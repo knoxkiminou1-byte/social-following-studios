@@ -75,8 +75,8 @@ function Button({ href, children, variant = "primary", size = "default" }) {
   const base =
     "inline-flex items-center justify-center rounded-2xl font-black transition active:scale-[0.98] shadow-lg hover:shadow-xl uppercase tracking-widest";
   const sizes = {
-    default: "px-4 py-3 text-[9px] md:px-6 md:py-4 md:text-[10px]",
-    large: "px-8 py-4 text-[10px] md:px-10 md:py-5 md:text-xs",
+    default: "px-5 py-4 text-sm md:px-7 md:py-4 md:text-base",
+    large: "px-9 py-5 text-base md:px-11 md:py-5 md:text-lg",
   };
   const styles =
     variant === "primary"
@@ -903,12 +903,12 @@ function Shell({ route, children }) {
       <div className="relative z-10">
 
       <header className="sticky top-0 z-50 border-b-2 border-stone-900/10 bg-transparent backdrop-blur-2xl shadow-sm text-left">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 text-left">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:py-5 text-left">
           <a href="#/" className="flex items-center gap-4 group">
             <LogoPlaceholder className="h-10 w-10 md:h-14 md:w-14 shadow-2xl" />
             <div className="leading-none text-left">
               <div className="text-base md:text-lg font-black tracking-tighter text-left">Social Following Studios</div>
-              <div className="text-[9px] md:text-[10px] font-black tracking-[0.2em] text-emerald-700 mt-1 uppercase text-left">Unified Conversion Systems</div>
+              <div className="text-xs md:text-sm font-black tracking-[0.2em] text-emerald-700 mt-1 uppercase text-left">Unified Conversion Systems</div>
             </div>
           </a>
 
@@ -918,7 +918,7 @@ function Shell({ route, children }) {
                 key={item.href}
                 href={item.href}
                 className={cx(
-                  "rounded-2xl px-5 py-3 text-[10px] font-black tracking-widest uppercase transition-all duration-300",
+                  "rounded-2xl px-7 py-4 text-base md:text-lg font-black tracking-[0.18em] uppercase transition-all duration-300",
                   active(item.href)
                     ? "bg-stone-950 text-white shadow-2xl"
                     : "text-stone-600 hover:text-stone-950 hover:bg-white/50"
@@ -933,10 +933,10 @@ function Shell({ route, children }) {
             <Button href={CONFIGURE_URL} variant="primary" size="default">CONFIGURE</Button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden flex items-center justify-center h-12 w-12 rounded-2xl bg-stone-950 text-white"
+              className="md:hidden flex items-center justify-center h-14 w-14 rounded-2xl bg-stone-950 text-white"
               aria-label="Toggle menu"
             >
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileMenuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 ) : (
@@ -949,14 +949,14 @@ function Shell({ route, children }) {
 
         {mobileMenuOpen && (
           <div className="md:hidden border-t-2 border-white/10 bg-stone-950/90 backdrop-blur-2xl shadow-2xl">
-            <nav className="mx-auto max-w-7xl px-6 py-6 flex flex-col gap-3">
+            <nav className="mx-auto max-w-7xl px-6 py-6 flex flex-col gap-4">
               {NAV.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cx(
-                    "rounded-2xl px-6 py-5 text-base font-extrabold tracking-[0.22em] uppercase transition-all duration-300 text-center",
+                    "rounded-2xl px-6 py-6 text-lg font-extrabold tracking-[0.22em] uppercase transition-all duration-300 text-center",
                     active(item.href)
                       ? "bg-emerald-500 text-white shadow-2xl"
                       : "text-white/80 hover:text-white hover:bg-white/10"
