@@ -130,6 +130,9 @@ const COPY = {
     brandSub: "Unified Conversion Systems",
     topCta: "Configure",
     footerSub: "© 2026 Unified Conversion Systems",
+    footerCreditPrefix: "made with",
+    footerCreditLink: "aafc",
+    footerCreditSuffix: "with love",
     terms: "Terms",
     privacy: "Privacy",
     termsBody: "Terms of Operation.",
@@ -641,6 +644,13 @@ function Shell({ children, route }) {
           <div>
             <div className="text-4xl font-black tracking-tighter uppercase mb-4 leading-none">{COPY.shell.brand}</div>
             <div className="text-xs font-black tracking-[0.4em] text-white/40 uppercase">{COPY.shell.footerSub}</div>
+            <div className="mt-3 text-xs font-black tracking-[0.2em] text-white/40 lowercase">
+              {COPY.shell.footerCreditPrefix}{" "}
+              <a href="https://aafcbuilders.org" target="_blank" rel="noreferrer" className="text-emerald-400 hover:text-emerald-300">
+                {COPY.shell.footerCreditLink}
+              </a>{" "}
+              {COPY.shell.footerCreditSuffix}
+            </div>
           </div>
           <div className="flex flex-col md:flex-row gap-12 md:gap-24 text-sm font-black tracking-[0.4em] text-white/40 uppercase">
             <a href="#/terms" className="hover:text-emerald-400 transition-colors">
