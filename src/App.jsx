@@ -130,14 +130,55 @@ const COPY = {
     brandSub: "Unified Conversion Systems",
     topCta: "Configure",
     footerSub: "© 2026 Unified Conversion Systems",
-    footerCreditPrefix: "made with",
-    footerCreditLink: "aafc",
-    footerCreditSuffix: "with love",
     terms: "Terms",
     privacy: "Privacy",
-    termsBody: "Terms of Operation.",
-    privacyBody: "Privacy Records.",
   },
+};
+
+const POLICY_TEMPLATE = {
+  siteName: "Social Following Studios",
+  email: "support@socialfollowingstudios.com",
+  updatedAt: "January 1, 2026",
+};
+
+const TERMS_POLICY = {
+  title: "Terms of Service",
+  intro:
+    "These Terms govern your use of Social Following Studios and any related pages, forms, and services.",
+  sections: [
+    {
+      heading: "Use of the site",
+      body: "You agree to use this site for lawful business purposes only and not to disrupt or misuse the platform.",
+    },
+    {
+      heading: "Service information",
+      body: "Service descriptions and availability may change over time. We can update, pause, or remove offerings without prior notice.",
+    },
+    {
+      heading: "Limitation of liability",
+      body: "The site and content are provided as-is. To the maximum extent allowed by law, we are not liable for indirect or consequential damages.",
+    },
+  ],
+};
+
+const PRIVACY_POLICY = {
+  title: "Privacy Policy",
+  intro:
+    "This policy explains how Social Following Studios collects, uses, and protects the information you submit.",
+  sections: [
+    {
+      heading: "Information we collect",
+      body: "We collect information you provide in forms, including name, email, phone number, and business details needed to deliver services.",
+    },
+    {
+      heading: "How we use data",
+      body: "We use submitted information to respond to inquiries, deliver requested services, and improve operations and customer support.",
+    },
+    {
+      heading: "Data sharing",
+      body: "We do not sell personal data. We may share information with trusted providers only when required to operate or support our services.",
+    },
+  ],
 };
 
 function cx(...parts) {
@@ -171,6 +212,30 @@ function Button({ href, children, variant = "primary" }) {
     <a href={href} className={cx(base, styles)}>
       {children}
     </a>
+  );
+}
+
+
+function PolicyPage({ policy }) {
+  return (
+    <section className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 py-20 text-white">
+      <p className="text-xs font-black tracking-[0.28em] uppercase text-emerald-400/90 mb-4">Last Updated: {POLICY_TEMPLATE.updatedAt}</p>
+      <h1 className="text-4xl md:text-5xl font-black tracking-tight uppercase mb-5">{policy.title}</h1>
+      <p className="text-base md:text-lg leading-8 text-white/80 mb-10">{policy.intro}</p>
+
+      <div className="space-y-8">
+        {policy.sections.map((section) => (
+          <article key={section.heading} className="border border-white/10 bg-white/[0.02] p-6 md:p-8">
+            <h2 className="text-xl md:text-2xl font-black uppercase tracking-wide mb-3">{section.heading}</h2>
+            <p className="text-sm md:text-base leading-7 text-white/75">{section.body}</p>
+          </article>
+        ))}
+      </div>
+
+      <p className="mt-10 text-sm text-white/60">
+        Questions? Contact {POLICY_TEMPLATE.siteName} at {POLICY_TEMPLATE.email}.
+      </p>
+    </section>
   );
 }
 
@@ -644,13 +709,6 @@ function Shell({ children, route }) {
           <div>
             <div className="text-4xl font-black tracking-tighter uppercase mb-4 leading-none">{COPY.shell.brand}</div>
             <div className="text-xs font-black tracking-[0.4em] text-white/40 uppercase">{COPY.shell.footerSub}</div>
-            <div className="mt-3 text-xs font-black tracking-[0.2em] text-white/40 lowercase">
-              {COPY.shell.footerCreditPrefix}{" "}
-              <a href="https://aafcbuilders.org" target="_blank" rel="noreferrer" className="text-emerald-400 hover:text-emerald-300">
-                {COPY.shell.footerCreditLink}
-              </a>{" "}
-              {COPY.shell.footerCreditSuffix}
-            </div>
           </div>
           <div className="flex flex-col md:flex-row gap-12 md:gap-24 text-sm font-black tracking-[0.4em] text-white/40 uppercase">
             <a href="#/terms" className="hover:text-emerald-400 transition-colors">
@@ -679,9 +737,9 @@ export default function App() {
       case "/contact":
         return <Contact />;
       case "/terms":
-        return <div className="p-20 text-white font-bold text-2xl relative z-10">{COPY.shell.termsBody}</div>;
+        return <PolicyPage policy={TERMS_POLICY} />;
       case "/privacy":
-        return <div className="p-20 text-white font-bold text-2xl relative z-10">{COPY.shell.privacyBody}</div>;
+        return <PolicyPage policy={PRIVACY_POLICY} />;
       default:
         return <Home />;
     }
