@@ -8,6 +8,22 @@ const NAV = [
 
 const PARTNERS = ["CHEVRON", "STANFORD MEDICAL", "DREW HEALTH CENTER", "PG&E", "City of Concord"];
 const BOOKING_URL = "#";
+const MAILING_LIST_ENDPOINT = "#";
+
+const TRUSTED_BY_LOGOS = [
+  { name: "The Anthemist", mode: "text", alt: "THE ANTHEMIST" },
+  { name: "D55", mode: "text", alt: "D55" },
+  { name: "PG&E", mode: "image", src: "https://logo.clearbit.com/pge.com", alt: "PG&E" },
+  { name: "Stanford Medical", mode: "text", alt: "STANFORD MEDICAL" },
+  { name: "Stanford University", mode: "image", src: "https://logo.clearbit.com/stanford.edu", alt: "Stanford University" },
+  { name: "NVIDIA", mode: "image", src: "https://logo.clearbit.com/nvidia.com", alt: "NVIDIA" },
+  { name: "CommonSpirit Health", mode: "image", src: "https://logo.clearbit.com/commonspirithealth.org", alt: "CommonSpirit Health" },
+  { name: "Drew Medical", mode: "image", src: "https://logo.clearbit.com/drewmedical.edu", alt: "Drew Medical" },
+  { name: "DGRP", mode: "text", alt: "DGRP" },
+  { name: "Rhythm & Roux", mode: "text", alt: "RHYTHM & ROUX" },
+  { name: "Parade of Youth", mode: "text", alt: "PARADE OF YOUTH" },
+  { name: "City of Concord", mode: "text", alt: "CITY OF CONCORD" },
+];
 
 /**
  * COPY CENTRAL (edit text here)
@@ -18,8 +34,8 @@ const COPY = {
     productName: "Unified Conversion Infrastructure",
     h1Line1: "We build language conversion infrastructure that turns credibility into",
     h1Line2Accent: "growth.",
-    sub: "Content builds authority. Authority creates sales. Sales drive growth.",
-    subBold: "We build the language systems that connect them.",
+    sub: "Built for high-trust operators with proven credibility.",
+    subBold: "",
     ctaPrimary: "Configure",
     ctaSecondary: "View Case Studies",
     stats: [
@@ -418,6 +434,29 @@ function Grid({ opacityClass = "opacity-20" }) {
   );
 }
 
+
+function resolveLogoAsset(logo) {
+  if (logo.mode === "image" && logo.src) {
+    return { mode: "image", src: logo.src, alt: logo.alt || logo.name };
+  }
+  return { mode: "text", text: logo.name.toUpperCase(), alt: logo.alt || logo.name };
+}
+
+function TrustedLogo({ logo }) {
+  const asset = resolveLogoAsset(logo);
+  if (asset.mode === "image") {
+    return (
+      <img
+        src={asset.src}
+        alt={asset.alt}
+        className="h-5 w-auto max-w-[180px] object-contain brightness-0 invert opacity-90"
+        loading="lazy"
+      />
+    );
+  }
+  return <span className="text-[10px] md:text-xs font-black tracking-[0.22em] uppercase text-white/70">{asset.text}</span>;
+}
+
 function Home() {
   return (
     <div className="relative pt-12 space-y-16">
@@ -432,13 +471,24 @@ function Home() {
             <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
           </h1>
           <p className="mt-8 text-xl md:text-3xl text-white/60 font-medium max-w-4xl leading-tight">{COPY.home.sub}</p>
-          <p className="mt-5 text-xl md:text-2xl text-white font-black max-w-4xl leading-tight">{COPY.home.subBold}</p>
+          {COPY.home.subBold && <p className="mt-5 text-xl md:text-2xl text-white font-black max-w-4xl leading-tight">{COPY.home.subBold}</p>}
           <div className="mt-12 flex flex-wrap gap-4">
             <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
             <Button href="#/case-studies" variant="secondary">
               {COPY.home.ctaSecondary}
             </Button>
           </div>
+        </div>
+      </section>
+
+      <section className="mb-2 py-12 border-y border-white/10 overflow-x-auto relative z-10">
+        <div className="text-[10px] font-black tracking-[0.3em] text-emerald-500 uppercase mb-8">TRUSTED BY</div>
+        <div className="flex gap-6 min-w-max">
+          {TRUSTED_BY_LOGOS.map((logo) => (
+            <div key={logo.name} className="border border-white/10 bg-black/40 px-4 py-3">
+              <TrustedLogo logo={logo} />
+            </div>
+          ))}
         </div>
       </section>
 
@@ -512,6 +562,32 @@ function Home() {
 
       <section className="border border-emerald-500/40 bg-emerald-500/5 p-8 md:p-12 relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <p className="text-lg md:text-2xl font-bold text-white max-w-3xl">I build unified conversion infrastructure across email, newsletters, podcasts, and strategic language.</p>
+        <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
+      </section>
+
+      <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">Case Studies</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {COPY.caseStudies.cards.map((cs) => (
+            <article key={cs.client} className="border border-white/10 bg-white/[0.03] p-6">
+              <div className="text-[10px] font-black tracking-[0.3em] text-emerald-400 uppercase mb-3">{cs.badge}</div>
+              <h3 className="text-xl font-black text-white mb-2">{cs.client}</h3>
+              <p className="text-white/70 text-sm mb-4">{cs.problem}</p>
+              <div className="text-lg font-black text-emerald-400">{cs.outcome}</div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border border-emerald-500/40 bg-emerald-500/5 p-8 md:p-12 relative z-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div>
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white max-w-4xl">
+            We build language conversion infrastructure that turns credibility into <span className="text-emerald-500">growth.</span>
+          </h2>
+          <p className="mt-4 text-base md:text-xl text-white/70 font-medium">Built for high-trust operators with proven credibility.</p>
+        </div>
         <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
       </section>
     </div>
@@ -619,46 +695,6 @@ function CaseStudies() {
   );
 }
 
-function Configure() {
-  const [status, setStatus] = useState("idle");
-  return (
-    <div className="pt-12 max-w-4xl relative z-10">
-      <div className="text-left mb-12">
-        <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.configure.kicker}</div>
-        <h1 className="text-5xl font-black tracking-tighter text-white leading-none">{COPY.configure.title}</h1>
-        <p className="mt-8 text-xl text-white/60 font-medium">{COPY.configure.sub}</p>
-      </div>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          setStatus("deployed");
-        }}
-        className="border border-white/10 p-12 bg-black/40 backdrop-blur-xl relative z-10"
-      >
-        <div className="text-[10px] font-black tracking-[0.3em] text-emerald-500 uppercase mb-12">{COPY.configure.formKicker}</div>
-        <div className="space-y-12">
-          {COPY.configure.fields.map((field) => (
-            <div key={field.label}>
-              <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-4">{field.label}</div>
-              <input
-                type="text"
-                className="w-full bg-transparent border-b border-white/20 px-0 py-4 text-xl font-bold text-white focus:outline-none focus:border-emerald-500 transition-colors placeholder:text-white/10"
-                placeholder={field.placeholder}
-              />
-            </div>
-          ))}
-          <button
-            type="submit"
-            className="w-full bg-emerald-600 py-8 text-xs font-black tracking-[0.4em] text-white uppercase hover:bg-emerald-500 transition-all shadow-2xl mt-12"
-          >
-            {status === "deployed" ? COPY.configure.submitDone : COPY.configure.submitIdle}
-          </button>
-        </div>
-      </form>
-    </div>
-  );
-}
-
 function Shell({ children, route }) {
   const active = (href) => {
     const r = href.replace(/^#/, "").toLowerCase();
@@ -706,12 +742,31 @@ function Shell({ children, route }) {
       <main className="max-w-[1800px] mx-auto px-6 md:px-12 pt-32 pb-48 relative z-10">{children}</main>
 
       <footer className="border-t border-white/10 py-24 bg-black relative z-50">
-        <div className="max-w-[1800px] mx-auto px-12 grid md:grid-cols-2 gap-24">
+        <div className="max-w-[1800px] mx-auto px-12 grid lg:grid-cols-3 gap-16">
           <div>
             <div className="text-4xl font-black tracking-tighter uppercase mb-4 leading-none">{COPY.shell.brand}</div>
             <div className="text-xs font-black tracking-[0.4em] text-white/40 uppercase">{COPY.shell.footerSub}</div>
           </div>
-          <div className="flex flex-col md:flex-row gap-12 md:gap-24 text-sm font-black tracking-[0.4em] text-white/40 uppercase">
+          <form
+            action={MAILING_LIST_ENDPOINT}
+            onSubmit={(e) => e.preventDefault()}
+            className="border border-white/10 bg-white/[0.02] p-6"
+          >
+            <p className="text-sm font-semibold text-white mb-4">Join our mailing list for the latest insights.</p>
+            <div className="flex gap-3">
+              <input
+                type="email"
+                required
+                placeholder="Email"
+                className="flex-1 bg-transparent border border-white/20 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-500"
+              />
+              <button type="submit" className="bg-emerald-600 px-5 py-3 text-xs font-black tracking-[0.24em] uppercase hover:bg-emerald-500">
+                Join
+              </button>
+            </div>
+            <p className="mt-3 text-[10px] font-black tracking-[0.28em] uppercase text-white/40">Insights page coming later</p>
+          </form>
+          <div className="flex flex-col md:flex-row lg:flex-col gap-8 text-sm font-black tracking-[0.4em] text-white/40 uppercase lg:items-end">
             <a href="#/terms" className="hover:text-emerald-400 transition-colors">
               {COPY.shell.terms}
             </a>
