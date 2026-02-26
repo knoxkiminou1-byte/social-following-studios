@@ -4,25 +4,26 @@ const NAV = [
   { label: "01 // Home", href: "#/" },
   { label: "02 // Infrastructure", href: "#/infrastructure" },
   { label: "03 // Case Studies", href: "#/case-studies" },
+  { label: "04 // Contact", href: "#/contact" },
 ];
 
 const PARTNERS = ["CHEVRON", "STANFORD MEDICAL", "DREW HEALTH CENTER", "PG&E", "City of Concord"];
-const BOOKING_URL = "#";
+const CONTACT_FORM_ENDPOINT = "#";
 const MAILING_LIST_ENDPOINT = "#";
 
 const TRUSTED_BY_LOGOS = [
-  { name: "The Anthemist", mode: "text", alt: "THE ANTHEMIST" },
-  { name: "D55", mode: "text", alt: "D55" },
-  { name: "PG&E", mode: "image", src: "https://logo.clearbit.com/pge.com", alt: "PG&E" },
-  { name: "Stanford Medical", mode: "text", alt: "STANFORD MEDICAL" },
-  { name: "Stanford University", mode: "image", src: "https://logo.clearbit.com/stanford.edu", alt: "Stanford University" },
-  { name: "NVIDIA", mode: "image", src: "https://logo.clearbit.com/nvidia.com", alt: "NVIDIA" },
-  { name: "CommonSpirit Health", mode: "image", src: "https://logo.clearbit.com/commonspirithealth.org", alt: "CommonSpirit Health" },
-  { name: "Drew Medical", mode: "image", src: "https://logo.clearbit.com/drewmedical.edu", alt: "Drew Medical" },
-  { name: "DGRP", mode: "text", alt: "DGRP" },
-  { name: "Rhythm & Roux", mode: "text", alt: "RHYTHM & ROUX" },
-  { name: "Parade of Youth", mode: "text", alt: "PARADE OF YOUTH" },
-  { name: "City of Concord", mode: "text", alt: "CITY OF CONCORD" },
+  { name: "The Anthemist", mode: "image", src: "/logos/the-anthemist.png", alt: "The Anthemist" },
+  { name: "D55", mode: "image", src: "/logos/d55.png", alt: "D55" },
+  { name: "PG&E", mode: "image", src: "/logos/pge.svg", alt: "PG&E" },
+  { name: "Stanford Medical", mode: "image", src: "/logos/stanford-medical.jpg", alt: "Stanford Medical" },
+  { name: "Stanford University", mode: "image", src: "/logos/stanford-university.svg", alt: "Stanford University" },
+  { name: "NVIDIA", mode: "image", src: "/logos/nvidia.svg", alt: "NVIDIA" },
+  { name: "CommonSpirit Health", mode: "image", src: "/logos/commonspirit-health.png", alt: "CommonSpirit Health" },
+  { name: "Drew Medical", mode: "image", src: "/logos/drew-medical.png", alt: "Drew Medical" },
+  { name: "DGRP", mode: "text", src: null, alt: "DGRP" },
+  { name: "Rhythm & Roux", mode: "text", src: null, alt: "RHYTHM & ROUX" },
+  { name: "Parade of Youth", mode: "text", src: null, alt: "PARADE OF YOUTH" },
+  { name: "City of Concord", mode: "image", src: "/logos/city-of-concord.png", alt: "City of Concord" },
 ];
 
 /**
@@ -36,7 +37,7 @@ const COPY = {
     h1Line2Accent: "growth.",
     sub: "Built for high-trust operators with proven credibility.",
     subBold: "",
-    ctaPrimary: "Configure",
+    ctaPrimary: "Work With Us",
     ctaSecondary: "View Case Studies",
     stats: [
       { label: "STRATEGY", sub: "LANGUAGE SYSTEMS" },
@@ -80,7 +81,7 @@ const COPY = {
     ],
     outroLines: ["Language positions.", "Distribution captures.", "Sequences nurture.", "Infrastructure converts."],
     outroSub: "OPERATIONAL CONTROL OVER DISTRIBUTION AND CONVERSION.",
-    cta: "Configure",
+    cta: "Work With Us",
   },
   caseStudies: {
     kicker: "CASE STUDIES",
@@ -111,7 +112,7 @@ const COPY = {
       },
     ],
     outroLines: ["Language builds authority.", "Infrastructure converts it."],
-    cta: "Configure",
+    cta: "Work With Us",
   },
   configure: {
     kicker: "CONFIGURE",
@@ -125,10 +126,17 @@ const COPY = {
     submitIdle: "SUBMIT CONFIGURATION",
     submitDone: "CAPTURED",
   },
+  contact: {
+    kicker: "CONTACT",
+    title: "Work with us.",
+    sub: "Looking to build your brand, sharpen your positioning, or install conversion infrastructure that actually moves?",
+    submitIdle: "SUBMIT",
+    submitDone: "SUBMITTED",
+  },
   shell: {
     brand: "Social Following Studios",
     brandSub: "Unified Conversion Infrastructure",
-    topCta: "Configure",
+    topCta: "Work With Us",
     footerSub: "© 2026 SOCIAL FOLLOWING STUDIOS",
     terms: "Terms",
     privacy: "Privacy",
@@ -444,51 +452,55 @@ function resolveLogoAsset(logo) {
 
 function TrustedLogo({ logo }) {
   const asset = resolveLogoAsset(logo);
-  if (asset.mode === "image") {
+  const [imageFailed, setImageFailed] = useState(false);
+  if (asset.mode === "image" && !imageFailed) {
     return (
       <img
         src={asset.src}
         alt={asset.alt}
         className="h-5 w-auto max-w-[180px] object-contain brightness-0 invert opacity-90"
         loading="lazy"
+        onError={() => setImageFailed(true)}
       />
     );
   }
-  return <span className="text-[10px] md:text-xs font-black tracking-[0.22em] uppercase text-white/70">{asset.text}</span>;
+  return <span className="text-[10px] md:text-xs font-black tracking-[0.22em] uppercase text-white/70">{logo.name.toUpperCase()}</span>;
 }
 
 function Home() {
   return (
     <div className="relative pt-12 space-y-16">
       <section className="min-h-[65vh] flex flex-col justify-center text-left relative z-10">
-        <div className="max-w-5xl">
-          <div className="inline-block border border-emerald-500/30 px-4 py-2 text-[10px] font-black tracking-[0.5em] text-emerald-400 uppercase mb-10">
-            {COPY.home.productName}
-          </div>
-          <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter leading-[0.9] text-white">
-            {COPY.home.h1Line1}
-            <br />
-            <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
-          </h1>
-          <p className="mt-8 text-xl md:text-3xl text-white/60 font-medium max-w-4xl leading-tight">{COPY.home.sub}</p>
-          {COPY.home.subBold && <p className="mt-5 text-xl md:text-2xl text-white font-black max-w-4xl leading-tight">{COPY.home.subBold}</p>}
-          <div className="mt-12 flex flex-wrap gap-4">
-            <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
-            <Button href="#/case-studies" variant="secondary">
-              {COPY.home.ctaSecondary}
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <section className="mb-2 py-12 border-y border-white/10 overflow-x-auto relative z-10">
-        <div className="text-[10px] font-black tracking-[0.3em] text-emerald-500 uppercase mb-8">TRUSTED BY</div>
-        <div className="flex gap-6 min-w-max">
-          {TRUSTED_BY_LOGOS.map((logo) => (
-            <div key={logo.name} className="border border-white/10 bg-black/40 px-4 py-3">
-              <TrustedLogo logo={logo} />
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_420px] gap-14 lg:gap-20 items-start">
+          <div className="max-w-5xl">
+            <div className="inline-block border border-emerald-500/30 px-4 py-2 text-[10px] font-black tracking-[0.5em] text-emerald-400 uppercase mb-10">
+              {COPY.home.productName}
             </div>
-          ))}
+            <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter leading-[0.9] text-white">
+              {COPY.home.h1Line1}
+              <br />
+              <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
+            </h1>
+            <p className="mt-8 text-xl md:text-3xl text-white/60 font-medium max-w-4xl leading-tight">{COPY.home.sub}</p>
+            {COPY.home.subBold && <p className="mt-5 text-xl md:text-2xl text-white font-black max-w-4xl leading-tight">{COPY.home.subBold}</p>}
+            <div className="mt-12 flex flex-wrap gap-4">
+              <Button href="#/contact">{COPY.home.ctaPrimary}</Button>
+              <Button href="#/case-studies" variant="secondary">
+                {COPY.home.ctaSecondary}
+              </Button>
+            </div>
+          </div>
+
+          <aside className="border border-white/10 bg-black/35 backdrop-blur-xl p-8 lg:mt-4 lg:text-right">
+            <div className="text-[10px] font-black tracking-[0.4em] text-emerald-400 uppercase mb-8">TRUSTED BY</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+              {TRUSTED_BY_LOGOS.map((logo) => (
+                <div key={logo.name} className="border border-white/10 bg-white/[0.02] px-4 py-3 lg:ml-auto lg:w-full">
+                  <TrustedLogo logo={logo} />
+                </div>
+              ))}
+            </div>
+          </aside>
         </div>
       </section>
 
@@ -590,6 +602,32 @@ function Home() {
         </div>
         <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
       </section>
+
+      <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">Case Studies</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {COPY.caseStudies.cards.map((cs) => (
+            <article key={cs.client} className="border border-white/10 bg-white/[0.03] p-6">
+              <div className="text-[10px] font-black tracking-[0.3em] text-emerald-400 uppercase mb-3">{cs.badge}</div>
+              <h3 className="text-xl font-black text-white mb-2">{cs.client}</h3>
+              <p className="text-white/70 text-sm mb-4">{cs.problem}</p>
+              <div className="text-lg font-black text-emerald-400">{cs.outcome}</div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border border-emerald-500/40 bg-emerald-500/5 p-8 md:p-12 relative z-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div>
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white max-w-4xl">
+            We build language conversion infrastructure that turns credibility into <span className="text-emerald-500">growth.</span>
+          </h2>
+          <p className="mt-4 text-base md:text-xl text-white/70 font-medium">Built for high-trust operators with proven credibility.</p>
+        </div>
+        <Button href="#/contact">{COPY.home.ctaPrimary}</Button>
+      </section>
     </div>
   );
 }
@@ -625,7 +663,7 @@ function Infrastructure() {
           ))}
         </p>
         <p className="text-xl text-white/40 uppercase tracking-widest font-bold mb-12">{COPY.infrastructure.outroSub}</p>
-        <Button href={BOOKING_URL}>{COPY.infrastructure.cta}</Button>
+        <Button href="#/contact">{COPY.infrastructure.cta}</Button>
       </section>
     </div>
   );
@@ -689,7 +727,53 @@ function CaseStudies() {
             </React.Fragment>
           ))}
         </p>
-        <Button href={BOOKING_URL}>{COPY.caseStudies.cta}</Button>
+        <Button href="#/contact">{COPY.caseStudies.cta}</Button>
+      </section>
+    </div>
+  );
+}
+
+
+function Contact() {
+  const [status, setStatus] = useState("idle");
+  return (
+    <div className="pt-12 max-w-5xl mx-auto relative z-10">
+      <section className="border border-white/10 bg-black/40 backdrop-blur-xl px-8 md:px-16 py-14 md:py-20">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.contact.kicker}</div>
+          <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white leading-[0.95]">{COPY.contact.title}</h1>
+          <div className="h-[2px] w-24 bg-emerald-500/90 mx-auto mt-8 mb-8" />
+          <p className="text-lg md:text-2xl text-white/70 font-medium leading-relaxed">{COPY.contact.sub}</p>
+        </div>
+
+        <form
+          action={CONTACT_FORM_ENDPOINT}
+          onSubmit={(e) => {
+            e.preventDefault();
+            setStatus("submitted");
+          }}
+          className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5"
+        >
+          {["First Name", "Last Name", "Email", "Phone", "Brand / Company", "What are you building?"].map((field) => (
+            <input
+              key={field}
+              type={field === "Email" ? "email" : "text"}
+              required={field !== "Phone"}
+              placeholder={field}
+              className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-base font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500"
+            />
+          ))}
+          <textarea
+            placeholder="Optional Message / Notes"
+            rows={5}
+            className="md:col-span-2 w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-base font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500"
+          />
+          <div className="md:col-span-2 flex justify-start mt-2">
+            <button type="submit" className="bg-emerald-600 px-10 py-4 text-xs font-black tracking-[0.3em] uppercase text-white hover:bg-emerald-500 transition-colors">
+              {status === "submitted" ? COPY.contact.submitDone : COPY.contact.submitIdle}
+            </button>
+          </div>
+        </form>
       </section>
     </div>
   );
@@ -730,7 +814,7 @@ function Shell({ children, route }) {
           </nav>
           <div className="hidden sm:block">
             <a
-              href={BOOKING_URL}
+              href="#/contact"
               className="border border-emerald-500/50 px-6 py-3 text-sm font-black tracking-[0.3em] uppercase hover:bg-emerald-500 transition-all"
             >
               {COPY.shell.topCta}
@@ -788,6 +872,8 @@ export default function App() {
         return <Infrastructure />;
       case "/case-studies":
         return <CaseStudies />;
+      case "/contact":
+        return <Contact />;
       case "/terms":
         return <PolicyPage policy={TERMS_POLICY} />;
       case "/privacy":
