@@ -469,6 +469,7 @@ function Home() {
             </div>
           </div>
         </div>
+        <p className="mt-10 text-xl md:text-2xl font-black text-emerald-400">{COPY.infrastructure.close}</p>
       </section>
 
       <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
@@ -503,6 +504,7 @@ function Infrastructure() {
         <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter text-white leading-[0.9]">{COPY.infrastructure.h1}</h1>
         <p className="mt-12 text-2xl md:text-4xl text-white/60 font-medium">{COPY.infrastructure.sub}</p>
       </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {COPY.infrastructure.layers.map((L) => (
           <div
