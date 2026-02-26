@@ -98,7 +98,6 @@ const COPY = {
   },
   insights: {
     h1: "Insights",
-    sub: "Strategy notes on email, newsletters, podcasts, and strategic language infrastructure.",
   },
   configure: {
     kicker: "CONFIGURE",
@@ -455,9 +454,8 @@ function Home() {
       </section>
 
       <section className="relative z-10">
-        <div className="flex items-end justify-between gap-6 mb-8">
+        <div className="mb-8">
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">Engines</h2>
-          <a href="#/engines" className="text-xs font-black tracking-[0.3em] uppercase text-emerald-400">View all</a>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {COPY.engines.cards.map((engine) => (
@@ -470,9 +468,8 @@ function Home() {
       </section>
 
       <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
-        <div className="flex items-end justify-between gap-6 mb-8">
+        <div className="mb-8">
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">Case Studies</h2>
-          <a href="#/case-studies" className="text-xs font-black tracking-[0.3em] uppercase text-emerald-400">See outcomes</a>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {COPY.caseStudies.cards.map((cs) => (
@@ -546,13 +543,8 @@ function Engines() {
 function Insights() {
   return (
     <div className="pt-12 relative z-10">
-      <div className="max-w-4xl text-left mb-14">
+      <div className="max-w-4xl text-left">
         <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white leading-[0.9]">{COPY.insights.h1}</h1>
-        <p className="mt-8 text-xl text-white/65 font-medium leading-relaxed">{COPY.insights.sub}</p>
-      </div>
-      <div className="border border-white/10 bg-black/40 backdrop-blur-xl p-10">
-        <p className="text-sm font-black tracking-[0.3em] uppercase text-emerald-400 mb-4">Coming Soon</p>
-        <p className="text-white/70">New essays and breakdowns will publish here.</p>
       </div>
     </div>
   );
