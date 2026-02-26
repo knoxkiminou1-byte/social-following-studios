@@ -2,12 +2,12 @@ import React, { useEffect, useMemo, useState, useRef } from "react";
 
 const NAV = [
   { label: "01 // Home", href: "#/" },
-  { label: "02 // System", href: "#/system" },
-  { label: "03 // Case studies", href: "#/case-studies" },
-  { label: "04 // Contact", href: "#/contact" },
+  { label: "02 // Infrastructure", href: "#/infrastructure" },
+  { label: "03 // Case Studies", href: "#/case-studies" },
 ];
 
 const PARTNERS = ["CHEVRON", "STANFORD MEDICAL", "DREW HEALTH CENTER", "PG&E", "City of Concord"];
+const BOOKING_URL = "#";
 
 /**
  * COPY CENTRAL (edit text here)
@@ -15,69 +15,61 @@ const PARTNERS = ["CHEVRON", "STANFORD MEDICAL", "DREW HEALTH CENTER", "PG&E", "
  */
 const COPY = {
   home: {
-    pill: "Unified Conversion Systems",
-    h1Line1: "Capture every opportunity.",
-    h1Line2: "Convert faster.",
-    h1Line3Accent: "Scale predictably.",
-    sub:
-      "Social Following deploys revenue infrastructure that organizes inbound demand into scheduled outcomes across intake, booking, and follow-up.",
-    ctaPrimary: "CONFIGURE NOW",
-    ctaSecondary: "VIEW CASE STUDIES",
-    equationKicker: "THE EQUATION",
-    equationHeadline: "Capture + Route + Convert = Predictable revenue.",
-    equationBody:
-      "Traffic becomes booked work when systems align. This infrastructure coordinates call capture, booking logic, and intake automation so inbound demand moves through one continuous pipeline.",
-    coreArch: "CORE ARCHITECTURE",
-  },
-  stats: [
-    { label: "COVERAGE", value: "24/7", sub: "Continuous intake and routing" },
-    { label: "RESPONSE SPEED", value: "<60s", sub: "First-touch handling" },
-    { label: "CONVERSION LIFT", value: "+42%", sub: "Booked outcomes" },
-    { label: "OPERATIONAL EFFICIENCY", value: "-60%", sub: "Manual workload" },
-  ],
-  system: {
-    kicker: "SYSTEM",
-    title: "The topology.",
-    sub: "A four-layer deployment that moves demand into outcomes.",
-    outroLines: [
-      "Access captures demand.",
-      "Conversion creates commitment.",
-      "Intake structures data.",
-      "Continuity maintains momentum.",
+    productName: "Unified Conversion Infrastructure",
+    h1Line1: "We build language conversion infrastructure that turns credibility into",
+    h1Line2Accent: "growth.",
+    sub: "Content builds authority. Authority creates sales. Sales drive growth.",
+    subBold: "We build the language systems that connect them.",
+    ctaPrimary: "Configure",
+    ctaSecondary: "View Case Studies",
+    stats: [
+      { label: "STRATEGY", sub: "LANGUAGE SYSTEMS" },
+      { label: "DISTRIBUTION", sub: "TRUST CHANNELS" },
+      { label: "AUTOMATION", sub: "LIFECYCLE SEQUENCES" },
+      { label: "OUTCOME", sub: "REVENUE CONVERSION" },
     ],
-    outroSub: "Operational stability at scale.",
-    cta: "Configure Your System",
+    equationKicker: "THE SYSTEM",
+    equationHeadline: "We build conversion infrastructure.",
+    equationBody:
+      "Strategic language, owned distribution, and lifecycle automation engineered as one coordinated system. Every engagement includes strategy, sequencing, design, and deployment. Nothing ships in isolation.",
+    coreArch: "FOUR ENGINES",
+    architecture: ["STRATEGIC LANGUAGE", "PODCAST ENGINE", "NEWSLETTER SYSTEM", "EMAIL INFRASTRUCTURE"],
+  },
+  infrastructure: {
+    kicker: "INFRASTRUCTURE",
+    h1: "The infrastructure.",
+    sub: "Four coordinated engines. One measurable outcome.",
     layers: [
       {
-        title: "Access Layer",
-        note: "01 // SPEED TO RESPONSE",
+        note: "01 // POSITIONING",
+        title: "STRATEGIC LANGUAGE",
         desc:
-          "The first layer captures inbound demand the moment it arrives. Every call, form submission, message, and inquiry enters structured handling immediately. Every opportunity receives immediate, structured attention.",
+          "Messaging architecture across homepage, email, and sales. Strategic language positions you to convert before the conversation starts.",
       },
       {
-        title: "Conversion Layer",
-        note: "02 // INTENT REALIZED",
-        desc:
-          "The second layer guides interest into commitment. Prospects enter clear booking paths. Scheduling happens in real time. Deposits process automatically. Calendar slots fill through automated coordination.",
+        note: "02 // DISTRIBUTION",
+        title: "PODCAST ENGINE",
+        desc: "Recurring distribution built for conversion routing. Long-form trust that moves listeners into owned channels.",
       },
       {
-        title: "Intake Layer",
-        note: "03 // RECORD INTEGRITY",
-        desc:
-          "The third layer organizes information for clean handoff. Lead data enters structured formats. Priority scoring identifies high-value opportunities. Records write directly into your system of record.",
+        note: "03 // REACH",
+        title: "NEWSLETTER SYSTEM",
+        desc: "Owned audience with segmentation and monetization logic. Segmented reach that compounds over time.",
       },
       {
-        title: "Continuity Layer",
-        note: "04 // LIFECYCLE PROTECTION",
-        desc:
-          "The fourth layer maintains relationship momentum beyond the first booking. Confirmations deliver reliably. Reminders reduce missed appointments. Follow-up sequences stay consistent.",
+        note: "04 // CONVERSION",
+        title: "EMAIL INFRASTRUCTURE",
+        desc: "Lifecycle automation from first touch to retention. Sequences, routing, and automation that drive booked outcomes.",
       },
     ],
+    outroLines: ["Language positions.", "Distribution captures.", "Sequences nurture.", "Infrastructure converts."],
+    outroSub: "OPERATIONAL CONTROL OVER DISTRIBUTION AND CONVERSION.",
+    cta: "Configure",
   },
   caseStudies: {
     kicker: "CASE STUDIES",
-    title: "Measured outcomes.",
-    sub: "Each case shows the problem, the deployed pillars, and the shift.",
+    title: "Measured outcomes",
+    sub: "Each case shows the problem, the deployed engines, and the shift.",
     trustedKicker: "TRUSTED BY INDUSTRY LEADERS",
     cards: [
       {
@@ -85,30 +77,30 @@ const COPY = {
         client: "B2B Operations",
         outcome: "+41% Qualified",
         problem: "Inbound requests arrive incomplete, unscored, and routed late.",
-        tech: "Voice + Intake + Conversion",
+        tech: "Language + Distribution + Conversion",
       },
       {
         badge: "B2C",
         client: "B2C Growth",
-        outcome: "+42% Bookings",
-        problem: "Missed calls and slow intake during peak demand.",
-        tech: "Voice + Booking Flow",
+        outcome: "+42% Growth",
+        problem: "Leads go cold during peak demand windows.",
+        tech: "Distribution + Nurture Sequences",
       },
       {
         badge: "Legal",
         client: "Professional Services",
         outcome: "60% Load Reduction",
         problem: "Staff spent hours qualifying unready prospects.",
-        tech: "Intake + Qualification",
+        tech: "Qualification + Lifecycle Automation",
       },
     ],
-    outroLines: ["Structure replaces manual coordination.", "Revenue becomes predictable."],
-    cta: "Configure Your System",
+    outroLines: ["Language builds authority.", "Infrastructure converts it."],
+    cta: "Configure",
   },
   configure: {
     kicker: "CONFIGURE",
     title: "Configuration.",
-    sub: "Deployment-ready output for voice and conversion systems.",
+    sub: "Deployment-ready output for strategic language and conversion infrastructure.",
     formKicker: "BUSINESS INFORMATION",
     fields: [
       { label: "Business Name", placeholder: "Enter business name" },
@@ -117,19 +109,11 @@ const COPY = {
     submitIdle: "SUBMIT CONFIGURATION",
     submitDone: "CAPTURED",
   },
-  contact: {
-    kicker: "CONTACT",
-    title: "Deploy the system",
-    sub: "Deploy conversion management in sequence.",
-    panelKicker: "ACTIVATION",
-    panelTitle: "Start configuration",
-    cta: "Configure Your System",
-  },
   shell: {
     brand: "Social Following Studios",
-    brandSub: "Unified Conversion Systems",
+    brandSub: "Unified Conversion Infrastructure",
     topCta: "Configure",
-    footerSub: "© 2026 Unified Conversion Systems",
+    footerSub: "© 2026 SOCIAL FOLLOWING STUDIOS",
     terms: "Terms",
     privacy: "Privacy",
   },
@@ -434,36 +418,23 @@ function Grid({ opacityClass = "opacity-20" }) {
   );
 }
 
-function Stat({ label, value, sub }) {
-  return (
-    <div className="relative z-10 border border-white/10 bg-white/5 p-8 backdrop-blur-sm text-left h-full overflow-hidden">
-      <div className="text-[10px] font-black tracking-[0.3em] uppercase text-emerald-400 mb-4">{label}</div>
-      <div className="text-4xl md:text-6xl font-black tracking-tighter text-white">{value}</div>
-      {sub && (
-        <div className="mt-2 text-xs font-bold text-white/40 uppercase tracking-widest leading-relaxed">{sub}</div>
-      )}
-    </div>
-  );
-}
-
 function Home() {
   return (
-    <div className="relative pt-12">
-      <section className="min-h-[80vh] flex flex-col justify-center text-left relative z-10">
-        <div className="max-w-6xl">
-          <div className="inline-block border border-emerald-500/30 px-4 py-2 text-[10px] font-black tracking-[0.5em] text-emerald-400 uppercase mb-12">
-            {COPY.home.pill}
+    <div className="relative pt-12 space-y-16">
+      <section className="min-h-[65vh] flex flex-col justify-center text-left relative z-10">
+        <div className="max-w-5xl">
+          <div className="inline-block border border-emerald-500/30 px-4 py-2 text-[10px] font-black tracking-[0.5em] text-emerald-400 uppercase mb-10">
+            {COPY.home.productName}
           </div>
-          <h1 className="text-6xl md:text-[10rem] font-black tracking-tighter leading-[0.85] text-white">
+          <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter leading-[0.9] text-white">
             {COPY.home.h1Line1}
             <br />
-            {COPY.home.h1Line2}
-            <br />
-            <span className="text-emerald-500">{COPY.home.h1Line3Accent}</span>
+            <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
           </h1>
-          <p className="mt-12 text-xl md:text-3xl text-white/60 font-medium max-w-4xl leading-tight">{COPY.home.sub}</p>
-          <div className="mt-16 flex flex-wrap gap-4">
-            <Button href="#/configure">{COPY.home.ctaPrimary}</Button>
+          <p className="mt-8 text-xl md:text-3xl text-white/60 font-medium max-w-4xl leading-tight">{COPY.home.sub}</p>
+          <p className="mt-5 text-xl md:text-2xl text-white font-black max-w-4xl leading-tight">{COPY.home.subBold}</p>
+          <div className="mt-12 flex flex-wrap gap-4">
+            <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
             <Button href="#/case-studies" variant="secondary">
               {COPY.home.ctaSecondary}
             </Button>
@@ -471,13 +442,16 @@ function Home() {
         </div>
       </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-24 relative z-10">
-        {COPY.stats.map((s) => (
-          <Stat key={s.label} label={s.label} value={s.value} sub={s.sub} />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-6 relative z-10">
+        {COPY.home.stats.map((s) => (
+          <div key={s.label} className="relative z-10 border border-white/10 bg-white/5 p-8 backdrop-blur-sm text-left h-full overflow-hidden">
+            <div className="text-xs md:text-sm font-black tracking-[0.25em] uppercase text-emerald-400 mb-3">{s.label}</div>
+            <div className="text-[10px] md:text-xs font-black tracking-[0.2em] text-white/60 uppercase">{s.sub}</div>
+          </div>
         ))}
       </div>
 
-      <section className="mt-32 border border-white/10 bg-black/40 backdrop-blur-xl p-12 md:p-24 relative z-10">
+      <section className="mt-14 border border-white/10 bg-black/40 backdrop-blur-xl p-12 md:p-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-24 items-center">
           <div>
             <div className="text-[10px] font-black tracking-[0.4em] text-emerald-500 uppercase mb-8">{COPY.home.equationKicker}</div>
@@ -487,7 +461,7 @@ function Home() {
           <div className="border border-white/10 p-10 bg-white/5 relative overflow-hidden">
             <div className="text-[10px] font-black tracking-[0.3em] text-white/40 uppercase mb-12">{COPY.home.coreArch}</div>
             <div className="space-y-4">
-              {["ACCESS", "CONVERSION", "INTAKE", "CONTINUITY"].map((layer, i) => (
+              {COPY.home.architecture.map((layer, i) => (
                 <div key={layer} className="flex items-center justify-between border-b border-white/5 py-4">
                   <span className="text-xs font-black tracking-widest text-emerald-400">0{i + 1}</span>
                   <span className="text-xl font-black text-white">{layer}</span>
@@ -497,20 +471,41 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">Case Studies</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {COPY.caseStudies.cards.map((cs) => (
+            <article key={cs.client} className="border border-white/10 bg-white/[0.03] p-6">
+              <div className="text-[10px] font-black tracking-[0.3em] text-emerald-400 uppercase mb-3">{cs.badge}</div>
+              <h3 className="text-xl font-black text-white mb-2">{cs.client}</h3>
+              <p className="text-white/70 text-sm mb-4">{cs.problem}</p>
+              <div className="text-lg font-black text-emerald-400">{cs.outcome}</div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border border-emerald-500/40 bg-emerald-500/5 p-8 md:p-12 relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <p className="text-lg md:text-2xl font-bold text-white max-w-3xl">I build unified conversion infrastructure across email, newsletters, podcasts, and strategic language.</p>
+        <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
+      </section>
     </div>
   );
 }
 
-function System() {
+function Infrastructure() {
   return (
-    <div className="pt-12 space-y-24 relative z-10">
+    <div className="pt-12 space-y-16 relative z-10">
       <div className="max-w-4xl text-left">
-        <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.system.kicker}</div>
-        <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter text-white leading-[0.9]">{COPY.system.title}</h1>
-        <p className="mt-12 text-2xl md:text-4xl text-white/60 font-medium">{COPY.system.sub}</p>
+        <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.infrastructure.kicker}</div>
+        <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter text-white leading-[0.9]">{COPY.infrastructure.h1}</h1>
+        <p className="mt-12 text-2xl md:text-4xl text-white/60 font-medium">{COPY.infrastructure.sub}</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {COPY.system.layers.map((L) => (
+        {COPY.infrastructure.layers.map((L) => (
           <div
             key={L.title}
             className="bg-black/40 backdrop-blur-md p-12 text-left border border-white/10 hover:bg-emerald-500/5 transition-colors h-full relative z-10 overflow-hidden"
@@ -523,15 +518,15 @@ function System() {
       </div>
       <section className="text-center py-24 border-t border-white/10 relative z-10">
         <p className="text-3xl md:text-5xl font-black text-white leading-tight mb-8">
-          {COPY.system.outroLines.map((line) => (
+          {COPY.infrastructure.outroLines.map((line) => (
             <React.Fragment key={line}>
               {line}
               <br />
             </React.Fragment>
           ))}
         </p>
-        <p className="text-xl text-white/40 uppercase tracking-widest font-bold mb-12">{COPY.system.outroSub}</p>
-        <Button href="#/configure">{COPY.system.cta}</Button>
+        <p className="text-xl text-white/40 uppercase tracking-widest font-bold mb-12">{COPY.infrastructure.outroSub}</p>
+        <Button href={BOOKING_URL}>{COPY.infrastructure.cta}</Button>
       </section>
     </div>
   );
@@ -595,7 +590,7 @@ function CaseStudies() {
             </React.Fragment>
           ))}
         </p>
-        <Button href="#/configure">{COPY.caseStudies.cta}</Button>
+        <Button href={BOOKING_URL}>{COPY.caseStudies.cta}</Button>
       </section>
     </div>
   );
@@ -641,23 +636,6 @@ function Configure() {
   );
 }
 
-function Contact() {
-  return (
-    <div className="pt-12 relative z-10">
-      <div className="text-left mb-24 max-w-4xl">
-        <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.contact.kicker}</div>
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white leading-[0.9]">{COPY.contact.title}</h1>
-        <p className="mt-8 text-xl text-white/60 font-medium leading-tight">{COPY.contact.sub}</p>
-      </div>
-      <div className="border border-white/10 bg-black/40 backdrop-blur-xl p-12 md:p-24 max-w-4xl relative z-10 overflow-hidden">
-        <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.contact.panelKicker}</div>
-        <h2 className="text-4xl md:text-6xl font-black text-white mb-12">{COPY.contact.panelTitle}</h2>
-        <Button href="#/configure">{COPY.contact.cta}</Button>
-      </div>
-    </div>
-  );
-}
-
 function Shell({ children, route }) {
   const active = (href) => {
     const r = href.replace(/^#/, "").toLowerCase();
@@ -693,7 +671,7 @@ function Shell({ children, route }) {
           </nav>
           <div className="hidden sm:block">
             <a
-              href="#/configure"
+              href={BOOKING_URL}
               className="border border-emerald-500/50 px-6 py-3 text-sm font-black tracking-[0.3em] uppercase hover:bg-emerald-500 transition-all"
             >
               {COPY.shell.topCta}
@@ -728,14 +706,10 @@ export default function App() {
   const route = useHashRoute();
   const page = useMemo(() => {
     switch (route) {
-      case "/system":
-        return <System />;
+      case "/infrastructure":
+        return <Infrastructure />;
       case "/case-studies":
         return <CaseStudies />;
-      case "/configure":
-        return <Configure />;
-      case "/contact":
-        return <Contact />;
       case "/terms":
         return <PolicyPage policy={TERMS_POLICY} />;
       case "/privacy":
