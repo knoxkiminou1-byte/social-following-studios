@@ -7,6 +7,7 @@ const NAV = [
 ];
 
 const PARTNERS = ["CHEVRON", "STANFORD MEDICAL", "DREW HEALTH CENTER", "PG&E", "City of Concord"];
+const BOOKING_URL = "#";
 
 /**
  * COPY CENTRAL (edit text here)
@@ -15,20 +16,20 @@ const PARTNERS = ["CHEVRON", "STANFORD MEDICAL", "DREW HEALTH CENTER", "PG&E", "
 const COPY = {
   home: {
     productName: "Unified Conversion Infrastructure",
-    h1Line1: "We turn words into",
-    h1Line2Accent: "revenue.",
+    h1Line1: "We build language conversion infrastructure that turns credibility into",
+    h1Line2Accent: "growth.",
     sub: "Content builds authority. Authority creates sales. Sales drive growth.",
-    subBold: "You already know this. So why aren't you building?",
+    subBold: "We build the language systems that connect them.",
     ctaPrimary: "Configure",
     ctaSecondary: "View Case Studies",
     stats: [
       { label: "STRATEGY", sub: "LANGUAGE SYSTEMS" },
-      { label: "DISTRIBUTION", sub: "OWNED CHANNELS" },
+      { label: "DISTRIBUTION", sub: "TRUST CHANNELS" },
       { label: "AUTOMATION", sub: "LIFECYCLE SEQUENCES" },
       { label: "OUTCOME", sub: "REVENUE CONVERSION" },
     ],
     equationKicker: "THE SYSTEM",
-    equationHeadline: "We build revenue infrastructure.",
+    equationHeadline: "We build conversion infrastructure.",
     equationBody:
       "Strategic language, owned distribution, and lifecycle automation engineered as one coordinated system. Every engagement includes strategy, sequencing, design, and deployment. Nothing ships in isolation.",
     coreArch: "FOUR ENGINES",
@@ -37,7 +38,7 @@ const COPY = {
   infrastructure: {
     kicker: "INFRASTRUCTURE",
     h1: "The infrastructure.",
-    sub: "Four coordinated systems. One measurable outcome.",
+    sub: "Four coordinated engines. One measurable outcome.",
     layers: [
       {
         note: "01 // POSITIONING",
@@ -58,7 +59,7 @@ const COPY = {
       {
         note: "04 // CONVERSION",
         title: "EMAIL INFRASTRUCTURE",
-        desc: "Lifecycle automation from first touch to retention. Sequences, routing, and automation that drive outcomes.",
+        desc: "Lifecycle automation from first touch to retention. Sequences, routing, and automation that drive booked outcomes.",
       },
     ],
     outroLines: ["Language positions.", "Distribution captures.", "Sequences nurture.", "Infrastructure converts."],
@@ -112,7 +113,7 @@ const COPY = {
     brand: "Social Following Studios",
     brandSub: "Unified Conversion Infrastructure",
     topCta: "Configure",
-    footerSub: "© 2026 Social Following Studios",
+    footerSub: "© 2026 SOCIAL FOLLOWING STUDIOS",
     terms: "Terms",
     privacy: "Privacy",
   },
@@ -433,7 +434,7 @@ function Home() {
           <p className="mt-8 text-xl md:text-3xl text-white/60 font-medium max-w-4xl leading-tight">{COPY.home.sub}</p>
           <p className="mt-5 text-xl md:text-2xl text-white font-black max-w-4xl leading-tight">{COPY.home.subBold}</p>
           <div className="mt-12 flex flex-wrap gap-4">
-            <Button href="#/configure">{COPY.home.ctaPrimary}</Button>
+            <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
             <Button href="#/case-studies" variant="secondary">
               {COPY.home.ctaSecondary}
             </Button>
@@ -492,6 +493,27 @@ function Home() {
         <p className="text-lg md:text-2xl font-bold text-white max-w-3xl">I build unified conversion infrastructure across email, newsletters, podcasts, and strategic language.</p>
         <Button href="#/configure">{COPY.home.ctaPrimary}</Button>
       </section>
+
+      <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">Case Studies</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {COPY.caseStudies.cards.map((cs) => (
+            <article key={cs.client} className="border border-white/10 bg-white/[0.03] p-6">
+              <div className="text-[10px] font-black tracking-[0.3em] text-emerald-400 uppercase mb-3">{cs.badge}</div>
+              <h3 className="text-xl font-black text-white mb-2">{cs.client}</h3>
+              <p className="text-white/70 text-sm mb-4">{cs.problem}</p>
+              <div className="text-lg font-black text-emerald-400">{cs.outcome}</div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border border-emerald-500/40 bg-emerald-500/5 p-8 md:p-12 relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <p className="text-lg md:text-2xl font-bold text-white max-w-3xl">I build unified conversion infrastructure across email, newsletters, podcasts, and strategic language.</p>
+        <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
+      </section>
     </div>
   );
 }
@@ -527,7 +549,7 @@ function Infrastructure() {
           ))}
         </p>
         <p className="text-xl text-white/40 uppercase tracking-widest font-bold mb-12">{COPY.infrastructure.outroSub}</p>
-        <Button href="#/configure">{COPY.infrastructure.cta}</Button>
+        <Button href={BOOKING_URL}>{COPY.infrastructure.cta}</Button>
       </section>
     </div>
   );
@@ -591,7 +613,7 @@ function CaseStudies() {
             </React.Fragment>
           ))}
         </p>
-        <Button href="#/configure">{COPY.caseStudies.cta}</Button>
+        <Button href={BOOKING_URL}>{COPY.caseStudies.cta}</Button>
       </section>
     </div>
   );
@@ -672,7 +694,7 @@ function Shell({ children, route }) {
           </nav>
           <div className="hidden sm:block">
             <a
-              href="#/configure"
+              href={BOOKING_URL}
               className="border border-emerald-500/50 px-6 py-3 text-sm font-black tracking-[0.3em] uppercase hover:bg-emerald-500 transition-all"
             >
               {COPY.shell.topCta}
@@ -711,8 +733,6 @@ export default function App() {
         return <Infrastructure />;
       case "/case-studies":
         return <CaseStudies />;
-      case "/configure":
-        return <Configure />;
       case "/terms":
         return <PolicyPage policy={TERMS_POLICY} />;
       case "/privacy":
