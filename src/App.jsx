@@ -1,12 +1,9 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
 
 const NAV = [
-  { label: "Home", href: "#/" },
-  { label: "Infrastructure", href: "#/infrastructure" },
-  { label: "Engines", href: "#/engines" },
-  { label: "Case Studies", href: "#/case-studies" },
-  { label: "Insights", href: "#/insights" },
-  { label: "Contact", href: "#/contact" },
+  { label: "01 // Home", href: "#/" },
+  { label: "02 // Infrastructure", href: "#/infrastructure" },
+  { label: "03 // Case Studies", href: "#/case-studies" },
 ];
 
 const PARTNERS = ["CHEVRON", "STANFORD MEDICAL", "DREW HEALTH CENTER", "PG&E", "City of Concord"];
@@ -18,52 +15,55 @@ const PARTNERS = ["CHEVRON", "STANFORD MEDICAL", "DREW HEALTH CENTER", "PG&E", "
 const COPY = {
   home: {
     productName: "Unified Conversion Infrastructure",
-    h1: "Unified Conversion Infrastructure",
-    sub: "Email, newsletter, podcast, and strategic language systems engineered to turn attention into revenue.",
-    support:
-      "We design coordinated distribution and conversion systems that compound. Every asset feeds the engine. Every touchpoint drives a measurable outcome.",
+    h1Line1: "We turn words into",
+    h1Line2Accent: "revenue.",
+    sub: "Content builds authority. Authority creates sales. Sales drive growth.",
+    subBold: "You already know this. So why aren't you building?",
     ctaPrimary: "Configure",
     ctaSecondary: "View Case Studies",
-    operatingModel: "Content → Capture → Nurture → Convert → Retain",
-    about: "I build unified conversion infrastructure across email, newsletters, podcasts, and strategic language.",
+    stats: [
+      { label: "STRATEGY", sub: "LANGUAGE SYSTEMS" },
+      { label: "DISTRIBUTION", sub: "OWNED CHANNELS" },
+      { label: "AUTOMATION", sub: "LIFECYCLE SEQUENCES" },
+      { label: "OUTCOME", sub: "REVENUE CONVERSION" },
+    ],
+    equationKicker: "THE SYSTEM",
+    equationHeadline: "We build revenue infrastructure.",
+    equationBody:
+      "Strategic language, owned distribution, and lifecycle automation engineered as one coordinated system. Every engagement includes strategy, sequencing, design, and deployment. Nothing ships in isolation.",
+    coreArch: "FOUR ENGINES",
+    architecture: ["STRATEGIC LANGUAGE", "PODCAST ENGINE", "NEWSLETTER SYSTEM", "EMAIL INFRASTRUCTURE"],
   },
   infrastructure: {
-    h1: "Infrastructure",
-    intro:
-      "One system. Email is the spine. Newsletter, podcast, and strategic language feed and amplify it.",
-    operatingModel: "Content → Capture → Nurture → Convert → Retain",
-    unifiedTitle: "What makes it unified",
-    unifiedPoints: [
-      "Everything routes back to owned distribution.",
-      "Podcast listeners join the newsletter.",
-      "Newsletter readers enter lifecycle email.",
-      "Email drives booked calls, sales, or applications.",
-      "Articles reinforce authority and feed search.",
-    ],
-    close: "No isolated channels. One infrastructure.",
-  },
-  engines: {
-    h1: "Engines",
-    intro: "Four coordinated engines power the system.",
-    cards: [
+    kicker: "INFRASTRUCTURE",
+    h1: "The infrastructure.",
+    sub: "Four coordinated systems. One measurable outcome.",
+    layers: [
       {
-        title: "Strategic Language",
-        desc: "Positioning, authority articles, conversion copy.",
+        note: "01 // POSITIONING",
+        title: "STRATEGIC LANGUAGE",
+        desc:
+          "Messaging architecture across homepage, email, and sales. Strategic language positions you to convert before the conversation starts.",
       },
       {
-        title: "Podcast Engine",
-        desc: "Audience capture through narrative authority and recurring distribution.",
+        note: "02 // DISTRIBUTION",
+        title: "PODCAST ENGINE",
+        desc: "Recurring distribution built for conversion routing. Long-form trust that moves listeners into owned channels.",
       },
       {
-        title: "Newsletter System",
-        desc: "Segmentation, monetization pathways, recurring reach.",
+        note: "03 // REACH",
+        title: "NEWSLETTER SYSTEM",
+        desc: "Owned audience with segmentation and monetization logic. Segmented reach that compounds over time.",
       },
       {
-        title: "Email Infrastructure",
-        desc: "Lifecycle sequences, routing, automation, and revenue conversion.",
+        note: "04 // CONVERSION",
+        title: "EMAIL INFRASTRUCTURE",
+        desc: "Lifecycle automation from first touch to retention. Sequences, routing, and automation that drive outcomes.",
       },
     ],
-    footer: "Email is the spine. The others feed and amplify it.",
+    outroLines: ["Language positions.", "Distribution captures.", "Sequences nurture.", "Infrastructure converts."],
+    outroSub: "OPERATIONAL CONTROL OVER DISTRIBUTION AND CONVERSION.",
+    cta: "Configure",
   },
   caseStudies: {
     kicker: "CASE STUDIES",
@@ -76,33 +76,30 @@ const COPY = {
         client: "B2B Operations",
         outcome: "+41% Qualified",
         problem: "Inbound requests arrive incomplete, unscored, and routed late.",
-        tech: "Voice + Intake + Conversion",
+        tech: "Language + Distribution + Conversion",
       },
       {
         badge: "B2C",
         client: "B2C Growth",
-        outcome: "+42% Bookings",
-        problem: "Missed calls and slow intake during peak demand.",
-        tech: "Voice + Booking Flow",
+        outcome: "+42% Growth",
+        problem: "Leads go cold during peak demand windows.",
+        tech: "Distribution + Nurture Sequences",
       },
       {
         badge: "Legal",
         client: "Professional Services",
         outcome: "60% Load Reduction",
         problem: "Staff spent hours qualifying unready prospects.",
-        tech: "Intake + Qualification",
+        tech: "Qualification + Lifecycle Automation",
       },
     ],
-    outroLines: ["Structure replaces manual coordination.", "Revenue becomes predictable."],
+    outroLines: ["Language builds authority.", "Infrastructure converts it."],
     cta: "Configure",
-  },
-  insights: {
-    h1: "Insights",
   },
   configure: {
     kicker: "CONFIGURE",
     title: "Configuration.",
-    sub: "Deployment-ready output for voice and conversion systems.",
+    sub: "Deployment-ready output for strategic language and conversion infrastructure.",
     formKicker: "BUSINESS INFORMATION",
     fields: [
       { label: "Business Name", placeholder: "Enter business name" },
@@ -111,19 +108,11 @@ const COPY = {
     submitIdle: "SUBMIT CONFIGURATION",
     submitDone: "CAPTURED",
   },
-  contact: {
-    kicker: "CONTACT",
-    title: "Deploy the system",
-    sub: "Deploy conversion management in sequence.",
-    panelKicker: "ACTIVATION",
-    panelTitle: "Start configuration",
-    cta: "Configure",
-  },
   shell: {
     brand: "Social Following Studios",
     brandSub: "Unified Conversion Infrastructure",
     topCta: "Configure",
-    footerSub: "© 2026 Unified Conversion Infrastructure",
+    footerSub: "© 2026 Social Following Studios",
     terms: "Terms",
     privacy: "Privacy",
   },
@@ -430,15 +419,19 @@ function Grid({ opacityClass = "opacity-20" }) {
 
 function Home() {
   return (
-    <div className="relative pt-12 space-y-20">
+    <div className="relative pt-12 space-y-16">
       <section className="min-h-[65vh] flex flex-col justify-center text-left relative z-10">
         <div className="max-w-5xl">
           <div className="inline-block border border-emerald-500/30 px-4 py-2 text-[10px] font-black tracking-[0.5em] text-emerald-400 uppercase mb-10">
             {COPY.home.productName}
           </div>
-          <h1 className="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] text-white">{COPY.home.h1}</h1>
-          <p className="mt-8 text-xl md:text-3xl text-white/70 font-medium max-w-4xl leading-tight">{COPY.home.sub}</p>
-          <p className="mt-6 text-base md:text-xl text-white/55 font-medium max-w-4xl leading-relaxed">{COPY.home.support}</p>
+          <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter leading-[0.9] text-white">
+            {COPY.home.h1Line1}
+            <br />
+            <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
+          </h1>
+          <p className="mt-8 text-xl md:text-3xl text-white/60 font-medium max-w-4xl leading-tight">{COPY.home.sub}</p>
+          <p className="mt-5 text-xl md:text-2xl text-white font-black max-w-4xl leading-tight">{COPY.home.subBold}</p>
           <div className="mt-12 flex flex-wrap gap-4">
             <Button href="#/configure">{COPY.home.ctaPrimary}</Button>
             <Button href="#/case-studies" variant="secondary">
@@ -448,23 +441,35 @@ function Home() {
         </div>
       </section>
 
-      <section className="border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12 relative z-10">
-        <div className="text-[10px] font-black tracking-[0.4em] text-emerald-500 uppercase mb-4">Operating Model</div>
-        <p className="text-2xl md:text-4xl font-black tracking-tight text-white">{COPY.home.operatingModel}</p>
-      </section>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-6 relative z-10">
+        {COPY.home.stats.map((s) => (
+          <div key={s.label} className="relative z-10 border border-white/10 bg-white/5 p-8 backdrop-blur-sm text-left h-full overflow-hidden">
+            <div className="text-xs md:text-sm font-black tracking-[0.25em] uppercase text-emerald-400 mb-3">{s.label}</div>
+            <div className="text-[10px] md:text-xs font-black tracking-[0.2em] text-white/60 uppercase">{s.sub}</div>
+          </div>
+        ))}
+      </div>
 
-      <section className="relative z-10">
-        <div className="mb-8">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">Engines</h2>
+      <section className="mt-14 border border-white/10 bg-black/40 backdrop-blur-xl p-12 md:p-24 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-24 items-center">
+          <div>
+            <div className="text-[10px] font-black tracking-[0.4em] text-emerald-500 uppercase mb-8">{COPY.home.equationKicker}</div>
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none">{COPY.home.equationHeadline}</h2>
+            <p className="mt-8 text-lg md:text-xl text-white/60 leading-relaxed font-medium">{COPY.home.equationBody}</p>
+          </div>
+          <div className="border border-white/10 p-10 bg-white/5 relative overflow-hidden">
+            <div className="text-[10px] font-black tracking-[0.3em] text-white/40 uppercase mb-12">{COPY.home.coreArch}</div>
+            <div className="space-y-4">
+              {COPY.home.architecture.map((layer, i) => (
+                <div key={layer} className="flex items-center justify-between border-b border-white/5 py-4">
+                  <span className="text-xs font-black tracking-widest text-emerald-400">0{i + 1}</span>
+                  <span className="text-xl font-black text-white">{layer}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {COPY.engines.cards.map((engine) => (
-            <article key={engine.title} className="border border-white/10 bg-white/[0.03] p-6">
-              <h3 className="text-xl font-black text-white mb-3">{engine.title}</h3>
-              <p className="text-sm text-white/65 leading-relaxed">{engine.desc}</p>
-            </article>
-          ))}
-        </div>
+        <p className="mt-10 text-xl md:text-2xl font-black text-emerald-400">{COPY.infrastructure.close}</p>
       </section>
 
       <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
@@ -484,7 +489,7 @@ function Home() {
       </section>
 
       <section className="border border-emerald-500/40 bg-emerald-500/5 p-8 md:p-12 relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        <p className="text-lg md:text-2xl font-bold text-white max-w-3xl">{COPY.home.about}</p>
+        <p className="text-lg md:text-2xl font-bold text-white max-w-3xl">I build unified conversion infrastructure across email, newsletters, podcasts, and strategic language.</p>
         <Button href="#/configure">{COPY.home.ctaPrimary}</Button>
       </section>
     </div>
@@ -494,58 +499,36 @@ function Home() {
 function Infrastructure() {
   return (
     <div className="pt-12 space-y-16 relative z-10">
-      <div className="max-w-5xl text-left">
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white leading-[0.9]">{COPY.infrastructure.h1}</h1>
-        <p className="mt-8 text-xl md:text-3xl text-white/65 font-medium">{COPY.infrastructure.intro}</p>
-      </div>
-
-      <section className="border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
-        <div className="text-[10px] font-black tracking-[0.4em] text-emerald-500 uppercase mb-4">Operating Model</div>
-        <p className="text-2xl md:text-4xl font-black text-white">{COPY.infrastructure.operatingModel}</p>
-      </section>
-
-      <section className="border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
-        <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white mb-8">{COPY.infrastructure.unifiedTitle}</h2>
-        <div className="space-y-4">
-          {COPY.infrastructure.unifiedPoints.map((point) => (
-            <p key={point} className="text-lg text-white/70">{point}</p>
-          ))}
-        </div>
-        <p className="mt-10 text-xl md:text-2xl font-black text-emerald-400">{COPY.infrastructure.close}</p>
-      </section>
-    </div>
-  );
-}
-
-function Engines() {
-  return (
-    <div className="pt-12 space-y-14 relative z-10">
-      <div className="max-w-5xl text-left">
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white leading-[0.9]">{COPY.engines.h1}</h1>
-        <p className="mt-8 text-xl md:text-3xl text-white/65 font-medium">{COPY.engines.intro}</p>
+      <div className="max-w-4xl text-left">
+        <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.infrastructure.kicker}</div>
+        <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter text-white leading-[0.9]">{COPY.infrastructure.h1}</h1>
+        <p className="mt-12 text-2xl md:text-4xl text-white/60 font-medium">{COPY.infrastructure.sub}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {COPY.engines.cards.map((engine, idx) => (
-          <article key={engine.title} className="bg-black/40 backdrop-blur-md p-10 text-left border border-white/10">
-            <div className="text-[10px] font-black tracking-[0.3em] text-emerald-500 mb-6">0{idx + 1}</div>
-            <h3 className="text-3xl font-black text-white mb-5">{engine.title}</h3>
-            <p className="text-lg text-white/65 font-medium leading-relaxed">{engine.desc}</p>
-          </article>
+        {COPY.infrastructure.layers.map((L) => (
+          <div
+            key={L.title}
+            className="bg-black/40 backdrop-blur-md p-12 text-left border border-white/10 hover:bg-emerald-500/5 transition-colors h-full relative z-10 overflow-hidden"
+          >
+            <div className="text-[10px] font-black tracking-[0.3em] text-emerald-500 mb-6">{L.note}</div>
+            <h3 className="text-3xl font-black text-white mb-6 uppercase">{L.title}</h3>
+            <p className="text-lg text-white/60 font-medium leading-relaxed">{L.desc}</p>
+          </div>
         ))}
       </div>
-
-      <p className="text-xl md:text-2xl font-black text-white/75 border-t border-white/10 pt-10">{COPY.engines.footer}</p>
-    </div>
-  );
-}
-
-function Insights() {
-  return (
-    <div className="pt-12 relative z-10">
-      <div className="max-w-4xl text-left">
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white leading-[0.9]">{COPY.insights.h1}</h1>
-      </div>
+      <section className="text-center py-24 border-t border-white/10 relative z-10">
+        <p className="text-3xl md:text-5xl font-black text-white leading-tight mb-8">
+          {COPY.infrastructure.outroLines.map((line) => (
+            <React.Fragment key={line}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
+        </p>
+        <p className="text-xl text-white/40 uppercase tracking-widest font-bold mb-12">{COPY.infrastructure.outroSub}</p>
+        <Button href="#/configure">{COPY.infrastructure.cta}</Button>
+      </section>
     </div>
   );
 }
@@ -654,23 +637,6 @@ function Configure() {
   );
 }
 
-function Contact() {
-  return (
-    <div className="pt-12 relative z-10">
-      <div className="text-left mb-24 max-w-4xl">
-        <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.contact.kicker}</div>
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white leading-[0.9]">{COPY.contact.title}</h1>
-        <p className="mt-8 text-xl text-white/60 font-medium leading-tight">{COPY.contact.sub}</p>
-      </div>
-      <div className="border border-white/10 bg-black/40 backdrop-blur-xl p-12 md:p-24 max-w-4xl relative z-10 overflow-hidden">
-        <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.contact.panelKicker}</div>
-        <h2 className="text-4xl md:text-6xl font-black text-white mb-12">{COPY.contact.panelTitle}</h2>
-        <Button href="#/configure">{COPY.contact.cta}</Button>
-      </div>
-    </div>
-  );
-}
-
 function Shell({ children, route }) {
   const active = (href) => {
     const r = href.replace(/^#/, "").toLowerCase();
@@ -743,16 +709,10 @@ export default function App() {
     switch (route) {
       case "/infrastructure":
         return <Infrastructure />;
-      case "/engines":
-        return <Engines />;
-      case "/insights":
-        return <Insights />;
       case "/case-studies":
         return <CaseStudies />;
       case "/configure":
         return <Configure />;
-      case "/contact":
-        return <Contact />;
       case "/terms":
         return <PolicyPage policy={TERMS_POLICY} />;
       case "/privacy":
