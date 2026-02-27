@@ -520,7 +520,7 @@ function TrustedLogo({ logo }) {
       />
     );
   }
-  return <span className="text-[10px] md:text-xs font-black tracking-[0.22em] uppercase text-white/70">{logo.name.toUpperCase()}</span>;
+  return <span className="text-xs font-black tracking-[0.22em] uppercase text-white/70">{logo.name.toUpperCase()}</span>;
 }
 
 function Home() {
@@ -529,7 +529,7 @@ function Home() {
       <section className="relative z-10" style={{height: "calc(100vh - 170px)"}}>
         <div className="grid grid-cols-[1fr_1.4fr] h-full gap-0">
           <div className="flex flex-col justify-center pr-12">
-            <div className="inline-block border border-emerald-500/30 px-4 py-2 text-[10px] font-black tracking-[0.5em] text-emerald-400 uppercase mb-10 self-start">
+            <div className="inline-block border border-emerald-500/30 px-4 py-2 text-xs font-black tracking-[0.5em] text-emerald-400 uppercase mb-10 self-start">
               {COPY.home.productName}
             </div>
             <h1 className="text-4xl md:text-5xl xl:text-6xl font-black tracking-tighter leading-[0.9] text-white">
@@ -547,8 +547,8 @@ function Home() {
           </div>
 
           <div className="flex flex-col justify-center pl-8">
-            <div className="text-[10px] font-black tracking-[0.4em] text-emerald-400 uppercase mb-1">{COPY.home.trustedKicker}</div>
-            <p className="text-[10px] text-white/40 font-medium mb-4">{COPY.home.trustedSub}</p>
+            <div className="text-xs font-black tracking-[0.4em] text-emerald-400 uppercase mb-1">{COPY.home.trustedKicker}</div>
+            <p className="text-xs text-white/40 font-medium mb-4">{COPY.home.trustedSub}</p>
             <img
               src="/logos-sheet.png"
               alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP Baysound, Rhythm & Roux, Parade of Youth, Chevron"
@@ -562,7 +562,7 @@ function Home() {
         {COPY.home.stats.map((s) => (
           <div key={s.label} className="relative z-10 border border-white/10 bg-white/5 p-8 backdrop-blur-sm text-left h-full overflow-hidden">
             <div className="text-xs font-black tracking-[0.25em] uppercase text-emerald-400 mb-3">{s.label}</div>
-            <div className="text-[10px] md:text-xs font-black tracking-[0.2em] text-white/60 uppercase">{s.sub}</div>
+            <div className="text-xs font-black tracking-[0.2em] text-white/60 uppercase">{s.sub}</div>
           </div>
         ))}
       </div>
@@ -570,12 +570,12 @@ function Home() {
       <section className="mt-14 border border-white/10 bg-black/40 backdrop-blur-xl p-12 md:p-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-24 items-start">
           <div>
-            <div className="text-[10px] font-black tracking-[0.4em] text-emerald-500 uppercase mb-8">{COPY.home.equationKicker}</div>
+            <div className="text-xs font-black tracking-[0.4em] text-emerald-500 uppercase mb-8">{COPY.home.equationKicker}</div>
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none">{COPY.home.equationHeadline}</h2>
             <p className="mt-8 text-[13px] text-white/60 leading-relaxed font-medium">{COPY.home.equationBody}</p>
           </div>
           <div className="border border-white/10 p-10 bg-white/5 relative overflow-hidden">
-            <div className="text-[10px] font-black tracking-[0.3em] text-white/40 uppercase mb-12">{COPY.home.coreArch}</div>
+            <div className="text-xs font-black tracking-[0.3em] text-white/40 uppercase mb-12">{COPY.home.coreArch}</div>
             <div className="space-y-6">
               {COPY.home.architecture.map((layer, i) => (
                 <div key={layer.title} className="border-b border-white/5 pb-6">
@@ -599,7 +599,7 @@ function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {COPY.caseStudies.cards.map((cs) => (
             <article key={cs.client} className="border border-white/10 bg-white/[0.03] p-6">
-              <div className="text-[10px] font-black tracking-[0.3em] text-emerald-400 uppercase mb-3">{cs.badge}</div>
+              <div className="text-xs font-black tracking-[0.3em] text-emerald-400 uppercase mb-3">{cs.badge}</div>
               <div className="text-3xl font-black text-emerald-400 mb-3">{cs.outcome}</div>
               <h3 className="text-base font-black text-white mb-2 uppercase">{cs.client}</h3>
               <p className="text-white/60 text-[13px] leading-relaxed">{cs.problem}</p>
@@ -628,7 +628,7 @@ function Infrastructure() {
   return (
     <div className="pt-12 space-y-20 relative z-10">
       <div className="max-w-4xl text-left">
-        <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.infrastructure.kicker}</div>
+        <div className="text-xs font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.infrastructure.kicker}</div>
         <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter text-white leading-[0.9]">{COPY.infrastructure.h1}</h1>
         <p className="mt-12 text-2xl md:text-4xl text-white/60 font-medium">{COPY.infrastructure.sub}</p>
       </div>
@@ -639,7 +639,7 @@ function Infrastructure() {
             key={L.title}
             className="bg-black/40 backdrop-blur-md p-10 text-left border border-white/10 hover:bg-emerald-500/5 transition-colors h-full relative z-10"
           >
-            <div className="text-[10px] font-black tracking-[0.3em] text-emerald-500 mb-6">{L.note}</div>
+            <div className="text-xs font-black tracking-[0.3em] text-emerald-500 mb-6">{L.note}</div>
             <h3 className="text-2xl font-black text-white mb-6 uppercase">{L.title}</h3>
             <p className="text-[13px] text-white/60 font-medium leading-relaxed">{L.desc}</p>
           </div>
@@ -649,13 +649,13 @@ function Infrastructure() {
       <section className="border border-white/10 bg-black/40 backdrop-blur-xl p-12 md:p-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
-            <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{whoWeServe.kicker}</div>
+            <div className="text-xs font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{whoWeServe.kicker}</div>
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-8">{whoWeServe.headline}</h2>
             <p className="text-[13px] text-white/60 font-medium leading-relaxed mb-10">{whoWeServe.body}</p>
             <p className="text-[13px] text-white/80 font-medium leading-relaxed italic">{whoWeServe.closing}</p>
           </div>
           <div className="space-y-4">
-            <div className="text-[10px] font-black tracking-[0.3em] text-white/40 uppercase mb-8">We work with:</div>
+            <div className="text-xs font-black tracking-[0.3em] text-white/40 uppercase mb-8">We work with:</div>
             {whoWeServe.list.map((item) => (
               <div key={item} className="flex items-start gap-4 border border-white/10 bg-white/[0.02] p-5">
                 <span className="text-emerald-400 font-black mt-0.5">—</span>
@@ -667,7 +667,7 @@ function Infrastructure() {
       </section>
 
       <section className="relative z-10">
-        <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{process.kicker}</div>
+        <div className="text-xs font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{process.kicker}</div>
         <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-14">{process.headline}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {process.steps.map((step) => (
@@ -681,7 +681,7 @@ function Infrastructure() {
       </section>
 
       <section className="relative z-10">
-        <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{engagements.kicker}</div>
+        <div className="text-xs font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{engagements.kicker}</div>
         <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-4">{engagements.headline}</h2>
         <p className="text-[13px] text-white/50 font-medium mb-14">{engagements.note}</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -713,13 +713,13 @@ function CaseStudies() {
   return (
     <div className="pt-12 relative z-10">
       <div className="text-left mb-24 max-w-4xl">
-        <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.caseStudies.kicker}</div>
+        <div className="text-xs font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.caseStudies.kicker}</div>
         <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white leading-[0.9]">{COPY.caseStudies.title}</h1>
         <p className="mt-8 text-[13px] text-white/60 font-medium leading-tight">{COPY.caseStudies.sub}</p>
       </div>
 
       <div className="mb-24 py-12 border-y border-white/10 overflow-hidden relative z-10">
-        <div className="text-[10px] font-black tracking-[0.3em] text-emerald-500 uppercase mb-12 text-center">
+        <div className="text-xs font-black tracking-[0.3em] text-emerald-500 uppercase mb-12 text-center">
           {COPY.caseStudies.trustedKicker}
         </div>
         <img
@@ -737,7 +737,7 @@ function CaseStudies() {
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
               <div>
-                <span className="inline-block border border-emerald-500/30 px-3 py-1 text-[10px] font-black tracking-widest text-emerald-400 uppercase mb-4">
+                <span className="inline-block border border-emerald-500/30 px-3 py-1 text-xs font-black tracking-widest text-emerald-400 uppercase mb-4">
                   {cs.badge}
                 </span>
                 <div className="text-2xl font-black text-white uppercase mb-6">{cs.client}</div>
@@ -746,21 +746,21 @@ function CaseStudies() {
               </div>
               <div className="space-y-6">
                 <div>
-                  <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-2">Challenge</div>
+                  <div className="text-xs font-black tracking-widest text-white/40 uppercase mb-2">Challenge</div>
                   <p className="text-[13px] font-medium text-white/70 leading-relaxed">{cs.challenge}</p>
                 </div>
                 <div>
-                  <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-2">Action</div>
+                  <div className="text-xs font-black tracking-widest text-white/40 uppercase mb-2">Action</div>
                   <p className="text-[13px] font-medium text-white/70 leading-relaxed">{cs.action}</p>
                 </div>
               </div>
               <div className="space-y-6">
                 <div>
-                  <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-2">Result</div>
+                  <div className="text-xs font-black tracking-widest text-white/40 uppercase mb-2">Result</div>
                   <p className="text-[13px] font-bold text-white leading-relaxed">{cs.result}</p>
                 </div>
                 <div>
-                  <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-2">Disciplines</div>
+                  <div className="text-xs font-black tracking-widest text-white/40 uppercase mb-2">Disciplines</div>
                   <div className="text-xs font-black tracking-widest text-emerald-400 uppercase">{cs.tech}</div>
                 </div>
               </div>
@@ -790,7 +790,7 @@ function Contact() {
     <div className="pt-12 max-w-5xl mx-auto relative z-10">
       <section className="border border-white/10 bg-black/40 backdrop-blur-xl px-8 md:px-16 py-14 md:py-20">
         <div className="text-center max-w-3xl mx-auto">
-          <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.contact.kicker}</div>
+          <div className="text-xs font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.contact.kicker}</div>
           <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white leading-[0.95]">{COPY.contact.title}</h1>
           <div className="h-[2px] w-24 bg-emerald-500/90 mx-auto mt-8 mb-8" />
           <p className="text-[13px] text-white/70 font-medium leading-relaxed">{COPY.contact.sub}</p>
@@ -846,7 +846,7 @@ function Shell({ children, route }) {
             <span className="text-xl md:text-2xl font-black tracking-tighter group-hover:text-emerald-400 transition-colors uppercase">
               {COPY.shell.brand}
             </span>
-            <span className="text-[10px] font-black tracking-[0.3em] text-emerald-500 uppercase mt-1">{COPY.shell.brandSub}</span>
+            <span className="text-xs font-black tracking-[0.3em] text-emerald-500 uppercase mt-1">{COPY.shell.brandSub}</span>
           </a>
           <nav className="flex gap-4 md:gap-8 mr-6 md:mr-14">
             {NAV.map((item) => (
