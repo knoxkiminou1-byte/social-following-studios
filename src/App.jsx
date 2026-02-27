@@ -842,19 +842,19 @@ function Shell({ children, route }) {
 
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
         <div className="max-w-[1800px] mx-auto flex items-center justify-between px-6 md:px-12 py-6 md:py-8">
-          <a href="#/" className="flex flex-col items-start leading-none group">
+          <a href="#/" className="flex flex-col items-start leading-none group shrink-0">
             <span className="text-xl md:text-2xl font-black tracking-tighter group-hover:text-emerald-400 transition-colors uppercase">
               {COPY.shell.brand}
             </span>
             <span className="text-[10px] font-black tracking-[0.3em] text-emerald-500 uppercase mt-1">{COPY.shell.brandSub}</span>
           </a>
-          <nav className="flex gap-4 md:gap-12">
+          <nav className="flex gap-4 md:gap-8 mr-6 md:mr-14">
             {NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 className={cx(
-                  "text-sm font-black tracking-[0.4em] uppercase transition-colors whitespace-nowrap",
+                  "text-xs font-black tracking-[0.25em] uppercase transition-colors whitespace-nowrap",
                   active(item.href) ? "text-emerald-400" : "text-white/40 hover:text-white"
                 )}
               >
@@ -862,10 +862,10 @@ function Shell({ children, route }) {
               </a>
             ))}
           </nav>
-          <div className="hidden sm:block">
+          <div className="hidden sm:block shrink-0">
             <a
               href="#/contact"
-              className="border border-emerald-500/50 px-6 py-3 text-sm font-black tracking-[0.3em] uppercase hover:bg-emerald-500 transition-all"
+              className="border border-emerald-500/50 px-6 py-3 text-sm font-black tracking-[0.3em] uppercase hover:bg-emerald-500 transition-all whitespace-nowrap"
             >
               {COPY.shell.topCta}
             </a>
