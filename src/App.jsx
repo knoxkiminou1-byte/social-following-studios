@@ -525,7 +525,7 @@ function Home() {
   return (
     <div className="relative pt-12 space-y-16">
       <section className="relative z-10" style={{height: "calc(100vh - 170px)"}}>
-        <div className="grid lg:grid-cols-[1fr_1.4fr] h-full gap-0">
+        <div className="grid grid-cols-[1fr_1.4fr] h-full gap-0">
           <div className="flex flex-col justify-center pr-12">
             <div className="inline-block border border-emerald-500/30 px-4 py-2 text-[10px] font-black tracking-[0.5em] text-emerald-400 uppercase mb-10 self-start">
               {COPY.home.productName}
