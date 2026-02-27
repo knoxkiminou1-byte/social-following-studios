@@ -288,16 +288,16 @@ function PolicyPage({ policy }) {
     <section className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 py-20 text-white">
       <p className="text-sm font-black tracking-[0.28em] uppercase text-emerald-400/90 mb-4">Last Updated: {POLICY_TEMPLATE.updatedAt}</p>
       <h1 className="text-4xl md:text-5xl font-black tracking-tight uppercase mb-5">{policy.title}</h1>
-      <p className="text-base leading-7 text-white/80 mb-10">{policy.intro}</p>
+      <p className="text-[17px] leading-7 text-white/80 mb-10">{policy.intro}</p>
       <div className="space-y-8">
         {policy.sections.map((section) => (
           <article key={section.heading} className="border border-white/10 bg-white/[0.02] p-6 md:p-8">
             <h2 className="text-xl md:text-2xl font-black uppercase tracking-wide mb-3">{section.heading}</h2>
-            <p className="text-base leading-7 text-white/75">{section.body}</p>
+            <p className="text-[17px] leading-7 text-white/88">{section.body}</p>
           </article>
         ))}
       </div>
-      <p className="mt-10 text-base text-white/60">
+      <p className="mt-10 text-[17px] text-white/80">
         Questions? Contact {POLICY_TEMPLATE.siteName} at {POLICY_TEMPLATE.email}.
       </p>
     </section>
@@ -520,7 +520,7 @@ function TrustedLogo({ logo }) {
       />
     );
   }
-  return <span className="text-sm font-black tracking-[0.22em] uppercase text-white/70">{logo.name.toUpperCase()}</span>;
+  return <span className="text-sm font-black tracking-[0.22em] uppercase text-white/85">{logo.name.toUpperCase()}</span>;
 }
 
 function Home() {
@@ -537,7 +537,7 @@ function Home() {
               <br />
               <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
             </h1>
-            <p className="mt-6 text-base text-white/60 font-medium leading-relaxed">{COPY.home.sub}</p>
+            <p className="mt-6 text-[17px] text-white/80 font-semibold leading-relaxed">{COPY.home.sub}</p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button href="#/contact">{COPY.home.ctaPrimary}</Button>
               <Button href="#/case-studies" variant="secondary">
@@ -548,7 +548,7 @@ function Home() {
 
           <div className="flex flex-col justify-center pl-8">
             <div className="text-sm font-black tracking-[0.4em] text-emerald-400 uppercase mb-1">{COPY.home.trustedKicker}</div>
-            <p className="text-base text-white/40 font-medium mb-4">{COPY.home.trustedSub}</p>
+            <p className="text-[17px] text-white/65 font-semibold mb-4">{COPY.home.trustedSub}</p>
             <img
               src="/logos-sheet.png"
               alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP Baysound, Rhythm & Roux, Parade of Youth, Chevron"
@@ -562,7 +562,7 @@ function Home() {
         {COPY.home.stats.map((s) => (
           <div key={s.label} className="relative z-10 border border-white/10 bg-white/5 p-8 backdrop-blur-sm text-left h-full overflow-hidden">
             <div className="text-sm font-black tracking-[0.25em] uppercase text-emerald-400 mb-3">{s.label}</div>
-            <div className="text-sm font-black tracking-[0.2em] text-white/60 uppercase">{s.sub}</div>
+            <div className="text-sm font-black tracking-[0.2em] text-white/80 uppercase">{s.sub}</div>
           </div>
         ))}
       </div>
@@ -572,10 +572,10 @@ function Home() {
           <div>
             <div className="text-sm font-black tracking-[0.4em] text-emerald-500 uppercase mb-8">{COPY.home.equationKicker}</div>
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none">{COPY.home.equationHeadline}</h2>
-            <p className="mt-8 text-base text-white/60 leading-relaxed font-medium">{COPY.home.equationBody}</p>
+            <p className="mt-8 text-[17px] text-white/80 leading-relaxed font-semibold">{COPY.home.equationBody}</p>
           </div>
           <div className="border border-white/10 p-10 bg-white/5 relative overflow-hidden">
-            <div className="text-sm font-black tracking-[0.3em] text-white/40 uppercase mb-12">{COPY.home.coreArch}</div>
+            <div className="text-sm font-black tracking-[0.3em] text-white/65 uppercase mb-12">{COPY.home.coreArch}</div>
             <div className="space-y-6">
               {COPY.home.architecture.map((layer, i) => (
                 <div key={layer.title} className="border-b border-white/5 pb-6">
@@ -583,7 +583,7 @@ function Home() {
                     <span className="text-sm font-black tracking-widest text-emerald-400">0{i + 1}</span>
                     <span className="text-lg font-black text-white">{layer.title}</span>
                   </div>
-                  <p className="text-base text-white/45 font-medium leading-relaxed text-right">{layer.desc}</p>
+                  <p className="text-[17px] text-white/85 font-semibold leading-relaxed text-right">{layer.desc}</p>
                 </div>
               ))}
             </div>
@@ -594,7 +594,7 @@ function Home() {
       <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
         <div className="mb-8">
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">{COPY.caseStudies.title}</h2>
-          <p className="mt-3 text-base text-white/50 font-medium">{COPY.caseStudies.sub}</p>
+          <p className="mt-3 text-[17px] text-white/72 font-semibold">{COPY.caseStudies.sub}</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {COPY.caseStudies.cards.map((cs) => (
@@ -602,7 +602,7 @@ function Home() {
               <div className="text-sm font-black tracking-[0.3em] text-emerald-400 uppercase mb-3">{cs.badge}</div>
               <div className="text-3xl font-black text-emerald-400 mb-3">{cs.outcome}</div>
               <h3 className="text-base font-black text-white mb-2 uppercase">{cs.client}</h3>
-              <p className="text-white/60 text-base leading-relaxed">{cs.problem}</p>
+              <p className="text-white/80 text-[17px] leading-relaxed">{cs.problem}</p>
             </article>
           ))}
         </div>
@@ -613,7 +613,7 @@ function Home() {
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight">
             {COPY.home.closingHeadline}
           </h2>
-          {COPY.home.closingSub && <p className="mt-4 text-base text-white/60 font-medium">{COPY.home.closingSub}</p>}
+          {COPY.home.closingSub && <p className="mt-4 text-[17px] text-white/80 font-semibold">{COPY.home.closingSub}</p>}
           <div className="mt-10">
             <Button href="#/contact">{COPY.home.closingCta}</Button>
           </div>
@@ -630,7 +630,7 @@ function Infrastructure() {
       <div className="max-w-4xl text-left">
         <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.infrastructure.kicker}</div>
         <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter text-white leading-[0.9]">{COPY.infrastructure.h1}</h1>
-        <p className="mt-12 text-2xl md:text-4xl text-white/60 font-medium">{COPY.infrastructure.sub}</p>
+        <p className="mt-12 text-2xl md:text-4xl text-white/80 font-semibold">{COPY.infrastructure.sub}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -641,7 +641,7 @@ function Infrastructure() {
           >
             <div className="text-sm font-black tracking-[0.3em] text-emerald-500 mb-6">{L.note}</div>
             <h3 className="text-2xl font-black text-white mb-6 uppercase">{L.title}</h3>
-            <p className="text-base text-white/60 font-medium leading-relaxed">{L.desc}</p>
+            <p className="text-[17px] text-white/80 font-semibold leading-relaxed">{L.desc}</p>
           </div>
         ))}
       </div>
@@ -651,15 +651,15 @@ function Infrastructure() {
           <div>
             <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{whoWeServe.kicker}</div>
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-8">{whoWeServe.headline}</h2>
-            <p className="text-base text-white/60 font-medium leading-relaxed mb-10">{whoWeServe.body}</p>
-            <p className="text-base text-white/80 font-medium leading-relaxed italic">{whoWeServe.closing}</p>
+            <p className="text-[17px] text-white/80 font-semibold leading-relaxed mb-10">{whoWeServe.body}</p>
+            <p className="text-[17px] text-white/80 font-semibold leading-relaxed italic">{whoWeServe.closing}</p>
           </div>
           <div className="space-y-4">
-            <div className="text-sm font-black tracking-[0.3em] text-white/40 uppercase mb-8">We work with:</div>
+            <div className="text-sm font-black tracking-[0.3em] text-white/65 uppercase mb-8">We work with:</div>
             {whoWeServe.list.map((item) => (
               <div key={item} className="flex items-start gap-4 border border-white/10 bg-white/[0.02] p-5">
                 <span className="text-emerald-400 font-black mt-0.5">—</span>
-                <p className="text-base font-medium text-white/80">{item}</p>
+                <p className="text-[17px] font-semibold text-white/80">{item}</p>
               </div>
             ))}
           </div>
@@ -674,7 +674,7 @@ function Infrastructure() {
             <div key={step.num} className="border border-white/10 bg-black/40 p-10">
               <div className="text-5xl font-black text-emerald-400/30 mb-6">{step.num}</div>
               <h3 className="text-xl font-black text-white uppercase mb-4">{step.title}</h3>
-              <p className="text-base text-white/60 font-medium leading-relaxed">{step.desc}</p>
+              <p className="text-[17px] text-white/80 font-semibold leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -683,12 +683,12 @@ function Infrastructure() {
       <section className="relative z-10">
         <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{engagements.kicker}</div>
         <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-4">{engagements.headline}</h2>
-        <p className="text-base text-white/50 font-medium mb-14">{engagements.note}</p>
+        <p className="text-[17px] text-white/72 font-semibold mb-14">{engagements.note}</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {engagements.tiers.map((tier) => (
             <div key={tier.title} className="border border-white/10 bg-black/40 p-10 hover:bg-emerald-500/5 transition-colors">
               <h3 className="text-xl font-black text-white uppercase mb-4">{tier.title}</h3>
-              <p className="text-base text-white/60 font-medium leading-relaxed">{tier.desc}</p>
+              <p className="text-[17px] text-white/80 font-semibold leading-relaxed">{tier.desc}</p>
             </div>
           ))}
         </div>
@@ -715,7 +715,7 @@ function CaseStudies() {
       <div className="text-left mb-24 max-w-4xl">
         <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.caseStudies.kicker}</div>
         <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white leading-[0.9]">{COPY.caseStudies.title}</h1>
-        <p className="mt-8 text-base text-white/60 font-medium leading-tight">{COPY.caseStudies.sub}</p>
+        <p className="mt-8 text-[17px] text-white/80 font-semibold leading-tight">{COPY.caseStudies.sub}</p>
       </div>
 
       <div className="mb-24 py-12 border-y border-white/10 overflow-hidden relative z-10">
@@ -742,25 +742,25 @@ function CaseStudies() {
                 </span>
                 <div className="text-2xl font-black text-white uppercase mb-6">{cs.client}</div>
                 <div className="text-6xl font-black text-emerald-400 leading-none">{cs.outcome}</div>
-                <div className="text-sm font-black tracking-widest text-white/40 uppercase mt-2">{cs.outcomeLabel}</div>
+                <div className="text-sm font-black tracking-widest text-white/65 uppercase mt-2">{cs.outcomeLabel}</div>
               </div>
               <div className="space-y-6">
                 <div>
-                  <div className="text-sm font-black tracking-widest text-white/40 uppercase mb-2">Challenge</div>
-                  <p className="text-base font-medium text-white/70 leading-relaxed">{cs.challenge}</p>
+                  <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Challenge</div>
+                  <p className="text-[17px] font-semibold text-white/85 leading-relaxed">{cs.challenge}</p>
                 </div>
                 <div>
-                  <div className="text-sm font-black tracking-widest text-white/40 uppercase mb-2">Action</div>
-                  <p className="text-base font-medium text-white/70 leading-relaxed">{cs.action}</p>
+                  <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Action</div>
+                  <p className="text-[17px] font-semibold text-white/85 leading-relaxed">{cs.action}</p>
                 </div>
               </div>
               <div className="space-y-6">
                 <div>
-                  <div className="text-sm font-black tracking-widest text-white/40 uppercase mb-2">Result</div>
+                  <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Result</div>
                   <p className="text-base font-bold text-white leading-relaxed">{cs.result}</p>
                 </div>
                 <div>
-                  <div className="text-sm font-black tracking-widest text-white/40 uppercase mb-2">Disciplines</div>
+                  <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Disciplines</div>
                   <div className="text-sm font-black tracking-widest text-emerald-400 uppercase">{cs.tech}</div>
                 </div>
               </div>
@@ -793,7 +793,7 @@ function Contact() {
           <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.contact.kicker}</div>
           <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white leading-[0.95]">{COPY.contact.title}</h1>
           <div className="h-[2px] w-24 bg-emerald-500/90 mx-auto mt-8 mb-8" />
-          <p className="text-base text-white/70 font-medium leading-relaxed">{COPY.contact.sub}</p>
+          <p className="text-[17px] text-white/85 font-semibold leading-relaxed">{COPY.contact.sub}</p>
         </div>
 
         <form
@@ -810,13 +810,13 @@ function Contact() {
               type={field === "Email" ? "email" : "text"}
               required={field !== "Phone"}
               placeholder={field}
-              className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-base font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500"
+              className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500"
             />
           ))}
           <textarea
             placeholder="Optional Message / Notes"
             rows={5}
-            className="md:col-span-2 w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-base font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500"
+            className="md:col-span-2 w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500"
           />
           <div className="md:col-span-2 flex justify-start mt-2">
             <button type="submit" className="bg-emerald-600 px-10 py-4 text-sm font-black tracking-[0.3em] uppercase text-white hover:bg-emerald-500 transition-colors">
@@ -855,7 +855,7 @@ function Shell({ children, route }) {
                 href={item.href}
                 className={cx(
                   "text-xs font-black tracking-[0.25em] uppercase transition-colors whitespace-nowrap",
-                  active(item.href) ? "text-emerald-400" : "text-white/40 hover:text-white"
+                  active(item.href) ? "text-emerald-400" : "text-white/65 hover:text-white"
                 )}
               >
                 {item.label}
@@ -883,7 +883,7 @@ function Shell({ children, route }) {
                 Ready to engineer your<br />
                 <span className="text-emerald-400">conversion infrastructure?</span>
               </h2>
-              <p className="mt-4 text-base text-white/50 font-medium">Stop chasing engagement. Start building authority equity.</p>
+              <p className="mt-4 text-[17px] text-white/72 font-semibold">Stop chasing engagement. Start building authority equity.</p>
             </div>
             <Button href="#/contact">Start Your Audit</Button>
           </div>
@@ -891,7 +891,7 @@ function Shell({ children, route }) {
         <div className="max-w-[1800px] mx-auto px-12 py-16 grid lg:grid-cols-3 gap-16">
           <div>
             <div className="text-4xl font-black tracking-tighter uppercase mb-4 leading-none">{COPY.shell.brand}</div>
-            <div className="text-sm font-black tracking-[0.4em] text-white/40 uppercase">{COPY.shell.footerSub}</div>
+            <div className="text-sm font-black tracking-[0.4em] text-white/65 uppercase">{COPY.shell.footerSub}</div>
           </div>
           <form
             action={MAILING_LIST_ENDPOINT}
@@ -904,14 +904,14 @@ function Shell({ children, route }) {
                 type="email"
                 required
                 placeholder="Email"
-                className="flex-1 bg-transparent border border-white/20 px-4 py-3 text-xs text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-500"
+                className="flex-1 bg-transparent border border-white/20 px-4 py-3 text-xs text-white placeholder:text-white/65 focus:outline-none focus:border-emerald-500"
               />
               <button type="submit" className="bg-emerald-600 px-5 py-3 text-sm font-black tracking-[0.24em] uppercase hover:bg-emerald-500">
                 Join
               </button>
             </div>
           </form>
-          <div className="flex flex-col md:flex-row lg:flex-col gap-8 text-sm font-black tracking-[0.4em] text-white/40 uppercase lg:items-end">
+          <div className="flex flex-col md:flex-row lg:flex-col gap-8 text-sm font-black tracking-[0.4em] text-white/65 uppercase lg:items-end">
             <a href="#/terms" className="hover:text-emerald-400 transition-colors">
               {COPY.shell.terms}
             </a>
