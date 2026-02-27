@@ -545,15 +545,15 @@ function Home() {
             </div>
           </div>
 
-          <div className="border border-white/10 bg-black/40 backdrop-blur-xl overflow-hidden flex flex-col" style={{height: "calc(100vh - 220px)"}}>
-            <div className="px-6 pt-6 pb-2 shrink-0">
+          <div className="overflow-hidden flex flex-col" style={{height: "calc(100vh - 220px)"}}>
+            <div className="pb-2 shrink-0">
               <div className="text-[10px] font-black tracking-[0.4em] text-emerald-400 uppercase mb-1">{COPY.home.trustedKicker}</div>
               <p className="text-[10px] text-white/40 font-medium">{COPY.home.trustedSub}</p>
             </div>
             <img
               src="/logos-sheet.png"
               alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP Baysound, Rhythm & Roux, Parade of Youth, Chevron"
-              className="w-full flex-1 object-contain object-center p-4"
+              className="w-full flex-1 object-contain object-center"
             />
           </div>
         </div>
