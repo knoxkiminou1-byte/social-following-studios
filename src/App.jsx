@@ -288,16 +288,16 @@ function PolicyPage({ policy }) {
     <section className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 py-20 text-white">
       <p className="text-xs font-black tracking-[0.28em] uppercase text-emerald-400/90 mb-4">Last Updated: {POLICY_TEMPLATE.updatedAt}</p>
       <h1 className="text-4xl md:text-5xl font-black tracking-tight uppercase mb-5">{policy.title}</h1>
-      <p className="text-base md:text-lg leading-8 text-white/80 mb-10">{policy.intro}</p>
+      <p className="text-xs leading-7 text-white/80 mb-10">{policy.intro}</p>
       <div className="space-y-8">
         {policy.sections.map((section) => (
           <article key={section.heading} className="border border-white/10 bg-white/[0.02] p-6 md:p-8">
             <h2 className="text-xl md:text-2xl font-black uppercase tracking-wide mb-3">{section.heading}</h2>
-            <p className="text-sm md:text-base leading-7 text-white/75">{section.body}</p>
+            <p className="text-xs leading-7 text-white/75">{section.body}</p>
           </article>
         ))}
       </div>
-      <p className="mt-10 text-sm text-white/60">
+      <p className="mt-10 text-xs text-white/60">
         Questions? Contact {POLICY_TEMPLATE.siteName} at {POLICY_TEMPLATE.email}.
       </p>
     </section>
@@ -537,7 +537,7 @@ function Home() {
               <br />
               <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-white/60 font-medium leading-relaxed">{COPY.home.sub}</p>
+            <p className="mt-6 text-xs text-white/60 font-medium leading-relaxed">{COPY.home.sub}</p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button href="#/contact">{COPY.home.ctaPrimary}</Button>
               <Button href="#/case-studies" variant="secondary">
@@ -561,7 +561,7 @@ function Home() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 relative z-10">
         {COPY.home.stats.map((s) => (
           <div key={s.label} className="relative z-10 border border-white/10 bg-white/5 p-8 backdrop-blur-sm text-left h-full overflow-hidden">
-            <div className="text-xs md:text-sm font-black tracking-[0.25em] uppercase text-emerald-400 mb-3">{s.label}</div>
+            <div className="text-xs font-black tracking-[0.25em] uppercase text-emerald-400 mb-3">{s.label}</div>
             <div className="text-[10px] md:text-xs font-black tracking-[0.2em] text-white/60 uppercase">{s.sub}</div>
           </div>
         ))}
@@ -572,7 +572,7 @@ function Home() {
           <div>
             <div className="text-[10px] font-black tracking-[0.4em] text-emerald-500 uppercase mb-8">{COPY.home.equationKicker}</div>
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none">{COPY.home.equationHeadline}</h2>
-            <p className="mt-8 text-lg md:text-xl text-white/60 leading-relaxed font-medium">{COPY.home.equationBody}</p>
+            <p className="mt-8 text-xs text-white/60 leading-relaxed font-medium">{COPY.home.equationBody}</p>
           </div>
           <div className="border border-white/10 p-10 bg-white/5 relative overflow-hidden">
             <div className="text-[10px] font-black tracking-[0.3em] text-white/40 uppercase mb-12">{COPY.home.coreArch}</div>
@@ -594,7 +594,7 @@ function Home() {
       <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
         <div className="mb-8">
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">{COPY.caseStudies.title}</h2>
-          <p className="mt-3 text-base text-white/50 font-medium">{COPY.caseStudies.sub}</p>
+          <p className="mt-3 text-xs text-white/50 font-medium">{COPY.caseStudies.sub}</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {COPY.caseStudies.cards.map((cs) => (
@@ -602,7 +602,7 @@ function Home() {
               <div className="text-[10px] font-black tracking-[0.3em] text-emerald-400 uppercase mb-3">{cs.badge}</div>
               <div className="text-3xl font-black text-emerald-400 mb-3">{cs.outcome}</div>
               <h3 className="text-base font-black text-white mb-2 uppercase">{cs.client}</h3>
-              <p className="text-white/60 text-sm leading-relaxed">{cs.problem}</p>
+              <p className="text-white/60 text-xs leading-relaxed">{cs.problem}</p>
             </article>
           ))}
         </div>
@@ -613,7 +613,7 @@ function Home() {
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight">
             {COPY.home.closingHeadline}
           </h2>
-          {COPY.home.closingSub && <p className="mt-4 text-base md:text-xl text-white/60 font-medium">{COPY.home.closingSub}</p>}
+          {COPY.home.closingSub && <p className="mt-4 text-xs text-white/60 font-medium">{COPY.home.closingSub}</p>}
           <div className="mt-10">
             <Button href="#/contact">{COPY.home.closingCta}</Button>
           </div>
@@ -641,7 +641,7 @@ function Infrastructure() {
           >
             <div className="text-[10px] font-black tracking-[0.3em] text-emerald-500 mb-6">{L.note}</div>
             <h3 className="text-2xl font-black text-white mb-6 uppercase">{L.title}</h3>
-            <p className="text-base text-white/60 font-medium leading-relaxed">{L.desc}</p>
+            <p className="text-xs text-white/60 font-medium leading-relaxed">{L.desc}</p>
           </div>
         ))}
       </div>
@@ -651,15 +651,15 @@ function Infrastructure() {
           <div>
             <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{whoWeServe.kicker}</div>
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-8">{whoWeServe.headline}</h2>
-            <p className="text-lg text-white/60 font-medium leading-relaxed mb-10">{whoWeServe.body}</p>
-            <p className="text-base text-white/80 font-medium leading-relaxed italic">{whoWeServe.closing}</p>
+            <p className="text-xs text-white/60 font-medium leading-relaxed mb-10">{whoWeServe.body}</p>
+            <p className="text-xs text-white/80 font-medium leading-relaxed italic">{whoWeServe.closing}</p>
           </div>
           <div className="space-y-4">
             <div className="text-[10px] font-black tracking-[0.3em] text-white/40 uppercase mb-8">We work with:</div>
             {whoWeServe.list.map((item) => (
               <div key={item} className="flex items-start gap-4 border border-white/10 bg-white/[0.02] p-5">
                 <span className="text-emerald-400 font-black mt-0.5">—</span>
-                <p className="text-base font-medium text-white/80">{item}</p>
+                <p className="text-xs font-medium text-white/80">{item}</p>
               </div>
             ))}
           </div>
@@ -674,7 +674,7 @@ function Infrastructure() {
             <div key={step.num} className="border border-white/10 bg-black/40 p-10">
               <div className="text-5xl font-black text-emerald-400/30 mb-6">{step.num}</div>
               <h3 className="text-xl font-black text-white uppercase mb-4">{step.title}</h3>
-              <p className="text-base text-white/60 font-medium leading-relaxed">{step.desc}</p>
+              <p className="text-xs text-white/60 font-medium leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -683,12 +683,12 @@ function Infrastructure() {
       <section className="relative z-10">
         <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{engagements.kicker}</div>
         <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-4">{engagements.headline}</h2>
-        <p className="text-base text-white/50 font-medium mb-14">{engagements.note}</p>
+        <p className="text-xs text-white/50 font-medium mb-14">{engagements.note}</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {engagements.tiers.map((tier) => (
             <div key={tier.title} className="border border-white/10 bg-black/40 p-10 hover:bg-emerald-500/5 transition-colors">
               <h3 className="text-xl font-black text-white uppercase mb-4">{tier.title}</h3>
-              <p className="text-base text-white/60 font-medium leading-relaxed">{tier.desc}</p>
+              <p className="text-xs text-white/60 font-medium leading-relaxed">{tier.desc}</p>
             </div>
           ))}
         </div>
@@ -715,7 +715,7 @@ function CaseStudies() {
       <div className="text-left mb-24 max-w-4xl">
         <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.caseStudies.kicker}</div>
         <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white leading-[0.9]">{COPY.caseStudies.title}</h1>
-        <p className="mt-8 text-xl text-white/60 font-medium leading-tight">{COPY.caseStudies.sub}</p>
+        <p className="mt-8 text-xs text-white/60 font-medium leading-tight">{COPY.caseStudies.sub}</p>
       </div>
 
       <div className="mb-24 py-12 border-y border-white/10 overflow-hidden relative z-10">
@@ -747,17 +747,17 @@ function CaseStudies() {
               <div className="space-y-6">
                 <div>
                   <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-2">Challenge</div>
-                  <p className="text-sm font-medium text-white/70 leading-relaxed">{cs.challenge}</p>
+                  <p className="text-xs font-medium text-white/70 leading-relaxed">{cs.challenge}</p>
                 </div>
                 <div>
                   <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-2">Action</div>
-                  <p className="text-sm font-medium text-white/70 leading-relaxed">{cs.action}</p>
+                  <p className="text-xs font-medium text-white/70 leading-relaxed">{cs.action}</p>
                 </div>
               </div>
               <div className="space-y-6">
                 <div>
                   <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-2">Result</div>
-                  <p className="text-sm font-bold text-white leading-relaxed">{cs.result}</p>
+                  <p className="text-xs font-bold text-white leading-relaxed">{cs.result}</p>
                 </div>
                 <div>
                   <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-2">Disciplines</div>
@@ -793,7 +793,7 @@ function Contact() {
           <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.contact.kicker}</div>
           <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-white leading-[0.95]">{COPY.contact.title}</h1>
           <div className="h-[2px] w-24 bg-emerald-500/90 mx-auto mt-8 mb-8" />
-          <p className="text-lg md:text-2xl text-white/70 font-medium leading-relaxed">{COPY.contact.sub}</p>
+          <p className="text-xs text-white/70 font-medium leading-relaxed">{COPY.contact.sub}</p>
         </div>
 
         <form
@@ -810,13 +810,13 @@ function Contact() {
               type={field === "Email" ? "email" : "text"}
               required={field !== "Phone"}
               placeholder={field}
-              className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-base font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500"
+              className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-xs font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500"
             />
           ))}
           <textarea
             placeholder="Optional Message / Notes"
             rows={5}
-            className="md:col-span-2 w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-base font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500"
+            className="md:col-span-2 w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-xs font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500"
           />
           <div className="md:col-span-2 flex justify-start mt-2">
             <button type="submit" className="bg-emerald-600 px-10 py-4 text-xs font-black tracking-[0.3em] uppercase text-white hover:bg-emerald-500 transition-colors">
@@ -883,7 +883,7 @@ function Shell({ children, route }) {
                 Ready to engineer your<br />
                 <span className="text-emerald-400">conversion infrastructure?</span>
               </h2>
-              <p className="mt-4 text-base text-white/50 font-medium">Stop chasing engagement. Start building authority equity.</p>
+              <p className="mt-4 text-xs text-white/50 font-medium">Stop chasing engagement. Start building authority equity.</p>
             </div>
             <Button href="#/contact">Start Your Audit</Button>
           </div>
@@ -898,13 +898,13 @@ function Shell({ children, route }) {
             onSubmit={(e) => e.preventDefault()}
             className="border border-white/10 bg-white/[0.02] p-6"
           >
-            <p className="text-sm font-semibold text-white mb-4">Join our mailing list for the latest insights.</p>
+            <p className="text-xs font-semibold text-white mb-4">Join our mailing list for the latest insights.</p>
             <div className="flex gap-3">
               <input
                 type="email"
                 required
                 placeholder="Email"
-                className="flex-1 bg-transparent border border-white/20 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-500"
+                className="flex-1 bg-transparent border border-white/20 px-4 py-3 text-xs text-white placeholder:text-white/40 focus:outline-none focus:border-emerald-500"
               />
               <button type="submit" className="bg-emerald-600 px-5 py-3 text-xs font-black tracking-[0.24em] uppercase hover:bg-emerald-500">
                 Join
