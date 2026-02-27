@@ -474,38 +474,36 @@ function Home() {
   return (
     <div className="relative pt-12 space-y-16">
       <section className="min-h-[65vh] flex flex-col justify-center text-left relative z-10">
-        <div className="grid lg:grid-cols-[minmax(0,1fr)_420px] gap-14 lg:gap-20 items-start">
-          <div className="max-w-5xl">
-            <div className="inline-block border border-emerald-500/30 px-4 py-2 text-[10px] font-black tracking-[0.5em] text-emerald-400 uppercase mb-10">
-              {COPY.home.productName}
-            </div>
-            <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter leading-[0.9] text-white">
-              {COPY.home.h1Line1}
-              <br />
-              <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
-            </h1>
-            <p className="mt-8 text-xl md:text-3xl text-white/60 font-medium max-w-4xl leading-tight">{COPY.home.sub}</p>
-            <p className="mt-3 text-xl md:text-2xl text-white font-black max-w-4xl leading-tight">{COPY.home.subBold}</p>
-            <div className="mt-12 flex flex-wrap gap-4">
-              <Button href="#/contact">{COPY.home.ctaPrimary}</Button>
-              <Button href="#/infrastructure" variant="secondary">
-                {COPY.home.ctaSecondary}
-              </Button>
-            </div>
+        <div className="max-w-5xl">
+          <div className="inline-block border border-emerald-500/30 px-4 py-2 text-[10px] font-black tracking-[0.5em] text-emerald-400 uppercase mb-10">
+            {COPY.home.productName}
           </div>
-
-          <aside className="border border-white/10 bg-black/35 backdrop-blur-xl overflow-hidden lg:mt-4">
-            <div className="px-8 pt-8 text-right">
-              <div className="text-[10px] font-black tracking-[0.4em] text-emerald-400 uppercase mb-2">{COPY.home.trustedKicker}</div>
-              <p className="text-[10px] text-white/40 font-medium leading-relaxed mb-6">{COPY.home.trustedSub}</p>
-            </div>
-            <img
-              src="/logos-sheet.png"
-              alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP, Rhythm & Roux, Parade of Youth, D55"
-              className="w-full object-contain"
-            />
-          </aside>
+          <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter leading-[0.9] text-white">
+            {COPY.home.h1Line1}
+            <br />
+            <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
+          </h1>
+          <p className="mt-8 text-xl md:text-3xl text-white/60 font-medium max-w-4xl leading-tight">{COPY.home.sub}</p>
+          <p className="mt-3 text-xl md:text-2xl text-white font-black max-w-4xl leading-tight">{COPY.home.subBold}</p>
+          <div className="mt-12 flex flex-wrap gap-4">
+            <Button href="#/contact">{COPY.home.ctaPrimary}</Button>
+            <Button href="#/infrastructure" variant="secondary">
+              {COPY.home.ctaSecondary}
+            </Button>
+          </div>
         </div>
+      </section>
+
+      <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl overflow-hidden">
+        <div className="px-8 md:px-12 pt-10 pb-4 flex flex-col md:flex-row md:items-end md:justify-between gap-2">
+          <div className="text-[10px] font-black tracking-[0.4em] text-emerald-400 uppercase">{COPY.home.trustedKicker}</div>
+          <p className="text-[10px] text-white/40 font-medium">{COPY.home.trustedSub}</p>
+        </div>
+        <img
+          src="/logos-sheet.png"
+          alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP, Rhythm & Roux, Parade of Youth, D55"
+          className="w-full object-contain"
+        />
       </section>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-6 relative z-10">
