@@ -474,9 +474,9 @@ function Home() {
   return (
     <div className="relative pt-12 space-y-16">
       <section className="min-h-[75vh] flex flex-col justify-center text-left relative z-10">
-        <div className="grid lg:grid-cols-[1fr_1.8fr] gap-16 items-stretch min-h-[75vh]">
-          <div className="flex flex-col justify-center">
-            <div className="inline-block border border-emerald-500/30 px-4 py-2 text-[10px] font-black tracking-[0.5em] text-emerald-400 uppercase mb-10 self-start">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <div className="inline-block border border-emerald-500/30 px-4 py-2 text-[10px] font-black tracking-[0.5em] text-emerald-400 uppercase mb-10">
               {COPY.home.productName}
             </div>
             <h1 className="text-5xl md:text-7xl xl:text-[6rem] font-black tracking-tighter leading-[0.9] text-white">
@@ -494,15 +494,15 @@ function Home() {
             </div>
           </div>
 
-          <div className="border border-white/10 bg-black/40 backdrop-blur-xl overflow-hidden flex flex-col">
-            <div className="px-6 pt-6 pb-2 shrink-0">
+          <div className="border border-white/10 bg-black/40 backdrop-blur-xl overflow-hidden">
+            <div className="px-6 pt-6 pb-2">
               <div className="text-[10px] font-black tracking-[0.4em] text-emerald-400 uppercase mb-1">{COPY.home.trustedKicker}</div>
               <p className="text-[10px] text-white/40 font-medium">{COPY.home.trustedSub}</p>
             </div>
             <img
               src="/logos-sheet.png"
               alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP, Rhythm & Roux, Parade of Youth, D55"
-              className="w-full flex-1 object-contain object-center"
+              className="w-full object-contain"
             />
           </div>
         </div>
