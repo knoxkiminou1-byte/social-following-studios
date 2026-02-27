@@ -906,10 +906,13 @@ function Shell({ route, children }) {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:py-5 text-left">
           <a href="#/" className="flex items-center gap-4 group">
             <LogoPlaceholder className="h-10 w-10 md:h-14 md:w-14 shadow-2xl" />
-            <div className="leading-none text-left">
-              <div className="text-base md:text-lg font-black tracking-tighter text-left">Social Following Studios</div>
-              <div className="text-xs md:text-sm font-black tracking-[0.2em] text-emerald-700 mt-1 uppercase text-left">Unified Conversion Systems</div>
-            </div>
+            <img
+              src={sfsLogo}
+              alt="Social Following Studios"
+              className="h-6 md:h-8 w-auto object-contain"
+              loading="eager"
+              decoding="async"
+            />
           </a>
 
           <nav className="hidden md:flex items-center gap-1 text-left">

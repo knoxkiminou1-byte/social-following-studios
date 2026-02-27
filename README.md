@@ -36,4 +36,4 @@ chmod +x scripts/*.sh
 
 ## Notes
 - Navigation uses hash routes (e.g., `#/configure`) so it works on Vercel without special routing.
-- Favicon is served from `public/favicon.ico`.
+- Favicon is served from `public/favicon.png`.
