@@ -7,51 +7,70 @@ const NAV = [
   { label: "04 // Contact", href: "#/contact" },
 ];
 
-const PARTNERS = ["CHEVRON", "STANFORD MEDICAL", "DREW HEALTH CENTER", "PG&E", "City of Concord"];
 const BOOKING_URL = "#";
 const CONTACT_FORM_ENDPOINT = "#";
 const MAILING_LIST_ENDPOINT = "#";
 
 const TRUSTED_BY_LOGOS = [
-  { name: "The Anthemist", mode: "image", src: "/logos/the-anthemist.png", alt: "The Anthemist" },
-  { name: "D55", mode: "image", src: "/logos/d55.png", alt: "D55" },
-  { name: "PG&E", mode: "image", src: "/logos/pge.svg", alt: "PG&E" },
-  { name: "Stanford Medical", mode: "image", src: "/logos/stanford-medical.jpg", alt: "Stanford Medical" },
+  { name: "Kaiser Permanente", mode: "image", src: "/logos/kaiser-permanente.png", alt: "Kaiser Permanente" },
   { name: "Stanford University", mode: "image", src: "/logos/stanford-university.svg", alt: "Stanford University" },
   { name: "NVIDIA", mode: "image", src: "/logos/nvidia.svg", alt: "NVIDIA" },
+  { name: "PG&E", mode: "image", src: "/logos/pge.svg", alt: "PG&E" },
   { name: "CommonSpirit Health", mode: "image", src: "/logos/commonspirit-health.png", alt: "CommonSpirit Health" },
   { name: "Drew Medical", mode: "image", src: "/logos/drew-medical.png", alt: "Drew Medical" },
+  { name: "The Anthemist", mode: "image", src: "/logos/the-anthemist.png", alt: "The Anthemist" },
+  { name: "City of Concord", mode: "image", src: "/logos/city-of-concord.png", alt: "City of Concord" },
   { name: "DGRP", mode: "text", src: null, alt: "DGRP" },
   { name: "Rhythm & Roux", mode: "text", src: null, alt: "RHYTHM & ROUX" },
   { name: "Parade of Youth", mode: "text", src: null, alt: "PARADE OF YOUTH" },
-  { name: "City of Concord", mode: "image", src: "/logos/city-of-concord.png", alt: "City of Concord" },
+  { name: "D55", mode: "image", src: "/logos/d55.png", alt: "D55" },
 ];
 
-/**
- * COPY CENTRAL (edit text here)
- * This keeps copy changes out of the JSX so updates stay fast and clean.
- */
+const PARTNERS = ["KAISER PERMANENTE", "STANFORD UNIVERSITY", "NVIDIA", "PG&E", "COMMONSPIRIT HEALTH", "DREW MEDICAL"];
+
 const COPY = {
   home: {
     productName: "Unified Conversion Infrastructure",
-    h1Line1: "We build language conversion infrastructure that turns credibility into",
-    h1Line2Accent: "growth.",
-    sub: "Built for high-trust operators with proven credibility.",
-    subBold: "",
-    ctaPrimary: "Work With Us",
-    ctaSecondary: "View Case Studies",
+    h1Line1: "We engineer the conversion systems that turn authority into",
+    h1Line2Accent: "revenue.",
+    sub: "High-trust operators don't need more engagement; they need high-intent conversion pipelines.",
+    subBold: "We build the unified infrastructure to capture it.",
+    ctaPrimary: "Audit Your Infrastructure",
+    ctaSecondary: "Explore the Framework",
+    trustedKicker: "COMMANDING AUTHORITY FOR GLOBAL LEADERS",
+    trustedSub: "We align narrative structures with high-intent audience segments for industry-defining operators.",
     stats: [
-      { label: "STRATEGY", sub: "LANGUAGE SYSTEMS" },
-      { label: "DISTRIBUTION", sub: "TRUST CHANNELS" },
-      { label: "AUTOMATION", sub: "LIFECYCLE SEQUENCES" },
-      { label: "OUTCOME", sub: "REVENUE CONVERSION" },
+      { label: "STRATEGY", sub: "LINGUISTIC CONVERSION FRAMEWORKS" },
+      { label: "DISTRIBUTION", sub: "OMNI-CHANNEL AUTHORITY ASSETS" },
+      { label: "AUTOMATION", sub: "BEHAVIORAL TRIGGER INFRASTRUCTURE" },
+      { label: "OUTCOME", sub: "UNIFIED REVENUE CONVERSION" },
     ],
     equationKicker: "THE SYSTEM",
-    equationHeadline: "We build conversion infrastructure.",
+    equationHeadline: "The Unified Conversion Engine.",
     equationBody:
-      "Strategic language, owned distribution, and lifecycle automation engineered as one coordinated system. Every engagement includes strategy, sequencing, design, and deployment. Nothing ships in isolation.",
+      "Strategic language, owned distribution, and lifecycle automation are not separate services. They are a single, coordinated system engineered for conversion. We don't ship 'projects'; we deploy Conversion Infrastructure.",
     coreArch: "FOUR ENGINES",
-    architecture: ["STRATEGIC LANGUAGE", "PODCAST ENGINE", "NEWSLETTER SYSTEM", "EMAIL INFRASTRUCTURE"],
+    architecture: [
+      {
+        title: "STRATEGIC LANGUAGE",
+        desc: "The Linguistic Foundation. We define the forward-speaking narrative that eliminates friction and commands high-intent action.",
+      },
+      {
+        title: "PODCAST ENGINE",
+        desc: "Authority at Scale. We transform long-form insights into high-retention distribution assets that build trust while you sleep.",
+      },
+      {
+        title: "NEWSLETTER SYSTEM",
+        desc: "Owned Audience Equity. We build the high-conversion distribution nodes that ensure your authority is never at the mercy of an algorithm.",
+      },
+      {
+        title: "EMAIL INFRASTRUCTURE",
+        desc: "The Revenue Pipeline. We engineer the behavioral triggers and automated sequences that turn intent into measurable growth.",
+      },
+    ],
+    closingHeadline: "Ready to engineer your conversion infrastructure?",
+    closingSub: "Stop chasing engagement. Start building authority equity.",
+    closingCta: "Start Your Audit",
   },
   infrastructure: {
     kicker: "INFRASTRUCTURE",
@@ -61,71 +80,58 @@ const COPY = {
       {
         note: "01 // POSITIONING",
         title: "STRATEGIC LANGUAGE",
-        desc:
-          "Messaging architecture across homepage, email, and sales. Strategic language positions you to convert before the conversation starts.",
+        desc: "Linguistic Conversion Frameworks: We codify your authority into high-intent narrative structures.",
       },
       {
         note: "02 // DISTRIBUTION",
         title: "PODCAST ENGINE",
-        desc: "Recurring distribution built for conversion routing. Long-form trust that moves listeners into owned channels.",
+        desc: "Omni-Channel Authority Assets: We deploy your narrative across high-retention distribution nodes.",
       },
       {
         note: "03 // REACH",
         title: "NEWSLETTER SYSTEM",
-        desc: "Owned audience with segmentation and monetization logic. Segmented reach that compounds over time.",
+        desc: "Behavioral Trigger Infrastructure: We engineer automated revenue pipelines that respond to intent in real-time.",
       },
       {
         note: "04 // CONVERSION",
         title: "EMAIL INFRASTRUCTURE",
-        desc: "Lifecycle automation from first touch to retention. Sequences, routing, and automation that drive booked outcomes.",
+        desc: "Unified Revenue Conversion: We deliver measurable, scalable growth through integrated infrastructure.",
       },
     ],
     outroLines: ["Language positions.", "Distribution captures.", "Sequences nurture.", "Infrastructure converts."],
     outroSub: "OPERATIONAL CONTROL OVER DISTRIBUTION AND CONVERSION.",
-    cta: "Work With Us",
+    cta: "Audit Your Infrastructure",
   },
   caseStudies: {
     kicker: "CASE STUDIES",
     title: "Measured outcomes",
-    sub: "Each case shows the problem, the deployed engines, and the shift.",
-    trustedKicker: "TRUSTED BY INDUSTRY LEADERS",
+    sub: "Each case shows the problem, the deployed engines, and the measurable shift.",
+    trustedKicker: "COMMANDING AUTHORITY FOR GLOBAL LEADERS",
     cards: [
       {
         badge: "B2B",
         client: "B2B Operations",
-        outcome: "+41% Qualified",
-        problem: "Inbound requests arrive incomplete, unscored, and routed late.",
+        outcome: "+41% High-Intent SQLs",
+        problem: "We replaced fragmented intake with a unified conversion system, automating lead scoring and narrative alignment.",
         tech: "Language + Distribution + Conversion",
       },
       {
         badge: "B2C",
         client: "B2C Growth",
-        outcome: "+42% Growth",
-        problem: "Leads go cold during peak demand windows.",
+        outcome: "+42% Revenue via Owned Assets",
+        problem: "We engineered a high-retention newsletter system that captured and converted peak demand windows with zero ad spend.",
         tech: "Distribution + Nurture Sequences",
       },
       {
         badge: "Legal",
         client: "Professional Services",
-        outcome: "60% Load Reduction",
-        problem: "Staff spent hours qualifying unready prospects.",
+        outcome: "60% Qualification Load Reduction",
+        problem: "We deployed a linguistic conversion framework that pre-qualified prospects, ensuring staff only engaged with high-intent opportunities.",
         tech: "Qualification + Lifecycle Automation",
       },
     ],
     outroLines: ["Language builds authority.", "Infrastructure converts it."],
-    cta: "Work With Us",
-  },
-  configure: {
-    kicker: "CONFIGURE",
-    title: "Configuration.",
-    sub: "Deployment-ready output for strategic language and conversion infrastructure.",
-    formKicker: "BUSINESS INFORMATION",
-    fields: [
-      { label: "Business Name", placeholder: "Enter business name" },
-      { label: "Primary Phone", placeholder: "Enter primary phone number" },
-    ],
-    submitIdle: "SUBMIT CONFIGURATION",
-    submitDone: "CAPTURED",
+    cta: "Start Your Audit",
   },
   contact: {
     kicker: "CONTACT",
@@ -224,14 +230,12 @@ function Button({ href, children, variant = "primary" }) {
   );
 }
 
-
 function PolicyPage({ policy }) {
   return (
     <section className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 py-20 text-white">
       <p className="text-xs font-black tracking-[0.28em] uppercase text-emerald-400/90 mb-4">Last Updated: {POLICY_TEMPLATE.updatedAt}</p>
       <h1 className="text-4xl md:text-5xl font-black tracking-tight uppercase mb-5">{policy.title}</h1>
       <p className="text-base md:text-lg leading-8 text-white/80 mb-10">{policy.intro}</p>
-
       <div className="space-y-8">
         {policy.sections.map((section) => (
           <article key={section.heading} className="border border-white/10 bg-white/[0.02] p-6 md:p-8">
@@ -240,7 +244,6 @@ function PolicyPage({ policy }) {
           </article>
         ))}
       </div>
-
       <p className="mt-10 text-sm text-white/60">
         Questions? Contact {POLICY_TEMPLATE.siteName} at {POLICY_TEMPLATE.email}.
       </p>
@@ -443,7 +446,6 @@ function Grid({ opacityClass = "opacity-20" }) {
   );
 }
 
-
 function resolveLogoAsset(logo) {
   if (logo.mode === "image" && logo.src) {
     return { mode: "image", src: logo.src, alt: logo.alt || logo.name };
@@ -483,17 +485,18 @@ function Home() {
               <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
             </h1>
             <p className="mt-8 text-xl md:text-3xl text-white/60 font-medium max-w-4xl leading-tight">{COPY.home.sub}</p>
-            {COPY.home.subBold && <p className="mt-5 text-xl md:text-2xl text-white font-black max-w-4xl leading-tight">{COPY.home.subBold}</p>}
+            <p className="mt-3 text-xl md:text-2xl text-white font-black max-w-4xl leading-tight">{COPY.home.subBold}</p>
             <div className="mt-12 flex flex-wrap gap-4">
               <Button href="#/contact">{COPY.home.ctaPrimary}</Button>
-              <Button href="#/case-studies" variant="secondary">
+              <Button href="#/infrastructure" variant="secondary">
                 {COPY.home.ctaSecondary}
               </Button>
             </div>
           </div>
 
           <aside className="border border-white/10 bg-black/35 backdrop-blur-xl p-8 lg:mt-4 lg:text-right">
-            <div className="text-[10px] font-black tracking-[0.4em] text-emerald-400 uppercase mb-8">TRUSTED BY</div>
+            <div className="text-[10px] font-black tracking-[0.4em] text-emerald-400 uppercase mb-2">{COPY.home.trustedKicker}</div>
+            <p className="text-[10px] text-white/40 font-medium leading-relaxed mb-8">{COPY.home.trustedSub}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
               {TRUSTED_BY_LOGOS.map((logo) => (
                 <div key={logo.name} className="border border-white/10 bg-white/[0.02] px-4 py-3 lg:ml-auto lg:w-full">
@@ -515,7 +518,7 @@ function Home() {
       </div>
 
       <section className="mt-14 border border-white/10 bg-black/40 backdrop-blur-xl p-12 md:p-24 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-24 items-start">
           <div>
             <div className="text-[10px] font-black tracking-[0.4em] text-emerald-500 uppercase mb-8">{COPY.home.equationKicker}</div>
             <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none">{COPY.home.equationHeadline}</h2>
@@ -523,111 +526,48 @@ function Home() {
           </div>
           <div className="border border-white/10 p-10 bg-white/5 relative overflow-hidden">
             <div className="text-[10px] font-black tracking-[0.3em] text-white/40 uppercase mb-12">{COPY.home.coreArch}</div>
-            <div className="space-y-4">
+            <div className="space-y-6">
               {COPY.home.architecture.map((layer, i) => (
-                <div key={layer} className="flex items-center justify-between border-b border-white/5 py-4">
-                  <span className="text-xs font-black tracking-widest text-emerald-400">0{i + 1}</span>
-                  <span className="text-xl font-black text-white">{layer}</span>
+                <div key={layer.title} className="border-b border-white/5 pb-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs font-black tracking-widest text-emerald-400">0{i + 1}</span>
+                    <span className="text-lg font-black text-white">{layer.title}</span>
+                  </div>
+                  <p className="text-xs text-white/45 font-medium leading-relaxed text-right">{layer.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
-        <p className="mt-10 text-xl md:text-2xl font-black text-emerald-400">{COPY.infrastructure.close}</p>
       </section>
 
       <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
         <div className="mb-8">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">Case Studies</h2>
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">{COPY.caseStudies.title}</h2>
+          <p className="mt-3 text-base text-white/50 font-medium">{COPY.caseStudies.sub}</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {COPY.caseStudies.cards.map((cs) => (
             <article key={cs.client} className="border border-white/10 bg-white/[0.03] p-6">
               <div className="text-[10px] font-black tracking-[0.3em] text-emerald-400 uppercase mb-3">{cs.badge}</div>
-              <h3 className="text-xl font-black text-white mb-2">{cs.client}</h3>
-              <p className="text-white/70 text-sm mb-4">{cs.problem}</p>
-              <div className="text-lg font-black text-emerald-400">{cs.outcome}</div>
+              <div className="text-3xl font-black text-emerald-400 mb-3">{cs.outcome}</div>
+              <h3 className="text-base font-black text-white mb-2 uppercase">{cs.client}</h3>
+              <p className="text-white/60 text-sm leading-relaxed">{cs.problem}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="border border-emerald-500/40 bg-emerald-500/5 p-8 md:p-12 relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        <p className="text-lg md:text-2xl font-bold text-white max-w-3xl">I build unified conversion infrastructure across email, newsletters, podcasts, and strategic language.</p>
-        <Button href="#/configure">{COPY.home.ctaPrimary}</Button>
-      </section>
-
-      <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
-        <div className="mb-8">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">Case Studies</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {COPY.caseStudies.cards.map((cs) => (
-            <article key={cs.client} className="border border-white/10 bg-white/[0.03] p-6">
-              <div className="text-[10px] font-black tracking-[0.3em] text-emerald-400 uppercase mb-3">{cs.badge}</div>
-              <h3 className="text-xl font-black text-white mb-2">{cs.client}</h3>
-              <p className="text-white/70 text-sm mb-4">{cs.problem}</p>
-              <div className="text-lg font-black text-emerald-400">{cs.outcome}</div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="border border-emerald-500/40 bg-emerald-500/5 p-8 md:p-12 relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        <p className="text-lg md:text-2xl font-bold text-white max-w-3xl">I build unified conversion infrastructure across email, newsletters, podcasts, and strategic language.</p>
-        <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
-      </section>
-
-      <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
-        <div className="mb-8">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">Case Studies</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {COPY.caseStudies.cards.map((cs) => (
-            <article key={cs.client} className="border border-white/10 bg-white/[0.03] p-6">
-              <div className="text-[10px] font-black tracking-[0.3em] text-emerald-400 uppercase mb-3">{cs.badge}</div>
-              <h3 className="text-xl font-black text-white mb-2">{cs.client}</h3>
-              <p className="text-white/70 text-sm mb-4">{cs.problem}</p>
-              <div className="text-lg font-black text-emerald-400">{cs.outcome}</div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="border border-emerald-500/40 bg-emerald-500/5 p-8 md:p-12 relative z-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-        <div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white max-w-4xl">
-            We build language conversion infrastructure that turns credibility into <span className="text-emerald-500">growth.</span>
+      <section className="border border-emerald-500/40 bg-emerald-500/5 p-12 md:p-20 relative z-10">
+        <div className="max-w-4xl">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight">
+            {COPY.home.closingHeadline}
           </h2>
-          <p className="mt-4 text-base md:text-xl text-white/70 font-medium">Built for high-trust operators with proven credibility.</p>
+          <p className="mt-4 text-base md:text-xl text-white/60 font-medium">{COPY.home.closingSub}</p>
+          <div className="mt-10">
+            <Button href="#/contact">{COPY.home.closingCta}</Button>
+          </div>
         </div>
-        <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
-      </section>
-
-      <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
-        <div className="mb-8">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">Case Studies</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {COPY.caseStudies.cards.map((cs) => (
-            <article key={cs.client} className="border border-white/10 bg-white/[0.03] p-6">
-              <div className="text-[10px] font-black tracking-[0.3em] text-emerald-400 uppercase mb-3">{cs.badge}</div>
-              <h3 className="text-xl font-black text-white mb-2">{cs.client}</h3>
-              <p className="text-white/70 text-sm mb-4">{cs.problem}</p>
-              <div className="text-lg font-black text-emerald-400">{cs.outcome}</div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="border border-emerald-500/40 bg-emerald-500/5 p-8 md:p-12 relative z-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-        <div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white max-w-4xl">
-            We build language conversion infrastructure that turns credibility into <span className="text-emerald-500">growth.</span>
-          </h2>
-          <p className="mt-4 text-base md:text-xl text-white/70 font-medium">Built for high-trust operators with proven credibility.</p>
-        </div>
-        <Button href="#/contact">{COPY.home.ctaPrimary}</Button>
       </section>
     </div>
   );
@@ -654,6 +594,7 @@ function Infrastructure() {
           </div>
         ))}
       </div>
+
       <section className="text-center py-24 border-t border-white/10 relative z-10">
         <p className="text-3xl md:text-5xl font-black text-white leading-tight mb-8">
           {COPY.infrastructure.outroLines.map((line) => (
@@ -709,7 +650,7 @@ function CaseStudies() {
               <p className="text-sm font-bold text-white leading-tight">{cs.problem}</p>
             </div>
             <div className="col-span-1 text-center">
-              <div className="text-4xl md:text-5xl font-black text-emerald-400">{cs.outcome}</div>
+              <div className="text-3xl md:text-4xl font-black text-emerald-400">{cs.outcome}</div>
             </div>
             <div className="col-span-1 md:text-right">
               <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-2">Tech Deployment</div>
@@ -733,7 +674,6 @@ function CaseStudies() {
     </div>
   );
 }
-
 
 function Contact() {
   const [status, setStatus] = useState("idle");
@@ -826,8 +766,20 @@ function Shell({ children, route }) {
 
       <main className="max-w-[1800px] mx-auto px-6 md:px-12 pt-32 pb-48 relative z-10">{children}</main>
 
-      <footer className="border-t border-white/10 py-24 bg-black relative z-50">
-        <div className="max-w-[1800px] mx-auto px-12 grid lg:grid-cols-3 gap-16">
+      <footer className="border-t border-white/10 bg-black relative z-50">
+        <div className="max-w-[1800px] mx-auto px-12 py-20 border-b border-white/10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+            <div>
+              <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white leading-tight">
+                Ready to engineer your<br />
+                <span className="text-emerald-400">conversion infrastructure?</span>
+              </h2>
+              <p className="mt-4 text-base text-white/50 font-medium">Stop chasing engagement. Start building authority equity.</p>
+            </div>
+            <Button href="#/contact">Start Your Audit</Button>
+          </div>
+        </div>
+        <div className="max-w-[1800px] mx-auto px-12 py-16 grid lg:grid-cols-3 gap-16">
           <div>
             <div className="text-4xl font-black tracking-tighter uppercase mb-4 leading-none">{COPY.shell.brand}</div>
             <div className="text-xs font-black tracking-[0.4em] text-white/40 uppercase">{COPY.shell.footerSub}</div>
@@ -849,7 +801,6 @@ function Shell({ children, route }) {
                 Join
               </button>
             </div>
-            <p className="mt-3 text-[10px] font-black tracking-[0.28em] uppercase text-white/40">Insights page coming later</p>
           </form>
           <div className="flex flex-col md:flex-row lg:flex-col gap-8 text-sm font-black tracking-[0.4em] text-white/40 uppercase lg:items-end">
             <a href="#/terms" className="hover:text-emerald-400 transition-colors">
