@@ -31,7 +31,9 @@ const PARTNERS = ["KAISER PERMANENTE", "STANFORD UNIVERSITY", "NVIDIA", "PG&E", 
 const COPY = {
   home: {
     productName: "Social Following Studios",
-    h1Line1: "We build language infrastructure that turns credibility into",
+    h1Line1: "We build language infrastructure that turns",
+    h1Line1Accent: "credibility",
+    h1Line1Suffix: "into",
     h1Line2Accent: "growth.",
     sub: "We codify your authority, deploy it strategically, and convert attention into measurable expansion.",
     subBold: "",
@@ -531,7 +533,7 @@ function Home() {
               {COPY.home.productName}
             </div>
             <h1 className="text-4xl md:text-5xl xl:text-6xl font-black tracking-tighter leading-[0.9] text-white">
-              {COPY.home.h1Line1}
+              {COPY.home.h1Line1} <span className="text-emerald-500">{COPY.home.h1Line1Accent}</span> {COPY.home.h1Line1Suffix}
               <br />
               <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
             </h1>
