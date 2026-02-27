@@ -497,13 +497,11 @@ function Home() {
           <aside className="border border-white/10 bg-black/35 backdrop-blur-xl p-8 lg:mt-4 lg:text-right">
             <div className="text-[10px] font-black tracking-[0.4em] text-emerald-400 uppercase mb-2">{COPY.home.trustedKicker}</div>
             <p className="text-[10px] text-white/40 font-medium leading-relaxed mb-8">{COPY.home.trustedSub}</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
-              {TRUSTED_BY_LOGOS.map((logo) => (
-                <div key={logo.name} className="border border-white/10 bg-white/[0.02] px-4 py-3 lg:ml-auto lg:w-full">
-                  <TrustedLogo logo={logo} />
-                </div>
-              ))}
-            </div>
+            <img
+              src="/logos-sheet.png"
+              alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP, Rhythm & Roux, Parade of Youth, D55"
+              className="w-full object-contain"
+            />
           </aside>
         </div>
       </section>
@@ -624,13 +622,11 @@ function CaseStudies() {
         <div className="text-[10px] font-black tracking-[0.3em] text-emerald-500 uppercase mb-12 text-center">
           {COPY.caseStudies.trustedKicker}
         </div>
-        <div className="flex flex-wrap justify-center gap-10 md:gap-20 text-white/60 font-black tracking-[0.3em] text-sm uppercase">
-          {PARTNERS.map((p) => (
-            <span key={p} className="hover:text-emerald-400 transition-colors">
-              {p}
-            </span>
-          ))}
-        </div>
+        <img
+          src="/logos-sheet.png"
+          alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP, Rhythm & Roux, Parade of Youth, D55"
+          className="w-full max-w-4xl mx-auto object-contain"
+        />
       </div>
 
       <div className="space-y-8 relative z-10">
