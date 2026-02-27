@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
+import sfsLogo from "./assets/SFSF.png";
 
 const NAV = [
   { label: "01 // Home", href: "#/" },
@@ -842,11 +843,12 @@ function Shell({ children, route }) {
 
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
         <div className="max-w-[1800px] mx-auto flex items-center justify-between px-6 md:px-12 py-6 md:py-8">
-          <a href="#/" className="flex flex-col items-start leading-none group shrink-0">
-            <span className="text-xl md:text-2xl font-black tracking-tighter group-hover:text-emerald-400 transition-colors uppercase">
-              {COPY.shell.brand}
-            </span>
-            <span className="text-sm font-black tracking-[0.3em] text-emerald-500 uppercase mt-1">{COPY.shell.brandSub}</span>
+          <a href="#/" className="group shrink-0">
+            <img
+              src={sfsLogo}
+              alt={COPY.shell.brand}
+              className="h-10 md:h-12 w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity"
+            />
           </a>
           <nav className="flex gap-4 md:gap-8 mr-6 md:mr-14">
             {NAV.map((item) => (
@@ -890,7 +892,7 @@ function Shell({ children, route }) {
         </div>
         <div className="max-w-[1800px] mx-auto px-12 py-16 grid lg:grid-cols-3 gap-16">
           <div>
-            <div className="text-4xl font-black tracking-tighter uppercase mb-4 leading-none">{COPY.shell.brand}</div>
+            <img src={sfsLogo} alt={COPY.shell.brand} className="h-14 w-auto object-contain mb-4 opacity-95" />
             <div className="text-sm font-black tracking-[0.4em] text-white/65 uppercase">{COPY.shell.footerSub}</div>
           </div>
           <form
