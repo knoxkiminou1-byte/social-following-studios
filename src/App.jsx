@@ -8,6 +8,7 @@ const NAV = [
 ];
 
 const PARTNERS = ["CHEVRON", "STANFORD MEDICAL", "DREW HEALTH CENTER", "PG&E", "City of Concord"];
+const BOOKING_URL = "#";
 const CONTACT_FORM_ENDPOINT = "#";
 const MAILING_LIST_ENDPOINT = "#";
 
