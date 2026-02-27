@@ -494,9 +494,11 @@ function Home() {
             </div>
           </div>
 
-          <aside className="border border-white/10 bg-black/35 backdrop-blur-xl p-8 lg:mt-4 lg:text-right">
-            <div className="text-[10px] font-black tracking-[0.4em] text-emerald-400 uppercase mb-2">{COPY.home.trustedKicker}</div>
-            <p className="text-[10px] text-white/40 font-medium leading-relaxed mb-8">{COPY.home.trustedSub}</p>
+          <aside className="border border-white/10 bg-black/35 backdrop-blur-xl overflow-hidden lg:mt-4">
+            <div className="px-8 pt-8 text-right">
+              <div className="text-[10px] font-black tracking-[0.4em] text-emerald-400 uppercase mb-2">{COPY.home.trustedKicker}</div>
+              <p className="text-[10px] text-white/40 font-medium leading-relaxed mb-6">{COPY.home.trustedSub}</p>
+            </div>
             <img
               src="/logos-sheet.png"
               alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP, Rhythm & Roux, Parade of Youth, D55"
