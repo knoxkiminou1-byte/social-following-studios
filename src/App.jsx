@@ -548,7 +548,7 @@ function Home() {
 
           <div className="flex flex-col justify-center pl-8">
             <div className="text-sm font-black tracking-[0.4em] text-emerald-400 uppercase mb-1">{COPY.home.trustedKicker}</div>
-            <p className="text-xs text-white/40 font-medium mb-4">{COPY.home.trustedSub}</p>
+            <p className="text-base text-white/40 font-medium mb-4">{COPY.home.trustedSub}</p>
             <img
               src="/logos-sheet.png"
               alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP Baysound, Rhythm & Roux, Parade of Youth, Chevron"
