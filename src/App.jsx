@@ -30,119 +30,170 @@ const PARTNERS = ["KAISER PERMANENTE", "STANFORD UNIVERSITY", "NVIDIA", "PG&E", 
 
 const COPY = {
   home: {
-    productName: "Unified Conversion Infrastructure",
-    h1Line1: "We engineer the conversion systems that turn authority into",
-    h1Line2Accent: "revenue.",
-    sub: "High-trust operators don't need more engagement; they need high-intent conversion pipelines.",
-    subBold: "We build the unified infrastructure to capture it.",
-    ctaPrimary: "Audit Your Infrastructure",
-    ctaSecondary: "Explore the Framework",
-    trustedKicker: "COMMANDING AUTHORITY FOR GLOBAL LEADERS",
-    trustedSub: "We align narrative structures with high-intent audience segments for industry-defining operators.",
+    productName: "Social Following Studios",
+    h1Line1: "We build language infrastructure that turns credibility into",
+    h1Line2Accent: "growth.",
+    sub: "We codify your authority, deploy it strategically, and convert attention into measurable expansion.",
+    subBold: "",
+    ctaPrimary: "Work With Us",
+    ctaSecondary: "View Case Studies",
+    trustedKicker: "TRUSTED BY",
+    trustedSub: "Trusted by operators across healthcare, energy, and professional services.",
     stats: [
-      { label: "STRATEGY", sub: "LINGUISTIC CONVERSION FRAMEWORKS" },
-      { label: "DISTRIBUTION", sub: "OMNI-CHANNEL AUTHORITY ASSETS" },
-      { label: "AUTOMATION", sub: "BEHAVIORAL TRIGGER INFRASTRUCTURE" },
-      { label: "OUTCOME", sub: "UNIFIED REVENUE CONVERSION" },
+      { label: "STRATEGIC LANGUAGE", sub: "MESSAGING THAT POSITIONS YOUR EXPERTISE FOR THE AUDIENCES WHO PAY" },
+      { label: "OWNED DISTRIBUTION", sub: "EMAIL SYSTEMS AND CONTENT WORKFLOWS YOU CONTROL" },
+      { label: "LIFECYCLE AUTOMATION", sub: "INTAKE, NURTURE, AND FOLLOW-UP CONNECTED INTO ONE SEQUENCE" },
     ],
-    equationKicker: "THE SYSTEM",
-    equationHeadline: "The Unified Conversion Engine.",
+    equationKicker: "HOW WE WORK",
+    equationHeadline: "One system. Three disciplines.",
     equationBody:
-      "Strategic language, owned distribution, and lifecycle automation are not separate services. They are a single, coordinated system engineered for conversion. We don't ship 'projects'; we deploy Conversion Infrastructure.",
-    coreArch: "FOUR ENGINES",
+      "Strategy, distribution, and automation operate as one system. We build them together so credibility converts.",
+    coreArch: "THREE DISCIPLINES",
     architecture: [
       {
         title: "STRATEGIC LANGUAGE",
-        desc: "The Linguistic Foundation. We define the forward-speaking narrative that eliminates friction and commands high-intent action.",
+        desc: "We write messaging that positions your expertise for the audiences who pay. Brand voice, website copy, sales collateral, and thought leadership content, all aligned to a single strategic framework.",
       },
       {
-        title: "PODCAST ENGINE",
-        desc: "Authority at Scale. We transform long-form insights into high-retention distribution assets that build trust while you sleep.",
+        title: "OWNED DISTRIBUTION",
+        desc: "We build the channels you control. Email systems, newsletter infrastructure, and content workflows designed to reach your audience directly, without renting attention from algorithms.",
       },
       {
-        title: "NEWSLETTER SYSTEM",
-        desc: "Owned Audience Equity. We build the high-conversion distribution nodes that ensure your authority is never at the mercy of an algorithm.",
-      },
-      {
-        title: "EMAIL INFRASTRUCTURE",
-        desc: "The Revenue Pipeline. We engineer the behavioral triggers and automated sequences that turn intent into measurable growth.",
+        title: "LIFECYCLE AUTOMATION",
+        desc: "We connect intake, nurture, and follow-up into one automated sequence. Every lead gets the right message at the right stage. Nothing falls through.",
       },
     ],
-    closingHeadline: "Ready to engineer your conversion infrastructure?",
-    closingSub: "Stop chasing engagement. Start building authority equity.",
-    closingCta: "Start Your Audit",
+    closingHeadline: "Ready to build a system that turns your credibility into growth?",
+    closingSub: "",
+    closingCta: "Work With Us",
   },
   infrastructure: {
-    kicker: "INFRASTRUCTURE",
-    h1: "The infrastructure.",
-    sub: "Four coordinated engines. One measurable outcome.",
+    kicker: "HOW WE WORK",
+    h1: "One system.",
+    sub: "Three disciplines. Built together so credibility converts.",
     layers: [
       {
-        note: "01 // POSITIONING",
+        note: "01 // STRATEGY",
         title: "STRATEGIC LANGUAGE",
-        desc: "Linguistic Conversion Frameworks: We codify your authority into high-intent narrative structures.",
+        desc: "We write messaging that positions your expertise for the audiences who pay. Brand voice, website copy, sales collateral, and thought leadership content, all aligned to a single strategic framework.",
       },
       {
         note: "02 // DISTRIBUTION",
-        title: "PODCAST ENGINE",
-        desc: "Omni-Channel Authority Assets: We deploy your narrative across high-retention distribution nodes.",
+        title: "OWNED DISTRIBUTION",
+        desc: "We build the channels you control. Email systems, newsletter infrastructure, and content workflows designed to reach your audience directly, without renting attention from algorithms.",
       },
       {
-        note: "03 // REACH",
-        title: "NEWSLETTER SYSTEM",
-        desc: "Behavioral Trigger Infrastructure: We engineer automated revenue pipelines that respond to intent in real-time.",
-      },
-      {
-        note: "04 // CONVERSION",
-        title: "EMAIL INFRASTRUCTURE",
-        desc: "Unified Revenue Conversion: We deliver measurable, scalable growth through integrated infrastructure.",
+        note: "03 // AUTOMATION",
+        title: "LIFECYCLE AUTOMATION",
+        desc: "We connect intake, nurture, and follow-up into one automated sequence. Every lead gets the right message at the right stage. Nothing falls through.",
       },
     ],
-    outroLines: ["Language positions.", "Distribution captures.", "Sequences nurture.", "Infrastructure converts."],
-    outroSub: "OPERATIONAL CONTROL OVER DISTRIBUTION AND CONVERSION.",
-    cta: "Audit Your Infrastructure",
+    whoWeServe: {
+      kicker: "WHO WE SERVE",
+      headline: "Built for firms where credibility is the product.",
+      body: "Our clients operate in industries where trust drives revenue. They have earned authority through decades of expertise. They need systems that translate that authority into consistent growth.",
+      list: [
+        "Healthcare organizations and specialty practices",
+        "Energy consultancies and infrastructure firms",
+        "Professional services firms (legal, financial, advisory)",
+        "Executive teams building personal authority platforms",
+      ],
+      closing: "If your business grows through relationships and reputation, we build the system that scales it.",
+    },
+    process: {
+      kicker: "OUR PROCESS",
+      headline: "Diagnostic. Build. Optimize.",
+      steps: [
+        {
+          num: "1",
+          title: "Diagnostic",
+          desc: "We audit your current language, distribution channels, and conversion points. You get a clear map of where credibility leaks growth.",
+        },
+        {
+          num: "2",
+          title: "Build",
+          desc: "We design and deploy your messaging framework, email infrastructure, and automation sequences. Everything ships within a defined timeline with weekly progress reports.",
+        },
+        {
+          num: "3",
+          title: "Optimize",
+          desc: "We measure performance against conversion benchmarks and refine. Language, sequences, and targeting improve based on real data, not assumptions.",
+        },
+      ],
+    },
+    engagements: {
+      kicker: "ENGAGEMENT MODELS",
+      headline: "Clear scope. Defined deliverables.",
+      note: "All engagements begin with a conversation. No proposals without a diagnostic.",
+      tiers: [
+        {
+          title: "Diagnostic Engagement",
+          desc: "A focused audit of your language, distribution, and conversion systems. Delivered as a written report with prioritized recommendations.",
+        },
+        {
+          title: "Full Build",
+          desc: "Complete system design and deployment. Messaging, email infrastructure, and automation sequences built and launched within an agreed timeline.",
+        },
+        {
+          title: "Retained Advisory",
+          desc: "Ongoing optimization, content production, and strategic guidance. Monthly reporting tied to conversion metrics.",
+        },
+      ],
+    },
+    outroLines: ["Language positions.", "Distribution captures.", "Automation converts."],
+    outroSub: "",
+    cta: "Work With Us",
   },
   caseStudies: {
     kicker: "CASE STUDIES",
-    title: "Measured outcomes",
-    sub: "Each case shows the problem, the deployed engines, and the measurable shift.",
-    trustedKicker: "COMMANDING AUTHORITY FOR GLOBAL LEADERS",
+    title: "Results from real engagements.",
+    sub: "Each engagement starts with a diagnostic. We identify where credibility leaks growth, then build the system to close the gap.",
+    trustedKicker: "TRUSTED BY OPERATORS ACROSS HEALTHCARE, ENERGY, AND PROFESSIONAL SERVICES",
     cards: [
       {
-        badge: "B2B",
-        client: "B2B Operations",
-        outcome: "+41% High-Intent SQLs",
-        problem: "We replaced fragmented intake with a unified conversion system, automating lead scoring and narrative alignment.",
-        tech: "Language + Distribution + Conversion",
+        badge: "HEALTHCARE",
+        client: "Healthcare Services Firm",
+        challenge: "Qualified leads stalled at intake. Messaging spoke to peers, not buyers.",
+        action: "Rebuilt intake and lead scoring. Aligned messaging with buyer intent across email and web.",
+        result: "+41% qualified opportunities within 90 days.",
+        outcome: "+41%",
+        outcomeLabel: "Qualified Opportunities",
+        tech: "Strategic Language + Owned Distribution + Lifecycle Automation",
       },
       {
-        badge: "B2C",
-        client: "B2C Growth",
-        outcome: "+42% Revenue via Owned Assets",
-        problem: "We engineered a high-retention newsletter system that captured and converted peak demand windows with zero ad spend.",
-        tech: "Distribution + Nurture Sequences",
+        badge: "ENERGY",
+        client: "Regional Energy Consultancy",
+        challenge: "High referral volume, low conversion to retained engagements.",
+        action: "Created a three-stage email nurture sequence tied to service tiers. Rewrote proposals for buyer language.",
+        result: "27% lift in proposal-to-close rate. Average deal size increased 18%.",
+        outcome: "+27%",
+        outcomeLabel: "Proposal-to-Close Rate",
+        tech: "Strategic Language + Lifecycle Automation",
       },
       {
-        badge: "Legal",
-        client: "Professional Services",
-        outcome: "60% Qualification Load Reduction",
-        problem: "We deployed a linguistic conversion framework that pre-qualified prospects, ensuring staff only engaged with high-intent opportunities.",
-        tech: "Qualification + Lifecycle Automation",
+        badge: "PROFESSIONAL SERVICES",
+        client: "Professional Services Network",
+        challenge: "Strong reputation, minimal digital presence. Revenue depended on word of mouth.",
+        action: "Built owned distribution from scratch: newsletter, LinkedIn content system, and an automated referral follow-up sequence.",
+        result: "First 6 months: 340 qualified subscribers, 12 new retained clients sourced from email.",
+        outcome: "340",
+        outcomeLabel: "Qualified Subscribers in 6 Months",
+        tech: "Owned Distribution + Lifecycle Automation",
       },
     ],
-    outroLines: ["Language builds authority.", "Infrastructure converts it."],
-    cta: "Start Your Audit",
+    outroLines: ["Language builds credibility.", "Systems convert it."],
+    cta: "Work With Us",
   },
   contact: {
     kicker: "CONTACT",
     title: "Work with us.",
-    sub: "Looking to build your brand, sharpen your positioning, or install conversion infrastructure that actually moves?",
+    sub: "All engagements begin with a conversation. Tell us about your business and we will be in touch.",
     submitIdle: "SUBMIT",
     submitDone: "SUBMITTED",
   },
   shell: {
     brand: "Social Following Studios",
-    brandSub: "Unified Conversion Infrastructure",
+    brandSub: "Language Infrastructure",
     topCta: "Work With Us",
     footerSub: "© 2026 SOCIAL FOLLOWING STUDIOS",
     terms: "Terms",
@@ -485,10 +536,10 @@ function Home() {
               <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
             </h1>
             <p className="mt-8 text-xl md:text-2xl text-white/60 font-medium leading-tight">{COPY.home.sub}</p>
-            <p className="mt-3 text-xl text-white font-black leading-tight">{COPY.home.subBold}</p>
+            {COPY.home.subBold && <p className="mt-3 text-xl text-white font-black leading-tight">{COPY.home.subBold}</p>}
             <div className="mt-12 flex flex-wrap gap-4">
               <Button href="#/contact">{COPY.home.ctaPrimary}</Button>
-              <Button href="#/infrastructure" variant="secondary">
+              <Button href="#/case-studies" variant="secondary">
                 {COPY.home.ctaSecondary}
               </Button>
             </div>
@@ -508,7 +559,7 @@ function Home() {
         </div>
       </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-6 relative z-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 relative z-10">
         {COPY.home.stats.map((s) => (
           <div key={s.label} className="relative z-10 border border-white/10 bg-white/5 p-8 backdrop-blur-sm text-left h-full overflow-hidden">
             <div className="text-xs md:text-sm font-black tracking-[0.25em] uppercase text-emerald-400 mb-3">{s.label}</div>
@@ -563,7 +614,7 @@ function Home() {
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight">
             {COPY.home.closingHeadline}
           </h2>
-          <p className="mt-4 text-base md:text-xl text-white/60 font-medium">{COPY.home.closingSub}</p>
+          {COPY.home.closingSub && <p className="mt-4 text-base md:text-xl text-white/60 font-medium">{COPY.home.closingSub}</p>}
           <div className="mt-10">
             <Button href="#/contact">{COPY.home.closingCta}</Button>
           </div>
@@ -574,29 +625,78 @@ function Home() {
 }
 
 function Infrastructure() {
+  const { whoWeServe, process, engagements } = COPY.infrastructure;
   return (
-    <div className="pt-12 space-y-16 relative z-10">
+    <div className="pt-12 space-y-20 relative z-10">
       <div className="max-w-4xl text-left">
         <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.infrastructure.kicker}</div>
         <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter text-white leading-[0.9]">{COPY.infrastructure.h1}</h1>
         <p className="mt-12 text-2xl md:text-4xl text-white/60 font-medium">{COPY.infrastructure.sub}</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {COPY.infrastructure.layers.map((L) => (
           <div
             key={L.title}
-            className="bg-black/40 backdrop-blur-md p-12 text-left border border-white/10 hover:bg-emerald-500/5 transition-colors h-full relative z-10 overflow-hidden"
+            className="bg-black/40 backdrop-blur-md p-10 text-left border border-white/10 hover:bg-emerald-500/5 transition-colors h-full relative z-10"
           >
             <div className="text-[10px] font-black tracking-[0.3em] text-emerald-500 mb-6">{L.note}</div>
-            <h3 className="text-3xl font-black text-white mb-6 uppercase">{L.title}</h3>
-            <p className="text-lg text-white/60 font-medium leading-relaxed">{L.desc}</p>
+            <h3 className="text-2xl font-black text-white mb-6 uppercase">{L.title}</h3>
+            <p className="text-base text-white/60 font-medium leading-relaxed">{L.desc}</p>
           </div>
         ))}
       </div>
 
-      <section className="text-center py-24 border-t border-white/10 relative z-10">
-        <p className="text-3xl md:text-5xl font-black text-white leading-tight mb-8">
+      <section className="border border-white/10 bg-black/40 backdrop-blur-xl p-12 md:p-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{whoWeServe.kicker}</div>
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-8">{whoWeServe.headline}</h2>
+            <p className="text-lg text-white/60 font-medium leading-relaxed mb-10">{whoWeServe.body}</p>
+            <p className="text-base text-white/80 font-medium leading-relaxed italic">{whoWeServe.closing}</p>
+          </div>
+          <div className="space-y-4">
+            <div className="text-[10px] font-black tracking-[0.3em] text-white/40 uppercase mb-8">We work with:</div>
+            {whoWeServe.list.map((item) => (
+              <div key={item} className="flex items-start gap-4 border border-white/10 bg-white/[0.02] p-5">
+                <span className="text-emerald-400 font-black mt-0.5">—</span>
+                <p className="text-base font-medium text-white/80">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative z-10">
+        <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{process.kicker}</div>
+        <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-14">{process.headline}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {process.steps.map((step) => (
+            <div key={step.num} className="border border-white/10 bg-black/40 p-10">
+              <div className="text-5xl font-black text-emerald-400/30 mb-6">{step.num}</div>
+              <h3 className="text-xl font-black text-white uppercase mb-4">{step.title}</h3>
+              <p className="text-base text-white/60 font-medium leading-relaxed">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="relative z-10">
+        <div className="text-[10px] font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{engagements.kicker}</div>
+        <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-4">{engagements.headline}</h2>
+        <p className="text-base text-white/50 font-medium mb-14">{engagements.note}</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {engagements.tiers.map((tier) => (
+            <div key={tier.title} className="border border-white/10 bg-black/40 p-10 hover:bg-emerald-500/5 transition-colors">
+              <h3 className="text-xl font-black text-white uppercase mb-4">{tier.title}</h3>
+              <p className="text-base text-white/60 font-medium leading-relaxed">{tier.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="text-center py-20 border-t border-white/10 relative z-10">
+        <p className="text-3xl md:text-5xl font-black text-white leading-tight mb-12">
           {COPY.infrastructure.outroLines.map((line) => (
             <React.Fragment key={line}>
               {line}
@@ -604,7 +704,6 @@ function Infrastructure() {
             </React.Fragment>
           ))}
         </p>
-        <p className="text-xl text-white/40 uppercase tracking-widest font-bold mb-12">{COPY.infrastructure.outroSub}</p>
         <Button href="#/contact">{COPY.infrastructure.cta}</Button>
       </section>
     </div>
@@ -635,24 +734,37 @@ function CaseStudies() {
         {COPY.caseStudies.cards.map((cs) => (
           <div
             key={cs.client}
-            className="grid grid-cols-1 md:grid-cols-4 items-center border border-white/10 bg-black/40 p-12 hover:bg-white/5 transition-all gap-12 relative z-10 overflow-hidden"
+            className="border border-white/10 bg-black/40 p-10 md:p-14 hover:bg-white/5 transition-all relative z-10"
           >
-            <div className="col-span-1">
-              <span className="inline-block border border-emerald-500/30 px-3 py-1 text-[10px] font-black tracking-widest text-emerald-400 uppercase mb-4">
-                {cs.badge}
-              </span>
-              <div className="text-2xl font-black text-white uppercase">{cs.client}</div>
-            </div>
-            <div className="col-span-1">
-              <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-2">Problem</div>
-              <p className="text-sm font-bold text-white leading-tight">{cs.problem}</p>
-            </div>
-            <div className="col-span-1 text-center">
-              <div className="text-3xl md:text-4xl font-black text-emerald-400">{cs.outcome}</div>
-            </div>
-            <div className="col-span-1 md:text-right">
-              <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-2">Tech Deployment</div>
-              <div className="text-xs font-black tracking-widest text-white uppercase">{cs.tech}</div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+              <div>
+                <span className="inline-block border border-emerald-500/30 px-3 py-1 text-[10px] font-black tracking-widest text-emerald-400 uppercase mb-4">
+                  {cs.badge}
+                </span>
+                <div className="text-2xl font-black text-white uppercase mb-6">{cs.client}</div>
+                <div className="text-6xl font-black text-emerald-400 leading-none">{cs.outcome}</div>
+                <div className="text-xs font-black tracking-widest text-white/40 uppercase mt-2">{cs.outcomeLabel}</div>
+              </div>
+              <div className="space-y-6">
+                <div>
+                  <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-2">Challenge</div>
+                  <p className="text-sm font-medium text-white/70 leading-relaxed">{cs.challenge}</p>
+                </div>
+                <div>
+                  <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-2">Action</div>
+                  <p className="text-sm font-medium text-white/70 leading-relaxed">{cs.action}</p>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div>
+                  <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-2">Result</div>
+                  <p className="text-sm font-bold text-white leading-relaxed">{cs.result}</p>
+                </div>
+                <div>
+                  <div className="text-[10px] font-black tracking-widest text-white/40 uppercase mb-2">Disciplines</div>
+                  <div className="text-xs font-black tracking-widest text-emerald-400 uppercase">{cs.tech}</div>
+                </div>
+              </div>
             </div>
           </div>
         ))}
