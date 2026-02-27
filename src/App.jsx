@@ -841,20 +841,20 @@ function Shell({ children, route }) {
       <Grid opacityClass={route === "/" ? "opacity-20" : "opacity-10"} />
 
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
-        <div className="max-w-[1800px] mx-auto flex items-center justify-between px-6 md:px-12 py-6 md:py-8">
+        <div className="max-w-[1800px] mx-auto grid grid-cols-[minmax(220px,280px)_minmax(0,1fr)_auto] items-center gap-4 xl:gap-8 px-6 md:px-12 py-6 md:py-8">
           <a href="#/" className="flex flex-col items-start leading-none group">
             <span className="text-xl md:text-2xl font-black tracking-tighter group-hover:text-emerald-400 transition-colors uppercase">
               {COPY.shell.brand}
             </span>
             <span className="text-[10px] font-black tracking-[0.3em] text-emerald-500 uppercase mt-1">{COPY.shell.brandSub}</span>
           </a>
-          <nav className="flex gap-4 md:gap-12">
+          <nav className="flex min-w-0 items-center justify-center gap-4 lg:gap-6 xl:gap-8 overflow-x-auto">
             {NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 className={cx(
-                  "text-sm font-black tracking-[0.4em] uppercase transition-colors whitespace-nowrap",
+                  "text-[11px] xl:text-sm font-black tracking-[0.22em] xl:tracking-[0.3em] uppercase transition-colors whitespace-nowrap shrink-0",
                   active(item.href) ? "text-emerald-400" : "text-white/40 hover:text-white"
                 )}
               >
@@ -862,7 +862,7 @@ function Shell({ children, route }) {
               </a>
             ))}
           </nav>
-          <div className="hidden sm:block">
+          <div className="hidden lg:block ml-4 xl:ml-8 shrink-0">
             <a
               href="#/contact"
               className="border border-emerald-500/50 px-6 py-3 text-sm font-black tracking-[0.3em] uppercase hover:bg-emerald-500 transition-all"
