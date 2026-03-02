@@ -2,10 +2,10 @@ import React, { useEffect, useMemo, useState, useRef } from "react";
 import sfsLogo from "./assets/SFSF.png";
 
 const NAV = [
-  { label: "01 // Home", href: "#/" },
-  { label: "02 // Infrastructure", href: "#/infrastructure" },
-  { label: "03 // Case Studies", href: "#/case-studies" },
-  { label: "04 // Contact", href: "#/contact" },
+  { label: "01 Home", href: "#/" },
+  { label: "02 Infrastructure", href: "#/infrastructure" },
+  { label: "03 Case Studies", href: "#/case-studies" },
+  { label: "04 Contact", href: "#/contact" },
 ];
 
 const BOOKING_URL = "#";
@@ -32,173 +32,181 @@ const PARTNERS = ["KAISER PERMANENTE", "STANFORD UNIVERSITY", "NVIDIA", "PG&E", 
 const COPY = {
   home: {
     productName: "Social Following Studios",
-    h1Line1: "We build language infrastructure that turns",
-    h1Line1Accent: "credibility",
-    h1Line1Suffix: "into",
-    h1Line2Accent: "growth.",
-    sub: "We codify your authority, deploy it strategically, and convert attention into measurable expansion.",
+    h1Line1: "builds",
+    h1Line1Accent: "words",
+    h1Line1Suffix: "systems.",
+    h1Line2Accent: "",
+    sub: "We operate the language conversion system that turns your authority into calls, your database into clients, and your name into revenue on demand.",
     subBold: "",
-    ctaPrimary: "Work With Us",
+    ctaPrimary: "Book Your Language Assessment",
     ctaSecondary: "View Case Studies",
     trustedKicker: "TRUSTED BY",
-    trustedSub: "Trusted by operators across healthcare, energy, and professional services.",
+    trustedSub: "Social Following Studios has built worlds systems for organizations that set the standard in their industries.",
     stats: [
-      { label: "STRATEGIC LANGUAGE", sub: "MESSAGING THAT POSITIONS YOUR EXPERTISE FOR THE AUDIENCES WHO PAY" },
-      { label: "OWNED DISTRIBUTION", sub: "EMAIL SYSTEMS AND CONTENT WORKFLOWS YOU CONTROL" },
-      { label: "LIFECYCLE AUTOMATION", sub: "INTAKE, NURTURE, AND FOLLOW-UP CONNECTED INTO ONE SEQUENCE" },
+      { label: "Social Following Studios works with operators whose authority is already built.", sub: "Lawyers with decades of referral relationships. Physicians with patient networks built over careers. Government leaders with institutional knowledge and trusted audiences. Founders whose names carry weight in their industries." },
+      { label: "Your authority is the asset.", sub: "Your database is full of people who already trust you." },
+      { label: "The system", sub: "Social Following Studios operates the deployment system that translates both into predictable revenue." },
     ],
-    equationKicker: "HOW WE WORK",
-    equationHeadline: "One system. Three disciplines.",
+    equationKicker: "DISCIPLINES",
+    equationHeadline: "We write it. We build it. We send it.",
     equationBody:
-      "Strategy, distribution, and automation operate as one system. We build them together so credibility converts.",
-    coreArch: "THREE DISCIPLINES",
+      "Strategy, infrastructure, and deployment operate as one coordinated system. Your authority reaches the people it belongs to across every channel you own.",
+    coreArch: "ONE DEPLOYMENT SYSTEM",
     architecture: [
       {
-        title: "STRATEGIC LANGUAGE",
-        desc: "We write messaging that positions your expertise for the audiences who pay. Brand voice, website copy, sales collateral, and thought leadership content, all aligned to a single strategic framework.",
+        title: "Strategic Language",
+        desc: "We write the messaging that positions your expertise for the audiences who act on it. Brand voice, email copy, sales collateral, newsletter content, and thought leadership aligned to a single strategic framework built around your institutional authority.",
       },
       {
-        title: "OWNED DISTRIBUTION",
-        desc: "We build the channels you control. Email systems, newsletter infrastructure, and content workflows designed to reach your audience directly, without renting attention from algorithms.",
+        title: "Owned Infrastructure",
+        desc: "We build the system you control. Email architecture, newsletter infrastructure, podcast distribution, automated messaging, and lifecycle sequences designed to reach your audience directly. Your database. Your relationships. Your record.",
       },
       {
-        title: "LIFECYCLE AUTOMATION",
-        desc: "We connect intake, nurture, and follow-up into one automated sequence. Every lead gets the right message at the right stage. Nothing falls through.",
+        title: "Full Deployment",
+        desc: "We operate the system. Every channel activated. Every sequence live. Every relationship in your database receiving the right language at the right stage.",
       },
     ],
-    closingHeadline: "Ready to build a system that turns your credibility into growth?",
+    resultsIntroTitle: "Results from real engagements.",
+    resultsIntroSub: "Every engagement begins with a strategic audit of your authority, your database, and your owned channels. We map structural gaps, install the system, and deploy it across channels you control.",
+    closingHeadline: "Your authority is built. Your deployment system is next.",
     closingSub: "",
-    closingCta: "Work With Us",
+    closingCta: "Book Your Language Assessment",
   },
   infrastructure: {
-    kicker: "HOW WE WORK",
-    h1: "One system.",
-    sub: "Three disciplines. Built together so credibility converts.",
+    kicker: "INFRASTRUCTURE",
+    h1: "One structured deployment across every channel you own.",
+    sub: "Built and operated by Social Following Studios.",
     layers: [
       {
-        note: "01 // STRATEGY",
-        title: "STRATEGIC LANGUAGE",
-        desc: "We write messaging that positions your expertise for the audiences who pay. Brand voice, website copy, sales collateral, and thought leadership content, all aligned to a single strategic framework.",
+        note: "01 We Write It",
+        title: "We write everything the system needs to run.",
+        desc: "Brand voice, email sequences, newsletter content, sales collateral, podcast scripts, automated messaging, and thought leadership. All aligned to a single strategic framework built around your institutional authority.",
       },
       {
-        note: "02 // DISTRIBUTION",
-        title: "OWNED DISTRIBUTION",
-        desc: "We build the channels you control. Email systems, newsletter infrastructure, and content workflows designed to reach your audience directly, without renting attention from algorithms.",
+        note: "02 We Build It",
+        title: "We build the infrastructure that delivers it.",
+        desc: "Email architecture, newsletter systems, podcast distribution, automated messaging sequences, lifecycle flows, and CRM integration. The complete deployment system end to end.",
       },
       {
-        note: "03 // AUTOMATION",
-        title: "LIFECYCLE AUTOMATION",
-        desc: "We connect intake, nurture, and follow-up into one automated sequence. Every lead gets the right message at the right stage. Nothing falls through.",
+        note: "03 We Send It",
+        title: "We operate the deployment.",
+        desc: "Every channel activated. Every sequence live. Every relationship in your database receiving the right language at the right stage. The system runs and generates predictable revenue.",
       },
     ],
     whoWeServe: {
       kicker: "WHO WE SERVE",
-      headline: "Built for firms where credibility is the product.",
-      body: "Our clients operate in industries where trust drives revenue. They have earned authority through decades of expertise. They need systems that translate that authority into consistent growth.",
+      headline: "Operators whose authority is the asset.",
+      body: "Social Following Studios operates structured deployment systems for operators whose authority is the asset.",
       list: [
-        "Healthcare organizations and specialty practices",
-        "Energy consultancies and infrastructure firms",
-        "Professional services firms (legal, financial, advisory)",
-        "Executive teams building personal authority platforms",
+        "Lawyers and Legal Practices",
+        "Physicians and Medical Practices",
+        "Government Leaders and Emeriti",
+        "Founders and Executives",
+        "Family Offices",
+        "Institutions and Foundations",
+        "Artists and Educators",
       ],
-      closing: "If your business grows through relationships and reputation, we build the system that scales it.",
+      closing: "Founders entering succession. Family offices sustaining generational continuity. Lawyers and physicians with networks built over decades. Institutions protecting irreplaceable records. Professional practices making expertise transferable.",
     },
     process: {
       kicker: "OUR PROCESS",
-      headline: "Diagnostic. Build. Optimize.",
+      headline: "Assessment. Build. Deploy.",
       steps: [
         {
           num: "1",
-          title: "Diagnostic",
-          desc: "We audit your current language, distribution channels, and conversion points. You get a clear map of where credibility leaks growth.",
+          title: "Assessment",
+          desc: "We map your current language, channels, database, and system gaps. You receive a written report identifying where your authority lives and exactly what the deployment system needs to activate it.",
         },
         {
           num: "2",
           title: "Build",
-          desc: "We design and deploy your messaging framework, email infrastructure, and automation sequences. Everything ships within a defined timeline with weekly progress reports.",
+          desc: "We design and build your complete deployment system. Messaging framework, email infrastructure, newsletter architecture, automated sequences, and deployment architecture. Everything built to your defined timeline with weekly progress reports.",
         },
         {
           num: "3",
-          title: "Optimize",
-          desc: "We measure performance against conversion benchmarks and refine. Language, sequences, and targeting improve based on real data, not assumptions.",
+          title: "Deploy",
+          desc: "We operate the system. Every channel live. Every sequence active. Performance measured against defined revenue benchmarks and refined based on real data from your actual audience.",
         },
       ],
     },
     engagements: {
       kicker: "ENGAGEMENT MODELS",
-      headline: "Clear scope. Defined deliverables.",
-      note: "All engagements begin with a conversation. No proposals without a diagnostic.",
+      headline: "All engagements begin with a Language Assessment.",
+      note: "",
       tiers: [
         {
-          title: "Diagnostic Engagement",
-          desc: "A focused audit of your language, distribution, and conversion systems. Delivered as a written report with prioritized recommendations.",
+          title: "Assessment",
+          desc: "A focused audit of your language, channels, database, and system gaps. Delivered as a written report with prioritized recommendations and a clear build roadmap.",
         },
         {
           title: "Full Build",
-          desc: "Complete system design and deployment. Messaging, email infrastructure, and automation sequences built and launched within an agreed timeline.",
+          desc: "Complete deployment system design and deployment. Strategy, infrastructure, and full activation across your owned channels. Built and launched within an agreed timeline.",
         },
         {
           title: "Retained Advisory",
-          desc: "Ongoing optimization, content production, and strategic guidance. Monthly reporting tied to conversion metrics.",
+          desc: "We operate the system on an ongoing basis. Content production, optimization, channel management, and strategic guidance. Monthly reporting tied to defined revenue benchmarks.",
         },
       ],
     },
-    outroLines: ["Language positions.", "Distribution captures.", "Automation converts."],
+    outroLines: ["Your deployment is ready to build."],
     outroSub: "",
-    cta: "Work With Us",
+    cta: "Book Your Language Assessment",
   },
   caseStudies: {
     kicker: "CASE STUDIES",
     title: "Results from real engagements.",
-    sub: "Each engagement starts with a diagnostic. We identify where credibility leaks growth, then build the system to close the gap.",
-    trustedKicker: "TRUSTED BY OPERATORS ACROSS HEALTHCARE, ENERGY, AND PROFESSIONAL SERVICES",
+    sub: "Every engagement begins with a strategic audit of authority, database structure, and owned channels. We design the architecture, deploy lifecycle messaging, and activate retained-client flow.",
+    trustedKicker: "",
     cards: [
       {
-        badge: "HEALTHCARE",
+        badge: "Case Study 01",
         client: "Healthcare Services Firm",
-        challenge: "Qualified leads stalled at intake. Messaging spoke to peers, not buyers.",
-        action: "Rebuilt intake and lead scoring. Aligned messaging with buyer intent across email and web.",
+        challenge: "Qualified relationships stalled at intake. Messaging reached peers rather than decision-makers. Revenue sat in a dormant database with no system to activate it.",
+        action: "Rebuilt intake architecture and lead scoring. Wrote and deployed messaging aligned with buyer intent across email and web. Activated the existing database through a structured lifecycle sequence.",
         result: "+41% qualified opportunities within 90 days.",
         outcome: "+41%",
-        outcomeLabel: "Qualified Opportunities",
-        tech: "Strategic Language + Owned Distribution + Lifecycle Automation",
+        outcomeLabel: "Qualified Opportunities · 90 Days",
+        tech: "Strategic Language · Owned Infrastructure · Full Deployment",
+        problem: "Before: Qualified relationships stalled at intake. Messaging reached peers rather than decision-makers.",
       },
       {
-        badge: "ENERGY",
+        badge: "Case Study 02",
         client: "Regional Energy Consultancy",
-        challenge: "High referral volume, low conversion to retained engagements.",
-        action: "Created a three-stage email nurture sequence tied to service tiers. Rewrote proposals for buyer language.",
-        result: "27% lift in proposal-to-close rate. Average deal size increased 18%.",
+        challenge: "High referral volume arriving with no nurture system to move relationships from interest to retained engagement. Authority was established. The conversion system did not exist.",
+        action: "Designed a three-stage email nurture sequence tied to service tiers. Rewrote proposals in buyer language. Deployed automated follow-up that moved referrals through the pipeline to retained engagement.",
+        result: "27% lift in proposal-to-close rate. Average engagement size increased 18%.",
         outcome: "+27%",
-        outcomeLabel: "Proposal-to-Close Rate",
-        tech: "Strategic Language + Lifecycle Automation",
+        outcomeLabel: "Proposal-to-Close Rate · +18% Avg Engagement Size",
+        tech: "Strategic Language · Lifecycle Sequences",
+        problem: "Before: High referral volume, no nurture system to move relationships from interest to retained engagement.",
       },
       {
-        badge: "PROFESSIONAL SERVICES",
+        badge: "Case Study 03",
         client: "Professional Services Network",
-        challenge: "Strong reputation, minimal digital presence. Revenue depended on word of mouth.",
-        action: "Built owned distribution from scratch: newsletter, LinkedIn content system, and an automated referral follow-up sequence.",
-        result: "First 6 months: 340 qualified subscribers, 12 new retained clients sourced from email.",
+        challenge: "Strong institutional reputation with no owned distribution. Every new relationship depended entirely on referral. The network existed. The deployment system did not.",
+        action: "Built the complete deployment system from the database up. Newsletter architecture, LinkedIn content system, podcast distribution, and an automated referral follow-up sequence. Every channel activated within one engagement.",
+        result: "340 qualified subscribers and 12 new retained clients sourced directly from owned channels in the first six months.",
         outcome: "340",
-        outcomeLabel: "Qualified Subscribers in 6 Months",
-        tech: "Owned Distribution + Lifecycle Automation",
+        outcomeLabel: "Qualified Subscribers · 12 Retained Clients · 6 Months",
+        tech: "Owned Infrastructure · Full Deployment",
+        problem: "Before: Strong institutional reputation with no owned distribution and no system to activate the existing network.",
       },
     ],
-    outroLines: ["Language builds credibility.", "Systems convert it."],
-    cta: "Work With Us",
+    outroLines: ["Your authority is built. Your deployment", "system is next."],
+    cta: "Book Your Language Assessment",
   },
   contact: {
     kicker: "CONTACT",
-    title: "Work with us.",
-    sub: "All engagements begin with a conversation. Tell us about your business and we will be in touch.",
+    title: "Book Your Call.",
+    sub: "Tell us about your authority, your audience, and your channels. We map the deployment that activates them.",
     submitIdle: "SUBMIT",
     submitDone: "SUBMITTED",
   },
   shell: {
     brand: "Social Following Studios",
     brandSub: "Language Infrastructure",
-    topCta: "Work With Us",
-    footerSub: "© 2026 SOCIAL FOLLOWING STUDIOS",
+    topCta: "Book Your Language Assessment",
+    footerSub: "Social Following Studios 2026",
     terms: "Terms",
     privacy: "Privacy",
   },
@@ -530,13 +538,12 @@ function Home() {
       <section className="relative z-10" style={{height: "calc(100vh - 170px)"}}>
         <div className="grid grid-cols-[1fr_1.4fr] h-full gap-0">
           <div className="flex flex-col justify-center pr-12">
-            <div className="inline-block border border-emerald-500/30 px-4 py-2 text-sm font-black tracking-[0.5em] text-emerald-400 uppercase mb-10 self-start">
-              {COPY.home.productName}
-            </div>
             <h1 className="text-4xl md:text-5xl xl:text-6xl font-black tracking-tighter leading-[0.9] text-white">
-              {COPY.home.h1Line1} <span className="text-emerald-500">{COPY.home.h1Line1Accent}</span> {COPY.home.h1Line1Suffix}
-              <br />
-              <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
+              {COPY.home.productName} {COPY.home.h1Line1} <span className="text-emerald-500">{COPY.home.h1Line1Accent}</span> {COPY.home.h1Line1Suffix}
+              {COPY.home.h1Line2Accent && (<>
+                <br />
+                <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
+              </>)}
             </h1>
             <p className="mt-6 text-[17px] text-white/80 font-semibold leading-relaxed">{COPY.home.sub}</p>
             <div className="mt-10 flex flex-wrap gap-4">
@@ -562,8 +569,8 @@ function Home() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 relative z-10">
         {COPY.home.stats.map((s) => (
           <div key={s.label} className="relative z-10 border border-white/10 bg-white/5 p-8 backdrop-blur-sm text-left h-full overflow-hidden">
-            <div className="text-sm font-black tracking-[0.25em] uppercase text-emerald-400 mb-3">{s.label}</div>
-            <div className="text-sm font-black tracking-[0.2em] text-white/80 uppercase">{s.sub}</div>
+            <div className="text-sm font-black tracking-[0.04em] text-emerald-400 uppercase mb-3">{s.label}</div>
+            <div className="text-sm font-black tracking-[0.02em] text-white/80">{s.sub}</div>
           </div>
         ))}
       </div>
@@ -594,8 +601,8 @@ function Home() {
 
       <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
         <div className="mb-8">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">{COPY.caseStudies.title}</h2>
-          <p className="mt-3 text-[17px] text-white/72 font-semibold">{COPY.caseStudies.sub}</p>
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">{COPY.home.resultsIntroTitle}</h2>
+          <p className="mt-3 text-[17px] text-white/72 font-semibold">{COPY.home.resultsIntroSub}</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {COPY.caseStudies.cards.map((cs) => (
@@ -630,7 +637,7 @@ function Infrastructure() {
     <div className="pt-12 space-y-20 relative z-10">
       <div className="max-w-4xl text-left">
         <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.infrastructure.kicker}</div>
-        <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter text-white leading-[0.9]">{COPY.infrastructure.h1}</h1>
+        <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter text-white leading-[0.9] whitespace-pre-line">{COPY.infrastructure.h1}</h1>
         <p className="mt-12 text-2xl md:text-4xl text-white/80 font-semibold">{COPY.infrastructure.sub}</p>
       </div>
 
@@ -805,17 +812,17 @@ function Contact() {
           }}
           className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5"
         >
-          {["First Name", "Last Name", "Email", "Phone", "Brand / Company", "What are you building?"].map((field) => (
+          {["Name", "Organization", "Role", "Primary channel or platform you want activated", "What your database or audience currently looks like", "What revenue outcome you are building toward"].map((field) => (
             <input
               key={field}
-              type={field === "Email" ? "email" : "text"}
-              required={field !== "Phone"}
+              type={field === "Name" ? "text" : "text"}
+              required
               placeholder={field}
               className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500"
             />
           ))}
           <textarea
-            placeholder="Optional Message / Notes"
+            placeholder="Additional context (optional)"
             rows={5}
             className="md:col-span-2 w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500"
           />
@@ -825,6 +832,13 @@ function Contact() {
             </button>
           </div>
         </form>
+        <div className="mt-12 border border-white/10 bg-white/[0.02] p-6 md:p-8">
+          <p className="text-sm font-black tracking-[0.3em] uppercase text-emerald-400 mb-3">Qualification</p>
+          <p className="text-[17px] text-white/80 font-semibold leading-relaxed">
+            Social Following Studios works with operators whose authority is already built. We review every assessment
+            request and engage with operators whose database and channels are ready to activate.
+          </p>
+        </div>
       </section>
     </div>
   );
@@ -882,12 +896,12 @@ function Shell({ children, route }) {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
             <div>
               <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white leading-tight">
-                Ready to engineer your<br />
-                <span className="text-emerald-400">conversion infrastructure?</span>
+                Your authority is built. Your deployment
+                <span className="text-emerald-400">system is next.</span>
               </h2>
-              <p className="mt-4 text-[17px] text-white/72 font-semibold">Stop chasing engagement. Start building authority equity.</p>
+              
             </div>
-            <Button href="#/contact">Start Your Audit</Button>
+            <Button href="#/contact">Book Your Language Assessment</Button>
           </div>
         </div>
         <div className="max-w-[1800px] mx-auto px-12 py-16 grid lg:grid-cols-3 gap-16">
