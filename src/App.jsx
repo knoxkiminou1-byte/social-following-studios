@@ -33,10 +33,10 @@ const COPY = {
   home: {
     productName: "Social Following Studios",
     h1Line1: "builds",
-    h1Line1Accent: "worlds",
+    h1Line1Accent: "words",
     h1Line1Suffix: "systems.",
     h1Line2Accent: "",
-    sub: "We operate language conversion systems that translate authority into consultations, subscribers, and predictable revenue.",
+    sub: "We operate the language conversion system that turns your authority into calls, your database into clients, and your name into revenue on demand.",
     subBold: "",
     ctaPrimary: "Book Your Language Assessment",
     ctaSecondary: "View Case Studies",
@@ -45,13 +45,13 @@ const COPY = {
     stats: [
       { label: "Social Following Studios works with operators whose authority is already built.", sub: "Lawyers with decades of referral relationships. Physicians with patient networks built over careers. Government leaders with institutional knowledge and trusted audiences. Founders whose names carry weight in their industries." },
       { label: "Your authority is the asset.", sub: "Your database is full of people who already trust you." },
-      { label: "The system", sub: "Social Following Studios operates the language conversion system that translates both into predictable revenue." },
+      { label: "The system", sub: "Social Following Studios operates the deployment system that translates both into predictable revenue." },
     ],
     equationKicker: "DISCIPLINES",
     equationHeadline: "We write it. We build it. We send it.",
     equationBody:
-      "Strategy, infrastructure, and deployment operate as one language conversion system. Your authority reaches the people it belongs to across every channel you own.",
-    coreArch: "ONE LANGUAGE CONVERSION SYSTEM",
+      "Strategy, infrastructure, and deployment operate as one coordinated system. Your authority reaches the people it belongs to across every channel you own.",
+    coreArch: "ONE DEPLOYMENT SYSTEM",
     architecture: [
       {
         title: "Strategic Language",
@@ -66,14 +66,16 @@ const COPY = {
         desc: "We operate the system. Every channel activated. Every sequence live. Every relationship in your database receiving the right language at the right stage.",
       },
     ],
-    closingHeadline: "Your authority is built. Your language conversion system is next.",
+    resultsIntroTitle: "Results from real engagements.",
+    resultsIntroSub: "Every engagement begins with a strategic audit of your authority, your database, and your owned channels. We map structural gaps, install the system, and deploy it across channels you control.",
+    closingHeadline: "Your authority is built. Your deployment system is next.",
     closingSub: "",
     closingCta: "Book Your Language Assessment",
   },
   infrastructure: {
     kicker: "INFRASTRUCTURE",
-    h1: "One language conversion system.\nEvery channel you own.",
-    sub: "Strategy. Infrastructure. Full deployment. Built and operated by Social Following Studios.",
+    h1: "One structured deployment across every channel you own.",
+    sub: "Built and operated by Social Following Studios.",
     layers: [
       {
         note: "01 We Write It",
@@ -83,7 +85,7 @@ const COPY = {
       {
         note: "02 We Build It",
         title: "We build the infrastructure that delivers it.",
-        desc: "Email architecture, newsletter systems, podcast distribution, automated messaging sequences, lifecycle flows, and CRM integration. The complete language conversion system end to end.",
+        desc: "Email architecture, newsletter systems, podcast distribution, automated messaging sequences, lifecycle flows, and CRM integration. The complete deployment system end to end.",
       },
       {
         note: "03 We Send It",
@@ -94,7 +96,7 @@ const COPY = {
     whoWeServe: {
       kicker: "WHO WE SERVE",
       headline: "Operators whose authority is the asset.",
-      body: "Social Following Studios operates language conversion systems for operators whose authority is the asset.",
+      body: "Social Following Studios operates structured deployment systems for operators whose authority is the asset.",
       list: [
         "Lawyers and Legal Practices",
         "Physicians and Medical Practices",
@@ -113,12 +115,12 @@ const COPY = {
         {
           num: "1",
           title: "Assessment",
-          desc: "We map your current language, channels, database, and system gaps. You receive a written report identifying where your authority lives and exactly what the language conversion system needs to activate it.",
+          desc: "We map your current language, channels, database, and system gaps. You receive a written report identifying where your authority lives and exactly what the deployment system needs to activate it.",
         },
         {
           num: "2",
           title: "Build",
-          desc: "We design and build your complete language conversion system. Messaging framework, email infrastructure, newsletter architecture, automated sequences, and deployment architecture. Everything built to your defined timeline with weekly progress reports.",
+          desc: "We design and build your complete deployment system. Messaging framework, email infrastructure, newsletter architecture, automated sequences, and deployment architecture. Everything built to your defined timeline with weekly progress reports.",
         },
         {
           num: "3",
@@ -138,7 +140,7 @@ const COPY = {
         },
         {
           title: "Full Build",
-          desc: "Complete language conversion system design and deployment. Strategy, infrastructure, and full activation across your owned channels. Built and launched within an agreed timeline.",
+          desc: "Complete deployment system design and deployment. Strategy, infrastructure, and full activation across your owned channels. Built and launched within an agreed timeline.",
         },
         {
           title: "Retained Advisory",
@@ -146,14 +148,14 @@ const COPY = {
         },
       ],
     },
-    outroLines: ["Your language conversion system is ready to build."],
+    outroLines: ["Your deployment is ready to build."],
     outroSub: "",
     cta: "Book Your Language Assessment",
   },
   caseStudies: {
     kicker: "CASE STUDIES",
     title: "Results from real engagements.",
-    sub: "Every engagement begins with a Language Assessment. We map where authority lives, identify system gaps, and build the language conversion system that translates existing relationships into predictable revenue.",
+    sub: "Every engagement begins with a strategic audit of authority, database structure, and owned channels. We design the architecture, deploy lifecycle messaging, and activate retained-client flow.",
     trustedKicker: "",
     cards: [
       {
@@ -181,8 +183,8 @@ const COPY = {
       {
         badge: "Case Study 03",
         client: "Professional Services Network",
-        challenge: "Strong institutional reputation with no owned distribution. Every new relationship depended entirely on referral. The network existed. The language conversion system did not.",
-        action: "Built the complete language conversion system from the database up. Newsletter architecture, LinkedIn content system, podcast distribution, and an automated referral follow-up sequence. Every channel activated within one engagement.",
+        challenge: "Strong institutional reputation with no owned distribution. Every new relationship depended entirely on referral. The network existed. The deployment system did not.",
+        action: "Built the complete deployment system from the database up. Newsletter architecture, LinkedIn content system, podcast distribution, and an automated referral follow-up sequence. Every channel activated within one engagement.",
         result: "340 qualified subscribers and 12 new retained clients sourced directly from owned channels in the first six months.",
         outcome: "340",
         outcomeLabel: "Qualified Subscribers · 12 Retained Clients · 6 Months",
@@ -190,13 +192,13 @@ const COPY = {
         problem: "Before: Strong institutional reputation with no owned distribution and no system to activate the existing network.",
       },
     ],
-    outroLines: ["Your authority is built. Your language conversion", "system is next."],
+    outroLines: ["Your authority is built. Your deployment", "system is next."],
     cta: "Book Your Language Assessment",
   },
   contact: {
     kicker: "CONTACT",
-    title: "Book Your Language Assessment.",
-    sub: "Every engagement starts here. Tell us about your authority, your audience, and your channels. We map the language conversion system that activates them.",
+    title: "Book Your Call.",
+    sub: "Tell us about your authority, your audience, and your channels. We map the deployment that activates them.",
     submitIdle: "SUBMIT",
     submitDone: "SUBMITTED",
   },
@@ -599,8 +601,8 @@ function Home() {
 
       <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
         <div className="mb-8">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">{COPY.caseStudies.title}</h2>
-          <p className="mt-3 text-[17px] text-white/72 font-semibold">{COPY.caseStudies.sub}</p>
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">{COPY.home.resultsIntroTitle}</h2>
+          <p className="mt-3 text-[17px] text-white/72 font-semibold">{COPY.home.resultsIntroSub}</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {COPY.caseStudies.cards.map((cs) => (
@@ -894,7 +896,7 @@ function Shell({ children, route }) {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
             <div>
               <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white leading-tight">
-                Your authority is built. Your language conversion
+                Your authority is built. Your deployment
                 <span className="text-emerald-400">system is next.</span>
               </h2>
               
