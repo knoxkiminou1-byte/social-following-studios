@@ -272,20 +272,12 @@ function CaseStudyCard({ title, metric, before, build, after, components }) {
   );
 }
 
-function Footer({ route }) {
-  const compact = route === "/" || route === "/case-studies";
-
+function Footer() {
   return (
     <footer className="border-t border-stone-900/10 py-10">
-      <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-center md:justify-between">
-        <div className="flex items-center gap-4">
-          <LogoMark className="h-12 w-12 border-stone-900/10 bg-stone-950" />
-          <p className="text-sm font-medium tracking-tight text-stone-900">
-            Social Following Studios Language Infrastructure
-          </p>
-        </div>
-        <div className="flex flex-wrap items-center gap-6 text-sm text-stone-600">
-          <span>{compact ? "Social Following Studios 2026" : "Social Following Studios 2026"}</span>
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-6 px-6 text-sm text-stone-600">
+        <span>Social Following Studios 2026</span>
+        <div className="flex flex-wrap items-center gap-6">
           <Link href="/terms" className="hover:text-stone-900">
             Terms
           </Link>
@@ -717,8 +709,6 @@ function CaseStudiesPage() {
 }
 
 function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
-
   return (
     <div className="space-y-10">
       <SectionCard>
@@ -741,7 +731,7 @@ function ContactPage() {
           onSubmit={(event) => {
             event.preventDefault();
             if (event.currentTarget.reportValidity()) {
-              setSubmitted(true);
+              window.location.href = ASSESSMENT_URL;
             }
           }}
           noValidate
@@ -811,24 +801,14 @@ function ContactPage() {
             />
           </label>
 
-          <div className="flex flex-col gap-4 md:flex-row md:items-center">
+          <div className="flex">
             <button
               type="submit"
               className="inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-6 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-400/40"
             >
               {CTA_LABEL}
             </button>
-            <Button href={ASSESSMENT_URL} variant="secondary">
-              {CTA_LABEL}
-            </Button>
           </div>
-
-          {submitted ? (
-            <p className="text-sm leading-7 text-stone-600">
-              Your assessment details are ready. Continue to scheduling to complete
-              your Language Assessment.
-            </p>
-          ) : null}
         </form>
       </SectionCard>
 
@@ -1150,7 +1130,7 @@ function Shell({ route, children }) {
         </header>
 
         <main className="mx-auto max-w-7xl px-6 py-10 md:py-14">{children}</main>
-        <Footer route={route} />
+        <Footer />
       </div>
     </div>
   );
