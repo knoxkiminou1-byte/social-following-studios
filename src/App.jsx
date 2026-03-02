@@ -608,140 +608,129 @@ function Select({ label, options }) {
 
 function Home() {
   return (
-    <div className="space-y-12">
-      <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/70 shadow-[0_18px_60px_rgba(0,0,0,0.55)]">
-        <div
-          className="absolute inset-0 opacity-[0.18]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
-            backgroundSize: "96px 96px",
-            backgroundPosition: "center",
-          }}
-        />
-        <div className="absolute inset-0 bg-[radial-gradient(900px_650px_at_15%_25%,rgba(16,185,129,0.18),transparent_60%),radial-gradient(900px_650px_at_85%_20%,rgba(34,211,238,0.14),transparent_60%)]" />
-        <div className="relative px-8 py-10 md:px-14 md:py-14">
-          <div className="inline-flex items-center rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[11px] font-semibold tracking-[0.22em] text-emerald-200/90">
-            Social Following Studios Language Infrastructure
-          </div>
+    <div className="mx-auto max-w-6xl px-5 pb-28 pt-0 -mt-10 md:-mt-16">
+      {/* Hero matches the reference video: dark panel over full-page liquid */}
+      <section>
+        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/70 shadow-[0_18px_60px_rgba(0,0,0,0.55)]">
+          <div
+            className="absolute inset-0 opacity-[0.18]"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
+              backgroundSize: "96px 96px",
+              backgroundPosition: "center",
+            }}
+          />
+          <div className="absolute inset-0 bg-[radial-gradient(900px_650px_at_15%_25%,rgba(16,185,129,0.18),transparent_60%),radial-gradient(900px_650px_at_85%_20%,rgba(34,211,238,0.14),transparent_60%)]" />
+          <div className="relative px-8 py-10 md:px-14 md:py-14">
+            <div className="inline-flex items-center rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[11px] font-semibold tracking-[0.22em] text-emerald-200/90">
+              SOCIAL FOLLOWING STUDIOS LANGUAGE INFRASTRUCTURE
+            </div>
 
-          <h1 className="mt-6 max-w-4xl text-5xl font-black tracking-tight text-white md:text-6xl">
-            Social Following Studios
-            <br />
-            <span className="text-emerald-300">builds words systems.</span>
-          </h1>
+            <h1 className="mt-6 max-w-3xl text-5xl font-black tracking-tight text-white md:text-6xl">
+              Social Following Studios
+              <br />
+              <span className="text-emerald-300">builds words systems.</span>
+            </h1>
 
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-white/70 md:text-lg">
-            We operate language conversion systems that translate authority into consultations, subscribers, and predictable revenue.
-          </p>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
+              We operate language conversion systems that translate authority into consultations, subscribers, and predictable revenue.
+            </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button href={CONFIGURE_URL} variant="primary" size="default">
-              {CTA_LABEL}
-            </Button>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a
+                href={CONFIGURE_URL}
+                className="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(16,185,129,0.35)] hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-300/60"
+              >
+                {CTA_LABEL}
+              </a>
+              <a
+                href="#/case-studies"
+                className="inline-flex items-center justify-center rounded-xl border border-white/18 bg-white/5 px-6 py-3 text-sm font-semibold text-white/90 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/25"
+              >
+                VIEW CASE STUDIES
+              </a>
+            </div>
+
+            {/* Bottom metric cards (match the reference capture) */}
+            <div className="mt-10 border-t border-white/10 pt-6">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <div className="flex items-start justify-between rounded-lg border border-white/10 bg-black/50 px-5 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                  <div>
+                    <p className="text-[10px] font-semibold tracking-[0.32em] text-white/55">AUTHORITY</p>
+                    <p className="mt-2 text-xs font-medium text-white/70">Your authority is the asset</p>
+                  </div>
+                  <p className="text-sm font-extrabold text-white/80">BUILT</p>
+                </div>
+
+                <div className="flex items-start justify-between rounded-lg border border-white/10 bg-black/50 px-5 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                  <div>
+                    <p className="text-[10px] font-semibold tracking-[0.32em] text-white/55">DATABASE</p>
+                    <p className="mt-2 text-xs font-medium text-white/70">People who already trust you</p>
+                  </div>
+                  <p className="text-sm font-extrabold text-white/80">READY</p>
+                </div>
+
+                <div className="flex items-start justify-between rounded-lg border border-white/10 bg-black/50 px-5 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                  <div>
+                    <p className="text-[10px] font-semibold tracking-[0.32em] text-white/55">LANGUAGE</p>
+                    <p className="mt-2 text-xs font-medium text-white/70">One language conversion system</p>
+                  </div>
+                  <p className="text-sm font-extrabold text-white/80">ACTIVE</p>
+                </div>
+
+                <div className="flex items-start justify-between rounded-lg border border-white/10 bg-black/50 px-5 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                  <div>
+                    <p className="text-[10px] font-semibold tracking-[0.32em] text-white/55">REVENUE</p>
+                    <p className="mt-2 text-xs font-medium text-white/70">Predictable revenue</p>
+                  </div>
+                  <p className="text-sm font-extrabold text-white/80">NEXT</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="rounded-[3rem] border-2 border-stone-900/10 bg-white/70 backdrop-blur overflow-hidden shadow-2xl pt-14 pb-10 text-left">
-        <div className="px-14">
-          <div className="text-sm font-black tracking-[0.4em] text-emerald-700 uppercase mb-8 leading-none text-left">TRUSTED BY</div>
-          <p className="max-w-3xl text-base md:text-lg text-stone-700 leading-relaxed font-medium">
-            Social Following Studios has built words systems for organizations that set the standard in their industries.
-          </p>
-        </div>
-        <div className="mt-2">
-          <PartnerMarquee />
-        </div>
-      </section>
+      {/* THE EQUATION section should stay exactly like the reference (copy + layout) */}
+      <section className="mt-16 md:mt-20">
+        <div className="rounded-3xl border border-white/12 bg-[#F0F3F8] shadow-[0_18px_50px_rgba(0,0,0,0.22)] backdrop-blur-sm">
+          <div className="p-8 md:p-10">
+            <p className="text-xs font-semibold tracking-[0.32em] text-emerald-700 uppercase">
+              WE WRITE IT. WE BUILD IT. WE SEND IT.
+            </p>
+            <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-900 md:text-5xl">
+              Strategy, infrastructure, and deployment operate as one language conversion system.
+            </h2>
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-700">
+              Your authority reaches the people it belongs to across every channel you own.
+            </p>
 
-      <Card title="Social Following Studios works with operators whose authority is already built." eyebrow="QUALIFICATION">
-        <p className="text-base md:text-lg leading-relaxed">
-          Lawyers with decades of referral relationships. Physicians with patient networks built over careers. Government leaders with institutional knowledge and trusted audiences. Founders whose names carry weight in their industries.
-        </p>
-        <p className="mt-6 text-base md:text-lg leading-relaxed">
-          Your authority is the asset. Your database is full of people who already trust you. Social Following Studios operates the language conversion system that translates both into predictable revenue.
-        </p>
-      </Card>
+            <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-7">
+              <p className="text-[11px] font-semibold tracking-[0.28em] text-slate-500 uppercase">
+                DISCIPLINES
+              </p>
+              <div className="mt-3 text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">
+                Strategic Language → Owned Infrastructure → Full Deployment
+              </div>
 
-      <Card title="We write it. We build it. We send it." eyebrow="DISCIPLINES">
-        <p className="text-base md:text-lg leading-relaxed">
-          Strategy, infrastructure, and deployment operate as one language conversion system. Your authority reaches the people it belongs to across every channel you own.
-        </p>
-        <div className="mt-10 grid gap-10 lg:grid-cols-3">
-          <div>
-            <h3 className="text-xl md:text-2xl font-black tracking-tight text-stone-950">Strategic Language</h3>
-            <p className="mt-4 text-sm md:text-base text-stone-700 leading-relaxed">
-              We write the messaging that positions your expertise for the audiences who act on it. Brand voice, email copy, sales collateral, newsletter content, and thought leadership aligned to a single strategic framework built around your institutional authority.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xl md:text-2xl font-black tracking-tight text-stone-950">Owned Infrastructure</h3>
-            <p className="mt-4 text-sm md:text-base text-stone-700 leading-relaxed">
-              We build the system you control. Email architecture, newsletter infrastructure, podcast distribution, automated messaging, and lifecycle sequences designed to reach your audience directly. Your database. Your relationships. Your record.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xl md:text-2xl font-black tracking-tight text-stone-950">Full Deployment</h3>
-            <p className="mt-4 text-sm md:text-base text-stone-700 leading-relaxed">
-              We operate the system. Every channel activated. Every sequence live. Every relationship in your database receiving the right language at the right stage.
-            </p>
-          </div>
-        </div>
-      </Card>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {["STRATEGIC LANGUAGE", "OWNED INFRASTRUCTURE", "FULL DEPLOYMENT", "LANGUAGE SYSTEM"].map((s) => (
+                  <button
+                    key={s}
+                    type="button"
+                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-[11px] font-semibold tracking-[0.22em] text-slate-700 hover:bg-slate-50"
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
 
-      <Card title="Results from real engagements." eyebrow="RESULTS">
-        <p className="text-base md:text-lg leading-relaxed">
-          Every engagement begins with a Language Assessment. We map your authority, your channels, and your system gaps. Then we build and operate the language conversion system that puts them to work.
-        </p>
-        <div className="mt-10 grid gap-8 lg:grid-cols-3">
-          <div className="rounded-[2rem] border-2 border-stone-900/10 bg-stone-50 p-8">
-            <h3 className="text-2xl font-black tracking-tight">Healthcare Services Firm</h3>
-            <p className="mt-3 text-base font-black tracking-tight text-stone-950">+41% Qualified Opportunities 90 Days</p>
-            <p className="mt-5 text-sm md:text-base text-stone-700 leading-relaxed">
-              Before: Qualified relationships stalled at intake. Messaging reached peers rather than decision-makers. Revenue sat in a dormant database with no activation system.
-            </p>
-            <p className="mt-4 text-sm md:text-base text-stone-700 leading-relaxed">
-              After: Rebuilt intake architecture, aligned messaging with buyer intent, and deployed a lifecycle sequence across email and web. +41% qualified opportunities within 90 days.
-            </p>
+              <div className="mt-6 h-2 w-full rounded-full bg-slate-200">
+                <div className="h-2 w-[62%] rounded-full bg-emerald-600" />
+              </div>
+            </div>
           </div>
-          <div className="rounded-[2rem] border-2 border-stone-900/10 bg-stone-50 p-8">
-            <h3 className="text-2xl font-black tracking-tight">Regional Energy Consultancy</h3>
-            <p className="mt-3 text-base font-black tracking-tight text-stone-950">+27% Proposal-to-Close Rate +18% Average Engagement Size</p>
-            <p className="mt-5 text-sm md:text-base text-stone-700 leading-relaxed">
-              Before: High referral volume arriving with no nurture system to move relationships from interest to retained engagement.
-            </p>
-            <p className="mt-4 text-sm md:text-base text-stone-700 leading-relaxed">
-              After: Three-stage email nurture sequence deployed across service tiers. Proposals rewritten in buyer language. 27% lift in proposal-to-close rate. Average engagement size increased 18%.
-            </p>
-          </div>
-          <div className="rounded-[2rem] border-2 border-stone-900/10 bg-stone-50 p-8">
-            <h3 className="text-2xl font-black tracking-tight">Professional Services Network</h3>
-            <p className="mt-3 text-base font-black tracking-tight text-stone-950">340 Qualified Subscribers 12 Retained Clients 6 Months</p>
-            <p className="mt-5 text-sm md:text-base text-stone-700 leading-relaxed">
-              Before: Strong institutional reputation with no owned distribution. Every new relationship depended entirely on referral. No system to activate the existing network.
-            </p>
-            <p className="mt-4 text-sm md:text-base text-stone-700 leading-relaxed">
-              After: Complete language conversion system built from the database up. Newsletter architecture, LinkedIn content system, podcast distribution, and automated referral follow-up sequence. 340 qualified subscribers and 12 new retained clients sourced directly from owned channels in six months.
-            </p>
-          </div>
-        </div>
-        <div className="mt-10">
-          <a
-            href="#/case-studies"
-            className="inline-flex items-center justify-center rounded-2xl border-2 border-stone-900/10 bg-stone-950 px-8 py-4 text-[10px] font-black tracking-widest uppercase text-white transition-all duration-300 hover:bg-stone-900"
-          >
-            VIEW CASE STUDIES
-          </a>
-        </div>
-      </Card>
-
-      <section className="rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-12 md:p-16 shadow-2xl text-left">
-        <h2 className="text-3xl md:text-5xl font-black tracking-tight text-stone-950">Your authority is built. Your language conversion system is next.</h2>
-        <div className="mt-10">
-          <Button href={CONFIGURE_URL} variant="primary" size="large">
-            {CTA_LABEL}
-          </Button>
         </div>
       </section>
     </div>
@@ -749,6 +738,12 @@ function Home() {
 }
 
 function System() {
+  const layers = [
+    { title: "01 We Write It", cap: ["Brand voice", "Email sequences", "Newsletter content", "Sales collateral", "Thought leadership"], out: ["Single strategic framework", "Language built around authority", "Messaging the system can run"], note: "SECTION HEADER" },
+    { title: "02 We Build It", cap: ["Email architecture", "Newsletter systems", "Podcast distribution", "Lifecycle flows", "CRM integration"], out: ["Owned infrastructure", "Complete language conversion system", "Delivery across owned channels"], note: "SECTION HEADER" },
+    { title: "03 We Send It", cap: ["Every channel activated", "Every sequence live", "Database relationships reached", "Right language by stage", "Deployment operated end to end"], out: ["System running", "Predictable revenue", "Ongoing deployment"], note: "SECTION HEADER" },
+    { title: "Operators Whose Authority Is The Asset", cap: ["Lawyers and legal practices", "Physicians and medical practices", "Government leaders and emeriti", "Founders and executives"], out: ["Family offices", "Institutions and foundations", "Artists and educators"], note: "WHO WE SERVE" },
+  ];
   return (
     <div className="space-y-12">
       <section className="rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-12 md:p-16 shadow-2xl text-left">
@@ -770,49 +765,26 @@ function System() {
           We write the strategy. We build the infrastructure. We operate the system that delivers it across every channel you own.
         </p>
       </Card>
-      <div className="grid lg:grid-cols-3 gap-8 text-left">
-        <Card title="01 We Write It" eyebrow="SECTION">
-          We write everything the system needs to run. Brand voice, email sequences, newsletter content, sales collateral, podcast scripts, automated messaging, and thought leadership. All aligned to a single strategic framework built around your institutional authority.
-        </Card>
-        <Card title="02 We Build It" eyebrow="SECTION">
-          We build the infrastructure that delivers it. Email architecture, newsletter systems, podcast distribution, automated messaging sequences, lifecycle flows, and CRM integration. The complete language conversion system end to end.
-        </Card>
-        <Card title="03 We Send It" eyebrow="SECTION">
-          We operate the deployment. Every channel activated. Every sequence live. Every relationship in your database receiving the right language at the right stage. The system runs and generates predictable revenue.
-        </Card>
+      <div className="grid lg:grid-cols-2 gap-8 text-left">
+        {layers.map((L) => (
+          <Card key={L.title} title={L.title} eyebrow={L.note}>
+            <div className="grid sm:grid-cols-2 gap-10 mt-4 text-left">
+              <div>
+                <div className="text-[10px] font-black tracking-widest text-stone-950 mb-6 uppercase text-left">Capabilities</div>
+                <ul className="space-y-4 text-sm text-stone-700 font-medium text-left">
+                  {L.cap.map((t) => (<li key={t} className="flex gap-4"><span className="mt-1.5 h-2 w-2 rounded-full bg-emerald-600 flex-shrink-0" /><span>{t}</span></li>))}
+                </ul>
+              </div>
+              <div>
+                <div className="text-[10px] font-black tracking-widest text-stone-950 mb-6 uppercase text-left">Outputs</div>
+                <div className="space-y-3 text-left">
+                  {L.out.map((t) => (<div key={t} className="rounded-2xl border-2 border-stone-900/10 bg-stone-50 px-6 py-5 text-xs font-black tracking-tight text-stone-950 shadow-sm text-left">{t}</div>))}
+                </div>
+              </div>
+            </div>
+          </Card>
+        ))}
       </div>
-      <Card title="Operators whose authority is the asset." eyebrow="WHO WE SERVE">
-        <div className="grid gap-8 lg:grid-cols-2">
-          <div>
-            <h3 className="text-xl font-black tracking-tight text-stone-950">Lawyers and Legal Practices</h3>
-            <p className="mt-4">Decades of referral relationships translated through a language conversion system built to activate existing trust into retained engagements and qualified consultations.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-black tracking-tight text-stone-950">Physicians and Medical Practices</h3>
-            <p className="mt-4">Patient networks and professional authority deployed through email, newsletter, and automated messaging that generates consultations and referrals on schedule.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-black tracking-tight text-stone-950">Government Leaders and Emeriti</h3>
-            <p className="mt-4">Institutional knowledge and trusted audiences activated through owned channels that translate authority into speaking engagements, advisory roles, and retained relationships.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-black tracking-tight text-stone-950">Founders and Executives</h3>
-            <p className="mt-4">Your achievements, your voice, and your network deployed through a language conversion system that generates predictable revenue and protects your authority across succession and transition.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-black tracking-tight text-stone-950">Family Offices</h3>
-            <p className="mt-4">Systems that preserve family history, values, and knowledge across generations while keeping institutional relationships active and productive.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-black tracking-tight text-stone-950">Institutions and Foundations</h3>
-            <p className="mt-4">Documentation and distribution infrastructure for organizations entrusted with irreplaceable knowledge and public record.</p>
-          </div>
-          <div className="lg:col-span-2">
-            <h3 className="text-xl font-black tracking-tight text-stone-950">Artists and Educators</h3>
-            <p className="mt-4">Your work recorded accurately, distributed consistently, and protected from misrepresentation across every channel your audience uses.</p>
-          </div>
-        </div>
-      </Card>
       <div className="grid lg:grid-cols-2 gap-8 text-left">
         <Card title="Assessment. Build. Deploy." eyebrow="OUR PROCESS">
           <div className="space-y-8">
@@ -858,83 +830,60 @@ function System() {
 }
 
 function CaseStudies() {
+  const items = useMemo(() => [
+    { title: "Healthcare Services Firm", industry: "Case Study 01", problem: "Qualified relationships stalled at intake. Messaging reached peers rather than decision-makers. Revenue sat in a dormant database with no system to activate it.", deployment: "+41% Qualified Opportunities 90 Days", stats: [{ label: "After", value: "+41%", sub: "qualified opportunities" }, { label: "Timeline", value: "90", sub: "days" }], highlights: ["Strategic Language", "Owned Infrastructure", "Full Deployment"] },
+    { title: "Regional Energy Consultancy", industry: "Case Study 02", problem: "High referral volume arriving with no nurture system to move relationships from interest to retained engagement. Authority was established. The conversion system did not exist.", deployment: "+27% Proposal-to-Close Rate +18% Average Engagement Size", stats: [{ label: "Close Rate", value: "+27%", sub: "proposal-to-close" }, { label: "Engagement", value: "+18%", sub: "average size" }], highlights: ["Strategic Language", "Lifecycle Sequences"] },
+    { title: "Professional Services Network", industry: "Case Study 03", problem: "Strong institutional reputation with no owned distribution. Every new relationship depended entirely on referral. The network existed. The language conversion system did not.", deployment: "340 Qualified Subscribers 12 Retained Clients 6 Months", stats: [{ label: "Subscribers", value: "340", sub: "qualified" }, { label: "Clients", value: "12", sub: "retained" }, { label: "Timeline", value: "6", sub: "months" }], highlights: ["Owned Infrastructure", "Full Deployment"] },
+  ], []);
+
   return (
     <div className="space-y-12">
       <section className="rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-12 md:p-16 shadow-2xl text-left">
-        <SectionHead
-          eyebrow="CASE STUDIES"
-          title="Results from real engagements."
-          desc="Every engagement begins with a Language Assessment. We map where authority lives, identify system gaps, and build the language conversion system that translates existing relationships into predictable revenue."
-        />
+        <SectionHead eyebrow="CASE STUDIES" title="Results from real engagements." desc="Every engagement begins with a Language Assessment. We map where authority lives, identify system gaps, and build the language conversion system that translates existing relationships into predictable revenue." />
       </section>
 
-      <Card title="Healthcare Services Firm" eyebrow="+41% QUALIFIED OPPORTUNITIES 90 DAYS">
-        <div className="space-y-8">
-          <div>
-            <h3 className="text-xl font-black tracking-tight text-stone-950">Before</h3>
-            <p className="mt-4">Qualified relationships stalled at intake. Messaging reached peers rather than decision-makers. Revenue sat in a dormant database with no system to activate it.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-black tracking-tight text-stone-950">Build</h3>
-            <p className="mt-4">Rebuilt intake architecture and lead scoring. Wrote and deployed messaging aligned with buyer intent across email and web. Activated the existing database through a structured lifecycle sequence.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-black tracking-tight text-stone-950">After</h3>
-            <p className="mt-4">+41% qualified opportunities within 90 days.</p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Pill>Strategic Language</Pill>
-            <Pill>Owned Infrastructure</Pill>
-            <Pill>Full Deployment</Pill>
-          </div>
+      <section className="rounded-[3rem] border-2 border-stone-900/10 bg-white/70 backdrop-blur overflow-hidden shadow-2xl pt-14 pb-10 text-left">
+        <div className="px-14">
+          <div className="text-sm font-black tracking-[0.4em] text-emerald-700 uppercase mb-8 leading-none text-left">SOCIAL FOLLOWING STUDIOS</div>
         </div>
-      </Card>
-      <Card title="Regional Energy Consultancy" eyebrow="+27% PROPOSAL-TO-CLOSE RATE +18% AVERAGE ENGAGEMENT SIZE">
-        <div className="space-y-8">
-          <div>
-            <h3 className="text-xl font-black tracking-tight text-stone-950">Before</h3>
-            <p className="mt-4">High referral volume arriving with no nurture system to move relationships from interest to retained engagement. Authority was established. The conversion system did not exist.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-black tracking-tight text-stone-950">Build</h3>
-            <p className="mt-4">Designed a three-stage email nurture sequence tied to service tiers. Rewrote proposals in buyer language. Deployed automated follow-up that moved referrals through the pipeline to retained engagement.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-black tracking-tight text-stone-950">After</h3>
-            <p className="mt-4">27% lift in proposal-to-close rate. Average engagement size increased 18%.</p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Pill>Strategic Language</Pill>
-            <Pill>Lifecycle Sequences</Pill>
-          </div>
-        </div>
-      </Card>
-      <Card title="Professional Services Network" eyebrow="340 QUALIFIED SUBSCRIBERS 12 RETAINED CLIENTS 6 MONTHS">
-        <div className="space-y-8">
-          <div>
-            <h3 className="text-xl font-black tracking-tight text-stone-950">Before</h3>
-            <p className="mt-4">Strong institutional reputation with no owned distribution. Every new relationship depended entirely on referral. The network existed. The language conversion system did not.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-black tracking-tight text-stone-950">Build</h3>
-            <p className="mt-4">Built the complete language conversion system from the database up. Newsletter architecture, LinkedIn content system, podcast distribution, and an automated referral follow-up sequence. Every channel activated within one engagement.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-black tracking-tight text-stone-950">After</h3>
-            <p className="mt-4">340 qualified subscribers and 12 new retained clients sourced directly from owned channels in the first six months.</p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Pill>Owned Infrastructure</Pill>
-            <Pill>Full Deployment</Pill>
-          </div>
-        </div>
-      </Card>
-      <section className="rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-12 md:p-16 shadow-2xl text-left">
-        <h2 className="text-3xl md:text-5xl font-black tracking-tight text-stone-950">Your authority is built. Your language conversion system is next.</h2>
-        <div className="mt-10">
-          <Button href={CONFIGURE_URL} variant="primary" size="large">{CTA_LABEL}</Button>
+        <div className="mt-2">
+          <PartnerMarquee />
         </div>
       </section>
+
+      <div className="grid gap-10 text-left">
+        {items.map((cs) => (
+          <section key={cs.title} className="rounded-[3rem] border-2 border-stone-900/10 bg-white p-10 md:p-16 shadow-2xl text-left">
+            <div className="grid lg:grid-cols-3 gap-16 text-left">
+              <div className="lg:col-span-1 text-left">
+                <div className="rounded-[2.5rem] border-2 border-stone-900/10 bg-gradient-to-br from-[#F5F2EA] to-white p-10 overflow-hidden relative shadow-lg text-left">
+                  <div className="absolute -top-10 -right-10 h-48 w-48 rounded-full bg-emerald-600/18 blur-2xl" />
+                  <div className="relative text-left">
+                    <div className="text-[10px] font-black tracking-[0.3em] text-emerald-700 uppercase mb-8 leading-none text-left">{cs.industry}</div>
+                    <h2 className="text-4xl md:text-5xl font-black tracking-tighter leading-tight text-left">{cs.title}</h2>
+                    <div className="mt-8 flex flex-wrap gap-2 text-left"><Pill>{cs.deployment}</Pill></div>
+                  </div>
+                </div>
+                <div className="mt-8 rounded-[2rem] border-2 border-stone-900/10 bg-white p-8 shadow-lg text-left">
+                  <div className="text-[10px] font-black tracking-widest text-stone-500 uppercase mb-4 leading-none text-left">BEFORE</div>
+                  <div className="text-lg font-bold text-stone-950 leading-tight text-left">{cs.problem}</div>
+                </div>
+              </div>
+              <div className="lg:col-span-2 space-y-10 text-left">
+                <div className="grid md:grid-cols-3 gap-6 text-left">
+                  {cs.stats.map((s) => (<Stat key={s.label} label={s.label} value={s.value} sub={s.sub} />))}
+                </div>
+                <div className="rounded-[2.5rem] border-2 border-stone-900/10 bg-white p-12 shadow-2xl text-left">
+                  <div className="text-[10px] font-black tracking-[0.3em] text-emerald-700 uppercase mb-10 leading-none text-left">LANGUAGE CONVERSION SYSTEM COMPONENTS</div>
+                  <div className="mt-6 flex flex-wrap gap-4 text-left">
+                    {cs.highlights.map((h) => (<span key={h} className="rounded-2xl border-2 border-stone-900/10 bg-[#F5F2EA] px-8 py-5 text-sm font-black tracking-tight text-stone-950 shadow-lg text-left">{h}</span>))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        ))}
+      </div>
     </div>
   );
 }
@@ -964,15 +913,11 @@ function Contact() {
   return (
     <div className="space-y-12">
       <section className="rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-12 md:p-16 shadow-2xl text-left">
-        <SectionHead
-          eyebrow="CONTACT"
-          title="Book Your Language Assessment."
-          desc="Every engagement starts here. Tell us about your authority, your audience, and your channels. We map the language conversion system that activates them."
-        />
+        <SectionHead eyebrow="CONTACT" title="Book Your Language Assessment." desc="Every engagement starts here. Tell us about your authority, your audience, and your channels. We map the language conversion system that activates them." />
       </section>
       <Card title="Language Assessment Request" eyebrow="FORM">
         <form
-          className="grid gap-8"
+          className="space-y-8"
           onSubmit={(event) => {
             event.preventDefault();
             if (event.currentTarget.reportValidity()) {
@@ -988,7 +933,7 @@ function Contact() {
           </div>
           <Textarea label="What your database or audience currently looks like" name="audience" placeholder="Describe your current database or audience" />
           <Textarea label="What revenue outcome you are building toward" name="revenueOutcome" placeholder="Describe the revenue outcome you are building toward" />
-          <div className="mt-2 text-left">
+          <div className="mt-10 text-left">
             <button
               type="submit"
               className="inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-8 py-4 text-[10px] font-black tracking-widest uppercase text-white transition active:scale-[0.98] shadow-lg hover:bg-emerald-700 hover:shadow-xl"
@@ -1030,7 +975,8 @@ function Shell({ route, children }) {
           <a href="#/" className="flex items-center gap-4 group">
             <LogoPlaceholder className="h-10 w-10 md:h-14 md:w-14 shadow-2xl" />
             <div className="leading-none text-left">
-              <div className="text-base md:text-lg font-black tracking-tighter text-left">Social Following Studios Language Infrastructure</div>
+              <div className="text-base md:text-lg font-black tracking-tighter text-left">Social Following Studios</div>
+              <div className="text-[9px] md:text-[10px] font-black tracking-[0.2em] text-emerald-700 mt-1 uppercase text-left">Language Infrastructure</div>
             </div>
           </a>
 
@@ -1051,19 +997,22 @@ function Shell({ route, children }) {
             ))}
           </nav>
 
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden flex items-center justify-center h-12 w-12 rounded-2xl bg-stone-950 text-white"
-            aria-label="Toggle menu"
-          >
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+          <div className="flex items-center gap-3">
+            <Button href={CONFIGURE_URL} variant="primary" size="default">{CTA_LABEL}</Button>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden flex items-center justify-center h-12 w-12 rounded-2xl bg-stone-950 text-white"
+              aria-label="Toggle menu"
+            >
+              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
         {mobileMenuOpen && (
@@ -1098,6 +1047,7 @@ function Shell({ route, children }) {
               <LogoPlaceholder className="h-12 w-12 border-stone-900/20 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500" />
               <div className="text-left">
                 <div className="text-xl font-black tracking-tighter text-left">Social Following Studios 2026</div>
+                <div className="text-[10px] font-black tracking-[0.2em] text-emerald-700 uppercase mt-1 text-left">Terms Privacy</div>
               </div>
             </div>
             <div className="flex items-center gap-10 text-[10px] font-black tracking-widest text-stone-500 uppercase">
