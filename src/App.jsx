@@ -567,7 +567,7 @@ function Home() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 relative z-10">
         {COPY.home.stats.map((s) => (
           <div key={s.label} className="relative z-10 border border-white/10 bg-white/5 p-8 backdrop-blur-sm text-left h-full overflow-hidden">
-            <div className="text-sm font-black tracking-[0.04em] text-emerald-400 mb-3">{s.label}</div>
+            <div className="text-sm font-black tracking-[0.04em] text-emerald-400 uppercase mb-3">{s.label}</div>
             <div className="text-sm font-black tracking-[0.02em] text-white/80">{s.sub}</div>
           </div>
         ))}
