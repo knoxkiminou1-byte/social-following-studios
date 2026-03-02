@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
 import * as THREE from "three";
-import sfsLogo from "./assets/sfs-mark.png";
 
 /**
  * Social Following Studios - Unified Conversion Systems
@@ -12,6 +11,7 @@ import sfsLogo from "./assets/sfs-mark.png";
 
 const CONFIGURE_URL = "https://cal.com/rashida-knox";
 const CTA_LABEL = "BOOK YOUR LANGUAGE ASSESSMENT";
+const BRAND_LOGO_PATH = "/sfs-logo.png";
 
 const NAV = [
   { label: "01 Home", href: "#/" },
@@ -51,23 +51,15 @@ function useHashRoute() {
 
 // ---------- base UI components ----------
 
-function LogoPlaceholder({ className }) {
+function BrandLogo({ className, priority = false }) {
   return (
-    <div
-      className={cx(
-        "flex items-center justify-center bg-stone-950 border border-emerald-500/30 rounded-[1.25rem] shadow-2xl overflow-hidden",
-        className
-      )}
-      aria-label="Social Following Studios"
-    >
-      <img
-        src={sfsLogo}
-        alt="Social Following Studios"
-        className="h-full w-full object-contain"
-        loading="eager"
-        decoding="async"
-      />
-    </div>
+    <img
+      src={BRAND_LOGO_PATH}
+      alt="Social Following Studios"
+      className={cx("block h-auto w-full max-w-full object-contain", className)}
+      loading={priority ? "eager" : "lazy"}
+      decoding="async"
+    />
   );
 }
 
@@ -972,12 +964,8 @@ function Shell({ route, children }) {
 
       <header className="sticky top-0 z-50 border-b-2 border-stone-900/10 bg-transparent backdrop-blur-2xl shadow-sm text-left">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 text-left">
-          <a href="#/" className="flex items-center gap-4 group">
-            <LogoPlaceholder className="h-10 w-10 md:h-14 md:w-14 shadow-2xl" />
-            <div className="leading-none text-left">
-              <div className="text-base md:text-lg font-black tracking-tighter text-left">Social Following Studios</div>
-              <div className="text-[9px] md:text-[10px] font-black tracking-[0.2em] text-emerald-700 mt-1 uppercase text-left">Language Infrastructure</div>
-            </div>
+          <a href="#/" className="flex items-center">
+            <BrandLogo className="w-[164px] md:w-[240px]" priority />
           </a>
 
           <nav className="hidden md:flex items-center gap-1 text-left">
@@ -1043,12 +1031,8 @@ function Shell({ route, children }) {
       <footer className="border-t-2 border-stone-900/10 py-16 text-left">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 text-left">
-            <div className="flex items-center gap-4 text-left">
-              <LogoPlaceholder className="h-12 w-12 border-stone-900/20 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500" />
-              <div className="text-left">
-                <div className="text-xl font-black tracking-tighter text-left">Social Following Studios 2026</div>
-                <div className="text-[10px] font-black tracking-[0.2em] text-emerald-700 uppercase mt-1 text-left">Terms Privacy</div>
-              </div>
+            <div className="text-left">
+              <BrandLogo className="w-[196px] md:w-[280px] opacity-70 hover:opacity-100 transition-opacity duration-500" />
             </div>
             <div className="flex items-center gap-10 text-[10px] font-black tracking-widest text-stone-500 uppercase">
               <a href="#/terms" className="hover:text-stone-950 transition-colors">Terms</a>
