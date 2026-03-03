@@ -575,14 +575,16 @@ function Home() {
         </div>
       </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 relative z-10">
-        {COPY.home.stats.map((s) => (
-          <div key={s.label || s.sub.slice(0, 40)} className="relative z-10 border border-white/10 bg-white/5 p-8 backdrop-blur-sm text-left h-full overflow-hidden">
-            {s.label && <div className="text-sm font-black tracking-[0.04em] text-emerald-400 uppercase mb-3">{s.label}</div>}
-            <div className="text-base font-black tracking-[0.02em] text-white/80 leading-relaxed">{s.sub}</div>
-          </div>
-        ))}
-      </div>
+      <section className="mt-6 relative z-10 border border-white/15 bg-gradient-to-r from-black/50 via-black/40 to-black/30 backdrop-blur-xl p-8 md:p-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {COPY.home.stats.map((s) => (
+            <div key={s.label || s.sub.slice(0, 40)} className="relative z-10 border border-white/10 bg-white/5 p-8 backdrop-blur-sm text-left h-full overflow-hidden">
+              {s.label && <div className="text-sm font-black tracking-[0.04em] text-emerald-400 uppercase mb-3">{s.label}</div>}
+              <div className="text-base font-black tracking-[0.02em] text-white/80 leading-relaxed">{s.sub}</div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className="mt-14 border border-white/10 bg-black/40 backdrop-blur-xl p-12 md:p-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-24 items-start">
@@ -608,7 +610,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
+      <section className="relative z-10 border border-white/15 bg-gradient-to-r from-black/90 via-black/85 to-black/80 backdrop-blur-xl p-8 md:p-12">
         <div className="mb-8">
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">{COPY.home.resultsIntroTitle}</h2>
           <p className="mt-3 text-[17px] text-white/72 font-semibold">{COPY.home.resultsIntroSub}</p>
