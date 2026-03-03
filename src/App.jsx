@@ -8,7 +8,7 @@ const NAV = [
   { label: "04 Contact", href: "#/contact" },
 ];
 
-const BOOKING_URL = "#";
+const BOOKING_URL = "https://app.cal.com/socialfollowing";
 const CONTACT_FORM_ENDPOINT = "#";
 const MAILING_LIST_ENDPOINT = "#";
 
@@ -44,8 +44,8 @@ const COPY = {
     trustedSub: "Social Following Studios has built worlds systems for organizations that set the standard in their industries.",
     stats: [
       {
-        label: "",
-        sub: "Your authority is the asset. Your database is full of people who already trust you. Most operators let both sit idle while they chase new audiences and spend money on ads. Social Following Studios activates what you already own. We take the relationships in your database, the authority behind your name, and the channels you control, and we convert all three into revenue on demand.",
+        label: "DATABASE — People who already trust you — READY",
+        sub: "Your authority is the asset. Your database is full of people who already trust you. Most operators let both sit idle while they chase new audiences and spend money on ads.\n\nSocial Following Studios activates what you already own. We take the relationships in your database, the authority behind your name, and the channels you control, and we convert all three into revenue on demand.",
       },
     ],
     equationKicker: "DISCIPLINES",
@@ -548,7 +548,7 @@ function Home() {
             </h1>
             <p className="mt-6 text-[17px] text-white/80 font-semibold leading-relaxed">{COPY.home.sub}</p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button href="#/contact">{COPY.home.ctaPrimary}</Button>
+              <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
               <Button href="#/case-studies" variant="secondary">
                 {COPY.home.ctaSecondary}
               </Button>
@@ -624,7 +624,7 @@ function Home() {
           </h2>
           {COPY.home.closingSub && <p className="mt-4 text-[17px] text-white/80 font-semibold">{COPY.home.closingSub}</p>}
           <div className="mt-10">
-            <Button href="#/contact">{COPY.home.closingCta}</Button>
+            <Button href={BOOKING_URL}>{COPY.home.closingCta}</Button>
           </div>
         </div>
       </section>
@@ -712,7 +712,7 @@ function Infrastructure() {
             </React.Fragment>
           ))}
         </p>
-        <Button href="#/contact">{COPY.infrastructure.cta}</Button>
+        <Button href={BOOKING_URL}>{COPY.infrastructure.cta}</Button>
       </section>
     </div>
   );
@@ -787,7 +787,7 @@ function CaseStudies() {
             </React.Fragment>
           ))}
         </p>
-        <Button href="#/contact">{COPY.caseStudies.cta}</Button>
+        <Button href={BOOKING_URL}>{COPY.caseStudies.cta}</Button>
       </section>
     </div>
   );
@@ -881,7 +881,7 @@ function Shell({ children, route }) {
           </nav>
           <div className="hidden sm:block shrink-0">
             <a
-              href="#/contact"
+              href={BOOKING_URL}
               className="border border-emerald-500/50 px-6 py-3 text-sm font-black tracking-[0.3em] uppercase hover:bg-emerald-500 transition-all whitespace-nowrap"
             >
               {COPY.shell.topCta}
@@ -902,7 +902,7 @@ function Shell({ children, route }) {
               </h2>
               
             </div>
-            <Button href="#/contact">Book Your Language Assessment</Button>
+            <Button href={BOOKING_URL}>Book Your Language Assessment</Button>
           </div>
         </div>
         <div className="max-w-[1800px] mx-auto px-12 py-16 grid lg:grid-cols-3 gap-16">
