@@ -44,8 +44,16 @@ const COPY = {
     trustedSub: "Social Following Studios has built worlds systems for organizations that set the standard in their industries.",
     stats: [
       {
-        label: "DATABASE — People who already trust you — READY",
-        sub: "Your authority is the asset. Your database is full of people who already trust you. Most operators let both sit idle while they chase new audiences and spend money on ads.\n\nSocial Following Studios activates what you already own. We take the relationships in your database, the authority behind your name, and the channels you control, and we convert all three into revenue on demand.",
+        label: "SOCIAL FOLLOWING STUDIOS WORKS WITH OPERATORS WHOSE AUTHORITY IS ALREADY BUILT.",
+        sub: "Lawyers with decades of referral relationships. Physicians with patient networks built over careers. Government leaders with institutional knowledge and trusted audiences. Founders whose names carry weight in their industries.",
+      },
+      {
+        label: "YOUR AUTHORITY IS THE ASSET.",
+        sub: "Your authority is the asset. Your database is full of people who already trust you. Most operators let both sit idle while they chase new audiences and spend money on ads.",
+      },
+      {
+        label: "THE SYSTEM",
+        sub: "Social Following Studios activates what you already own. We take the relationships in your database, the authority behind your name, and the channels you control, and we convert all three into revenue on demand. Social Following Studios aligns your email, messaging, and controlled media into a unified reactivation framework. Every touchpoint reinforces the same positioning, the same authority, and the same next step. Instead of scattered outreach, you operate one coordinated communication engine designed to move dormant relationships back into active engagement.",
       },
     ],
     equationKicker: "DISCIPLINES",
