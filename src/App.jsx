@@ -8,7 +8,7 @@ const NAV = [
   { label: "04 Contact", href: "#/contact" },
 ];
 
-const BOOKING_URL = "#";
+const BOOKING_URL = "https://app.cal.com/socialfollowing";
 const CONTACT_FORM_ENDPOINT = "#";
 const MAILING_LIST_ENDPOINT = "#";
 
@@ -38,14 +38,22 @@ const COPY = {
     h1Line2Accent: "",
     sub: "We operate the language conversion system that turns your authority into calls, your database into clients, and your name into revenue on demand.",
     subBold: "",
-    ctaPrimary: "Book Your Language Assessment",
+    ctaPrimary: "Book Your Call",
     ctaSecondary: "View Case Studies",
     trustedKicker: "TRUSTED BY",
     trustedSub: "Social Following Studios has built worlds systems for organizations that set the standard in their industries.",
     stats: [
       {
-        label: "",
-        sub: "Social Following Studios aligns your email, messaging, and controlled media into a unified reactivation framework. Every touchpoint reinforces the same positioning, the same authority, and the same next step. Instead of scattered outreach, you operate one coordinated communication engine designed to move dormant relationships back into active engagement.",
+        label: "SOCIAL FOLLOWING STUDIOS WORKS WITH OPERATORS WHOSE AUTHORITY IS ALREADY BUILT.",
+        sub: "Lawyers with decades of referral relationships. Physicians with patient networks built over careers. Government leaders with institutional knowledge and trusted audiences. Founders whose names carry weight in their industries.",
+      },
+      {
+        label: "YOUR AUTHORITY IS THE ASSET.",
+        sub: "Your authority is the asset. Your database is full of people who already trust you. Most operators let both sit idle while they chase new audiences and spend money on ads.",
+      },
+      {
+        label: "THE SYSTEM",
+        sub: "Social Following Studios activates what you already own. We take the relationships in your database, the authority behind your name, and the channels you control, and we convert all three into revenue on demand. Social Following Studios aligns your email, messaging, and controlled media into a unified reactivation framework. Every touchpoint reinforces the same positioning, the same authority, and the same next step. Instead of scattered outreach, you operate one coordinated communication engine designed to move dormant relationships back into active engagement.",
       },
     ],
     equationKicker: "DISCIPLINES",
@@ -71,7 +79,7 @@ const COPY = {
     resultsIntroSub: "Every engagement begins with a strategic audit of your authority, your database, and your owned channels. We map structural gaps, install the system, and deploy it across channels you control.",
     closingHeadline: "Your authority is built. Your deployment system is next.",
     closingSub: "",
-    closingCta: "Book Your Language Assessment",
+    closingCta: "Book Your Call",
   },
   infrastructure: {
     kicker: "INFRASTRUCTURE",
@@ -151,7 +159,7 @@ const COPY = {
     },
     outroLines: ["Your deployment is ready to build."],
     outroSub: "",
-    cta: "Book Your Language Assessment",
+    cta: "Book Your Call",
   },
   caseStudies: {
     kicker: "CASE STUDIES",
@@ -194,7 +202,7 @@ const COPY = {
       },
     ],
     outroLines: ["Your authority is built. Your deployment", "system is next."],
-    cta: "Book Your Language Assessment",
+    cta: "Book Your Call",
   },
   contact: {
     kicker: "CONTACT",
@@ -206,7 +214,7 @@ const COPY = {
   shell: {
     brand: "Social Following Studios",
     brandSub: "Language Infrastructure",
-    topCta: "Book Your Language Assessment",
+    topCta: "Book Your Call",
     footerSub: "Social Following Studios 2026",
     terms: "Terms",
     privacy: "Privacy",
@@ -548,7 +556,7 @@ function Home() {
             </h1>
             <p className="mt-6 text-[17px] text-white/80 font-semibold leading-relaxed">{COPY.home.sub}</p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button href="#/contact">{COPY.home.ctaPrimary}</Button>
+              <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
               <Button href="#/case-studies" variant="secondary">
                 {COPY.home.ctaSecondary}
               </Button>
@@ -624,7 +632,7 @@ function Home() {
           </h2>
           {COPY.home.closingSub && <p className="mt-4 text-[17px] text-white/80 font-semibold">{COPY.home.closingSub}</p>}
           <div className="mt-10">
-            <Button href="#/contact">{COPY.home.closingCta}</Button>
+            <Button href={BOOKING_URL}>{COPY.home.closingCta}</Button>
           </div>
         </div>
       </section>
@@ -712,7 +720,7 @@ function Infrastructure() {
             </React.Fragment>
           ))}
         </p>
-        <Button href="#/contact">{COPY.infrastructure.cta}</Button>
+        <Button href={BOOKING_URL}>{COPY.infrastructure.cta}</Button>
       </section>
     </div>
   );
@@ -787,7 +795,7 @@ function CaseStudies() {
             </React.Fragment>
           ))}
         </p>
-        <Button href="#/contact">{COPY.caseStudies.cta}</Button>
+        <Button href={BOOKING_URL}>{COPY.caseStudies.cta}</Button>
       </section>
     </div>
   );
@@ -881,7 +889,7 @@ function Shell({ children, route }) {
           </nav>
           <div className="hidden sm:block shrink-0">
             <a
-              href="#/contact"
+              href={BOOKING_URL}
               className="border border-emerald-500/50 px-6 py-3 text-sm font-black tracking-[0.3em] uppercase hover:bg-emerald-500 transition-all whitespace-nowrap"
             >
               {COPY.shell.topCta}
@@ -902,7 +910,7 @@ function Shell({ children, route }) {
               </h2>
               
             </div>
-            <Button href="#/contact">Book Your Language Assessment</Button>
+            <Button href={BOOKING_URL}>Book Your Call</Button>
           </div>
         </div>
         <div className="max-w-[1800px] mx-auto px-12 py-16 grid lg:grid-cols-3 gap-16">
