@@ -608,7 +608,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="relative z-10 border border-white/10 bg-black/40 backdrop-blur-xl p-8 md:p-12">
+      <section className="relative z-10 border border-white/15 bg-gradient-to-r from-black/90 via-black/85 to-black/80 backdrop-blur-xl p-8 md:p-12">
         <div className="mb-8">
           <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">{COPY.home.resultsIntroTitle}</h2>
           <p className="mt-3 text-[17px] text-white/72 font-semibold">{COPY.home.resultsIntroSub}</p>
