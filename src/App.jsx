@@ -109,10 +109,10 @@ const COPY = {
     },
     howItWorks: {
       kicker: "HOW IT WORKS",
-      headline: "All engagements begin with a Language Assessment.",
+      headline: "All engagements begin with a Language Audit.",
       tiers: [
         {
-          title: "Assessment",
+          title: "THE AUDIT",
           desc: "A focused audit of your language, database, and system gaps, delivered as a written report that maps the system you need.",
         },
         {
