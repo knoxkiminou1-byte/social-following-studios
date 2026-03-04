@@ -97,14 +97,14 @@ const COPY = {
       },
       {
         note: "03 We Send It",
-        title: "We operate the system.",
-        desc: "We operate the system that produces consistent calls.",
+        title: "We deploy the system.",
+        desc: "We deploy the system that produces consistent calls.",
       },
     ],
     whoWeServe: {
       kicker: "WHO WE SERVE",
       headline: "For operators whose authority is the asset.",
-      body: "We work with operators who have built real authority over years, with full databases, owned channels, and audiences that already trust them.",
+      body: "We work with operators who have built real world authority, with full databases, owned channels, and audiences that already trust them.",
       closing: "",
     },
     howItWorks: {
