@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
-import sfsLogo from "./assets/SFSF.png";
 
 const NAV = [
   { label: "01 Home", href: "#/" },
@@ -36,48 +35,47 @@ const COPY = {
     h1Line1Accent: "words",
     h1Line1Suffix: "systems.",
     h1Line2Accent: "",
-    sub: "We operate the language conversion system that turns your authority into calls, your database into clients, and your name into revenue on demand.",
+    sub: "We deploy language conversion systems that turn your database and authority into revenue on demand.",
     subBold: "",
     ctaPrimary: "Book Your Call",
     ctaSecondary: "View Case Studies",
     trustedKicker: "TRUSTED BY",
-    trustedSub: "Social Following Studios has built worlds systems for organizations that set the standard in their industries.",
+    trustedSub: "Trusted by teams with real stakes.",
     stats: [
       {
-        label: "SOCIAL FOLLOWING STUDIOS WORKS WITH OPERATORS WHOSE AUTHORITY IS ALREADY BUILT.",
-        sub: "Lawyers with decades of referral relationships. Physicians with patient networks built over careers. Government leaders with institutional knowledge and trusted audiences. Founders whose names carry weight in their industries.",
+        label: "BUILT NAME",
+        sub: "You have the name and the list. We make both book calls.",
       },
       {
-        label: "YOUR AUTHORITY IS THE ASSET.",
-        sub: "Your authority is the asset. Your database is full of people who already trust you. Most operators let both sit idle while they chase new audiences and spend money on ads.",
+        label: "DORMANT LIST",
+        sub: "Your list holds trust. We turn it into booked work.",
       },
       {
-        label: "THE SYSTEM",
-        sub: "Social Following Studios activates what you already own. We take the relationships in your database, the authority behind your name, and the channels you control, and we convert all three into revenue on demand. Social Following Studios aligns your email, messaging, and controlled media into a unified reactivation framework. Every touchpoint reinforces the same positioning, the same authority, and the same next step. Instead of scattered outreach, you operate one coordinated communication engine designed to move dormant relationships back into active engagement.",
+        label: "DEPLOYMENT",
+        sub: "We set the flow across your channels and keep it live.",
       },
     ],
     equationKicker: "DISCIPLINES",
-    equationHeadline: "We write it. We build it. We send it.",
-    equationBody:
-      "Strategy, infrastructure, and deployment operate as one coordinated system. Your authority reaches the people it belongs to across every channel you own.",
-    coreArch: "ONE DEPLOYMENT SYSTEM",
+    equationHeadline: "Audit. Deploy. Run.",
+    equationBody: "We sync each channel you own to turn past leads into booked calls.",
+    coreArch: "ONE FLOW",
     architecture: [
       {
-        title: "Strategic Language",
-        desc: "We write the messaging that positions your expertise for the audiences who act on it. Brand voice, email copy, sales collateral, newsletter content, and thought leadership aligned to a single strategic framework built around your institutional authority.",
+        title: "Words",
+        desc: "We craft clear copy that moves buyers to book. Your skill, in print.",
       },
       {
-        title: "Owned Infrastructure",
-        desc: "We build the system you control. Email architecture, newsletter infrastructure, podcast distribution, automated messaging, and lifecycle sequences designed to reach your audience directly. Your database. Your relationships. Your record.",
+        title: "Channels",
+        desc: "We wire email, site, and booking into one flow. Your reach, on tap.",
       },
       {
-        title: "Full Deployment",
-        desc: "We operate the system. Every channel activated. Every sequence live. Every relationship in your database receiving the right language at the right stage.",
+        title: "Ops",
+        desc: "We run the flow and track booked calls. Your week, full.",
       },
     ],
     resultsIntroTitle: "Results from real engagements.",
-    resultsIntroSub: "Every engagement begins with a strategic audit of your authority, your database, and your owned channels. We map structural gaps, install the system, and deploy it across channels you control.",
-    closingHeadline: "Your authority is built. Your deployment system is next.",
+    resultsIntroSub: "Each job starts with a hard audit of your name, list, and owned channels. We map gaps and ship the flow.",
+    closingHeadline: "Your name is built. Your flow is next.",
     closingSub: "",
     closingCta: "Book Your Call",
   },
@@ -87,25 +85,25 @@ const COPY = {
     sub: "Built and operated by Social Following Studios.",
     layers: [
       {
-        note: "01 We Write It",
-        title: "We write everything the system needs to run.",
-        desc: "Brand voice, email sequences, newsletter content, sales collateral, podcast scripts, automated messaging, and thought leadership. All aligned to a single strategic framework built around your institutional authority.",
+        note: "01 Audit",
+        title: "Map gaps.",
+        desc: "We audit your list, copy, and channel mix.",
       },
       {
-        note: "02 We Build It",
-        title: "We build the infrastructure that delivers it.",
-        desc: "Email architecture, newsletter systems, podcast distribution, automated messaging sequences, lifecycle flows, and CRM integration. The complete deployment system end to end.",
+        note: "02 Build",
+        title: "Set flow.",
+        desc: "We set the email, page, and book path.",
       },
       {
-        note: "03 We Send It",
-        title: "We operate the deployment.",
-        desc: "Every channel activated. Every sequence live. Every relationship in your database receiving the right language at the right stage. The system runs and generates predictable revenue.",
+        note: "03 Run",
+        title: "Run live.",
+        desc: "We run the flow and keep calls on deck.",
       },
     ],
     whoWeServe: {
       kicker: "WHO WE SERVE",
-      headline: "Operators whose authority is the asset.",
-      body: "Social Following Studios operates structured deployment systems for operators whose authority is the asset.",
+      headline: "For teams with a built name.",
+      body: "We work with teams with a live list, owned channels, and a clear offer.",
       list: [
         "Lawyers and Legal Practices",
         "Physicians and Medical Practices",
@@ -119,11 +117,11 @@ const COPY = {
     },
     process: {
       kicker: "OUR PROCESS",
-      headline: "Assessment. Build. Deploy.",
+      headline: "Work starts with an audit.",
       steps: [
         {
           num: "1",
-          title: "Assessment",
+          title: "Audit",
           desc: "We map your current language, channels, database, and system gaps. You receive a written report identifying where your authority lives and exactly what the deployment system needs to activate it.",
         },
         {
@@ -140,24 +138,24 @@ const COPY = {
     },
     engagements: {
       kicker: "ENGAGEMENT MODELS",
-      headline: "All engagements begin with a Language Assessment.",
+      headline: "Work starts with an audit.",
       note: "",
       tiers: [
         {
-          title: "Assessment",
-          desc: "A focused audit of your language, channels, database, and system gaps. Delivered as a written report with prioritized recommendations and a clear build roadmap.",
+          title: "Audit",
+          desc: "A tight audit of your copy, list, and gaps. You get a clear plan.",
         },
         {
-          title: "Full Build",
-          desc: "Complete deployment system design and deployment. Strategy, infrastructure, and full activation across your owned channels. Built and launched within an agreed timeline.",
+          title: "Build",
+          desc: "A full build across your owned channels. Past leads turn into booked calls.",
         },
         {
-          title: "Retained Advisory",
-          desc: "We operate the system on an ongoing basis. Content production, optimization, channel management, and strategic guidance. Monthly reporting tied to defined revenue benchmarks.",
+          title: "Ops",
+          desc: "We run it each month with a short report tied to booked calls.",
         },
       ],
     },
-    outroLines: ["Your deployment is ready to build."],
+    outroLines: ["Your flow is ready."],
     outroSub: "",
     cta: "Book Your Call",
   },
@@ -201,19 +199,19 @@ const COPY = {
         problem: "Before: Strong institutional reputation with no owned distribution and no system to activate the existing network.",
       },
     ],
-    outroLines: ["Your authority is built. Your deployment", "system is next."],
+    outroLines: ["Your calls are next."],
     cta: "Book Your Call",
   },
   contact: {
     kicker: "CONTACT",
     title: "Book Your Call.",
-    sub: "Tell us about your authority, your audience, and your channels. We map the deployment that activates them.",
+    sub: "Start here. We bring the flow. You bring the list.",
     submitIdle: "SUBMIT",
     submitDone: "SUBMITTED",
   },
   shell: {
     brand: "Social Following Studios",
-    brandSub: "Language Infrastructure",
+    brandSub: "Words Systems",
     topCta: "Book Your Call",
     footerSub: "Social Following Studios 2026",
     terms: "Terms",
@@ -413,8 +411,8 @@ function LiquidBackground() {
         uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
         uColor1: { value: new THREE.Vector3(0.06, 0.72, 0.5) },
         uColor2: { value: new THREE.Vector3(0.02, 0.03, 0.08) },
-        uSpeed: { value: 1.2 },
-        uIntensity: { value: 2.2 },
+        uSpeed: { value: 0.25 },
+        uIntensity: { value: 0.35 },
         uTouchTexture: { value: touchTexture.texture },
         uGrainIntensity: { value: 0.08 },
         uDarkNavy: { value: new THREE.Vector3(0.01, 0.02, 0.05) },
@@ -453,7 +451,7 @@ function LiquidBackground() {
       scene.add(new THREE.Mesh(new THREE.PlaneGeometry(150, 150, 1, 1), material));
       const clock = new THREE.Clock();
       const animate = () => {
-        uniforms.uTime.value += clock.getDelta();
+        uniforms.uTime.value += clock.getDelta() * (6 / 18);
         touchTexture.update();
         renderer.render(scene, camera);
         requestAnimationFrame(animate);
@@ -484,9 +482,9 @@ function InnerBackground() {
   return (
     <div className="fixed inset-0 -z-30">
       <div className="absolute inset-0 bg-stone-950" />
-      <div className="absolute -top-56 left-1/2 h-[980px] w-[980px] -translate-x-1/2 rounded-full bg-emerald-500/10 blur-[140px]" />
-      <div className="absolute -top-32 -left-48 h-[720px] w-[720px] rounded-full bg-white/5 blur-[130px]" />
-      <div className="absolute -bottom-48 -right-48 h-[820px] w-[820px] rounded-full bg-emerald-400/5 blur-[160px]" />
+      <div className="absolute -top-56 left-1/2 h-[980px] w-[980px] -translate-x-1/2 rounded-full bg-emerald-500/6 blur-[96px]" />
+      <div className="absolute -top-32 -left-48 h-[720px] w-[720px] rounded-full bg-white/4 blur-[88px]" />
+      <div className="absolute -bottom-48 -right-48 h-[820px] w-[820px] rounded-full bg-emerald-400/4 blur-[112px]" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
       <div
         className="absolute inset-0 opacity-[0.06] mix-blend-overlay"
@@ -846,8 +844,7 @@ function Contact() {
         <div className="mt-12 border border-white/10 bg-white/[0.02] p-6 md:p-8">
           <p className="text-sm font-black tracking-[0.3em] uppercase text-emerald-400 mb-3">Qualification</p>
           <p className="text-[17px] text-white/80 font-semibold leading-relaxed">
-            Social Following Studios works with operators whose authority is already built. We review every assessment
-            request and engage with operators whose database and channels are ready to activate.
+            We review each request and take on teams with a live list and a clear offer.
           </p>
         </div>
       </section>
@@ -869,19 +866,17 @@ function Shell({ children, route }) {
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
         <div className="max-w-[1800px] mx-auto flex items-center justify-between px-6 md:px-12 py-6 md:py-8">
           <a href="#/" className="group shrink-0">
-            <img
-              src={sfsLogo}
-              alt={COPY.shell.brand}
-              className="h-10 md:h-12 w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity"
-            />
+            <span className="text-lg md:text-2xl font-black tracking-[0.08em] uppercase text-white group-hover:text-emerald-400 transition-colors">
+              {COPY.shell.brand}
+            </span>
           </a>
-          <nav className="flex gap-4 md:gap-8 mr-6 md:mr-14">
+          <nav className="flex gap-4 md:gap-8 mr-6 md:mr-14 text-base md:text-lg">
             {NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 className={cx(
-                  "text-xs font-black tracking-[0.25em] uppercase transition-colors whitespace-nowrap",
+                  "text-base md:text-lg font-black tracking-[0.25em] uppercase transition-colors whitespace-nowrap",
                   active(item.href) ? "text-emerald-400" : "text-white/65 hover:text-white"
                 )}
               >
@@ -900,15 +895,14 @@ function Shell({ children, route }) {
         </div>
       </header>
 
-      <main className="max-w-[1800px] mx-auto px-6 md:px-12 pt-32 pb-48 relative z-10">{children}</main>
+      <main className="max-w-[1800px] mx-auto px-6 md:px-12 pt-32 pb-48 relative z-10 text-base md:text-lg leading-relaxed">{children}</main>
 
       <footer className="border-t border-white/10 bg-black relative z-50">
         <div className="max-w-[1800px] mx-auto px-12 py-20 border-b border-white/10">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
             <div>
               <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white leading-tight">
-                Your authority is built. Your deployment
-                <span className="text-emerald-400">system is next.</span>
+                Your name is built. Your <span className="text-emerald-400">flow runs.</span>
               </h2>
               
             </div>
@@ -917,7 +911,7 @@ function Shell({ children, route }) {
         </div>
         <div className="max-w-[1800px] mx-auto px-12 py-16 grid lg:grid-cols-3 gap-16">
           <div>
-            <img src={sfsLogo} alt={COPY.shell.brand} className="h-14 w-auto object-contain mb-4 opacity-95" />
+            <div className="text-lg font-black tracking-[0.08em] uppercase text-white mb-4">{COPY.shell.brand}</div>
             <div className="text-sm font-black tracking-[0.4em] text-white/65 uppercase">{COPY.shell.footerSub}</div>
           </div>
           <form
