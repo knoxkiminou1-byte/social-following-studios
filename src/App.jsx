@@ -830,7 +830,7 @@ function Shell({ children, route }) {
         </div>
       </header>
 
-      <main className="max-w-[1800px] mx-auto px-6 md:px-12 pt-32 pb-48 relative z-10">{children}</main>
+      <main className="max-w-[1800px] mx-auto px-6 md:px-12 pt-32 pb-48 relative z-10 text-base md:text-lg leading-relaxed">{children}</main>
 
       <footer className="border-t border-white/10 bg-black relative z-50">
         <div className="max-w-[1800px] mx-auto px-12 py-20 border-b border-white/10">
