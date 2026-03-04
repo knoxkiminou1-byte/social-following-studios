@@ -35,7 +35,7 @@ const COPY = {
     h1Line1Accent: "words",
     h1Line1Suffix: "systems.",
     h1Line2Accent: "",
-    sub: "We deploy language conversion systems that turn your database and authority into revenue on demand.",
+    sub: "We deploy language conversion systems that turn your data and authority into revenue on demand.",
     subBold: "",
     ctaPrimary: "Book Your Call",
     ctaSecondary: "View Case Studies",
@@ -75,7 +75,7 @@ const COPY = {
     ],
     resultsIntroTitle: "Results from real engagements.",
     resultsIntroSub: "Each job starts with a hard audit of your name, list, and owned channels. We map gaps and ship the flow.",
-    closingHeadline: "Your name is built. Your flow is next.",
+    closingHeadline: "You built your name. Deploy your system.",
     closingSub: "",
     closingCta: "Book Your Call",
   },
@@ -83,55 +83,20 @@ const COPY = {
     kicker: "INFRASTRUCTURE",
     h1: "One structured deployment across every channel you own.",
     sub: "Built and operated by Social Following Studios.",
-    layers: [
-      {
-        note: "01 Audit",
-        title: "Map gaps.",
-        desc: "We audit your list, copy, and channel mix.",
-      },
-      {
-        note: "02 Build",
-        title: "Set flow.",
-        desc: "We set the email, page, and book path.",
-      },
-      {
-        note: "03 Run",
-        title: "Run live.",
-        desc: "We run the flow and keep calls on deck.",
-      },
-    ],
-    whoWeServe: {
-      kicker: "WHO WE SERVE",
-      headline: "For teams with a built name.",
-      body: "We work with teams with a live list, owned channels, and a clear offer.",
-      list: [
-        "Lawyers and Legal Practices",
-        "Physicians and Medical Practices",
-        "Government Leaders and Emeriti",
-        "Founders and Executives",
-        "Family Offices",
-        "Institutions and Foundations",
-        "Artists and Educators",
-      ],
-      closing: "Founders entering succession. Family offices sustaining generational continuity. Lawyers and physicians with networks built over decades. Institutions protecting irreplaceable records. Professional practices making expertise transferable.",
-    },
     process: {
       kicker: "OUR PROCESS",
       headline: "Work starts with an audit.",
       steps: [
         {
-          num: "1",
           title: "Audit",
           desc: "We map your current language, channels, database, and system gaps. You receive a written report identifying where your authority lives and exactly what the deployment system needs to activate it.",
         },
         {
-          num: "2",
           title: "Build",
           desc: "We design and build your complete deployment system. Messaging framework, email infrastructure, newsletter architecture, automated sequences, and deployment architecture. Everything built to your defined timeline with weekly progress reports.",
         },
         {
-          num: "3",
-          title: "Deploy",
+          title: "Run",
           desc: "We operate the system. Every channel live. Every sequence active. Performance measured against defined revenue benchmarks and refined based on real data from your actual audience.",
         },
       ],
@@ -285,15 +250,19 @@ function useHashRoute() {
   return route;
 }
 
-function Button({ href, children, variant = "primary" }) {
+function Button({ href, children, variant = "primary", size = "default" }) {
   const base =
-    "inline-flex items-center justify-center px-8 py-4 text-sm font-black tracking-[0.2em] uppercase transition-all active:scale-[0.98] border shadow-2xl relative z-10";
+    "inline-flex items-center justify-center font-black uppercase transition-all active:scale-[0.98] border shadow-2xl relative z-10";
+  const sizeClass =
+    size === "small"
+      ? "px-5 py-2.5 text-xs tracking-[0.16em]"
+      : "px-8 py-4 text-sm tracking-[0.2em]";
   const styles =
     variant === "primary"
       ? "bg-emerald-600 text-white border-emerald-500 hover:bg-emerald-500"
       : "bg-transparent text-white border-white/20 hover:bg-white/5";
   return (
-    <a href={href} className={cx(base, styles)}>
+    <a href={href} className={cx(base, sizeClass, styles)}>
       {children}
     </a>
   );
@@ -632,7 +601,7 @@ function Home() {
           </h2>
           {COPY.home.closingSub && <p className="mt-4 text-[17px] text-white/80 font-semibold">{COPY.home.closingSub}</p>}
           <div className="mt-10">
-            <Button href={BOOKING_URL}>{COPY.home.closingCta}</Button>
+            <Button href={BOOKING_URL} size="small">{COPY.home.closingCta}</Button>
           </div>
         </div>
       </section>
@@ -641,55 +610,21 @@ function Home() {
 }
 
 function Infrastructure() {
-  const { whoWeServe, process, engagements } = COPY.infrastructure;
+  const { process, engagements } = COPY.infrastructure;
   return (
     <div className="pt-12 space-y-20 relative z-10">
       <div className="max-w-4xl text-left">
         <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.infrastructure.kicker}</div>
-        <h1 className="text-5xl md:text-[8rem] font-black tracking-tighter text-white leading-[0.9] whitespace-pre-line">{COPY.infrastructure.h1}</h1>
+        <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-[0.95] whitespace-pre-line">{COPY.infrastructure.h1}</h1>
         <p className="mt-12 text-2xl md:text-4xl text-white/80 font-semibold">{COPY.infrastructure.sub}</p>
       </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {COPY.infrastructure.layers.map((L) => (
-          <div
-            key={L.title}
-            className="bg-black/40 backdrop-blur-md p-10 text-left border border-white/10 hover:bg-emerald-500/5 transition-colors h-full relative z-10"
-          >
-            <div className="text-sm font-black tracking-[0.3em] text-emerald-500 mb-6">{L.note}</div>
-            <h3 className="text-2xl font-black text-white mb-6 uppercase">{L.title}</h3>
-            <p className="text-[17px] text-white/80 font-semibold leading-relaxed">{L.desc}</p>
-          </div>
-        ))}
-      </div>
-
-      <section className="border border-white/10 bg-black/40 backdrop-blur-xl p-12 md:p-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{whoWeServe.kicker}</div>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-8">{whoWeServe.headline}</h2>
-            <p className="text-[17px] text-white/80 font-semibold leading-relaxed mb-10">{whoWeServe.body}</p>
-            <p className="text-[17px] text-white/80 font-semibold leading-relaxed italic">{whoWeServe.closing}</p>
-          </div>
-          <div className="space-y-4">
-            <div className="text-sm font-black tracking-[0.3em] text-white/65 uppercase mb-8">We work with:</div>
-            {whoWeServe.list.map((item) => (
-              <div key={item} className="flex items-start gap-4 border border-white/10 bg-white/[0.02] p-5">
-                <span className="text-emerald-400 font-black mt-0.5">—</span>
-                <p className="text-[17px] font-semibold text-white/80">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="relative z-10">
         <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{process.kicker}</div>
         <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-14">{process.headline}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {process.steps.map((step) => (
-            <div key={step.num} className="border border-white/10 bg-black/40 p-10">
-              <div className="text-5xl font-black text-emerald-400/30 mb-6">{step.num}</div>
+            <div key={step.title} className="border border-white/10 bg-black/40 p-10">
               <h3 className="text-xl font-black text-white uppercase mb-4">{step.title}</h3>
               <p className="text-[17px] text-white/80 font-semibold leading-relaxed">{step.desc}</p>
             </div>
@@ -870,13 +805,13 @@ function Shell({ children, route }) {
               {COPY.shell.brand}
             </span>
           </a>
-          <nav className="flex gap-4 md:gap-8 mr-6 md:mr-14 text-base md:text-lg">
+          <nav className="flex gap-4 md:gap-8 mr-6 md:mr-14 text-sm md:text-base">
             {NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 className={cx(
-                  "text-base md:text-lg font-black tracking-[0.25em] uppercase transition-colors whitespace-nowrap",
+                  "text-sm md:text-base font-black tracking-[0.25em] uppercase transition-colors whitespace-nowrap",
                   active(item.href) ? "text-emerald-400" : "text-white/65 hover:text-white"
                 )}
               >
@@ -900,13 +835,8 @@ function Shell({ children, route }) {
       <footer className="border-t border-white/10 bg-black relative z-50">
         <div className="max-w-[1800px] mx-auto px-12 py-20 border-b border-white/10">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-            <div>
-              <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white leading-tight">
-                Your name is built. Your <span className="text-emerald-400">flow runs.</span>
-              </h2>
-              
-            </div>
-            <Button href={BOOKING_URL}>Book Your Call</Button>
+            <div />
+            <Button href={BOOKING_URL} size="small">Book Your Call</Button>
           </div>
         </div>
         <div className="max-w-[1800px] mx-auto px-12 py-16 grid lg:grid-cols-3 gap-16">
