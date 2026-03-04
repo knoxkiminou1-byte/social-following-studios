@@ -125,9 +125,9 @@ const COPY = {
         },
       ],
     },
-    outroLines: ["Your system is ready."],
+    outroLines: [],
     outroSub: "",
-    cta: "BOOK MY CALL",
+    cta: "DEPLOY YOUR SYSTEM",
   },
   caseStudies: {
     kicker: "CASE STUDIES",
@@ -646,14 +646,16 @@ function Infrastructure() {
       </section>
 
       <section className="text-center py-20 border-t border-white/10 relative z-10">
-        <p className="text-3xl md:text-5xl font-black text-white leading-tight mb-12">
-          {COPY.infrastructure.outroLines.map((line) => (
-            <React.Fragment key={line}>
-              {line}
-              <br />
-            </React.Fragment>
-          ))}
-        </p>
+        {COPY.infrastructure.outroLines.length > 0 && (
+          <p className="text-3xl md:text-5xl font-black text-white leading-tight mb-12">
+            {COPY.infrastructure.outroLines.map((line) => (
+              <React.Fragment key={line}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
+          </p>
+        )}
         <Button href={BOOKING_URL}>{COPY.infrastructure.cta}</Button>
       </section>
     </div>
@@ -776,7 +778,7 @@ function Contact() {
         <div className="mt-12 border border-white/10 bg-white/[0.02] p-6 md:p-8">
           <p className="text-sm font-black tracking-[0.3em] uppercase text-emerald-400 mb-3">Qualification</p>
           <p className="text-[17px] text-white/80 font-semibold leading-relaxed">
-            Social Following Studios works with operators whose authority is already built. We review every assessment request and engage with operators whose database and channels are ready to activate.
+            We review every assessment request and engage with operators whose database and channels are ready to activate.
           </p>
         </div>
       </section>
