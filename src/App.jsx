@@ -804,13 +804,13 @@ function Shell({ children, route }) {
               {COPY.shell.brand}
             </span>
           </a>
-          <nav className="flex gap-4 md:gap-8 mr-6 md:mr-14">
+          <nav className="flex gap-4 md:gap-8 mr-6 md:mr-14 text-base md:text-lg">
             {NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 className={cx(
-                  "text-xs font-black tracking-[0.25em] uppercase transition-colors whitespace-nowrap",
+                  "text-base md:text-lg font-black tracking-[0.25em] uppercase transition-colors whitespace-nowrap",
                   active(item.href) ? "text-emerald-400" : "text-white/65 hover:text-white"
                 )}
               >
@@ -829,7 +829,7 @@ function Shell({ children, route }) {
         </div>
       </header>
 
-      <main className="max-w-[1800px] mx-auto px-6 md:px-12 pt-32 pb-48 relative z-10">{children}</main>
+      <main className="max-w-[1800px] mx-auto px-6 md:px-12 pt-32 pb-48 relative z-10 text-base md:text-lg leading-relaxed">{children}</main>
 
       <footer className="border-t border-white/10 bg-black relative z-50">
         <div className="max-w-[1800px] mx-auto px-12 py-16 grid lg:grid-cols-3 gap-16">
