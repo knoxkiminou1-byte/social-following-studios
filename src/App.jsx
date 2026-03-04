@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
-import sfsLogo from "./assets/SFSF.png";
 
 const NAV = [
   { label: "01 Home", href: "#/" },
@@ -9,7 +8,7 @@ const NAV = [
 ];
 
 const BOOKING_URL = "https://app.cal.com/socialfollowing";
-const CONTACT_FORM_ENDPOINT = "#";
+const CONTACT_FORM_ENDPOINT = "https://crm.zoho.com/crm/WebToLeadForm";
 const MAILING_LIST_ENDPOINT = "#";
 
 const TRUSTED_BY_LOGOS = [
@@ -36,185 +35,173 @@ const COPY = {
     h1Line1Accent: "words",
     h1Line1Suffix: "systems.",
     h1Line2Accent: "",
-    sub: "We operate the language conversion system that turns your authority into calls, your database into clients, and your name into revenue on demand.",
-    subBold: "",
-    ctaPrimary: "Book Your Call",
+    sub: "We deploy language conversion systems that turn your data and authority into increased visibility and revenue.",
+    ctaPrimary: "BOOK MY CALL",
     ctaSecondary: "View Case Studies",
     trustedKicker: "TRUSTED BY",
-    trustedSub: "Social Following Studios has built worlds systems for organizations that set the standard in their industries.",
+    trustedSub: "Social Following Studios has built words systems for groups that set the standard in their fields.",
     stats: [
       {
-        label: "SOCIAL FOLLOWING STUDIOS WORKS WITH OPERATORS WHOSE AUTHORITY IS ALREADY BUILT.",
-        sub: "Lawyers with decades of referral relationships. Physicians with patient networks built over careers. Government leaders with institutional knowledge and trusted audiences. Founders whose names carry weight in their industries.",
+        label: "FOR ESTABLISHED OPERATORS",
+        sub: "You have the authority and the database. We build the system that turns both into booked calls.",
       },
       {
         label: "YOUR AUTHORITY IS THE ASSET.",
-        sub: "Your authority is the asset. Your database is full of people who already trust you. Most operators let both sit idle while they chase new audiences and spend money on ads.",
+        sub: "Your database is full of people who already trust you. Most let it sit idle. The revenue you want is already in the room.",
       },
       {
-        label: "THE SYSTEM",
-        sub: "Social Following Studios activates what you already own. We take the relationships in your database, the authority behind your name, and the channels you control, and we convert all three into revenue on demand. Social Following Studios aligns your email, messaging, and controlled media into a unified reactivation framework. Every touchpoint reinforces the same positioning, the same authority, and the same next step. Instead of scattered outreach, you operate one coordinated communication engine designed to move dormant relationships back into active engagement.",
+        label: "THE CONVERSION SYSTEM THAT NARRATES ITSELF",
+        sub: "We build the system that tells your story, activates your database, and converts your authority into a predictable pipeline of calls and clients.",
       },
     ],
     equationKicker: "DISCIPLINES",
     equationHeadline: "We write it. We build it. We send it.",
     equationBody:
-      "Strategy, infrastructure, and deployment operate as one coordinated system. Your authority reaches the people it belongs to across every channel you own.",
+      "We align every channel you control around one objective: converting dormant relationships into booked consultations.",
     coreArch: "ONE DEPLOYMENT SYSTEM",
     architecture: [
       {
         title: "Strategic Language",
-        desc: "We write the messaging that positions your expertise for the audiences who act on it. Brand voice, email copy, sales collateral, newsletter content, and thought leadership aligned to a single strategic framework built around your institutional authority.",
+        desc: "We define the language that moves qualified buyers to signed agreements. Your expertise, codified.",
       },
       {
         title: "Owned Infrastructure",
-        desc: "We build the system you control. Email architecture, newsletter infrastructure, podcast distribution, automated messaging, and lifecycle sequences designed to reach your audience directly. Your database. Your relationships. Your record.",
+        desc: "We build the infrastructure that puts you in command. Your channels, unified.",
       },
       {
         title: "Full Deployment",
-        desc: "We operate the system. Every channel activated. Every sequence live. Every relationship in your database receiving the right language at the right stage.",
+        desc: "We operate the system that produces consistent calls. Your calendar, full.",
       },
     ],
     resultsIntroTitle: "Results from real engagements.",
-    resultsIntroSub: "Every engagement begins with a strategic audit of your authority, your database, and your owned channels. We map structural gaps, install the system, and deploy it across channels you control.",
-    closingHeadline: "Your authority is built. Your deployment system is next.",
+    resultsIntroSub:
+      "Every engagement begins with a Language Assessment. We map your authority, find your system gaps, and build the bridge to revenue.",
+    closingHeadline: "Your authority is built. Your deployment system solidifies it.",
     closingSub: "",
-    closingCta: "Book Your Call",
+    closingCta: "BOOK MY CALL",
   },
   infrastructure: {
     kicker: "INFRASTRUCTURE",
-    h1: "One structured deployment across every channel you own.",
+    h1: "One system. Every channel.",
     sub: "Built and operated by Social Following Studios.",
     layers: [
       {
         note: "01 We Write It",
-        title: "We write everything the system needs to run.",
-        desc: "Brand voice, email sequences, newsletter content, sales collateral, podcast scripts, automated messaging, and thought leadership. All aligned to a single strategic framework built around your institutional authority.",
+        title: "We write the words.",
+        desc: "We write the language that moves qualified buyers to signed agreements.",
       },
       {
         note: "02 We Build It",
-        title: "We build the infrastructure that delivers it.",
-        desc: "Email architecture, newsletter systems, podcast distribution, automated messaging sequences, lifecycle flows, and CRM integration. The complete deployment system end to end.",
+        title: "We build the system.",
+        desc: "We build the infrastructure that puts you in command.",
       },
       {
         note: "03 We Send It",
-        title: "We operate the deployment.",
-        desc: "Every channel activated. Every sequence live. Every relationship in your database receiving the right language at the right stage. The system runs and generates predictable revenue.",
+        title: "We operate the system.",
+        desc: "We operate the system that produces consistent calls.",
       },
     ],
     whoWeServe: {
       kicker: "WHO WE SERVE",
-      headline: "Operators whose authority is the asset.",
-      body: "Social Following Studios operates structured deployment systems for operators whose authority is the asset.",
-      list: [
-        "Lawyers and Legal Practices",
-        "Physicians and Medical Practices",
-        "Government Leaders and Emeriti",
-        "Founders and Executives",
-        "Family Offices",
-        "Institutions and Foundations",
-        "Artists and Educators",
-      ],
-      closing: "Founders entering succession. Family offices sustaining generational continuity. Lawyers and physicians with networks built over decades. Institutions protecting irreplaceable records. Professional practices making expertise transferable.",
+      headline: "For operators whose authority is the asset.",
+      body: "We work with operators who have built real authority over years, with full databases, owned channels, and audiences that already trust them.",
+      closing: "",
     },
-    process: {
-      kicker: "OUR PROCESS",
-      headline: "Assessment. Build. Deploy.",
-      steps: [
-        {
-          num: "1",
-          title: "Assessment",
-          desc: "We map your current language, channels, database, and system gaps. You receive a written report identifying where your authority lives and exactly what the deployment system needs to activate it.",
-        },
-        {
-          num: "2",
-          title: "Build",
-          desc: "We design and build your complete deployment system. Messaging framework, email infrastructure, newsletter architecture, automated sequences, and deployment architecture. Everything built to your defined timeline with weekly progress reports.",
-        },
-        {
-          num: "3",
-          title: "Deploy",
-          desc: "We operate the system. Every channel live. Every sequence active. Performance measured against defined revenue benchmarks and refined based on real data from your actual audience.",
-        },
-      ],
-    },
-    engagements: {
-      kicker: "ENGAGEMENT MODELS",
+    howItWorks: {
+      kicker: "HOW IT WORKS",
       headline: "All engagements begin with a Language Assessment.",
-      note: "",
       tiers: [
         {
           title: "Assessment",
-          desc: "A focused audit of your language, channels, database, and system gaps. Delivered as a written report with prioritized recommendations and a clear build roadmap.",
+          desc: "A focused audit of your language, database, and system gaps, delivered as a written report that maps the system you need.",
         },
         {
           title: "Full Build",
-          desc: "Complete deployment system design and deployment. Strategy, infrastructure, and full activation across your owned channels. Built and launched within an agreed timeline.",
+          desc: "Your complete system, built and launched across your owned channels to turn dormant connections into revenue.",
         },
         {
           title: "Retained Advisory",
-          desc: "We operate the system on an ongoing basis. Content production, optimization, channel management, and strategic guidance. Monthly reporting tied to defined revenue benchmarks.",
+          desc: "We operate your system on an ongoing basis, with monthly reporting tied to your revenue targets.",
         },
       ],
     },
-    outroLines: ["Your deployment is ready to build."],
+    outroLines: ["Your system is ready."],
     outroSub: "",
-    cta: "Book Your Call",
+    cta: "BOOK MY CALL",
   },
   caseStudies: {
     kicker: "CASE STUDIES",
     title: "Results from real engagements.",
-    sub: "Every engagement begins with a strategic audit of authority, database structure, and owned channels. We design the architecture, deploy lifecycle messaging, and activate retained-client flow.",
-    trustedKicker: "",
     cards: [
       {
         badge: "Case Study 01",
-        client: "Healthcare Services Firm",
-        challenge: "Qualified relationships stalled at intake. Messaging reached peers rather than decision-makers. Revenue sat in a dormant database with no system to activate it.",
-        action: "Rebuilt intake architecture and lead scoring. Wrote and deployed messaging aligned with buyer intent across email and web. Activated the existing database through a structured lifecycle sequence.",
-        result: "+41% qualified opportunities within 90 days.",
-        outcome: "+41%",
-        outcomeLabel: "Qualified Opportunities · 90 Days",
+        client: "Michael Todd Legal",
+        location: "San Francisco Bay Area",
+        quote: "Our calendar filled from emails we already owned. Ninety days.",
+        quoteAttrib: "Michael Todd, Managing Principal",
+        challenge:
+          "Strong referral reputation. Email list sitting idle. No lifecycle sequencing. Bookings dependent on inbound timing.",
+        action:
+          "Repositioned messaging for decision-stage buyers. Built segmented email architecture. Deployed consultation booking sequence with automated follow-up.",
+        result:
+          "+32% retained clients sourced directly from owned channels in 90 days. Revenue stabilized through structured lifecycle deployment.",
+        outcome: "+32%",
+        outcomeLabel: "Retained Clients · 90 Days · Owned Channels",
         tech: "Strategic Language · Owned Infrastructure · Full Deployment",
-        problem: "Before: Qualified relationships stalled at intake. Messaging reached peers rather than decision-makers.",
+        problem:
+          "Before: Strong referral reputation. Email list sitting idle. No lifecycle sequencing. Bookings dependent on inbound timing.",
+        methodology: "Retained client count measured against owned channel sequences over a 90-day deployment window.",
       },
       {
         badge: "Case Study 02",
-        client: "Regional Energy Consultancy",
-        challenge: "High referral volume arriving with no nurture system to move relationships from interest to retained engagement. Authority was established. The conversion system did not exist.",
-        action: "Designed a three-stage email nurture sequence tied to service tiers. Rewrote proposals in buyer language. Deployed automated follow-up that moved referrals through the pipeline to retained engagement.",
-        result: "27% lift in proposal-to-close rate. Average engagement size increased 18%.",
-        outcome: "+27%",
-        outcomeLabel: "Proposal-to-Close Rate · +18% Avg Engagement Size",
-        tech: "Strategic Language · Lifecycle Sequences",
-        problem: "Before: High referral volume, no nurture system to move relationships from interest to retained engagement.",
+        client: "Erich Simpson, MD",
+        location: "Northern California",
+        quote: "Patients we hadn't heard from in years started booking. The system found them.",
+        quoteAttrib: "Erich Simpson, Founder",
+        challenge: "Established patient trust. Dormant database. No re-engagement system. No referral path.",
+        action:
+          "Strategic messaging rewrite. Reactivation sequence deployed. Newsletter system built. Referral amplification workflow installed.",
+        result: "+41% lift in consultations and recurring referrals in 120 days.",
+        outcome: "+41%",
+        outcomeLabel: "Consultations & Referrals · 120 Days",
+        tech: "Strategic Language · Owned Infrastructure · Full Deployment",
+        problem: "Before: Established patient trust. Dormant database. No re-engagement system. No referral path.",
+        methodology: "Consultation and referral volume measured against baseline across a 120-day reactivation deployment.",
       },
       {
         badge: "Case Study 03",
-        client: "Professional Services Network",
-        challenge: "Strong institutional reputation with no owned distribution. Every new relationship depended entirely on referral. The network existed. The deployment system did not.",
-        action: "Built the complete deployment system from the database up. Newsletter architecture, LinkedIn content system, podcast distribution, and an automated referral follow-up sequence. Every channel activated within one engagement.",
-        result: "340 qualified subscribers and 12 new retained clients sourced directly from owned channels in the first six months.",
-        outcome: "340",
-        outcomeLabel: "Qualified Subscribers · 12 Retained Clients · 6 Months",
-        tech: "Owned Infrastructure · Full Deployment",
-        problem: "Before: Strong institutional reputation with no owned distribution and no system to activate the existing network.",
+        client: "Sandra Lindholm Real Estate",
+        location: "San Francisco",
+        quote: "I had the brand. I just needed the system behind it.",
+        quoteAttrib: "Sandra Lindholm, Principal",
+        challenge:
+          "Strong personal brand. High social visibility. No owned system to move prospects from interest to signed agreement.",
+        action:
+          "Offer positioning rewrite. Automated nurture system built. Seller consultation sequence deployed. Follow-up messaging aligned with buyer psychology.",
+        result: "+28% increase in signed listing agreements driven from owned email and follow-up sequences.",
+        outcome: "+28%",
+        outcomeLabel: "Signed Listing Agreements · Owned Channels",
+        tech: "Strategic Language · Owned Infrastructure · Full Deployment",
+        problem:
+          "Before: Strong personal brand. High social visibility. No owned system to move prospects from interest to signed agreement.",
+        methodology:
+          "Signed listing agreements measured against owned email and follow-up sequence activity over the engagement period.",
       },
     ],
-    outroLines: ["Your authority is built. Your deployment", "system is next."],
-    cta: "Book Your Call",
+    outroLines: ["Your system is next."],
+    cta: "BOOK MY CALL",
   },
   contact: {
     kicker: "CONTACT",
     title: "Book Your Call.",
-    sub: "Tell us about your authority, your audience, and your channels. We map the deployment that activates them.",
+    sub: "Every engagement starts here. We bring the system. You bring the authority.",
     submitIdle: "SUBMIT",
     submitDone: "SUBMITTED",
   },
   shell: {
     brand: "Social Following Studios",
     brandSub: "Language Infrastructure",
-    topCta: "Book Your Call",
+    topCta: "BOOK MY CALL",
     footerSub: "Social Following Studios 2026",
     terms: "Terms",
     privacy: "Privacy",
@@ -413,8 +400,8 @@ function LiquidBackground() {
         uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
         uColor1: { value: new THREE.Vector3(0.06, 0.72, 0.5) },
         uColor2: { value: new THREE.Vector3(0.02, 0.03, 0.08) },
-        uSpeed: { value: 1.2 },
-        uIntensity: { value: 2.2 },
+        uSpeed: { value: 0.55 },
+        uIntensity: { value: 0.85 },
         uTouchTexture: { value: touchTexture.texture },
         uGrainIntensity: { value: 0.08 },
         uDarkNavy: { value: new THREE.Vector3(0.01, 0.02, 0.05) },
@@ -453,7 +440,7 @@ function LiquidBackground() {
       scene.add(new THREE.Mesh(new THREE.PlaneGeometry(150, 150, 1, 1), material));
       const clock = new THREE.Clock();
       const animate = () => {
-        uniforms.uTime.value += clock.getDelta();
+        uniforms.uTime.value += clock.getDelta() * 0.85;
         touchTexture.update();
         renderer.render(scene, camera);
         requestAnimationFrame(animate);
@@ -484,9 +471,9 @@ function InnerBackground() {
   return (
     <div className="fixed inset-0 -z-30">
       <div className="absolute inset-0 bg-stone-950" />
-      <div className="absolute -top-56 left-1/2 h-[980px] w-[980px] -translate-x-1/2 rounded-full bg-emerald-500/10 blur-[140px]" />
-      <div className="absolute -top-32 -left-48 h-[720px] w-[720px] rounded-full bg-white/5 blur-[130px]" />
-      <div className="absolute -bottom-48 -right-48 h-[820px] w-[820px] rounded-full bg-emerald-400/5 blur-[160px]" />
+      <div className="absolute -top-56 left-1/2 h-[980px] w-[980px] -translate-x-1/2 rounded-full bg-emerald-500/8 blur-[120px]" />
+      <div className="absolute -top-32 -left-48 h-[720px] w-[720px] rounded-full bg-white/6 blur-[110px]" />
+      <div className="absolute -bottom-48 -right-48 h-[820px] w-[820px] rounded-full bg-emerald-400/6 blur-[130px]" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
       <div
         className="absolute inset-0 opacity-[0.06] mix-blend-overlay"
@@ -643,7 +630,7 @@ function Home() {
 }
 
 function Infrastructure() {
-  const { whoWeServe, process, engagements } = COPY.infrastructure;
+  const { whoWeServe, howItWorks } = COPY.infrastructure;
   return (
     <div className="pt-12 space-y-20 relative z-10">
       <div className="max-w-4xl text-left">
@@ -666,45 +653,19 @@ function Infrastructure() {
       </div>
 
       <section className="border border-white/10 bg-black/40 backdrop-blur-xl p-12 md:p-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{whoWeServe.kicker}</div>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-8">{whoWeServe.headline}</h2>
-            <p className="text-[17px] text-white/80 font-semibold leading-relaxed mb-10">{whoWeServe.body}</p>
-            <p className="text-[17px] text-white/80 font-semibold leading-relaxed italic">{whoWeServe.closing}</p>
-          </div>
-          <div className="space-y-4">
-            <div className="text-sm font-black tracking-[0.3em] text-white/65 uppercase mb-8">We work with:</div>
-            {whoWeServe.list.map((item) => (
-              <div key={item} className="flex items-start gap-4 border border-white/10 bg-white/[0.02] p-5">
-                <span className="text-emerald-400 font-black mt-0.5">—</span>
-                <p className="text-[17px] font-semibold text-white/80">{item}</p>
-              </div>
-            ))}
-          </div>
+        <div className="max-w-3xl">
+          <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{whoWeServe.kicker}</div>
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-8">{whoWeServe.headline}</h2>
+          <p className="text-[17px] text-white/80 font-semibold leading-relaxed mb-10">{whoWeServe.body}</p>
+          {whoWeServe.closing && <p className="text-[17px] text-white/80 font-semibold leading-relaxed italic">{whoWeServe.closing}</p>}
         </div>
       </section>
 
       <section className="relative z-10">
-        <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{process.kicker}</div>
-        <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-14">{process.headline}</h2>
+        <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{howItWorks.kicker}</div>
+        <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-14">{howItWorks.headline}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {process.steps.map((step) => (
-            <div key={step.num} className="border border-white/10 bg-black/40 p-10">
-              <div className="text-5xl font-black text-emerald-400/30 mb-6">{step.num}</div>
-              <h3 className="text-xl font-black text-white uppercase mb-4">{step.title}</h3>
-              <p className="text-[17px] text-white/80 font-semibold leading-relaxed">{step.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="relative z-10">
-        <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{engagements.kicker}</div>
-        <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-4">{engagements.headline}</h2>
-        <p className="text-[17px] text-white/72 font-semibold mb-14">{engagements.note}</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {engagements.tiers.map((tier) => (
+          {howItWorks.tiers.map((tier) => (
             <div key={tier.title} className="border border-white/10 bg-black/40 p-10 hover:bg-emerald-500/5 transition-colors">
               <h3 className="text-xl font-black text-white uppercase mb-4">{tier.title}</h3>
               <p className="text-[17px] text-white/80 font-semibold leading-relaxed">{tier.desc}</p>
@@ -734,13 +695,13 @@ function CaseStudies() {
       <div className="text-left mb-24 max-w-4xl">
         <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.caseStudies.kicker}</div>
         <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white leading-[0.9]">{COPY.caseStudies.title}</h1>
-        <p className="mt-8 text-[17px] text-white/80 font-semibold leading-tight">{COPY.caseStudies.sub}</p>
+        {COPY.caseStudies.sub && <p className="mt-8 text-[17px] text-white/80 font-semibold leading-tight">{COPY.caseStudies.sub}</p>}
       </div>
 
       <div className="mb-24 py-12 border-y border-white/10 overflow-hidden relative z-10">
-        <div className="text-sm font-black tracking-[0.3em] text-emerald-500 uppercase mb-12 text-center">
-          {COPY.caseStudies.trustedKicker}
-        </div>
+        {COPY.caseStudies.trustedKicker && (
+          <div className="text-sm font-black tracking-[0.3em] text-emerald-500 uppercase mb-12 text-center">{COPY.caseStudies.trustedKicker}</div>
+        )}
         <img
           src="/logos-sheet.png"
           alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP Baysound, Rhythm & Roux, Parade of Youth, Chevron"
@@ -750,15 +711,10 @@ function CaseStudies() {
 
       <div className="space-y-8 relative z-10">
         {COPY.caseStudies.cards.map((cs) => (
-          <div
-            key={cs.client}
-            className="border border-white/10 bg-black/40 p-10 md:p-14 hover:bg-white/5 transition-all relative z-10"
-          >
+          <div key={cs.client} className="border border-white/10 bg-black/40 p-10 md:p-14 hover:bg-white/5 transition-all relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
               <div>
-                <span className="inline-block border border-emerald-500/30 px-3 py-1 text-sm font-black tracking-widest text-emerald-400 uppercase mb-4">
-                  {cs.badge}
-                </span>
+                <span className="inline-block border border-emerald-500/30 px-3 py-1 text-sm font-black tracking-widest text-emerald-400 uppercase mb-4">{cs.badge}</span>
                 <div className="text-2xl font-black text-white uppercase mb-6">{cs.client}</div>
                 <div className="text-6xl font-black text-emerald-400 leading-none">{cs.outcome}</div>
                 <div className="text-sm font-black tracking-widest text-white/65 uppercase mt-2">{cs.outcomeLabel}</div>
@@ -781,6 +737,10 @@ function CaseStudies() {
                 <div>
                   <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Disciplines</div>
                   <div className="text-sm font-black tracking-widest text-emerald-400 uppercase">{cs.tech}</div>
+                </div>
+                <div>
+                  <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Methodology</div>
+                  <p className="text-sm font-semibold text-white/65 leading-relaxed">{cs.methodology}</p>
                 </div>
               </div>
             </div>
@@ -817,37 +777,37 @@ function Contact() {
 
         <form
           action={CONTACT_FORM_ENDPOINT}
+          method="POST"
           onSubmit={(e) => {
             e.preventDefault();
             setStatus("submitted");
           }}
           className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5"
         >
-          {["Name", "Organization", "Role", "Primary channel or platform you want activated", "What your database or audience currently looks like", "What revenue outcome you are building toward"].map((field) => (
-            <input
-              key={field}
-              type={field === "Name" ? "text" : "text"}
-              required
-              placeholder={field}
-              className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500"
-            />
-          ))}
-          <textarea
-            placeholder="Additional context (optional)"
-            rows={5}
-            className="md:col-span-2 w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500"
-          />
+          <input type="hidden" name="xnQsjsdp" value="YOUR_ZOHO_FORM_KEY" />
+          <input type="hidden" name="xmIwtLD" value="YOUR_ZOHO_FORM_ID" />
+          <input type="hidden" name="actionType" value="TGVhZHM=" />
+          <input type="hidden" name="returnURL" value="https://socialfollowingstudios.com" />
+
+          <input type="text" name="Last Name" required placeholder="Name" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          <input type="email" name="Email" required placeholder="Email" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          <input type="text" name="Company" required placeholder="Organization" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          <input type="text" name="Title" required placeholder="Role" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          <input type="text" name="LEADCF1" placeholder="Primary channel or platform you want activated" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          <input type="text" name="LEADCF2" placeholder="What your database or audience currently looks like" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          <textarea name="LEADCF3" placeholder="What revenue outcome you are building toward" rows={3} className="md:col-span-2 w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          <textarea name="Description" placeholder="Additional context (optional)" rows={4} className="md:col-span-2 w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
           <div className="md:col-span-2 flex justify-start mt-2">
             <button type="submit" className="bg-emerald-600 px-10 py-4 text-sm font-black tracking-[0.3em] uppercase text-white hover:bg-emerald-500 transition-colors">
               {status === "submitted" ? COPY.contact.submitDone : COPY.contact.submitIdle}
             </button>
           </div>
         </form>
+
         <div className="mt-12 border border-white/10 bg-white/[0.02] p-6 md:p-8">
           <p className="text-sm font-black tracking-[0.3em] uppercase text-emerald-400 mb-3">Qualification</p>
           <p className="text-[17px] text-white/80 font-semibold leading-relaxed">
-            Social Following Studios works with operators whose authority is already built. We review every assessment
-            request and engage with operators whose database and channels are ready to activate.
+            Social Following Studios works with operators whose authority is already built. We review every assessment request and engage with operators whose database and channels are ready to activate.
           </p>
         </div>
       </section>
@@ -869,11 +829,9 @@ function Shell({ children, route }) {
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
         <div className="max-w-[1800px] mx-auto flex items-center justify-between px-6 md:px-12 py-6 md:py-8">
           <a href="#/" className="group shrink-0">
-            <img
-              src={sfsLogo}
-              alt={COPY.shell.brand}
-              className="h-10 md:h-12 w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity"
-            />
+            <span className="text-lg md:text-2xl font-black tracking-[0.08em] uppercase text-white group-hover:text-emerald-400 transition-colors">
+              {COPY.shell.brand}
+            </span>
           </a>
           <nav className="flex gap-4 md:gap-8 mr-6 md:mr-14">
             {NAV.map((item) => (
@@ -908,16 +866,15 @@ function Shell({ children, route }) {
             <div>
               <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white leading-tight">
                 Your authority is built. Your deployment
-                <span className="text-emerald-400">system is next.</span>
+                <span className="text-emerald-400">system solidifies it.</span>
               </h2>
-              
             </div>
-            <Button href={BOOKING_URL}>Book Your Call</Button>
+            <Button href={BOOKING_URL}>{COPY.shell.topCta}</Button>
           </div>
         </div>
         <div className="max-w-[1800px] mx-auto px-12 py-16 grid lg:grid-cols-3 gap-16">
           <div>
-            <img src={sfsLogo} alt={COPY.shell.brand} className="h-14 w-auto object-contain mb-4 opacity-95" />
+            <div className="text-lg font-black tracking-[0.08em] uppercase text-white mb-4">{COPY.shell.brand}</div>
             <div className="text-sm font-black tracking-[0.4em] text-white/65 uppercase">{COPY.shell.footerSub}</div>
           </div>
           <form
