@@ -35,7 +35,7 @@ const COPY = {
     h1Line1Accent: "words",
     h1Line1Suffix: "systems.",
     h1Line2Accent: "",
-    sub: "We build the system that turns your authority into revenue.",
+    sub: "We deploy language conversion systems that turn your data and authority into increased visibility and revenue.",
     ctaPrimary: "BOOK MY CALL",
     ctaSecondary: "View Case Studies",
     trustedKicker: "TRUSTED BY",
@@ -43,7 +43,7 @@ const COPY = {
     stats: [
       {
         label: "FOR ESTABLISHED OPERATORS",
-        sub: "You have the authority and the database. We build the system that turns both into booked calls.",
+        sub: "You have the authority and the database. We build the system that turns both into booked appointments.",
       },
       {
         label: "YOUR AUTHORITY IS THE ASSET.",
@@ -51,7 +51,7 @@ const COPY = {
       },
       {
         label: "THE CONVERSION SYSTEM THAT NARRATES ITSELF",
-        sub: "We build the system that tells your story, activates your database, and converts your authority into a predictable pipeline of calls and clients.",
+        sub: "We deploy the sequence that tells your story, activates your database, and converts trust into predictable appointments and clients.",
       },
     ],
     equationKicker: "DISCIPLINES",
@@ -70,7 +70,7 @@ const COPY = {
       },
       {
         title: "Full Deployment",
-        desc: "We operate the system that produces consistent calls. Your calendar, full.",
+        desc: "We deploy the system across your channels to keep qualified appointments coming. Your calendar, full.",
       },
     ],
     resultsIntroTitle: "Results from real engagements.",
@@ -83,7 +83,7 @@ const COPY = {
   infrastructure: {
     kicker: "INFRASTRUCTURE",
     h1: "One system. Every channel.",
-    sub: "Built and operated by Social Following Studios.",
+    sub: "Built and deployed by Social Following Studios.",
     layers: [
       {
         note: "01 We Write It",
@@ -97,22 +97,22 @@ const COPY = {
       },
       {
         note: "03 We Send It",
-        title: "We operate the system.",
-        desc: "We operate the system that produces consistent calls.",
+        title: "We deploy the system.",
+        desc: "We deploy the system across your channels to keep qualified appointments coming.",
       },
     ],
     whoWeServe: {
       kicker: "WHO WE SERVE",
       headline: "For operators whose authority is the asset.",
-      body: "We work with operators who have built real authority over years, with full databases, owned channels, and audiences that already trust them.",
+      body: "We work with operators who have built real world authority, with full databases, owned channels, and audiences that already trust them.",
       closing: "",
     },
     howItWorks: {
       kicker: "HOW IT WORKS",
-      headline: "All engagements begin with a Language Assessment.",
+      headline: "All engagements begin with a Language Audit.",
       tiers: [
         {
-          title: "Assessment",
+          title: "THE AUDIT",
           desc: "A focused audit of your language, database, and system gaps, delivered as a written report that maps the system you need.",
         },
         {
@@ -121,7 +121,7 @@ const COPY = {
         },
         {
           title: "Retained Advisory",
-          desc: "We operate your system on an ongoing basis, with monthly reporting tied to your revenue targets.",
+          desc: "We deploy your system on an ongoing basis, with monthly reporting tied to your revenue targets.",
         },
       ],
     },
@@ -188,7 +188,7 @@ const COPY = {
           "Signed listing agreements measured against owned email and follow-up sequence activity over the engagement period.",
       },
     ],
-    outroLines: ["Your system is next."],
+    outroLines: [],
     cta: "BOOK MY CALL",
   },
   contact: {
@@ -249,7 +249,7 @@ const PRIVACY_POLICY = {
     },
     {
       heading: "Data sharing",
-      body: "We do not sell personal data. We may share information with trusted providers only when required to operate or support our services.",
+      body: "We do not sell personal data. We may share information with trusted providers only when required to run or support our services.",
     },
   ],
 };
@@ -596,35 +596,6 @@ function Home() {
           </div>
         </div>
       </section>
-
-      <section className="relative z-10 border border-white/15 bg-gradient-to-r from-black/90 via-black/85 to-black/80 backdrop-blur-xl p-8 md:p-12">
-        <div className="mb-8">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">{COPY.home.resultsIntroTitle}</h2>
-          <p className="mt-3 text-[17px] text-white/72 font-semibold">{COPY.home.resultsIntroSub}</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {COPY.caseStudies.cards.map((cs) => (
-            <article key={cs.client} className="border border-white/10 bg-white/[0.03] p-6">
-              <div className="text-sm font-black tracking-[0.3em] text-emerald-400 uppercase mb-3">{cs.badge}</div>
-              <div className="text-3xl font-black text-emerald-400 mb-3">{cs.outcome}</div>
-              <h3 className="text-base font-black text-white mb-2 uppercase">{cs.client}</h3>
-              <p className="text-white/80 text-[17px] leading-relaxed">{cs.problem}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="border border-emerald-500/40 bg-emerald-500/5 p-12 md:p-20 relative z-10">
-        <div className="max-w-4xl">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight">
-            {COPY.home.closingHeadline}
-          </h2>
-          {COPY.home.closingSub && <p className="mt-4 text-[17px] text-white/80 font-semibold">{COPY.home.closingSub}</p>}
-          <div className="mt-10">
-            <Button href={BOOKING_URL}>{COPY.home.closingCta}</Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
@@ -697,18 +668,6 @@ function CaseStudies() {
         <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white leading-[0.9]">{COPY.caseStudies.title}</h1>
         {COPY.caseStudies.sub && <p className="mt-8 text-[17px] text-white/80 font-semibold leading-tight">{COPY.caseStudies.sub}</p>}
       </div>
-
-      <div className="mb-24 py-12 border-y border-white/10 overflow-hidden relative z-10">
-        {COPY.caseStudies.trustedKicker && (
-          <div className="text-sm font-black tracking-[0.3em] text-emerald-500 uppercase mb-12 text-center">{COPY.caseStudies.trustedKicker}</div>
-        )}
-        <img
-          src="/logos-sheet.png"
-          alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP Baysound, Rhythm & Roux, Parade of Youth, Chevron"
-          className="w-full max-w-4xl mx-auto object-contain"
-        />
-      </div>
-
       <div className="space-y-8 relative z-10">
         {COPY.caseStudies.cards.map((cs) => (
           <div key={cs.client} className="border border-white/10 bg-black/40 p-10 md:p-14 hover:bg-white/5 transition-all relative z-10">
@@ -748,16 +707,26 @@ function CaseStudies() {
         ))}
       </div>
 
+      <div className="mb-24 py-12 border-y border-white/10 overflow-hidden relative z-10">
+        {COPY.caseStudies.trustedKicker && (
+          <div className="text-sm font-black tracking-[0.3em] text-emerald-500 uppercase mb-12 text-center">{COPY.caseStudies.trustedKicker}</div>
+        )}
+        <img
+          src="/logos-sheet.png"
+          alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP Baysound, Rhythm & Roux, Parade of Youth, Chevron"
+          className="w-full max-w-4xl mx-auto object-contain"
+        />
+      </div>
+
       <section className="text-center py-24 mt-24 relative z-10">
-        <p className="text-3xl md:text-5xl font-black text-white leading-tight mb-8">
-          {COPY.caseStudies.outroLines.map((line) => (
-            <React.Fragment key={line}>
-              {line}
-              <br />
-            </React.Fragment>
-          ))}
-        </p>
         <Button href={BOOKING_URL}>{COPY.caseStudies.cta}</Button>
+      </section>
+
+      <section className="border border-emerald-500/40 bg-emerald-500/5 p-12 md:p-20 relative z-10">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight">{COPY.home.closingHeadline}</h2>
+          <Button href={BOOKING_URL}>{COPY.shell.topCta}</Button>
+        </div>
       </section>
     </div>
   );
@@ -861,17 +830,6 @@ function Shell({ children, route }) {
       <main className="max-w-[1800px] mx-auto px-6 md:px-12 pt-32 pb-48 relative z-10 text-base md:text-lg leading-relaxed">{children}</main>
 
       <footer className="border-t border-white/10 bg-black relative z-50">
-        <div className="max-w-[1800px] mx-auto px-12 py-20 border-b border-white/10">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-            <div>
-              <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white leading-tight">
-                Your authority is built. Your deployment
-                <span className="text-emerald-400">system solidifies it.</span>
-              </h2>
-            </div>
-            <Button href={BOOKING_URL}>{COPY.shell.topCta}</Button>
-          </div>
-        </div>
         <div className="max-w-[1800px] mx-auto px-12 py-16 grid lg:grid-cols-3 gap-16">
           <div>
             <div className="text-lg font-black tracking-[0.08em] uppercase text-white mb-4">{COPY.shell.brand}</div>
