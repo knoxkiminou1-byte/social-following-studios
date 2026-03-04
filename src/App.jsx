@@ -43,7 +43,7 @@ const COPY = {
     stats: [
       {
         label: "FOR ESTABLISHED OPERATORS",
-        sub: "You have the authority and the database. We build the system that turns both into booked calls.",
+        sub: "You have the authority and the database. We build the system that turns both into booked appointments.",
       },
       {
         label: "YOUR AUTHORITY IS THE ASSET.",
@@ -51,7 +51,7 @@ const COPY = {
       },
       {
         label: "THE CONVERSION SYSTEM THAT NARRATES ITSELF",
-        sub: "We build the system that tells your story, activates your database, and converts your authority into a predictable pipeline of calls and clients.",
+        sub: "We deploy the sequence that tells your story, activates your database, and converts trust into predictable appointments and clients.",
       },
     ],
     equationKicker: "DISCIPLINES",
@@ -70,7 +70,7 @@ const COPY = {
       },
       {
         title: "Full Deployment",
-        desc: "We operate the system that produces consistent calls. Your calendar, full.",
+        desc: "We deploy the system across your channels to keep qualified appointments coming. Your calendar, full.",
       },
     ],
     resultsIntroTitle: "Results from real engagements.",
@@ -83,7 +83,7 @@ const COPY = {
   infrastructure: {
     kicker: "INFRASTRUCTURE",
     h1: "One system. Every channel.",
-    sub: "Built and operated by Social Following Studios.",
+    sub: "Built and deployed by Social Following Studios.",
     layers: [
       {
         note: "01 We Write It",
@@ -98,7 +98,7 @@ const COPY = {
       {
         note: "03 We Send It",
         title: "We deploy the system.",
-        desc: "We deploy the system that produces consistent calls.",
+        desc: "We deploy the system across your channels to keep qualified appointments coming.",
       },
     ],
     whoWeServe: {
@@ -121,7 +121,7 @@ const COPY = {
         },
         {
           title: "Retained Advisory",
-          desc: "We operate your system on an ongoing basis, with monthly reporting tied to your revenue targets.",
+          desc: "We deploy your system on an ongoing basis, with monthly reporting tied to your revenue targets.",
         },
       ],
     },
@@ -249,7 +249,7 @@ const PRIVACY_POLICY = {
     },
     {
       heading: "Data sharing",
-      body: "We do not sell personal data. We may share information with trusted providers only when required to operate or support our services.",
+      body: "We do not sell personal data. We may share information with trusted providers only when required to run or support our services.",
     },
   ],
 };
