@@ -748,27 +748,22 @@ function Contact() {
         <form
           action={CONTACT_FORM_ENDPOINT}
           method="POST"
-          onSubmit={(e) => {
-            e.preventDefault();
-            setStatus("submitted");
-          }}
           className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5"
         >
-          <input type="hidden" name="xnQsjsdp" value="YOUR_ZOHO_FORM_KEY" />
-          <input type="hidden" name="xmIwtLD" value="YOUR_ZOHO_FORM_ID" />
-          <input type="hidden" name="actionType" value="TGVhZHM=" />
-          <input type="hidden" name="returnURL" value="https://socialfollowingstudios.com" />
+          <input type="text" style={{ display: "none" }} name="xnQsjsdp" value="0b971d4f2e6e139d7a99a4f24046c5e0ebefca7e325e69aaee1d82d7c7990b06" readOnly />
+          <input type="text" style={{ display: "none" }} name="xmlwtLD" value="c7896fe32d7dd80c22329686cebf5a67c71dfe0e17b02248db6424ca5c0cc3c0f6d4db95ff74bbee6728de4d07c2b5" readOnly />
+          <input type="text" style={{ display: "none" }} name="actionType" value="TGVhZHMM" readOnly />
 
-          <input type="text" name="Last Name" required placeholder="Name" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          <input type="text" name="First Name" placeholder="First Name (optional)" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          <input type="text" name="Last Name" required placeholder="Last Name" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
           <input type="email" name="Email" required placeholder="Email" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          <input type="text" name="Company" required placeholder="Organization" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          <input type="text" name="Title" required placeholder="Role" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          <input type="text" name="LEADCF1" placeholder="Primary channel or platform you want activated" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          <input type="text" name="LEADCF2" placeholder="What your database or audience currently looks like" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          <textarea name="LEADCF3" placeholder="What revenue outcome you are building toward" rows={3} className="md:col-span-2 w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          <textarea name="Description" placeholder="Additional context (optional)" rows={4} className="md:col-span-2 w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          <input type="text" name="Company" required placeholder="Company" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          <input type="text" name="Title" required placeholder="Title" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          <input type="text" name="LEADCF1" placeholder="Primary Channel" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          <textarea name="Description" placeholder="Audience Description" rows={3} className="md:col-span-2 w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          <textarea name="LEADCF2" placeholder="Additional Context" rows={4} className="md:col-span-2 w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
           <div className="md:col-span-2 flex justify-start mt-2">
-            <button type="submit" className="bg-emerald-600 px-10 py-4 text-sm font-black tracking-[0.3em] uppercase text-white hover:bg-emerald-500 transition-colors">
+            <button type="submit" onClick={() => setStatus("submitted")} className="bg-emerald-600 px-10 py-4 text-sm font-black tracking-[0.3em] uppercase text-white hover:bg-emerald-500 transition-colors">
               {status === "submitted" ? COPY.contact.submitDone : COPY.contact.submitIdle}
             </button>
           </div>
