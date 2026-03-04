@@ -125,9 +125,9 @@ const COPY = {
         },
       ],
     },
-    outroLines: ["Your system is ready."],
+    outroLines: [],
     outroSub: "",
-    cta: "BOOK MY CALL",
+    cta: "DEPLOY YOUR SYSTEM",
   },
   caseStudies: {
     kicker: "CASE STUDIES",
@@ -646,14 +646,16 @@ function Infrastructure() {
       </section>
 
       <section className="text-center py-20 border-t border-white/10 relative z-10">
-        <p className="text-3xl md:text-5xl font-black text-white leading-tight mb-12">
-          {COPY.infrastructure.outroLines.map((line) => (
-            <React.Fragment key={line}>
-              {line}
-              <br />
-            </React.Fragment>
-          ))}
-        </p>
+        {COPY.infrastructure.outroLines.length > 0 && (
+          <p className="text-3xl md:text-5xl font-black text-white leading-tight mb-12">
+            {COPY.infrastructure.outroLines.map((line) => (
+              <React.Fragment key={line}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
+          </p>
+        )}
         <Button href={BOOKING_URL}>{COPY.infrastructure.cta}</Button>
       </section>
     </div>
