@@ -623,12 +623,11 @@ function Infrastructure() {
         ))}
       </div>
 
-      <section className="border border-white/10 bg-black/40 backdrop-blur-xl p-12 md:p-20 relative z-10">
-        <div className="max-w-3xl">
-          <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{whoWeServe.kicker}</div>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-8">{whoWeServe.headline}</h2>
-          <p className="text-[17px] text-white/80 font-semibold leading-relaxed mb-10">{whoWeServe.body}</p>
-          {whoWeServe.closing && <p className="text-[17px] text-white/80 font-semibold leading-relaxed italic">{whoWeServe.closing}</p>}
+      <section className="border border-white/10 bg-black/40 backdrop-blur-xl p-6 md:p-8 relative z-10">
+        <div className="max-w-2xl">
+          <div className="text-xs font-black tracking-[0.4em] text-emerald-500 uppercase mb-4">{whoWeServe.kicker}</div>
+          <h3 className="text-2xl md:text-3xl font-black tracking-tight text-white leading-tight mb-4">{whoWeServe.headline}</h3>
+          <p className="text-[17px] text-white/80 font-semibold leading-relaxed">{whoWeServe.body}</p>
         </div>
       </section>
 
