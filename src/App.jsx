@@ -798,7 +798,7 @@ function Shell({ children, route }) {
             <img
               src={BRAND_LOGO_PATH}
               alt={COPY.shell.brand}
-              className="h-auto w-[150px] md:w-[220px] max-h-16 object-contain"
+              className="h-auto w-[320px] md:w-[560px] max-h-28 md:max-h-36 object-contain"
               loading="eager"
               decoding="async"
             />
