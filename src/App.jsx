@@ -10,6 +10,7 @@ const NAV = [
 const BOOKING_URL = "https://app.cal.com/socialfollowing";
 const CONTACT_FORM_ENDPOINT = "https://crm.zoho.com/crm/WebToLeadForm";
 const MAILING_LIST_ENDPOINT = "#";
+const BRAND_LOGO_PATH = "/brand/sfs-logo.png";
 
 const TRUSTED_BY_LOGOS = [
   { name: "Kaiser Permanente", mode: "image", src: "/logos/kaiser-permanente.png", alt: "Kaiser Permanente" },
@@ -794,9 +795,13 @@ function Shell({ children, route }) {
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
         <div className="max-w-[1800px] mx-auto flex items-center justify-between px-6 md:px-12 py-6 md:py-8">
           <a href="#/" className="group shrink-0">
-            <span className="text-lg md:text-2xl font-black tracking-[0.08em] uppercase text-white group-hover:text-emerald-400 transition-colors">
-              {COPY.shell.brand}
-            </span>
+            <img
+              src={BRAND_LOGO_PATH}
+              alt={COPY.shell.brand}
+              className="h-auto w-[150px] md:w-[220px] max-h-16 object-contain"
+              loading="eager"
+              decoding="async"
+            />
           </a>
           <nav className="flex gap-4 md:gap-8 mr-6 md:mr-14 text-base md:text-lg">
             {NAV.map((item) => (
@@ -828,7 +833,13 @@ function Shell({ children, route }) {
       <footer className="border-t border-white/10 bg-black relative z-50">
         <div className="max-w-[1800px] mx-auto px-12 py-16 grid lg:grid-cols-3 gap-16">
           <div>
-            <div className="text-lg font-black tracking-[0.08em] uppercase text-white mb-4">{COPY.shell.brand}</div>
+            <img
+              src={BRAND_LOGO_PATH}
+              alt={COPY.shell.brand}
+              className="h-auto w-[170px] md:w-[240px] max-h-16 object-contain mb-4"
+              loading="lazy"
+              decoding="async"
+            />
             <div className="text-sm font-black tracking-[0.4em] text-white/65 uppercase">{COPY.shell.footerSub}</div>
           </div>
           <form
