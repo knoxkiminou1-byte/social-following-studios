@@ -793,7 +793,7 @@ function Shell({ children, route }) {
       <Grid opacityClass={route === "/" ? "opacity-20" : "opacity-10"} />
 
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
-        <div className="max-w-[1800px] mx-auto flex items-center justify-between px-6 md:px-12 py-6 md:py-8">
+        <div className="max-w-[1800px] mx-auto flex items-center justify-between gap-3 px-6 md:px-12 py-3 md:py-4">
           <a href="#/" className="group shrink-0">
             <img
               src={BRAND_LOGO_PATH}
@@ -803,13 +803,13 @@ function Shell({ children, route }) {
               decoding="async"
             />
           </a>
-          <nav className="flex gap-4 md:gap-8 mr-6 md:mr-14 text-base md:text-lg">
+          <nav className="flex gap-2 md:gap-4 mr-2 md:mr-6 text-base md:text-lg">
             {NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 className={cx(
-                  "text-base md:text-lg font-black tracking-[0.25em] uppercase transition-colors whitespace-nowrap",
+                  "text-sm md:text-base font-black tracking-[0.2em] uppercase transition-colors whitespace-nowrap",
                   active(item.href) ? "text-emerald-400" : "text-white/65 hover:text-white"
                 )}
               >
