@@ -750,12 +750,12 @@ function Contact() {
           method="POST"
           className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5"
         >
-          <input type="text" style={{ display: "none" }} name="xnQsjsdp" value="b45ce04ddd76914bbfeade30ab0a6e86446ed07ddcd64b5425a1a4d9d5a467b8" readOnly />
+          <input type="hidden" name="xnQsjsdp" value="b45ce04ddd76914bbfeade30ab0a6e86446ed07ddcd64b5425a1a4d9d5a467b8" readOnly />
           <input type="hidden" name="zc_gad" id="zc_gad" value="" readOnly />
-          <input type="text" style={{ display: "none" }} name="xmIwtLD" value="97ca543a3d1ea88492628d126d9ab329b04cea167679b0225170279c6fc6e4f3684dbc3fb82c598c93398f0f68dcd29b" readOnly />
-          <input type="text" style={{ display: "none" }} name="actionType" value="TGVhZHM=" readOnly />
-          <input type="text" style={{ display: "none" }} name="returnURL" value={ZOHO_RETURN_URL} readOnly />
-          <input type="text" style={{ display: "none" }} name="aG9uZXlwb3Q" value="" readOnly />
+          <input type="hidden" name="xmIwtLD" value="97ca543a3d1ea88492628d126d9ab329b04cea167679b0225170279c6fc6e4f3684dbc3fb82c598c93398f0f68dcd29b" readOnly />
+          <input type="hidden" name="actionType" value="TGVhZHM=" readOnly />
+          <input type="hidden" name="returnURL" value={ZOHO_RETURN_URL} readOnly />
+          <input type="hidden" name="aG9uZXlwb3Q" value="" readOnly />
 
           <div>
             <label htmlFor="company" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Company *</label>
