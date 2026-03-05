@@ -952,19 +952,19 @@ function Shell({ route, children }) {
 
       <div className="relative z-10">
 
-      <header className="sticky top-0 z-50 border-b-2 border-stone-900/10 bg-transparent backdrop-blur-2xl shadow-sm text-left">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 text-left">
+      <header className="sticky top-0 z-50 border-b border-stone-900/10 bg-transparent backdrop-blur-2xl shadow-sm text-left">
+        <div className="mx-auto flex max-w-7xl items-center gap-4 px-6 py-3 text-left">
           <a href="#/" className="flex items-center">
             <BrandLogo className="w-[320px] md:w-[560px]" priority />
           </a>
 
-          <nav className="hidden md:flex items-center gap-8 text-base md:text-lg font-medium tracking-wide text-left">
+          <nav className="hidden md:flex items-center gap-3 text-base md:text-lg font-medium tracking-wide text-left">
             {NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 className={cx(
-                  "text-base md:text-lg hover:opacity-80 transition rounded-2xl px-5 py-3 font-medium tracking-wide",
+                  "text-sm md:text-base hover:opacity-80 transition rounded-2xl px-3 py-2 font-medium tracking-wide",
                   active(item.href)
                     ? "bg-stone-950 text-white shadow-2xl"
                     : "text-stone-600 hover:text-stone-950 hover:bg-white/50"
@@ -975,7 +975,7 @@ function Shell({ route, children }) {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="ml-auto flex items-center gap-2">
             <Button href={CONFIGURE_URL} variant="primary" size="default">{CTA_LABEL}</Button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
