@@ -9,6 +9,7 @@ const NAV = [
 
 const BOOKING_URL = "https://app.cal.com/socialfollowing";
 const CONTACT_FORM_ENDPOINT = "https://crm.zoho.com/crm/WebToLeadForm";
+const ZOHO_RETURN_URL = "https://socialfollowingstudios.com/#/thank-you";
 const MAILING_LIST_ENDPOINT = "#";
 const BRAND_LOGO_PATH = "/brand/sfs-logo.png";
 
@@ -744,25 +745,58 @@ function Contact() {
           <div className="h-[2px] w-24 bg-emerald-500/90 mx-auto mt-8 mb-8" />
           <p className="text-[17px] text-white/85 font-semibold leading-relaxed">{COPY.contact.sub}</p>
         </div>
-
         <form
           action={CONTACT_FORM_ENDPOINT}
           method="POST"
           className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5"
         >
-          <input type="text" style={{ display: "none" }} name="xnQsjsdp" value="0b971d4f2e6e139d7a99a4f24046c5e0ebefca7e325e69aaee1d82d7c7990b06" readOnly />
-          <input type="text" style={{ display: "none" }} name="xmlwtLD" value="c7896fe32d7dd80c22329686cebf5a67c71dfe0e17b02248db6424ca5c0cc3c0f6d4db95ff74bbee6728de4d07c2b5" readOnly />
-          <input type="text" style={{ display: "none" }} name="actionType" value="TGVhZHMM" readOnly />
-          <input type="text" style={{ display: "none" }} name="returnURL" value="https://socialfollowingstudios.com/#/contact" readOnly />
+          <input type="text" style={{ display: "none" }} name="xnQsjsdp" value="b45ce04ddd76914bbfeade30ab0a6e86446ed07ddcd64b5425a1a4d9d5a467b8" readOnly />
+          <input type="hidden" name="zc_gad" id="zc_gad" value="" readOnly />
+          <input type="text" style={{ display: "none" }} name="xmIwtLD" value="97ca543a3d1ea88492628d126d9ab329b04cea167679b0225170279c6fc6e4f3684dbc3fb82c598c93398f0f68dcd29b" readOnly />
+          <input type="text" style={{ display: "none" }} name="actionType" value="TGVhZHM=" readOnly />
+          <input type="text" style={{ display: "none" }} name="returnURL" value={ZOHO_RETURN_URL} readOnly />
+          <input type="text" style={{ display: "none" }} name="aG9uZXlwb3Q" value="" readOnly />
 
-          <input type="text" name="First Name" placeholder="First Name (optional)" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          <input type="text" name="Last Name" required placeholder="Last Name" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          <input type="email" name="Email" required placeholder="Email" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          <input type="text" name="Company" required placeholder="Company" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          <input type="text" name="Title" required placeholder="Title" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          <input type="text" name="LEADCF1" placeholder="Primary Channel" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          <textarea name="Description" placeholder="Audience Description" rows={3} className="md:col-span-2 w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          <textarea name="LEADCF2" placeholder="Additional Context" rows={4} className="md:col-span-2 w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          <div>
+            <label htmlFor="company" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Company *</label>
+            <input id="company" type="text" name="Company" required placeholder="Company" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div>
+            <label htmlFor="designation" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Title</label>
+            <input id="designation" type="text" name="Designation" placeholder="Title" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div>
+            <label htmlFor="firstName" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">First Name</label>
+            <input id="firstName" type="text" name="First Name" placeholder="First Name (optional)" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div>
+            <label htmlFor="email" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Email</label>
+            <input id="email" type="email" name="Email" placeholder="Email" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div>
+            <label htmlFor="lastName" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Last Name *</label>
+            <input id="lastName" type="text" name="Last Name" required placeholder="Last Name" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div>
+            <label htmlFor="primaryChannel" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Primary Channel</label>
+            <input id="primaryChannel" type="text" name="LEADCF2" placeholder="Primary Channel" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div className="md:col-span-2">
+            <label htmlFor="audienceDescription" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Audience Description</label>
+            <textarea id="audienceDescription" name="Description" placeholder="Audience Description" rows={3} className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div className="md:col-span-2">
+            <label htmlFor="additionalContext" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Additional Context</label>
+            <textarea id="additionalContext" name="LEADCF1" placeholder="Additional Context" rows={4} className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
           <div className="md:col-span-2 flex justify-start mt-2">
             <button type="submit" className="bg-emerald-600 px-10 py-4 text-sm font-black tracking-[0.3em] uppercase text-white hover:bg-emerald-500 transition-colors">
               {COPY.contact.submitIdle}
@@ -775,6 +809,21 @@ function Contact() {
           <p className="text-[17px] text-white/80 font-semibold leading-relaxed">
             We review every assessment request and engage with operators whose database and channels are ready to activate.
           </p>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+
+function ThankYou() {
+  return (
+    <div className="pt-20 max-w-4xl mx-auto relative z-10">
+      <section className="border border-white/10 bg-black/40 backdrop-blur-xl px-8 md:px-16 py-16 text-center">
+        <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white">Thanks. We got your request.</h1>
+        <p className="mt-6 text-[17px] text-white/80 font-semibold">Our team will review and follow up shortly.</p>
+        <div className="mt-10">
+          <Button href="#/">Back Home</Button>
         </div>
       </section>
     </div>
@@ -795,13 +844,9 @@ function Shell({ children, route }) {
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
         <div className="max-w-[1800px] mx-auto flex items-center justify-between gap-3 px-6 md:px-12 py-3 md:py-4">
           <a href="#/" className="group shrink-0">
-            <img
-              src={BRAND_LOGO_PATH}
-              alt={COPY.shell.brand}
-              className="h-auto w-[320px] md:w-[560px] max-h-28 md:max-h-36 object-contain"
-              loading="eager"
-              decoding="async"
-            />
+            <span className="text-lg md:text-2xl font-black tracking-[0.08em] uppercase text-white group-hover:text-emerald-400 transition-colors">
+              {COPY.shell.brand}
+            </span>
           </a>
           <nav className="flex gap-2 md:gap-4 mr-2 md:mr-6 text-base md:text-lg">
             {NAV.map((item) => (
@@ -833,13 +878,7 @@ function Shell({ children, route }) {
       <footer className="border-t border-white/10 bg-black relative z-50">
         <div className="max-w-[1800px] mx-auto px-12 py-16 grid lg:grid-cols-3 gap-16">
           <div>
-            <img
-              src={BRAND_LOGO_PATH}
-              alt={COPY.shell.brand}
-              className="h-auto w-[170px] md:w-[240px] max-h-16 object-contain mb-4"
-              loading="lazy"
-              decoding="async"
-            />
+            <div className="text-lg font-black tracking-[0.08em] uppercase text-white mb-4">{COPY.shell.brand}</div>
             <div className="text-sm font-black tracking-[0.4em] text-white/65 uppercase">{COPY.shell.footerSub}</div>
           </div>
           <form
@@ -888,6 +927,8 @@ export default function App() {
         return <PolicyPage policy={TERMS_POLICY} />;
       case "/privacy":
         return <PolicyPage policy={PRIVACY_POLICY} />;
+      case "/thank-you":
+        return <ThankYou />;
       default:
         return <Home />;
     }
