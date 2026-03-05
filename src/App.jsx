@@ -9,6 +9,7 @@ const NAV = [
 
 const BOOKING_URL = "https://app.cal.com/socialfollowing";
 const CONTACT_FORM_ENDPOINT = "https://crm.zoho.com/crm/WebToLeadForm";
+const ZOHO_RETURN_URL = "https://socialfollowingstudios.com/#/thank-you";
 const MAILING_LIST_ENDPOINT = "#";
 
 const TRUSTED_BY_LOGOS = [
@@ -748,13 +749,31 @@ function Contact() {
           method="POST"
           className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5"
         >
-          <input type="text" style={{ display: "none" }} name="xnQsjsdp" value="0b971d4f2e6e139d7a99a4f24046c5e0ebefca7e325e69aaee1d82d7c7990b06" readOnly />
-          <input type="text" style={{ display: "none" }} name="xmlwtLD" value="c7896fe32d7dd80c22329686cebf5a67c71dfe0e17b02248db6424ca5c0cc3c0f6d4db95ff74bbee6728de4d07c2b5" readOnly />
-          <input type="text" style={{ display: "none" }} name="actionType" value="TGVhZHMM" readOnly />
+          <input type="text" style={{ display: "none" }} name="xnQsjsdp" value="b45ce04ddd76914bbfeade30ab0a6e86446ed07ddcd64b5425a1a4d9d5a467b8" readOnly />
+          <input type="hidden" name="zc_gad" id="zc_gad" value="" readOnly />
+          <input type="text" style={{ display: "none" }} name="xmIwtLD" value="97ca543a3d1ea88492628d126d9ab329b04cea167679b0225170279c6fc6e4f3684dbc3fb82c598c93398f0f68dcd29b" readOnly />
+          <input type="text" style={{ display: "none" }} name="actionType" value="TGVhZHM=" readOnly />
+          <input type="text" style={{ display: "none" }} name="returnURL" value={ZOHO_RETURN_URL} readOnly />
+          <input type="text" style={{ display: "none" }} name="aG9uZXlwb3Q" value="" readOnly />
+
+          <div>
+            <label htmlFor="company" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Company *</label>
+            <input id="company" type="text" name="Company" required placeholder="Company" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div>
+            <label htmlFor="designation" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Title</label>
+            <input id="designation" type="text" name="Designation" placeholder="Title" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
 
           <div>
             <label htmlFor="firstName" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">First Name</label>
             <input id="firstName" type="text" name="First Name" placeholder="First Name (optional)" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div>
+            <label htmlFor="email" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Email</label>
+            <input id="email" type="email" name="Email" placeholder="Email" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
           </div>
 
           <div>
@@ -763,24 +782,8 @@ function Contact() {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Email</label>
-            <input id="email" type="email" name="Email" required placeholder="Email" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          </div>
-
-          <div>
-            <label htmlFor="company" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Company</label>
-            <input id="company" type="text" name="Company" required placeholder="Company" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          </div>
-
-          <div>
-            <label htmlFor="title" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Title</label>
-            <input id="title" type="text" name="Title" required placeholder="Title" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
-          </div>
-
-          <div>
             <label htmlFor="primaryChannel" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Primary Channel</label>
-            {/* TODO: Confirm exact Zoho API name for "Primary Channel" custom field from Zoho form generator. */}
-            <input id="primaryChannel" type="text" name="LEADCF1" placeholder="Primary Channel" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+            <input id="primaryChannel" type="text" name="LEADCF2" placeholder="Primary Channel" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
           </div>
 
           <div className="md:col-span-2">
@@ -790,8 +793,7 @@ function Contact() {
 
           <div className="md:col-span-2">
             <label htmlFor="additionalContext" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Additional Context</label>
-            {/* TODO: Confirm exact Zoho API name for "Additional Context" custom field from Zoho form generator. */}
-            <textarea id="additionalContext" name="LEADCF2" placeholder="Additional Context" rows={4} className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+            <textarea id="additionalContext" name="LEADCF1" placeholder="Additional Context" rows={4} className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
           </div>
 
           <div className="md:col-span-2 flex justify-start mt-2">
@@ -806,6 +808,21 @@ function Contact() {
           <p className="text-[17px] text-white/80 font-semibold leading-relaxed">
             We review every assessment request and engage with operators whose database and channels are ready to activate.
           </p>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+
+function ThankYou() {
+  return (
+    <div className="pt-20 max-w-4xl mx-auto relative z-10">
+      <section className="border border-white/10 bg-black/40 backdrop-blur-xl px-8 md:px-16 py-16 text-center">
+        <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white">Thanks. We got your request.</h1>
+        <p className="mt-6 text-[17px] text-white/80 font-semibold">Our team will review and follow up shortly.</p>
+        <div className="mt-10">
+          <Button href="#/">Back Home</Button>
         </div>
       </section>
     </div>
@@ -909,6 +926,8 @@ export default function App() {
         return <PolicyPage policy={TERMS_POLICY} />;
       case "/privacy":
         return <PolicyPage policy={PRIVACY_POLICY} />;
+      case "/thank-you":
+        return <ThankYou />;
       default:
         return <Home />;
     }
