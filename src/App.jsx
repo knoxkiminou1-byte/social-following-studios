@@ -530,6 +530,23 @@ function TrustedLogo({ logo }) {
   return <span className="text-sm font-black tracking-[0.22em] uppercase text-white/85">{logo.name.toUpperCase()}</span>;
 }
 
+function BrandLogo({ className = "", priority = false }) {
+  const [imageFailed, setImageFailed] = useState(false);
+  if (imageFailed) {
+    return <span className="text-lg md:text-2xl font-black tracking-[0.08em] uppercase text-white">Social Following Studios</span>;
+  }
+  return (
+    <img
+      src={BRAND_LOGO_PATH}
+      alt="Social Following Studios"
+      className={cx("block h-auto w-full max-w-full object-contain", className)}
+      loading={priority ? "eager" : "lazy"}
+      decoding="async"
+      onError={() => setImageFailed(true)}
+    />
+  );
+}
+
 function Home() {
   return (
     <div className="relative pt-12 space-y-16">
@@ -844,9 +861,7 @@ function Shell({ children, route }) {
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
         <div className="max-w-[1800px] mx-auto flex items-center justify-between gap-3 px-6 md:px-12 py-3 md:py-4">
           <a href="#/" className="group shrink-0">
-            <span className="text-lg md:text-2xl font-black tracking-[0.08em] uppercase text-white group-hover:text-emerald-400 transition-colors">
-              {COPY.shell.brand}
-            </span>
+            <BrandLogo className="w-[180px] md:w-[260px]" priority />
           </a>
           <nav className="flex gap-2 md:gap-4 mr-2 md:mr-6 text-base md:text-lg">
             {NAV.map((item) => (
@@ -878,7 +893,7 @@ function Shell({ children, route }) {
       <footer className="border-t border-white/10 bg-black relative z-50">
         <div className="max-w-[1800px] mx-auto px-12 py-16 grid lg:grid-cols-3 gap-16">
           <div>
-            <div className="text-lg font-black tracking-[0.08em] uppercase text-white mb-4">{COPY.shell.brand}</div>
+            <BrandLogo className="w-[220px] md:w-[300px] mb-4" />
             <div className="text-sm font-black tracking-[0.4em] text-white/65 uppercase">{COPY.shell.footerSub}</div>
           </div>
           <form
