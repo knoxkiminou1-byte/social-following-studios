@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
 import * as THREE from "three";
+import brandLogo from "./assets/brand/sfs-logo.png";
 
 /**
  * Social Following Studios - Unified Conversion Systems
@@ -11,7 +12,7 @@ import * as THREE from "three";
 
 const CONFIGURE_URL = "https://cal.com/rashida-knox";
 const CTA_LABEL = "BOOK YOUR CALL";
-const BRAND_LOGO_PATH = "/SFSF.png";
+const BRAND_LOGO_PATH = brandLogo;
 
 const NAV = [
   { label: "01 Home", href: "#/" },

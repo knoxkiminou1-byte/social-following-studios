@@ -4,7 +4,7 @@ import sharp from "sharp";
 import pngToIco from "png-to-ico";
 
 const rootDir = process.cwd();
-const input = process.argv[2] || "public/brand/sfs-logo.png";
+const input = process.argv[2] || "src/assets/brand/sfs-logo.png";
 const inputPath = path.resolve(rootDir, input);
 const outDir = path.resolve(rootDir, "public");
 
