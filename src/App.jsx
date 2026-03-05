@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
-import sfsLogo from "./assets/SFSF.png";
 
 const NAV = [
   { label: "01 Home", href: "#/" },
@@ -12,6 +11,7 @@ const BOOKING_URL = "https://app.cal.com/socialfollowing";
 const CONTACT_FORM_ENDPOINT = "https://crm.zoho.com/crm/WebToLeadForm";
 const ZOHO_RETURN_URL = "https://socialfollowingstudios.com/#/thank-you";
 const MAILING_LIST_ENDPOINT = "#";
+const BRAND_LOGO_PATH = "/brand/sfs-logo.png";
 
 const TRUSTED_BY_LOGOS = [
   { name: "Kaiser Permanente", mode: "image", src: "/logos/kaiser-permanente.png", alt: "Kaiser Permanente" },
@@ -842,21 +842,19 @@ function Shell({ children, route }) {
       <Grid opacityClass={route === "/" ? "opacity-20" : "opacity-10"} />
 
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
-        <div className="max-w-[1800px] mx-auto flex items-center justify-between px-6 md:px-12 py-6 md:py-8">
+        <div className="max-w-[1800px] mx-auto flex items-center justify-between gap-3 px-6 md:px-12 py-3 md:py-4">
           <a href="#/" className="group shrink-0">
-            <img
-              src={sfsLogo}
-              alt={COPY.shell.brand}
-              className="h-10 md:h-12 w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity"
-            />
+            <span className="text-lg md:text-2xl font-black tracking-[0.08em] uppercase text-white group-hover:text-emerald-400 transition-colors">
+              {COPY.shell.brand}
+            </span>
           </a>
-          <nav className="flex gap-4 md:gap-8 mr-6 md:mr-14">
+          <nav className="flex gap-2 md:gap-4 mr-2 md:mr-6 text-base md:text-lg">
             {NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 className={cx(
-                  "text-xs font-black tracking-[0.25em] uppercase transition-colors whitespace-nowrap",
+                  "text-sm md:text-base font-black tracking-[0.2em] uppercase transition-colors whitespace-nowrap",
                   active(item.href) ? "text-emerald-400" : "text-white/65 hover:text-white"
                 )}
               >
@@ -875,12 +873,12 @@ function Shell({ children, route }) {
         </div>
       </header>
 
-      <main className="max-w-[1800px] mx-auto px-6 md:px-12 pt-32 pb-48 relative z-10">{children}</main>
+      <main className="max-w-[1800px] mx-auto px-6 md:px-12 pt-32 pb-48 relative z-10 text-base md:text-lg leading-relaxed">{children}</main>
 
       <footer className="border-t border-white/10 bg-black relative z-50">
         <div className="max-w-[1800px] mx-auto px-12 py-16 grid lg:grid-cols-3 gap-16">
           <div>
-            <img src={sfsLogo} alt={COPY.shell.brand} className="h-14 w-auto object-contain mb-4 opacity-95" />
+            <div className="text-lg font-black tracking-[0.08em] uppercase text-white mb-4">{COPY.shell.brand}</div>
             <div className="text-sm font-black tracking-[0.4em] text-white/65 uppercase">{COPY.shell.footerSub}</div>
           </div>
           <form
