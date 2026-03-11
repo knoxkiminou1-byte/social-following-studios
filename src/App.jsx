@@ -13,6 +13,12 @@ import brandLogo from "./assets/brand/sfs-logo.png";
 const CONFIGURE_URL = "https://cal.com/rashida-knox";
 const CTA_LABEL = "BOOK YOUR CALL";
 const BRAND_LOGO_PATH = brandLogo;
+const ZOHO_FORM_ACTION = import.meta.env.VITE_ZOHO_FORM_ACTION || "https://crm.zoho.com/crm/WebToLeadForm";
+const ZOHO_RETURN_URL = import.meta.env.VITE_ZOHO_RETURN_URL || CONFIGURE_URL;
+const ZOHO_ACTION_TYPE = import.meta.env.VITE_ZOHO_ACTION_TYPE || "TGVhZHM=";
+const ZOHO_XNQSJSDP = import.meta.env.VITE_ZOHO_XNQSJSDP || "";
+const ZOHO_XMIWTLD = import.meta.env.VITE_ZOHO_XMIWTLD || "";
+const ZOHO_LZAD = import.meta.env.VITE_ZOHO_LZAD || "";
 
 const NAV = [
   { label: "01 Home", href: "#/" },
@@ -97,19 +103,19 @@ function BrandLogo({ className, priority = false }) {
   );
 }
 
-function Button({ href, children, variant = "primary", size = "default" }) {
+function Button({ href, children, variant = "primary", size = "default", className = "" }) {
   const base =
-    "inline-flex items-center justify-center rounded-2xl font-black transition active:scale-[0.98] shadow-lg hover:shadow-xl uppercase tracking-widest";
+    "inline-flex min-h-11 items-center justify-center rounded-2xl font-black transition active:scale-[0.98] shadow-lg hover:shadow-xl uppercase tracking-widest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2";
   const sizes = {
-    default: "px-4 py-3 text-[9px] md:px-6 md:py-4 md:text-[10px]",
-    large: "px-8 py-4 text-[10px] md:px-10 md:py-5 md:text-xs",
+    default: "px-4 py-3 text-[10px] md:px-6 md:py-4 md:text-[10px]",
+    large: "px-8 py-4 text-[11px] md:px-10 md:py-5 md:text-xs",
   };
   const styles =
     variant === "primary"
       ? "bg-emerald-600 text-white hover:bg-emerald-700"
       : "bg-stone-950 text-white hover:bg-stone-900 border-2 border-emerald-600/20";
   return (
-    <a href={href} className={cx(base, sizes[size], styles)}>
+    <a href={href} className={cx(base, sizes[size], styles, className)}>
       {children}
     </a>
   );
@@ -125,12 +131,12 @@ function Pill({ children }) {
 
 function SectionHead({ eyebrow, title, desc, right }) {
   return (
-    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 text-left">
+    <div className="flex flex-col gap-6 text-left md:flex-row md:items-end md:justify-between md:gap-8">
       <div>
         <div className="text-sm font-black tracking-[0.25em] text-emerald-700 uppercase mb-6 leading-none">{eyebrow}</div>
-        <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-[1]">{title}</h1>
+        <h1 className="text-[clamp(2rem,8vw,4.5rem)] font-black tracking-tighter leading-[1.05]">{title}</h1>
         {desc ? (
-          <p className="mt-8 max-w-3xl text-lg md:text-xl text-stone-700 leading-relaxed font-medium">{desc}</p>
+          <p className="mt-6 max-w-3xl text-base md:mt-8 md:text-xl text-stone-700 leading-relaxed font-medium">{desc}</p>
         ) : null}
       </div>
       {right ? <div className="md:shrink-0">{right}</div> : null}
@@ -140,7 +146,7 @@ function SectionHead({ eyebrow, title, desc, right }) {
 
 function Card({ title, eyebrow, children, right }) {
   return (
-    <section className="rounded-[2.5rem] border-2 border-stone-900/10 bg-white/75 backdrop-blur-xl p-8 md:p-12 shadow-2xl text-left transition-all duration-500 hover:shadow-emerald-600/5">
+    <section className="rounded-[1.75rem] md:rounded-[2.5rem] border-2 border-stone-900/10 bg-white/75 backdrop-blur-xl p-5 sm:p-6 md:p-12 shadow-2xl text-left transition-all duration-500 hover:shadow-emerald-600/5">
       <div className="flex items-start justify-between gap-6">
         <div>
           {eyebrow ? (
@@ -594,9 +600,9 @@ function HomeLiquidBackdrop() {
 
 function Fieldset({ title, children }) {
   return (
-    <fieldset className="rounded-[2.5rem] border-2 border-stone-900/10 bg-[#F5F2EA]/50 backdrop-blur-sm p-10 text-left">
+    <fieldset className="rounded-[1.75rem] md:rounded-[2.5rem] border-2 border-stone-900/10 bg-[#F5F2EA]/50 backdrop-blur-sm p-5 sm:p-6 md:p-10 text-left">
       <legend className="px-5 text-[10px] font-black text-emerald-700 uppercase tracking-[0.4em] mb-4">{title}</legend>
-      <div className="mt-4 space-y-8">{children}</div>
+      <div className="mt-4 space-y-6 md:space-y-8">{children}</div>
     </fieldset>
   );
 }
@@ -605,7 +611,7 @@ function Input({ label, placeholder, name, required = true }) {
   return (
     <label className="block text-left">
       <div className="text-[10px] font-black tracking-widest text-stone-500 uppercase mb-3">{label}</div>
-      <input type="text" name={name} required={required} placeholder={placeholder} className="w-full rounded-[1.25rem] border-2 border-stone-900/10 bg-white px-6 py-5 text-lg font-bold focus:outline-none focus:ring-4 focus:ring-emerald-600/10 focus:border-emerald-600 transition-all shadow-inner placeholder:text-stone-300" />
+      <input type="text" name={name} required={required} placeholder={placeholder} className="w-full min-h-11 rounded-xl md:rounded-[1.25rem] border-2 border-stone-900/10 bg-white px-4 md:px-6 py-3 md:py-5 text-base md:text-lg font-bold focus:outline-none focus:ring-4 focus:ring-emerald-600/10 focus:border-emerald-600 transition-all shadow-inner placeholder:text-stone-300" />
     </label>
   );
 }
@@ -614,7 +620,7 @@ function Textarea({ label, placeholder, name, required = true }) {
   return (
     <label className="block text-left">
       <div className="text-[10px] font-black tracking-widest text-stone-500 uppercase mb-3">{label}</div>
-      <textarea name={name} required={required} rows={4} placeholder={placeholder} className="w-full rounded-[1.25rem] border-2 border-stone-900/10 bg-white px-6 py-5 text-lg font-bold focus:outline-none focus:ring-4 focus:ring-emerald-600/10 focus:border-emerald-600 transition-all shadow-inner placeholder:text-stone-300" />
+      <textarea name={name} required={required} rows={4} placeholder={placeholder} className="w-full min-h-[140px] resize-y rounded-xl md:rounded-[1.25rem] border-2 border-stone-900/10 bg-white px-4 md:px-6 py-3 md:py-5 text-base md:text-lg font-bold focus:outline-none focus:ring-4 focus:ring-emerald-600/10 focus:border-emerald-600 transition-all shadow-inner placeholder:text-stone-300" />
     </label>
   );
 }
@@ -623,7 +629,7 @@ function Select({ label, options }) {
   return (
     <label className="block text-left">
       <div className="text-[10px] font-black tracking-widest text-stone-500 uppercase mb-3">{label}</div>
-      <select className="w-full rounded-[1.25rem] border-2 border-stone-900/10 bg-white px-6 py-5 text-lg font-bold focus:outline-none focus:ring-4 focus:ring-emerald-600/10 focus:border-emerald-600 transition-all shadow-md appearance-none">
+      <select className="w-full min-h-11 rounded-xl md:rounded-[1.25rem] border-2 border-stone-900/10 bg-white px-4 md:px-6 py-3 md:py-5 text-base md:text-lg font-bold focus:outline-none focus:ring-4 focus:ring-emerald-600/10 focus:border-emerald-600 transition-all shadow-md appearance-none">
         {options.map((o) => (<option key={o} value={o}>{o}</option>))}
       </select>
     </label>
@@ -634,7 +640,7 @@ function Select({ label, options }) {
 
 function Home() {
   return (
-    <div className="mx-auto max-w-6xl px-5 pb-28 pt-0 -mt-10 md:-mt-16">
+    <div className="mx-auto max-w-6xl px-4 sm:px-5 pb-20 md:pb-28 pt-0 -mt-6 sm:-mt-10 md:-mt-16">
       {/* Hero matches the reference video: dark panel over full-page liquid */}
       <section>
         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/70 shadow-[0_18px_60px_rgba(0,0,0,0.55)]">
@@ -648,12 +654,12 @@ function Home() {
             }}
           />
           <div className="absolute inset-0 bg-[radial-gradient(900px_650px_at_15%_25%,rgba(16,185,129,0.18),transparent_60%),radial-gradient(900px_650px_at_85%_20%,rgba(34,211,238,0.14),transparent_60%)]" />
-          <div className="relative px-8 py-10 md:px-14 md:py-14">
+          <div className="relative px-5 py-8 sm:px-8 sm:py-10 md:px-14 md:py-14">
             <div className="inline-flex items-center rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[11px] font-semibold tracking-[0.22em] text-emerald-200/90">
               Trusted by teams with real stakes.
             </div>
 
-            <h1 className="mt-6 max-w-3xl text-5xl font-black tracking-tight text-white md:text-6xl">
+            <h1 className="mt-6 max-w-3xl text-[clamp(2rem,10vw,3.75rem)] font-black tracking-tight text-white leading-[1.05]">
               Social Following Studios
               <br />
               <span className="text-emerald-300">builds words systems.</span>
@@ -753,7 +759,7 @@ function Home() {
 function System() {
   return (
     <div className="space-y-12">
-      <section className="rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-12 md:p-16 shadow-2xl text-left">
+      <section className="rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-6 sm:p-8 md:p-16 shadow-2xl text-left">
         <SectionHead
           eyebrow="INFRASTRUCTURE"
           title="Map gaps. Set flow. Run live."
@@ -799,7 +805,7 @@ function System() {
           </div>
         </Card>
       </div>
-      <section className="rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-12 md:p-16 shadow-2xl text-left">
+      <section className="rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-6 sm:p-8 md:p-16 shadow-2xl text-left">
         <h2 className="text-3xl md:text-5xl font-black tracking-tight text-stone-950">Your flow is ready.</h2>
         <div className="mt-10">
           <Button href={CONFIGURE_URL} variant="primary" size="large">{CTA_LABEL}</Button>
@@ -818,12 +824,12 @@ function CaseStudies() {
 
   return (
     <div className="space-y-12">
-      <section className="rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-12 md:p-16 shadow-2xl text-left">
+      <section className="rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-6 sm:p-8 md:p-16 shadow-2xl text-left">
         <SectionHead eyebrow="CASE STUDIES" title="Results from real engagements." desc="We map where authority lives, identify gaps, and turn existing relationships into booked calls." />
       </section>
 
-      <section className="rounded-[3rem] border-2 border-stone-900/10 bg-white/70 backdrop-blur overflow-hidden shadow-2xl pt-14 pb-10 text-left">
-        <div className="px-14">
+      <section className="rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white/70 backdrop-blur overflow-hidden shadow-2xl pt-10 md:pt-14 pb-8 md:pb-10 text-left">
+        <div className="px-5 md:px-14">
           <div className="text-sm font-black tracking-[0.4em] text-emerald-700 uppercase mb-8 leading-none text-left">SOCIAL FOLLOWING STUDIOS</div>
         </div>
         <div className="mt-2">
@@ -833,18 +839,18 @@ function CaseStudies() {
 
       <div className="grid gap-10 text-left">
         {items.map((cs) => (
-          <section key={cs.title} className="rounded-[3rem] border-2 border-stone-900/10 bg-white p-10 md:p-16 shadow-2xl text-left">
-            <div className="grid lg:grid-cols-3 gap-16 text-left">
+          <section key={cs.title} className="rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white p-5 sm:p-8 md:p-16 shadow-2xl text-left">
+            <div className="grid lg:grid-cols-3 gap-8 md:gap-16 text-left">
               <div className="lg:col-span-1 text-left">
-                <div className="rounded-[2.5rem] border-2 border-stone-900/10 bg-gradient-to-br from-[#F5F2EA] to-white p-10 overflow-hidden relative shadow-lg text-left">
+                <div className="rounded-[1.75rem] md:rounded-[2.5rem] border-2 border-stone-900/10 bg-gradient-to-br from-[#F5F2EA] to-white p-5 sm:p-8 md:p-10 overflow-hidden relative shadow-lg text-left">
                   <div className="absolute -top-10 -right-10 h-48 w-48 rounded-full bg-emerald-600/18 blur-2xl" />
                   <div className="relative text-left">
                     <div className="text-[10px] font-black tracking-[0.3em] text-emerald-700 uppercase mb-8 leading-none text-left">{cs.industry}</div>
-                    <h2 className="text-4xl md:text-5xl font-black tracking-tighter leading-tight text-left">{cs.title}</h2>
+                    <h2 className="text-[clamp(1.9rem,9vw,3rem)] font-black tracking-tighter leading-tight text-left">{cs.title}</h2>
                     <div className="mt-8 flex flex-wrap gap-2 text-left"><Pill>{cs.deployment}</Pill></div>
                   </div>
                 </div>
-                <div className="mt-8 rounded-[2rem] border-2 border-stone-900/10 bg-white p-8 shadow-lg text-left">
+                <div className="mt-8 rounded-[1.5rem] md:rounded-[2rem] border-2 border-stone-900/10 bg-white p-5 sm:p-6 md:p-8 shadow-lg text-left">
                   <div className="text-[10px] font-black tracking-widest text-stone-500 uppercase mb-4 leading-none text-left">BEFORE</div>
                   <div className="text-lg font-bold text-stone-950 leading-tight text-left">{cs.problem}</div>
                 </div>
@@ -853,7 +859,7 @@ function CaseStudies() {
                 <div className="grid md:grid-cols-3 gap-6 text-left">
                   {cs.stats.map((s) => (<Stat key={s.label} label={s.label} value={s.value} sub={s.sub} />))}
                 </div>
-                <div className="rounded-[2.5rem] border-2 border-stone-900/10 bg-white p-12 shadow-2xl text-left">
+                <div className="rounded-[1.75rem] md:rounded-[2.5rem] border-2 border-stone-900/10 bg-white p-5 sm:p-6 md:p-12 shadow-2xl text-left">
                   <div className="text-[10px] font-black tracking-[0.3em] text-emerald-700 uppercase mb-10 leading-none text-left">FLOW COMPONENTS</div>
                   <div className="mt-6 flex flex-wrap gap-4 text-left">
                     {cs.highlights.map((h) => (<span key={h} className="rounded-2xl border-2 border-stone-900/10 bg-[#F5F2EA] px-8 py-5 text-sm font-black tracking-tight text-stone-950 shadow-lg text-left">{h}</span>))}
@@ -864,7 +870,7 @@ function CaseStudies() {
           </section>
         ))}
       </div>
-      <section className="rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-12 md:p-16 shadow-2xl text-left">
+      <section className="rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-6 sm:p-8 md:p-16 shadow-2xl text-left">
         <h2 className="text-3xl md:text-5xl font-black tracking-tight text-stone-950">Your calls are next.</h2>
       </section>
     </div>
@@ -878,7 +884,7 @@ function Configure() {
 
   return (
     <div className="space-y-12">
-      <section className="rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-12 md:p-16 shadow-2xl text-left">
+      <section className="rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-6 sm:p-8 md:p-16 shadow-2xl text-left">
         <SectionHead
           eyebrow="CONFIGURE"
           title="Redirecting."
@@ -895,19 +901,20 @@ function Configure() {
 function Contact() {
   return (
     <div className="space-y-12">
-      <section className="rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-12 md:p-16 shadow-2xl text-left">
+      <section id="contact" className="scroll-mt-28 rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-6 sm:p-8 md:p-16 shadow-2xl text-left">
         <SectionHead eyebrow="CONTACT" title="Book Your Call." desc="Start here. We bring the flow. You bring the list." />
       </section>
       <Card title="Call Request" eyebrow="FORM">
         <form
-          className="space-y-8"
-          onSubmit={(event) => {
-            event.preventDefault();
-            if (event.currentTarget.reportValidity()) {
-              window.location.href = CONFIGURE_URL;
-            }
-          }}
+          className="space-y-6 md:space-y-8"
+          method="POST"
+          action={ZOHO_FORM_ACTION}
         >
+          <input type="hidden" name="actionType" value={ZOHO_ACTION_TYPE} />
+          <input type="hidden" name="returnURL" value={ZOHO_RETURN_URL} />
+          {ZOHO_XNQSJSDP ? <input type="hidden" name="xnQsjsdp" value={ZOHO_XNQSJSDP} /> : null}
+          {ZOHO_XMIWTLD ? <input type="hidden" name="xmIwtLD" value={ZOHO_XMIWTLD} /> : null}
+          {ZOHO_LZAD ? <input type="hidden" name="lzad" value={ZOHO_LZAD} /> : null}
           <div className="grid gap-6 md:grid-cols-2">
             <Input label="Name" name="name" placeholder="Your name" />
             <Input label="Organization" name="organization" placeholder="Organization" />
@@ -919,7 +926,7 @@ function Contact() {
           <div className="mt-10 text-left">
             <button
               type="submit"
-              className="inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-8 py-4 text-[10px] font-black tracking-widest uppercase text-white transition active:scale-[0.98] shadow-lg hover:bg-emerald-700 hover:shadow-xl"
+              className="inline-flex min-h-11 items-center justify-center rounded-2xl bg-emerald-600 px-8 py-4 text-[10px] font-black tracking-widest uppercase text-white transition active:scale-[0.98] shadow-lg hover:bg-emerald-700 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2"
             >
               {CTA_LABEL}
             </button>
@@ -954,9 +961,9 @@ function Shell({ route, children }) {
       <div className="relative z-10">
 
       <header className="sticky top-0 z-50 border-b border-stone-900/10 bg-transparent backdrop-blur-2xl shadow-sm text-left">
-        <div className="mx-auto flex max-w-7xl items-center gap-4 px-6 py-3 text-left">
-          <a href="#/" className="flex items-center">
-            <BrandLogo className="w-[320px] md:w-[560px]" priority />
+        <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-3 sm:gap-4 sm:px-6 text-left">
+          <a href="#/" className="flex min-w-0 flex-1 items-center md:flex-none">
+            <BrandLogo className="w-[220px] sm:w-[300px] md:w-[560px]" priority />
           </a>
 
           <nav className="hidden md:flex items-center gap-3 text-base md:text-lg font-medium tracking-wide text-left">
@@ -977,11 +984,13 @@ function Shell({ route, children }) {
           </nav>
 
           <div className="ml-auto flex items-center gap-2">
-            <Button href={CONFIGURE_URL} variant="primary" size="default">{CTA_LABEL}</Button>
+            <Button href={CONFIGURE_URL} variant="primary" size="default" className="hidden sm:inline-flex">{CTA_LABEL}</Button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden flex items-center justify-center h-12 w-12 rounded-2xl bg-stone-950 text-white"
+              className="md:hidden flex min-h-11 min-w-11 items-center justify-center rounded-2xl bg-stone-950 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2"
               aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-nav"
             >
               <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileMenuOpen ? (
@@ -995,15 +1004,18 @@ function Shell({ route, children }) {
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden border-t-2 border-white/10 bg-stone-950/90 backdrop-blur-2xl shadow-2xl">
-            <nav className="mx-auto max-w-7xl px-6 py-6 flex flex-col gap-3 text-base md:text-lg font-medium tracking-wide">
+          <div id="mobile-nav" className="md:hidden border-t-2 border-white/10 bg-stone-950/90 backdrop-blur-2xl shadow-2xl">
+            <nav className="mx-auto max-w-7xl px-4 sm:px-6 py-4 sm:py-6 flex flex-col gap-3 text-base md:text-lg font-medium tracking-wide">
+              <Button href={CONFIGURE_URL} variant="primary" size="default" className="w-full">
+                {CTA_LABEL}
+              </Button>
               {NAV.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cx(
-                    "text-base md:text-lg hover:opacity-80 transition rounded-2xl px-6 py-5 font-medium tracking-wide text-center",
+                    "flex min-h-11 items-center justify-center text-base md:text-lg hover:opacity-80 transition rounded-2xl px-6 py-4 font-medium tracking-wide text-center",
                     active(item.href)
                       ? "bg-emerald-500 text-white shadow-2xl"
                       : "text-white/80 hover:text-white hover:bg-white/10"
@@ -1017,19 +1029,19 @@ function Shell({ route, children }) {
         )}
       </header>
 
-      <main className="mx-auto max-w-7xl px-6 py-16 md:py-24 text-left">{children}</main>
+      <main className="mx-auto max-w-7xl px-4 sm:px-6 py-10 sm:py-16 md:py-24 text-left">{children}</main>
 
       <footer className="border-t-2 border-stone-900/10 py-16 text-left">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-4xl md:text-6xl font-black tracking-tight text-stone-950">
+          <h2 className="text-[clamp(2rem,9vw,3.75rem)] font-black tracking-tight text-stone-950 leading-[1.08]">
             Your name is built. Your <span className="text-emerald-400">flow runs.</span>
           </h2>
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 text-left">
             <div className="text-left">
-              <BrandLogo className="w-[300px] md:w-[460px] opacity-70 hover:opacity-100 transition-opacity duration-500" />
+              <BrandLogo className="w-[220px] sm:w-[300px] md:w-[460px] opacity-70 hover:opacity-100 transition-opacity duration-500" />
               <p className="mt-3 text-base md:text-lg leading-relaxed text-stone-600">Words Systems</p>
             </div>
-            <div className="flex items-center gap-10 text-base md:text-lg font-medium tracking-wide text-stone-500">
+            <div className="flex flex-wrap items-center gap-6 md:gap-10 text-base md:text-lg font-medium tracking-wide text-stone-500">
               <a href="#/terms" className="hover:text-stone-950 transition-colors">Terms</a>
               <a href="#/privacy" className="hover:text-stone-950 transition-colors">Privacy</a>
             </div>

@@ -4,4 +4,39 @@
 
 html, body {
   height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-padding-top: 96px;
+}
+
+body, #root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+main, section, header, footer {
+  max-width: 100%;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+}
+
+a, button {
+  min-height: 44px;
+}
+
+textarea {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 16px;
+  }
 }
