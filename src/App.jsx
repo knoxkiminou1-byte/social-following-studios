@@ -27,47 +27,253 @@ const NAV = [
   { label: "04 Contact", href: "#/contact" },
 ];
 
-const PARTNERS = [
-  "CHEVRON",
-  "STANFORD MEDICAL",
-  "TRUE HEALTH CENTER",
-  "PG&E",
+const BOOKING_URL = "https://app.cal.com/socialfollowing";
+const CONTACT_FORM_ENDPOINT = "https://crm.zoho.com/crm/WebToLeadForm";
+const ZOHO_RETURN_URL = "https://socialfollowingstudios.com/#/thank-you";
+const MAILING_LIST_ENDPOINT = "#";
+
+const TRUSTED_BY_LOGOS = [
+  { name: "Kaiser Permanente", mode: "image", src: "/logos/kaiser-permanente.png", alt: "Kaiser Permanente" },
+  { name: "Stanford University", mode: "image", src: "/logos/stanford-university.svg", alt: "Stanford University" },
+  { name: "NVIDIA", mode: "image", src: "/logos/nvidia.svg", alt: "NVIDIA" },
+  { name: "PG&E", mode: "image", src: "/logos/pge.svg", alt: "PG&E" },
+  { name: "CommonSpirit Health", mode: "image", src: "/logos/commonspirit-health.png", alt: "CommonSpirit Health" },
+  { name: "Drew Medical", mode: "image", src: "/logos/drew-medical.png", alt: "Drew Medical" },
+  { name: "The Anthemist", mode: "image", src: "/logos/the-anthemist.png", alt: "The Anthemist" },
+  { name: "City of Concord", mode: "image", src: "/logos/city-of-concord.png", alt: "City of Concord" },
+  { name: "DGRP", mode: "text", src: null, alt: "DGRP" },
+  { name: "Rhythm & Roux", mode: "text", src: null, alt: "RHYTHM & ROUX" },
+  { name: "Parade of Youth", mode: "text", src: null, alt: "PARADE OF YOUTH" },
+  { name: "D55", mode: "image", src: "/logos/d55.png", alt: "D55" },
 ];
 
-const HOME_STATS = [
-  {
-    label: "BUILT NAME",
-    sub: "You have the name and the list. We make both book calls.",
-  },
-  {
-    label: "DORMANT LIST",
-    sub: "Your list holds trust. We turn it into booked work.",
-  },
-  {
-    label: "DEPLOYMENT",
-    sub: "We set the flow across your channels and keep it live.",
-  },
-];
+const PARTNERS = ["KAISER PERMANENTE", "STANFORD UNIVERSITY", "NVIDIA", "PG&E", "COMMONSPIRIT HEALTH", "DREW MEDICAL"];
 
-const INFRA_LAYERS = [
-  {
-    note: "01 Audit",
-    title: "Map gaps.",
-    desc: "We audit your list, copy, and channel mix.",
+const COPY = {
+  home: {
+    productName: "Social Following Studios",
+    h1Line1: "builds",
+    h1Line1Accent: "words",
+    h1Line1Suffix: "systems.",
+    h1Line2Accent: "",
+    sub: "We deploy language conversion systems that turn your data and authority into increased visibility and revenue.",
+    ctaPrimary: "BOOK MY CALL",
+    ctaSecondary: "View Case Studies",
+    trustedKicker: "TRUSTED BY",
+    trustedSub: "Social Following Studios has built words systems for groups that set the standard in their fields.",
+    stats: [
+      {
+        label: "FOR ESTABLISHED OPERATORS",
+        sub: "You have the authority and the database. We build the system that turns both into booked appointments.",
+      },
+      {
+        label: "YOUR AUTHORITY IS THE ASSET.",
+        sub: "Your database is full of people who already trust you. Most let it sit idle. The revenue you want is already in the room.",
+      },
+      {
+        label: "THE CONVERSION SYSTEM THAT NARRATES ITSELF",
+        sub: "We deploy the sequence that tells your story, activates your database, and converts trust into predictable appointments and clients.",
+      },
+    ],
+    equationKicker: "DISCIPLINES",
+    equationHeadline: "We write it. We build it. We send it.",
+    equationBody:
+      "We align every channel you control around one objective: converting dormant relationships into booked consultations.",
+    coreArch: "ONE DEPLOYMENT SYSTEM",
+    architecture: [
+      {
+        title: "Strategic Language",
+        desc: "We define the language that moves qualified buyers to signed agreements. Your expertise, codified.",
+      },
+      {
+        title: "Owned Infrastructure",
+        desc: "We build the infrastructure that puts you in command. Your channels, unified.",
+      },
+      {
+        title: "Full Deployment",
+        desc: "We deploy the system across your channels to keep qualified appointments coming. Your calendar, full.",
+      },
+    ],
+    resultsIntroTitle: "Results from real engagements.",
+    resultsIntroSub:
+      "Every engagement begins with a Language Assessment. We map your authority, find your system gaps, and build the bridge to revenue.",
+    closingHeadline: "Your authority is built. Your deployment system solidifies it.",
+    closingSub: "",
+    closingCta: "BOOK MY CALL",
   },
-  {
-    note: "02 Build",
-    title: "Set flow.",
-    desc: "We set the email, page, and book path.",
+  infrastructure: {
+    kicker: "INFRASTRUCTURE",
+    h1: "One system. Every channel.",
+    sub: "Built and deployed by Social Following Studios.",
+    layers: [
+      {
+        note: "01 We Write It",
+        title: "We write the words.",
+        desc: "We write the language that moves qualified buyers to signed agreements.",
+      },
+      {
+        note: "02 We Build It",
+        title: "We build the system.",
+        desc: "We build the infrastructure that puts you in command.",
+      },
+      {
+        note: "03 We Send It",
+        title: "We deploy the system.",
+        desc: "We deploy the system across your channels to keep qualified appointments coming.",
+      },
+    ],
+    whoWeServe: {
+      kicker: "WHO WE SERVE",
+      headline: "For operators whose authority is the asset.",
+      body: "We work with operators who have built real world authority, with full databases, owned channels, and audiences that already trust them.",
+      closing: "",
+    },
+    howItWorks: {
+      kicker: "HOW IT WORKS",
+      headline: "All engagements begin with a Language Audit.",
+      tiers: [
+        {
+          title: "THE AUDIT",
+          desc: "A focused audit of your language, database, and system gaps, delivered as a written report that maps the system you need.",
+        },
+        {
+          title: "Full Build",
+          desc: "Your complete system, built and launched across your owned channels to turn dormant connections into revenue.",
+        },
+        {
+          title: "Retained Advisory",
+          desc: "We deploy your system on an ongoing basis, with monthly reporting tied to your revenue targets.",
+        },
+      ],
+    },
+    outroLines: [],
+    outroSub: "",
+    cta: "DEPLOY YOUR SYSTEM",
   },
-  {
-    note: "03 Run",
-    title: "Run live.",
-    desc: "We run the flow and keep calls on deck.",
+  caseStudies: {
+    kicker: "CASE STUDIES",
+    title: "Results from real engagements.",
+    cards: [
+      {
+        badge: "Case Study 01",
+        client: "Michael Todd Legal",
+        location: "San Francisco Bay Area",
+        quote: "Our calendar filled from emails we already owned. Ninety days.",
+        quoteAttrib: "Michael Todd, Managing Principal",
+        challenge:
+          "Strong referral reputation. Email list sitting idle. No lifecycle sequencing. Bookings dependent on inbound timing.",
+        action:
+          "Repositioned messaging for decision-stage buyers. Built segmented email architecture. Deployed consultation booking sequence with automated follow-up.",
+        result:
+          "+32% retained clients sourced directly from owned channels in 90 days. Revenue stabilized through structured lifecycle deployment.",
+        outcome: "+32%",
+        outcomeLabel: "Retained Clients · 90 Days · Owned Channels",
+        tech: "Strategic Language · Owned Infrastructure · Full Deployment",
+        problem:
+          "Before: Strong referral reputation. Email list sitting idle. No lifecycle sequencing. Bookings dependent on inbound timing.",
+        methodology: "Retained client count measured against owned channel sequences over a 90-day deployment window.",
+      },
+      {
+        badge: "Case Study 02",
+        client: "Erich Simpson, MD",
+        location: "Northern California",
+        quote: "Patients we hadn't heard from in years started booking. The system found them.",
+        quoteAttrib: "Erich Simpson, Founder",
+        challenge: "Established patient trust. Dormant database. No re-engagement system. No referral path.",
+        action:
+          "Strategic messaging rewrite. Reactivation sequence deployed. Newsletter system built. Referral amplification workflow installed.",
+        result: "+41% lift in consultations and recurring referrals in 120 days.",
+        outcome: "+41%",
+        outcomeLabel: "Consultations & Referrals · 120 Days",
+        tech: "Strategic Language · Owned Infrastructure · Full Deployment",
+        problem: "Before: Established patient trust. Dormant database. No re-engagement system. No referral path.",
+        methodology: "Consultation and referral volume measured against baseline across a 120-day reactivation deployment.",
+      },
+      {
+        badge: "Case Study 03",
+        client: "Sandra Lindholm Real Estate",
+        location: "San Francisco",
+        quote: "I had the brand. I just needed the system behind it.",
+        quoteAttrib: "Sandra Lindholm, Principal",
+        challenge:
+          "Strong personal brand. High social visibility. No owned system to move prospects from interest to signed agreement.",
+        action:
+          "Offer positioning rewrite. Automated nurture system built. Seller consultation sequence deployed. Follow-up messaging aligned with buyer psychology.",
+        result: "+28% increase in signed listing agreements driven from owned email and follow-up sequences.",
+        outcome: "+28%",
+        outcomeLabel: "Signed Listing Agreements · Owned Channels",
+        tech: "Strategic Language · Owned Infrastructure · Full Deployment",
+        problem:
+          "Before: Strong personal brand. High social visibility. No owned system to move prospects from interest to signed agreement.",
+        methodology:
+          "Signed listing agreements measured against owned email and follow-up sequence activity over the engagement period.",
+      },
+    ],
+    outroLines: [],
+    cta: "BOOK MY CALL",
   },
-];
+  contact: {
+    kicker: "CONTACT",
+    title: "Book Your Call.",
+    sub: "Every engagement starts here. We bring the system. You bring the authority.",
+    submitIdle: "SUBMIT",
+    submitDone: "SUBMITTED",
+  },
+  shell: {
+    brand: "Social Following Studios",
+    brandSub: "Language Infrastructure",
+    topCta: "BOOK MY CALL",
+    footerSub: "Social Following Studios 2026",
+    terms: "Terms",
+    privacy: "Privacy",
+  },
+};
 
-// ---------- helpers & routing ----------
+const POLICY_TEMPLATE = {
+  siteName: "Social Following Studios",
+  email: "support@socialfollowingstudios.com",
+  updatedAt: "January 1, 2026",
+};
+
+const TERMS_POLICY = {
+  title: "Terms of Service",
+  intro:
+    "These Terms govern your use of Social Following Studios and any related pages, forms, and services.",
+  sections: [
+    {
+      heading: "Use of the site",
+      body: "You agree to use this site for lawful business purposes only and not to disrupt or misuse the platform.",
+    },
+    {
+      heading: "Service information",
+      body: "Service descriptions and availability may change over time. We can update, pause, or remove offerings without prior notice.",
+    },
+    {
+      heading: "Limitation of liability",
+      body: "The site and content are provided as-is. To the maximum extent allowed by law, we are not liable for indirect or consequential damages.",
+    },
+  ],
+};
+
+const PRIVACY_POLICY = {
+  title: "Privacy Policy",
+  intro:
+    "This policy explains how Social Following Studios collects, uses, and protects the information you submit.",
+  sections: [
+    {
+      heading: "Information we collect",
+      body: "We collect information you provide in forms, including name, email, phone number, and business details needed to deliver services.",
+    },
+    {
+      heading: "How we use data",
+      body: "We use submitted information to respond to inquiries, deliver requested services, and improve operations and customer support.",
+    },
+    {
+      heading: "Data sharing",
+      body: "We do not sell personal data. We may share information with trusted providers only when required to run or support our services.",
+    },
+  ],
+};
 
 function cx(...parts) {
   return parts.filter(Boolean).join(" ");
@@ -403,124 +609,77 @@ function LiquidBackground({ className = "" }) {
 
         this.texture.needsUpdate = true;
       }
-    }
-
-    const touchTexture = new TouchTexture();
-
-    const uniforms = {
-      uTime: { value: 0 },
-      uResolution: { value: new THREE.Vector2(1, 1) },
-      uColor1: { value: new THREE.Vector3(0.062, 0.725, 0.505) },
-      uColor2: { value: new THREE.Vector3(0.039, 0.055, 0.153) },
-      uSpeed: { value: 0.25 },
-      uIntensity: { value: 0.35 },
-      uTouchTexture: { value: touchTexture.texture },
-      uGrainIntensity: { value: 0.03 },
-      uDarkNavy: { value: new THREE.Vector3(0.039, 0.055, 0.153) },
-      uGradientSize: { value: 0.45 },
-      uGradientCount: { value: 12.0 },
-      uColor1Weight: { value: 0.55 },
-      uColor2Weight: { value: 1.6 },
-    };
-
-    const material = new THREE.ShaderMaterial({
-      uniforms,
-      vertexShader: `
-        varying vec2 vUv;
-        void main() {
-          vUv = uv;
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-        }
-      `,
-      fragmentShader: `
-        uniform float uTime;
-        uniform vec2 uResolution;
-        uniform vec3 uColor1;
-        uniform vec3 uColor2;
-        uniform vec3 uDarkNavy;
-        uniform float uSpeed;
-        uniform float uIntensity;
-        uniform float uGrainIntensity;
-        uniform float uGradientSize;
-        uniform float uColor1Weight;
-        uniform float uColor2Weight;
-        uniform sampler2D uTouchTexture;
-        varying vec2 vUv;
-
-        float grain(vec2 uv, float time) {
-          vec2 grainUv = uv * uResolution * 0.5;
-          return fract(sin(dot(grainUv + time, vec2(12.9898, 78.233))) * 43758.5453) * 2.0 - 1.0;
-        }
-
-        vec3 getGradientColor(vec2 uv, float time) {
-          float s = uSpeed;
-          vec3 color = vec3(0.0);
-
-          for (int i = 0; i < 12; i++) {
-            float fi = float(i);
-            vec2 c = vec2(
-              0.5 + sin(time * s * (0.4 + fi * 0.02)) * 0.45,
-              0.5 + cos(time * s * (0.5 + fi * 0.03)) * 0.45
-            );
-
-            float inf = 1.0 - smoothstep(0.0, uGradientSize, length(uv - c));
-            vec3 base = (i % 2 == 0) ? uColor1 : uColor2;
-            float w = (i % 2 == 0) ? uColor1Weight : uColor2Weight;
-
-            color += base * inf * (0.5 + 0.5 * sin(time * s * (0.8 + fi * 0.1))) * w;
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      containerRef.current.appendChild(renderer.domElement);
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.z = 50;
+      const touchTexture = new TouchTexture();
+      const uniforms = {
+        uTime: { value: 0 },
+        uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
+        uColor1: { value: new THREE.Vector3(0.06, 0.72, 0.5) },
+        uColor2: { value: new THREE.Vector3(0.02, 0.03, 0.08) },
+        uSpeed: { value: 0.55 },
+        uIntensity: { value: 0.85 },
+        uTouchTexture: { value: touchTexture.texture },
+        uGrainIntensity: { value: 0.08 },
+        uDarkNavy: { value: new THREE.Vector3(0.01, 0.02, 0.05) },
+        uGradientSize: { value: 0.5 },
+        uGradientCount: { value: 8.0 },
+        uColor1Weight: { value: 0.6 },
+        uColor2Weight: { value: 1.8 },
+      };
+      const material = new THREE.ShaderMaterial({
+        uniforms,
+        vertexShader: `varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+        fragmentShader: `
+          uniform float uTime; uniform vec2 uResolution; uniform vec3 uColor1, uColor2, uDarkNavy;
+          uniform float uSpeed, uIntensity, uGrainIntensity, uGradientSize, uColor1Weight, uColor2Weight;
+          uniform sampler2D uTouchTexture; varying vec2 vUv;
+          float grain(vec2 uv, float time) { vec2 grainUv = uv * uResolution * 0.5; return fract(sin(dot(grainUv + time, vec2(12.9898, 78.233))) * 43758.5453) * 2.0 - 1.0; }
+          vec3 getGradientColor(vec2 uv, float time) {
+            float s = uSpeed; vec3 color = vec3(0.0);
+            for(int i=0; i<8; i++) {
+                float fi = float(i);
+                vec2 c = vec2(0.5 + sin(time * s * (0.4 + fi * 0.02)) * 0.4, 0.5 + cos(time * s * (0.5 + fi * 0.03)) * 0.4);
+                float inf = 1.0 - smoothstep(0.0, uGradientSize, length(uv - c));
+                color += ((i % 2 == 0) ? uColor1 : uColor2) * inf * (0.5 + 0.5 * sin(time * s * (0.8 + fi*0.1))) * ((i % 2 == 0) ? uColor1Weight : uColor2Weight);
+            }
+            color = clamp(color * uIntensity, 0.0, 1.0);
+            return mix(uDarkNavy, color, max(length(color), 0.1));
           }
-
-          color = clamp(color * uIntensity, 0.0, 1.0);
-          return clamp(mix(uDarkNavy, color, max(length(color), 0.2)), 0.0, 1.0);
-        }
-
-        void main() {
-          vec2 uv = vUv;
-          vec4 touchTex = texture2D(uTouchTexture, uv);
-
-          uv += vec2(-(touchTex.r * 2.0 - 1.0), -(touchTex.g * 2.0 - 1.0)) * 0.8 * touchTex.b;
-
-          vec3 color = getGradientColor(uv, uTime);
-          color += grain(uv, uTime) * uGrainIntensity;
-
-          gl_FragColor = vec4(color, 1.0);
-        }
-      `,
-      transparent: true,
-    });
-
-    const geometry = new THREE.PlaneGeometry(120, 120, 1, 1);
-    const mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh);
-
-    const clock = new THREE.Clock();
-    let rafId = 0;
-
-    const resize = () => {
-      const rect = el.getBoundingClientRect();
-      const w = Math.max(1, rect.width);
-      const h = Math.max(1, rect.height);
-
-      renderer.setSize(w, h, false);
-      camera.aspect = w / h;
-      camera.updateProjectionMatrix();
-      uniforms.uResolution.value.set(w, h);
-    };
-
-    const handleMove = (e) => {
-      const p = e.touches && e.touches[0] ? e.touches[0] : e;
-      const rect = el.getBoundingClientRect();
-      const clamp01 = (v) => Math.min(1, Math.max(0, v));
-      const x = clamp01((p.clientX - rect.left) / rect.width);
-      const y = clamp01(1 - (p.clientY - rect.top) / rect.height);
-      touchTexture.addTouch({ x, y });
-    };
-
-    const animate = () => {
-      uniforms.uTime.value += clock.getDelta();
-      touchTexture.update();
-      renderer.render(scene, camera);
-      rafId = requestAnimationFrame(animate);
+          void main() {
+            vec2 uv = vUv; vec4 touchTex = texture2D(uTouchTexture, uv);
+            uv += vec2(-(touchTex.r * 2.0 - 1.0), -(touchTex.g * 2.0 - 1.0)) * 0.5 * touchTex.b;
+            vec3 color = getGradientColor(uv, uTime); color += grain(uv, uTime) * uGrainIntensity;
+            gl_FragColor = vec4(color, 1.0);
+          }
+        `,
+      });
+      scene.add(new THREE.Mesh(new THREE.PlaneGeometry(150, 150, 1, 1), material));
+      const clock = new THREE.Clock();
+      const animate = () => {
+        uniforms.uTime.value += clock.getDelta() * 0.85;
+        touchTexture.update();
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+      };
+      animate();
+      const handleMove = (e) => {
+        const x = (e.clientX || (e.touches && e.touches[0].clientX)) / window.innerWidth;
+        const y = 1 - (e.clientY || (e.touches && e.touches[0].clientY)) / window.innerHeight;
+        touchTexture.addTouch({ x, y });
+      };
+      window.addEventListener("mousemove", handleMove);
+      window.addEventListener("touchmove", handleMove);
+      window.addEventListener("resize", () => {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+      });
     };
 
     const ro = new ResizeObserver(resize);
@@ -554,18 +713,21 @@ function LiquidBackground({ className = "" }) {
 
 function Grid() {
   return (
-    <svg className="absolute inset-0 h-full w-full opacity-[0.05]" xmlns="http://www.w3.org/2000/svg">
-      <defs><pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M 80 0 L 0 0 0 80" fill="none" stroke="#1C1917" strokeWidth="1" /></pattern></defs>
-      <rect width="100%" height="100%" fill="url(#grid)" />
-    </svg>
-  );
-}
-
-function Background() {
-  return (
-    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(28,25,23,0.03),transparent_70%)]" />
-      <Grid />
+    <div className="fixed inset-0 -z-30">
+      <div className="absolute inset-0 bg-stone-950" />
+      <div className="absolute -top-56 left-1/2 h-[980px] w-[980px] -translate-x-1/2 rounded-full bg-emerald-500/8 blur-[120px]" />
+      <div className="absolute -top-32 -left-48 h-[720px] w-[720px] rounded-full bg-white/6 blur-[110px]" />
+      <div className="absolute -bottom-48 -right-48 h-[820px] w-[820px] rounded-full bg-emerald-400/6 blur-[130px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+      <div
+        className="absolute inset-0 opacity-[0.06] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.35) 1px, transparent 0)",
+          backgroundSize: "24px 24px",
+        }}
+      />
+      <div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]" />
     </div>
   );
 }
@@ -640,34 +802,36 @@ function Select({ label, options }) {
 
 function Home() {
   return (
-    <div className="mx-auto max-w-6xl px-4 sm:px-5 pb-20 md:pb-28 pt-0 -mt-6 sm:-mt-10 md:-mt-16">
-      {/* Hero matches the reference video: dark panel over full-page liquid */}
-      <section>
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/70 shadow-[0_18px_60px_rgba(0,0,0,0.55)]">
-          <div
-            className="absolute inset-0 opacity-[0.18]"
-            style={{
-              backgroundImage:
-                "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
-              backgroundSize: "96px 96px",
-              backgroundPosition: "center",
-            }}
-          />
-          <div className="absolute inset-0 bg-[radial-gradient(900px_650px_at_15%_25%,rgba(16,185,129,0.18),transparent_60%),radial-gradient(900px_650px_at_85%_20%,rgba(34,211,238,0.14),transparent_60%)]" />
-          <div className="relative px-5 py-8 sm:px-8 sm:py-10 md:px-14 md:py-14">
-            <div className="inline-flex items-center rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[11px] font-semibold tracking-[0.22em] text-emerald-200/90">
-              Trusted by teams with real stakes.
+    <div className="relative pt-6 md:pt-12 space-y-10 md:space-y-16">
+      <section className="relative z-10 min-h-[calc(100vh-170px)] md:h-[calc(100vh-170px)]">
+        <div className="grid h-full grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-0">
+          <div className="flex flex-col justify-center pr-0 lg:pr-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-black tracking-tighter leading-[0.95] md:leading-[0.9] text-white">
+              {COPY.home.productName} {COPY.home.h1Line1} <span className="text-emerald-500">{COPY.home.h1Line1Accent}</span> {COPY.home.h1Line1Suffix}
+              {COPY.home.h1Line2Accent && (<>
+                <br />
+                <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
+              </>)}
+            </h1>
+            <p className="mt-6 text-[17px] text-white/80 font-semibold leading-relaxed">{COPY.home.sub}</p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
+              <Button href="#/case-studies" variant="secondary">
+                {COPY.home.ctaSecondary}
+              </Button>
             </div>
 
-            <h1 className="mt-6 max-w-3xl text-[clamp(2rem,10vw,3.75rem)] font-black tracking-tight text-white leading-[1.05]">
-              Social Following Studios
-              <br />
-              <span className="text-emerald-300">builds words systems.</span>
-            </h1>
-
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-              We operate the language conversion system that turns your authority into calls, your database into clients, and your name into revenue on demand.
-            </p>
+          <div className="flex flex-col justify-center pl-0 lg:pl-8">
+            <div className="text-sm font-black tracking-[0.4em] text-emerald-400 uppercase mb-1">{COPY.home.trustedKicker}</div>
+            <p className="text-[17px] text-white/65 font-semibold mb-4">{COPY.home.trustedSub}</p>
+            <img
+              src="/logos-sheet.png"
+              alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP Baysound, Rhythm & Roux, Parade of Youth, Chevron"
+              className="w-full object-contain"
+            />
+          </div>
+        </div>
+      </section>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
@@ -684,13 +848,21 @@ function Home() {
               </a>
             </div>
 
-            {/* Bottom metric cards (match the reference capture) */}
-            <div className="mt-10 border-t border-white/10 pt-6">
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-                {HOME_STATS.map((item) => (
-                  <div key={item.label} className="rounded-lg border border-white/10 bg-black/50 px-5 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-                    <p className="text-[10px] font-semibold tracking-[0.32em] text-white/55">{item.label}</p>
-                    <p className="mt-2 text-base md:text-lg leading-relaxed font-medium text-white/75">{item.sub}</p>
+      <section className="mt-12 md:mt-14 border border-white/10 bg-black/40 backdrop-blur-xl p-6 sm:p-8 md:p-24 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-24 items-start">
+          <div>
+            <div className="text-sm font-black tracking-[0.4em] text-emerald-500 uppercase mb-8">{COPY.home.equationKicker}</div>
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none">{COPY.home.equationHeadline}</h2>
+            <p className="mt-8 text-[17px] text-white/80 leading-relaxed font-semibold">{COPY.home.equationBody}</p>
+          </div>
+          <div className="border border-white/10 p-10 bg-white/5 relative overflow-hidden">
+            <div className="text-sm font-black tracking-[0.3em] text-white/65 uppercase mb-12">{COPY.home.coreArch}</div>
+            <div className="space-y-6">
+              {COPY.home.architecture.map((layer, i) => (
+                <div key={layer.title} className="border-b border-white/5 pb-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-black tracking-widest text-emerald-400">0{i + 1}</span>
+                    <span className="text-lg font-black text-white">{layer.title}</span>
                   </div>
                 ))}
               </div>
@@ -698,75 +870,19 @@ function Home() {
           </div>
         </div>
       </section>
-
-      <section className="mt-16 md:mt-20">
-        <div className="rounded-3xl border border-white/12 bg-[#F0F3F8] shadow-[0_18px_50px_rgba(0,0,0,0.22)] backdrop-blur-sm">
-          <div className="p-8 md:p-10">
-            <p className="text-xs font-semibold tracking-[0.32em] text-emerald-700 uppercase">
-              ONE FLOW
-            </p>
-            <h2 className="mt-3 text-4xl font-black tracking-tight text-slate-900 md:text-5xl">
-              Audit. Deploy. Run.
-            </h2>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-700">
-              We sync each channel you own to turn past leads into booked calls.
-            </p>
-            <p className="mt-4 max-w-3xl text-base md:text-lg leading-relaxed text-slate-700">
-              Each job starts with a hard audit of your name, list, and owned channels. We map gaps and ship the flow.
-            </p>
-
-            <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-7">
-              <p className="text-[11px] font-semibold tracking-[0.28em] text-slate-500 uppercase">
-                ONE FLOW
-              </p>
-
-              <div className="mt-5 grid gap-4 md:grid-cols-3">
-                <div className="rounded-2xl border border-slate-200 p-5">
-                  <h3 className="text-xl font-black text-slate-900">Words</h3>
-                  <p className="mt-2 text-base md:text-lg leading-relaxed text-slate-700">
-                    We craft clear copy that moves buyers to book. Your skill, in print.
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-slate-200 p-5">
-                  <h3 className="text-xl font-black text-slate-900">Channels</h3>
-                  <p className="mt-2 text-base md:text-lg leading-relaxed text-slate-700">
-                    We wire email, site, and booking into one flow. Your reach, on tap.
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-slate-200 p-5">
-                  <h3 className="text-xl font-black text-slate-900">Ops</h3>
-                  <p className="mt-2 text-base md:text-lg leading-relaxed text-slate-700">
-                    We run the flow and track booked calls. Your week, full.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-6 h-2 w-full rounded-full bg-slate-200">
-                <div className="h-2 w-[62%] rounded-full bg-emerald-600" />
-              </div>
-            </div>
-
-            <h3 className="mt-10 text-3xl font-black tracking-tight text-slate-900 md:text-4xl">
-              Your name is built. Your flow is next.
-            </h3>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
 
-function System() {
+function Infrastructure() {
+  const { whoWeServe, howItWorks } = COPY.infrastructure;
   return (
-    <div className="space-y-12">
-      <section className="rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-6 sm:p-8 md:p-16 shadow-2xl text-left">
-        <SectionHead
-          eyebrow="INFRASTRUCTURE"
-          title="Map gaps. Set flow. Run live."
-          desc="Work starts with an audit, then we ship and run the flow."
-          right={<Button href={CONFIGURE_URL} variant="primary">{CTA_LABEL}</Button>}
-        />
-      </section>
+    <div className="pt-12 space-y-20 relative z-10">
+      <div className="max-w-4xl text-left">
+        <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.infrastructure.kicker}</div>
+        <h1 className="text-4xl sm:text-5xl md:text-[8rem] font-black tracking-tighter text-white leading-[0.95] md:leading-[0.9] whitespace-pre-line">{COPY.infrastructure.h1}</h1>
+        <p className="mt-8 md:mt-12 text-xl sm:text-2xl md:text-4xl text-white/80 font-semibold">{COPY.infrastructure.sub}</p>
+      </div>
 
       <div className="grid lg:grid-cols-3 gap-8 text-left">
         {INFRA_LAYERS.map((layer) => (
@@ -776,25 +892,22 @@ function System() {
         ))}
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-8 text-left">
-        <Card title="For teams with a built name." eyebrow="WHO WE SERVE">
-          <p className="text-base md:text-lg leading-relaxed text-stone-700">
-            We work with teams with a live list, owned channels, and a clear offer.
-          </p>
-        </Card>
-        <Card title="Work starts with an audit." eyebrow="HOW IT WORKS">
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-black tracking-tight text-stone-950">Audit</h3>
-              <p className="mt-4 text-base md:text-lg leading-relaxed text-stone-700">
-                A tight audit of your copy, list, and gaps. You get a clear plan.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-black tracking-tight text-stone-950">Build</h3>
-              <p className="mt-4 text-base md:text-lg leading-relaxed text-stone-700">
-                A full build across your owned channels. Past leads turn into booked calls.
-              </p>
+      <section className="border border-white/10 bg-black/40 backdrop-blur-xl p-6 md:p-8 relative z-10">
+        <div className="max-w-2xl">
+          <div className="text-xs font-black tracking-[0.4em] text-emerald-500 uppercase mb-4">{whoWeServe.kicker}</div>
+          <h3 className="text-2xl md:text-3xl font-black tracking-tight text-white leading-tight mb-4">{whoWeServe.headline}</h3>
+          <p className="text-[17px] text-white/80 font-semibold leading-relaxed">{whoWeServe.body}</p>
+        </div>
+      </section>
+
+      <section className="relative z-10">
+        <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{howItWorks.kicker}</div>
+        <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-14">{howItWorks.headline}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {howItWorks.tiers.map((tier) => (
+            <div key={tier.title} className="border border-white/10 bg-black/40 p-10 hover:bg-emerald-500/5 transition-colors">
+              <h3 className="text-xl font-black text-white uppercase mb-4">{tier.title}</h3>
+              <p className="text-[17px] text-white/80 font-semibold leading-relaxed">{tier.desc}</p>
             </div>
             <div>
               <h3 className="text-xl font-black tracking-tight text-stone-950">Ops</h3>
@@ -811,6 +924,20 @@ function System() {
           <Button href={CONFIGURE_URL} variant="primary" size="large">{CTA_LABEL}</Button>
         </div>
       </section>
+
+      <section className="text-center py-20 border-t border-white/10 relative z-10">
+        {COPY.infrastructure.outroLines.length > 0 && (
+          <p className="text-3xl md:text-5xl font-black text-white leading-tight mb-12">
+            {COPY.infrastructure.outroLines.map((line) => (
+              <React.Fragment key={line}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
+          </p>
+        )}
+        <Button href={BOOKING_URL}>{COPY.infrastructure.cta}</Button>
+      </section>
     </div>
   );
 }
@@ -823,32 +950,26 @@ function CaseStudies() {
   ], []);
 
   return (
-    <div className="space-y-12">
-      <section className="rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-6 sm:p-8 md:p-16 shadow-2xl text-left">
-        <SectionHead eyebrow="CASE STUDIES" title="Results from real engagements." desc="We map where authority lives, identify gaps, and turn existing relationships into booked calls." />
-      </section>
-
-      <section className="rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white/70 backdrop-blur overflow-hidden shadow-2xl pt-10 md:pt-14 pb-8 md:pb-10 text-left">
-        <div className="px-5 md:px-14">
-          <div className="text-sm font-black tracking-[0.4em] text-emerald-700 uppercase mb-8 leading-none text-left">SOCIAL FOLLOWING STUDIOS</div>
-        </div>
-        <div className="mt-2">
-          <PartnerMarquee />
-        </div>
-      </section>
-
-      <div className="grid gap-10 text-left">
-        {items.map((cs) => (
-          <section key={cs.title} className="rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white p-5 sm:p-8 md:p-16 shadow-2xl text-left">
-            <div className="grid lg:grid-cols-3 gap-8 md:gap-16 text-left">
-              <div className="lg:col-span-1 text-left">
-                <div className="rounded-[1.75rem] md:rounded-[2.5rem] border-2 border-stone-900/10 bg-gradient-to-br from-[#F5F2EA] to-white p-5 sm:p-8 md:p-10 overflow-hidden relative shadow-lg text-left">
-                  <div className="absolute -top-10 -right-10 h-48 w-48 rounded-full bg-emerald-600/18 blur-2xl" />
-                  <div className="relative text-left">
-                    <div className="text-[10px] font-black tracking-[0.3em] text-emerald-700 uppercase mb-8 leading-none text-left">{cs.industry}</div>
-                    <h2 className="text-[clamp(1.9rem,9vw,3rem)] font-black tracking-tighter leading-tight text-left">{cs.title}</h2>
-                    <div className="mt-8 flex flex-wrap gap-2 text-left"><Pill>{cs.deployment}</Pill></div>
-                  </div>
+    <div className="pt-12 relative z-10">
+      <div className="text-left mb-12 md:mb-24 max-w-4xl">
+        <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.caseStudies.kicker}</div>
+        <h1 className="text-4xl sm:text-5xl md:text-8xl font-black tracking-tighter text-white leading-[0.95] md:leading-[0.9]">{COPY.caseStudies.title}</h1>
+        {COPY.caseStudies.sub && <p className="mt-8 text-[17px] text-white/80 font-semibold leading-tight">{COPY.caseStudies.sub}</p>}
+      </div>
+      <div className="space-y-8 relative z-10">
+        {COPY.caseStudies.cards.map((cs) => (
+          <div key={cs.client} className="border border-white/10 bg-black/40 p-6 sm:p-8 md:p-14 hover:bg-white/5 transition-all relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+              <div>
+                <span className="inline-block border border-emerald-500/30 px-3 py-1 text-sm font-black tracking-widest text-emerald-400 uppercase mb-4">{cs.badge}</span>
+                <div className="text-2xl font-black text-white uppercase mb-6">{cs.client}</div>
+                <div className="text-6xl font-black text-emerald-400 leading-none">{cs.outcome}</div>
+                <div className="text-sm font-black tracking-widest text-white/65 uppercase mt-2">{cs.outcomeLabel}</div>
+              </div>
+              <div className="space-y-6">
+                <div>
+                  <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Challenge</div>
+                  <p className="text-[17px] font-semibold text-white/85 leading-relaxed">{cs.challenge}</p>
                 </div>
                 <div className="mt-8 rounded-[1.5rem] md:rounded-[2rem] border-2 border-stone-900/10 bg-white p-5 sm:p-6 md:p-8 shadow-lg text-left">
                   <div className="text-[10px] font-black tracking-widest text-stone-500 uppercase mb-4 leading-none text-left">BEFORE</div>
@@ -865,33 +986,35 @@ function CaseStudies() {
                     {cs.highlights.map((h) => (<span key={h} className="rounded-2xl border-2 border-stone-900/10 bg-[#F5F2EA] px-8 py-5 text-sm font-black tracking-tight text-stone-950 shadow-lg text-left">{h}</span>))}
                   </div>
                 </div>
+                <div>
+                  <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Methodology</div>
+                  <p className="text-sm font-semibold text-white/65 leading-relaxed">{cs.methodology}</p>
+                </div>
               </div>
             </div>
           </section>
         ))}
       </div>
-      <section className="rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-6 sm:p-8 md:p-16 shadow-2xl text-left">
-        <h2 className="text-3xl md:text-5xl font-black tracking-tight text-stone-950">Your calls are next.</h2>
-      </section>
-    </div>
-  );
-}
 
-function Configure() {
-  useEffect(() => {
-    window.location.replace(CONFIGURE_URL);
-  }, []);
-
-  return (
-    <div className="space-y-12">
-      <section className="rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-6 sm:p-8 md:p-16 shadow-2xl text-left">
-        <SectionHead
-          eyebrow="CONFIGURE"
-          title="Redirecting."
-          desc="Sending you to scheduling. If it does not open automatically, use the button below."
+      <div className="mb-24 py-12 border-y border-white/10 overflow-hidden relative z-10">
+        {COPY.caseStudies.trustedKicker && (
+          <div className="text-sm font-black tracking-[0.3em] text-emerald-500 uppercase mb-12 text-center">{COPY.caseStudies.trustedKicker}</div>
+        )}
+        <img
+          src="/logos-sheet.png"
+          alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP Baysound, Rhythm & Roux, Parade of Youth, Chevron"
+          className="w-full max-w-4xl mx-auto object-contain"
         />
-        <div className="mt-10">
-          <Button href={CONFIGURE_URL} variant="primary" size="large">OPEN CALENDAR</Button>
+      </div>
+
+      <section className="text-center py-16 md:py-24 mt-16 md:mt-24 relative z-10">
+        <Button href={BOOKING_URL}>{COPY.caseStudies.cta}</Button>
+      </section>
+
+      <section className="border border-emerald-500/40 bg-emerald-500/5 p-6 sm:p-8 md:p-20 relative z-10">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight">{COPY.home.closingHeadline}</h2>
+          <Button href={BOOKING_URL}>{COPY.shell.topCta}</Button>
         </div>
       </section>
     </div>
@@ -900,53 +1023,105 @@ function Configure() {
 
 function Contact() {
   return (
-    <div className="space-y-12">
-      <section id="contact" className="scroll-mt-28 rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-6 sm:p-8 md:p-16 shadow-2xl text-left">
-        <SectionHead eyebrow="CONTACT" title="Book Your Call." desc="Start here. We bring the flow. You bring the list." />
-      </section>
-      <Card title="Call Request" eyebrow="FORM">
+    <div className="pt-6 md:pt-12 max-w-5xl mx-auto relative z-10">
+      <section className="border border-white/10 bg-black/40 backdrop-blur-xl px-4 sm:px-6 md:px-16 py-8 sm:py-10 md:py-20">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.contact.kicker}</div>
+          <h1 className="text-3xl sm:text-4xl md:text-7xl font-black tracking-tighter text-white leading-[0.95]">{COPY.contact.title}</h1>
+          <div className="h-[2px] w-24 bg-emerald-500/90 mx-auto mt-6 md:mt-8 mb-6 md:mb-8" />
+          <p className="text-[17px] text-white/85 font-semibold leading-relaxed">{COPY.contact.sub}</p>
+        </div>
         <form
-          className="space-y-6 md:space-y-8"
+          action={CONTACT_FORM_ENDPOINT}
           method="POST"
-          action={ZOHO_FORM_ACTION}
+          className="mt-8 md:mt-14 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5"
         >
-          <input type="hidden" name="actionType" value={ZOHO_ACTION_TYPE} />
-          <input type="hidden" name="returnURL" value={ZOHO_RETURN_URL} />
-          {ZOHO_XNQSJSDP ? <input type="hidden" name="xnQsjsdp" value={ZOHO_XNQSJSDP} /> : null}
-          {ZOHO_XMIWTLD ? <input type="hidden" name="xmIwtLD" value={ZOHO_XMIWTLD} /> : null}
-          {ZOHO_LZAD ? <input type="hidden" name="lzad" value={ZOHO_LZAD} /> : null}
-          <div className="grid gap-6 md:grid-cols-2">
-            <Input label="Name" name="name" placeholder="Your name" />
-            <Input label="Organization" name="organization" placeholder="Organization" />
-            <Input label="Role" name="role" placeholder="Role" />
-            <Input label="Primary channel or platform you want activated" name="primaryChannel" placeholder="Primary channel" />
+          <input type="hidden" name="xnQsjsdp" value="b45ce04ddd76914bbfeade30ab0a6e86446ed07ddcd64b5425a1a4d9d5a467b8" readOnly />
+          <input type="hidden" name="zc_gad" id="zc_gad" value="" readOnly />
+          <input type="hidden" name="xmIwtLD" value="97ca543a3d1ea88492628d126d9ab329b04cea167679b0225170279c6fc6e4f3684dbc3fb82c598c93398f0f68dcd29b" readOnly />
+          <input type="hidden" name="actionType" value="TGVhZHM=" readOnly />
+          <input type="hidden" name="returnURL" value={ZOHO_RETURN_URL} readOnly />
+          <input type="hidden" name="aG9uZXlwb3Q" value="" readOnly />
+
+          <div>
+            <label htmlFor="company" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Company *</label>
+            <input id="company" type="text" name="Company" required placeholder="Company" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
           </div>
-          <Textarea label="What your database or audience currently looks like" name="audience" placeholder="Describe your current database or audience" />
-          <Textarea label="What revenue outcome you are building toward" name="revenueOutcome" placeholder="Describe the revenue outcome you are building toward" />
-          <div className="mt-10 text-left">
-            <button
-              type="submit"
-              className="inline-flex min-h-11 items-center justify-center rounded-2xl bg-emerald-600 px-8 py-4 text-[10px] font-black tracking-widest uppercase text-white transition active:scale-[0.98] shadow-lg hover:bg-emerald-700 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2"
-            >
-              {CTA_LABEL}
+
+          <div>
+            <label htmlFor="designation" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Title</label>
+            <input id="designation" type="text" name="Designation" placeholder="Title" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div>
+            <label htmlFor="firstName" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">First Name</label>
+            <input id="firstName" type="text" name="First Name" placeholder="First Name (optional)" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div>
+            <label htmlFor="email" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Email</label>
+            <input id="email" type="email" name="Email" placeholder="Email" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div>
+            <label htmlFor="lastName" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Last Name *</label>
+            <input id="lastName" type="text" name="Last Name" required placeholder="Last Name" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div>
+            <label htmlFor="primaryChannel" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Primary Channel</label>
+            <input id="primaryChannel" type="text" name="LEADCF2" placeholder="Primary Channel" className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div className="md:col-span-2">
+            <label htmlFor="audienceDescription" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Audience Description</label>
+            <textarea id="audienceDescription" name="Description" placeholder="Audience Description" rows={3} className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div className="md:col-span-2">
+            <label htmlFor="additionalContext" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Additional Context</label>
+            <textarea id="additionalContext" name="LEADCF1" placeholder="Additional Context" rows={4} className="w-full bg-white/[0.02] border border-white/20 px-5 py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+          </div>
+
+          <div className="md:col-span-2 flex justify-start mt-2">
+            <button type="submit" className="bg-emerald-600 w-full sm:w-auto px-8 md:px-10 py-4 min-h-[44px] text-sm font-black tracking-[0.3em] uppercase text-white hover:bg-emerald-500 transition-colors">
+              {COPY.contact.submitIdle}
             </button>
           </div>
         </form>
-      </Card>
-      <Card title="Social Following Studios works with operators whose authority is already built." eyebrow="QUALIFICATION">
-        We review each request and take on teams with a live list and a clear offer.
-      </Card>
+
+        <div className="mt-12 border border-white/10 bg-white/[0.02] p-6 md:p-8">
+          <p className="text-sm font-black tracking-[0.3em] uppercase text-emerald-400 mb-3">Qualification</p>
+          <p className="text-[17px] text-white/80 font-semibold leading-relaxed">
+            We review every assessment request and engage with operators whose database and channels are ready to activate.
+          </p>
+        </div>
+      </section>
     </div>
   );
 }
 
-function Terms() { return <div className="p-20 text-left font-bold text-xl">Commercial terms for Unified Conversion Systems.</div>; }
-function Privacy() { return <div className="p-20 text-left font-bold text-xl">Privacy policy for intake configuration data.</div>; }
 
-// ---------- main shell ----------
+function ThankYou() {
+  return (
+    <div className="pt-20 max-w-4xl mx-auto relative z-10">
+      <section className="border border-white/10 bg-black/40 backdrop-blur-xl px-4 sm:px-8 md:px-16 py-10 md:py-16 text-center">
+        <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white">Thanks. We got your request.</h1>
+        <p className="mt-6 text-[17px] text-white/80 font-semibold">Our team will review and follow up shortly.</p>
+        <div className="mt-10">
+          <Button href="#/">Back Home</Button>
+        </div>
+      </section>
+    </div>
+  );
+}
 
-function Shell({ route, children }) {
+function Shell({ children, route }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [route]);
 
   const active = (href) => {
     const r = href.replace(/^#/, "").toLowerCase();
@@ -954,19 +1129,21 @@ function Shell({ route, children }) {
   };
 
   return (
-    <div className={cx("relative min-h-screen text-stone-900 overflow-x-hidden selection:bg-emerald-600 selection:text-white", route === "/" ? "bg-transparent" : "bg-[#F5F2EA]")}>
-      {route === "/" ? <HomeLiquidBackdrop /> : <Background />}
-      <CustomCursor />
+    <div className="min-h-screen text-white selection:bg-emerald-600 selection:text-white font-sans relative">
+      {route === "/" ? <LiquidBackground /> : <InnerBackground />}
+      <Grid opacityClass={route === "/" ? "opacity-20" : "opacity-10"} />
 
-      <div className="relative z-10">
-
-      <header className="sticky top-0 z-50 border-b border-stone-900/10 bg-transparent backdrop-blur-2xl shadow-sm text-left">
-        <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-3 sm:gap-4 sm:px-6 text-left">
-          <a href="#/" className="flex min-w-0 flex-1 items-center md:flex-none">
-            <BrandLogo className="w-[220px] sm:w-[300px] md:w-[560px]" priority />
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
+        <div className="max-w-[1800px] mx-auto flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 md:py-8">
+          <a href="#/" className="group shrink-0">
+            <img
+              src={sfsLogo}
+              alt={COPY.shell.brand}
+              className="h-8 sm:h-10 md:h-12 w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity"
+            />
           </a>
 
-          <nav className="hidden md:flex items-center gap-3 text-base md:text-lg font-medium tracking-wide text-left">
+          <nav className="hidden md:flex gap-4 md:gap-8 mr-6 md:mr-14">
             {NAV.map((item) => (
               <a
                 key={item.href}
@@ -983,67 +1160,69 @@ function Shell({ route, children }) {
             ))}
           </nav>
 
-          <div className="ml-auto flex items-center gap-2">
-            <Button href={CONFIGURE_URL} variant="primary" size="default" className="hidden sm:inline-flex">{CTA_LABEL}</Button>
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden flex min-h-11 min-w-11 items-center justify-center rounded-2xl bg-stone-950 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2"
-              aria-label="Toggle menu"
-              aria-expanded={mobileMenuOpen}
-              aria-controls="mobile-nav"
+          <div className="flex items-center gap-2 sm:gap-3">
+            <a
+              href={BOOKING_URL}
+              className="border border-emerald-500/50 px-3 sm:px-4 md:px-6 py-2.5 md:py-3 text-[10px] sm:text-xs md:text-sm font-black tracking-[0.18em] sm:tracking-[0.22em] md:tracking-[0.3em] uppercase hover:bg-emerald-500 transition-all whitespace-nowrap min-h-[44px] inline-flex items-center"
             >
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              {COPY.shell.topCta}
+            </a>
+            <button
+              type="button"
+              className="md:hidden border border-white/20 p-3 min-h-[44px] min-w-[44px] inline-flex items-center justify-center"
+              aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
+              onClick={() => setMobileMenuOpen((open) => !open)}
+            >
+              <span className="text-lg leading-none">{mobileMenuOpen ? "✕" : "☰"}</span>
             </button>
           </div>
         </div>
 
         {mobileMenuOpen && (
-          <div id="mobile-nav" className="md:hidden border-t-2 border-white/10 bg-stone-950/90 backdrop-blur-2xl shadow-2xl">
-            <nav className="mx-auto max-w-7xl px-4 sm:px-6 py-4 sm:py-6 flex flex-col gap-3 text-base md:text-lg font-medium tracking-wide">
-              <Button href={CONFIGURE_URL} variant="primary" size="default" className="w-full">
-                {CTA_LABEL}
-              </Button>
+          <nav className="md:hidden border-t border-white/10 px-4 pb-4 pt-2 bg-black/95">
+            <div className="flex flex-col gap-2">
               {NAV.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
                   className={cx(
-                    "flex min-h-11 items-center justify-center text-base md:text-lg hover:opacity-80 transition rounded-2xl px-6 py-4 font-medium tracking-wide text-center",
-                    active(item.href)
-                      ? "bg-emerald-500 text-white shadow-2xl"
-                      : "text-white/80 hover:text-white hover:bg-white/10"
+                    "px-2 py-3 text-xs font-black tracking-[0.2em] uppercase transition-colors",
+                    active(item.href) ? "text-emerald-400" : "text-white/75 hover:text-white"
                   )}
                 >
                   {item.label}
                 </a>
               ))}
-            </nav>
-          </div>
+            </div>
+          </nav>
         )}
       </header>
 
-      <main className="mx-auto max-w-7xl px-4 sm:px-6 py-10 sm:py-16 md:py-24 text-left">{children}</main>
+      <main className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12 pt-24 md:pt-32 pb-24 md:pb-48 relative z-10">{children}</main>
 
-      <footer className="border-t-2 border-stone-900/10 py-16 text-left">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-[clamp(2rem,9vw,3.75rem)] font-black tracking-tight text-stone-950 leading-[1.08]">
-            Your name is built. Your <span className="text-emerald-400">flow runs.</span>
-          </h2>
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 text-left">
-            <div className="text-left">
-              <BrandLogo className="w-[220px] sm:w-[300px] md:w-[460px] opacity-70 hover:opacity-100 transition-opacity duration-500" />
-              <p className="mt-3 text-base md:text-lg leading-relaxed text-stone-600">Words Systems</p>
-            </div>
-            <div className="flex flex-wrap items-center gap-6 md:gap-10 text-base md:text-lg font-medium tracking-wide text-stone-500">
-              <a href="#/terms" className="hover:text-stone-950 transition-colors">Terms</a>
-              <a href="#/privacy" className="hover:text-stone-950 transition-colors">Privacy</a>
+      <footer className="border-t border-white/10 bg-black relative z-50">
+        <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12 py-12 md:py-16 grid lg:grid-cols-3 gap-10 md:gap-16">
+          <div>
+            <img src={sfsLogo} alt={COPY.shell.brand} className="h-14 w-auto object-contain mb-4 opacity-95" />
+            <div className="text-sm font-black tracking-[0.4em] text-white/65 uppercase">{COPY.shell.footerSub}</div>
+          </div>
+          <form
+            action={MAILING_LIST_ENDPOINT}
+            onSubmit={(e) => e.preventDefault()}
+            className="border border-white/10 bg-white/[0.02] p-6"
+          >
+            <p className="text-base font-semibold text-white mb-4">Join our mailing list for the latest insights.</p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                required
+                placeholder="Email"
+                className="flex-1 bg-transparent border border-white/20 px-4 py-3 text-xs text-white placeholder:text-white/65 focus:outline-none focus:border-emerald-500"
+              />
+              <button type="submit" className="bg-emerald-600 px-5 py-3 min-h-[44px] text-sm font-black tracking-[0.24em] uppercase hover:bg-emerald-500">
+                Join
+              </button>
             </div>
           </div>
         </div>
@@ -1067,13 +1246,19 @@ export default function App() {
   const page = useMemo(() => {
     switch (route) {
       case "/infrastructure":
-      case "/system": return <System />;
-      case "/case-studies": case "/use-cases": return <CaseStudies />;
-      case "/configure": return <Configure />;
-      case "/contact": return <Contact />;
-      case "/terms": return <Terms />;
-      case "/privacy": return <Privacy />;
-      default: return <Home />;
+        return <Infrastructure />;
+      case "/case-studies":
+        return <CaseStudies />;
+      case "/contact":
+        return <Contact />;
+      case "/terms":
+        return <PolicyPage policy={TERMS_POLICY} />;
+      case "/privacy":
+        return <PolicyPage policy={PRIVACY_POLICY} />;
+      case "/thank-you":
+        return <ThankYou />;
+      default:
+        return <Home />;
     }
   }, [route]);
   return <Shell route={route}>{page}</Shell>;
