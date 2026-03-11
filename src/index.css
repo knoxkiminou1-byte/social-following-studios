@@ -2,12 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
   scroll-padding-top: 96px;
+  -webkit-text-size-adjust: 100%;
 }
 
 body, #root {
@@ -16,8 +21,16 @@ body, #root {
   overflow-x: hidden;
 }
 
+#root {
+  isolation: isolate;
+}
+
 main, section, header, footer {
   max-width: 100%;
+}
+
+main *, section *, header *, footer * {
+  min-width: 0;
 }
 
 img, svg, video, canvas {
@@ -38,5 +51,11 @@ textarea {
   select,
   button {
     font-size: 16px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: anywhere;
   }
 }

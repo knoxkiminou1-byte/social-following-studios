@@ -107,8 +107,8 @@ function Button({ href, children, variant = "primary", size = "default", classNa
   const base =
     "inline-flex min-h-11 items-center justify-center rounded-2xl font-black transition active:scale-[0.98] shadow-lg hover:shadow-xl uppercase tracking-widest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2";
   const sizes = {
-    default: "px-4 py-3 text-[10px] md:px-6 md:py-4 md:text-[10px]",
-    large: "px-8 py-4 text-[11px] md:px-10 md:py-5 md:text-xs",
+    default: "px-4 py-3 text-[11px] md:px-6 md:py-4 md:text-[10px]",
+    large: "px-8 py-4 text-[12px] md:px-10 md:py-5 md:text-xs",
   };
   const styles =
     variant === "primary"
@@ -134,7 +134,7 @@ function SectionHead({ eyebrow, title, desc, right }) {
     <div className="flex flex-col gap-6 text-left md:flex-row md:items-end md:justify-between md:gap-8">
       <div>
         <div className="text-sm font-black tracking-[0.25em] text-emerald-700 uppercase mb-6 leading-none">{eyebrow}</div>
-        <h1 className="text-[clamp(2rem,8vw,4.5rem)] font-black tracking-tighter leading-[1.05]">{title}</h1>
+        <h1 className="text-[clamp(1.8rem,8vw,4.5rem)] font-black tracking-tighter leading-[1.08]">{title}</h1>
         {desc ? (
           <p className="mt-6 max-w-3xl text-base md:mt-8 md:text-xl text-stone-700 leading-relaxed font-medium">{desc}</p>
         ) : null}
@@ -611,7 +611,7 @@ function Input({ label, placeholder, name, required = true }) {
   return (
     <label className="block text-left">
       <div className="text-[10px] font-black tracking-widest text-stone-500 uppercase mb-3">{label}</div>
-      <input type="text" name={name} required={required} placeholder={placeholder} className="w-full min-h-11 rounded-xl md:rounded-[1.25rem] border-2 border-stone-900/10 bg-white px-4 md:px-6 py-3 md:py-5 text-base md:text-lg font-bold focus:outline-none focus:ring-4 focus:ring-emerald-600/10 focus:border-emerald-600 transition-all shadow-inner placeholder:text-stone-300" />
+      <input type="text" name={name} required={required} placeholder={placeholder} className="w-full min-h-11 rounded-xl md:rounded-[1.25rem] border-2 border-stone-900/10 bg-white px-4 md:px-6 py-3 md:py-5 text-base md:text-lg font-bold focus:outline-none focus:ring-4 focus:ring-emerald-600/10 focus:border-emerald-600 transition-all shadow-inner placeholder:text-stone-300" style={{ fontSize: "16px" }} />
     </label>
   );
 }
@@ -620,7 +620,7 @@ function Textarea({ label, placeholder, name, required = true }) {
   return (
     <label className="block text-left">
       <div className="text-[10px] font-black tracking-widest text-stone-500 uppercase mb-3">{label}</div>
-      <textarea name={name} required={required} rows={4} placeholder={placeholder} className="w-full min-h-[140px] resize-y rounded-xl md:rounded-[1.25rem] border-2 border-stone-900/10 bg-white px-4 md:px-6 py-3 md:py-5 text-base md:text-lg font-bold focus:outline-none focus:ring-4 focus:ring-emerald-600/10 focus:border-emerald-600 transition-all shadow-inner placeholder:text-stone-300" />
+      <textarea name={name} required={required} rows={4} placeholder={placeholder} className="w-full min-h-[140px] resize-y rounded-xl md:rounded-[1.25rem] border-2 border-stone-900/10 bg-white px-4 md:px-6 py-3 md:py-5 text-base md:text-lg font-bold focus:outline-none focus:ring-4 focus:ring-emerald-600/10 focus:border-emerald-600 transition-all shadow-inner placeholder:text-stone-300" style={{ fontSize: "16px" }} />
     </label>
   );
 }
@@ -629,7 +629,7 @@ function Select({ label, options }) {
   return (
     <label className="block text-left">
       <div className="text-[10px] font-black tracking-widest text-stone-500 uppercase mb-3">{label}</div>
-      <select className="w-full min-h-11 rounded-xl md:rounded-[1.25rem] border-2 border-stone-900/10 bg-white px-4 md:px-6 py-3 md:py-5 text-base md:text-lg font-bold focus:outline-none focus:ring-4 focus:ring-emerald-600/10 focus:border-emerald-600 transition-all shadow-md appearance-none">
+      <select className="w-full min-h-11 rounded-xl md:rounded-[1.25rem] border-2 border-stone-900/10 bg-white px-4 md:px-6 py-3 md:py-5 text-base md:text-lg font-bold focus:outline-none focus:ring-4 focus:ring-emerald-600/10 focus:border-emerald-600 transition-all shadow-md appearance-none" style={{ fontSize: "16px" }}>
         {options.map((o) => (<option key={o} value={o}>{o}</option>))}
       </select>
     </label>
@@ -923,10 +923,10 @@ function Contact() {
           </div>
           <Textarea label="What your database or audience currently looks like" name="audience" placeholder="Describe your current database or audience" />
           <Textarea label="What revenue outcome you are building toward" name="revenueOutcome" placeholder="Describe the revenue outcome you are building toward" />
-          <div className="mt-10 text-left">
+          <div className="mt-8 md:mt-10 text-left">
             <button
               type="submit"
-              className="inline-flex min-h-11 items-center justify-center rounded-2xl bg-emerald-600 px-8 py-4 text-[10px] font-black tracking-widest uppercase text-white transition active:scale-[0.98] shadow-lg hover:bg-emerald-700 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2"
+              className="inline-flex w-full sm:w-auto min-h-11 items-center justify-center rounded-2xl bg-emerald-600 px-8 py-4 text-[11px] font-black tracking-widest uppercase text-white transition active:scale-[0.98] shadow-lg hover:bg-emerald-700 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2"
             >
               {CTA_LABEL}
             </button>
@@ -948,6 +948,10 @@ function Privacy() { return <div className="p-20 text-left font-bold text-xl">Pr
 function Shell({ route, children }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [route]);
+
   const active = (href) => {
     const r = href.replace(/^#/, "").toLowerCase();
     return route === r || (route === "/" && r === "/");
@@ -963,7 +967,7 @@ function Shell({ route, children }) {
       <header className="sticky top-0 z-50 border-b border-stone-900/10 bg-transparent backdrop-blur-2xl shadow-sm text-left">
         <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-3 sm:gap-4 sm:px-6 text-left">
           <a href="#/" className="flex min-w-0 flex-1 items-center md:flex-none">
-            <BrandLogo className="w-[220px] sm:w-[300px] md:w-[560px]" priority />
+            <BrandLogo className="w-[160px] sm:w-[280px] md:w-[560px]" priority />
           </a>
 
           <nav className="hidden md:flex items-center gap-3 text-base md:text-lg font-medium tracking-wide text-left">
@@ -1015,7 +1019,7 @@ function Shell({ route, children }) {
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cx(
-                    "flex min-h-11 items-center justify-center text-base md:text-lg hover:opacity-80 transition rounded-2xl px-6 py-4 font-medium tracking-wide text-center",
+                    "flex min-h-11 items-center justify-center text-base md:text-lg hover:opacity-80 transition rounded-2xl px-6 py-4 font-medium tracking-wide text-center whitespace-normal leading-snug",
                     active(item.href)
                       ? "bg-emerald-500 text-white shadow-2xl"
                       : "text-white/80 hover:text-white hover:bg-white/10"
