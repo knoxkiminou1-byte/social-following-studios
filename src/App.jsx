@@ -1,5 +1,24 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
-import sfsLogo from "./assets/SFSF.png";
+import * as THREE from "three";
+import brandLogo from "./assets/brand/sfs-logo.png";
+
+/**
+ * Social Following Studios - Unified Conversion Systems
+ * Aesthetic: Hyper-Modern AI / Aerodynamic
+ * Integration: High-Fidelity Three.js Liquid Field (No Rain) + Precision Cursor
+ * Palette: Royal Creme + Ink + Emerald
+ * Language: Forward-speaking, affirmative statements only
+ */
+
+const CONFIGURE_URL = "https://cal.com/rashida-knox";
+const CTA_LABEL = "BOOK YOUR CALL";
+const BRAND_LOGO_PATH = brandLogo;
+const ZOHO_FORM_ACTION = import.meta.env.VITE_ZOHO_FORM_ACTION || "https://crm.zoho.com/crm/WebToLeadForm";
+const ZOHO_RETURN_URL = import.meta.env.VITE_ZOHO_RETURN_URL || CONFIGURE_URL;
+const ZOHO_ACTION_TYPE = import.meta.env.VITE_ZOHO_ACTION_TYPE || "TGVhZHM=";
+const ZOHO_XNQSJSDP = import.meta.env.VITE_ZOHO_XNQSJSDP || "";
+const ZOHO_XMIWTLD = import.meta.env.VITE_ZOHO_XMIWTLD || "";
+const ZOHO_LZAD = import.meta.env.VITE_ZOHO_LZAD || "";
 
 const NAV = [
   { label: "01 Home", href: "#/" },
@@ -276,118 +295,319 @@ function useHashRoute() {
   return route;
 }
 
-function Button({ href, children, variant = "primary" }) {
+// ---------- base UI components ----------
+
+function BrandLogo({ className, priority = false }) {
+  return (
+    <img
+      src={BRAND_LOGO_PATH}
+      alt="Social Following Studios"
+      className={cx("block h-auto w-full max-w-full object-contain", className)}
+      loading={priority ? "eager" : "lazy"}
+      decoding="async"
+    />
+  );
+}
+
+function Button({ href, children, variant = "primary", size = "default", className = "" }) {
   const base =
-    "inline-flex items-center justify-center px-8 py-4 text-sm font-black tracking-[0.2em] uppercase transition-all active:scale-[0.98] border shadow-2xl relative z-10";
+    "inline-flex min-h-11 items-center justify-center rounded-2xl font-black transition active:scale-[0.98] shadow-lg hover:shadow-xl uppercase tracking-widest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2";
+  const sizes = {
+    default: "px-4 py-3 text-[10px] md:px-6 md:py-4 md:text-[10px]",
+    large: "px-8 py-4 text-[11px] md:px-10 md:py-5 md:text-xs",
+  };
   const styles =
     variant === "primary"
-      ? "bg-emerald-600 text-white border-emerald-500 hover:bg-emerald-500"
-      : "bg-transparent text-white border-white/20 hover:bg-white/5";
+      ? "bg-emerald-600 text-white hover:bg-emerald-700"
+      : "bg-stone-950 text-white hover:bg-stone-900 border-2 border-emerald-600/20";
   return (
-    <a href={href} className={cx(base, styles)}>
+    <a href={href} className={cx(base, sizes[size], styles, className)}>
       {children}
     </a>
   );
 }
 
-function PolicyPage({ policy }) {
+function Pill({ children }) {
   return (
-    <section className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 py-20 text-white">
-      <p className="text-sm font-black tracking-[0.28em] uppercase text-emerald-400/90 mb-4">Last Updated: {POLICY_TEMPLATE.updatedAt}</p>
-      <h1 className="text-4xl md:text-5xl font-black tracking-tight uppercase mb-5">{policy.title}</h1>
-      <p className="text-[17px] leading-7 text-white/80 mb-10">{policy.intro}</p>
-      <div className="space-y-8">
-        {policy.sections.map((section) => (
-          <article key={section.heading} className="border border-white/10 bg-white/[0.02] p-6 md:p-8">
-            <h2 className="text-xl md:text-2xl font-black uppercase tracking-wide mb-3">{section.heading}</h2>
-            <p className="text-[17px] leading-7 text-white/88">{section.body}</p>
-          </article>
-        ))}
+    <span className="inline-flex items-center rounded-full border-2 border-emerald-600/25 bg-emerald-50 px-4 py-2 text-sm font-bold tracking-wide text-emerald-900 shadow-md">
+      {children}
+    </span>
+  );
+}
+
+function SectionHead({ eyebrow, title, desc, right }) {
+  return (
+    <div className="flex flex-col gap-6 text-left md:flex-row md:items-end md:justify-between md:gap-8">
+      <div>
+        <div className="text-sm font-black tracking-[0.25em] text-emerald-700 uppercase mb-6 leading-none">{eyebrow}</div>
+        <h1 className="text-[clamp(2rem,8vw,4.5rem)] font-black tracking-tighter leading-[1.05]">{title}</h1>
+        {desc ? (
+          <p className="mt-6 max-w-3xl text-base md:mt-8 md:text-xl text-stone-700 leading-relaxed font-medium">{desc}</p>
+        ) : null}
       </div>
-      <p className="mt-10 text-[17px] text-white/80">
-        Questions? Contact {POLICY_TEMPLATE.siteName} at {POLICY_TEMPLATE.email}.
-      </p>
+      {right ? <div className="md:shrink-0">{right}</div> : null}
+    </div>
+  );
+}
+
+function Card({ title, eyebrow, children, right }) {
+  return (
+    <section className="rounded-[1.75rem] md:rounded-[2.5rem] border-2 border-stone-900/10 bg-white/75 backdrop-blur-xl p-5 sm:p-6 md:p-12 shadow-2xl text-left transition-all duration-500 hover:shadow-emerald-600/5">
+      <div className="flex items-start justify-between gap-6">
+        <div>
+          {eyebrow ? (
+            <div className="text-sm font-black tracking-[0.25em] text-emerald-700 uppercase mb-6 leading-none">{eyebrow}</div>
+          ) : null}
+          {title ? <h2 className="text-2xl md:text-4xl font-black tracking-tight">{title}</h2> : null}
+        </div>
+        {right ? <div className="hidden md:block">{right}</div> : null}
+      </div>
+      <div className="mt-8 text-base md:text-lg text-stone-700 leading-relaxed">{children}</div>
     </section>
   );
 }
 
-function LiquidBackground() {
-  const containerRef = useRef(null);
+function Stat({ label, value, sub, dark = false }) {
+  return (
+    <div
+      className={cx(
+        "rounded-[2rem] border-2 p-6 md:p-8 shadow-2xl transition-all duration-500 hover:-translate-y-2 text-left",
+        dark ? "border-white/10 bg-white/5" : "border-stone-900/10 bg-white"
+      )}
+    >
+      <div className="flex items-baseline justify-between gap-4">
+        <div className={cx("text-[10px] font-black tracking-[0.2em] uppercase", dark ? "text-white/60" : "text-stone-600")}>
+          {label}
+        </div>
+        <div className={cx("text-2xl md:text-4xl font-black tracking-tighter", dark ? "text-white" : "text-stone-900")}>{value}</div>
+      </div>
+      {sub ? (
+        <div className={cx("mt-3 text-base md:text-lg leading-relaxed opacity-80", dark ? "text-white" : "text-stone-600")}>{sub}</div>
+      ) : null}
+    </div>
+  );
+}
+
+function VisualTile({ title, subtitle }) {
+  return (
+    <div className="rounded-[2.5rem] border-2 border-stone-900/10 bg-white p-10 shadow-2xl overflow-hidden relative">
+      <div className="absolute -top-10 -right-10 h-48 w-48 rounded-full bg-emerald-600/20 blur-3xl" />
+      <div className="absolute bottom-0 left-0 h-48 w-48 rounded-full bg-stone-900/8 blur-3xl" />
+      <div className="relative text-left">
+        <div className="text-[10px] font-black tracking-[0.3em] text-stone-600 uppercase mb-6 leading-none">{subtitle}</div>
+        <div className="mt-2 text-2xl md:text-3xl font-black tracking-tight">{title}</div>
+        <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {["ACCESS", "CONVERSION", "INTAKE", "CONTINUITY"].map((t) => (
+            <div
+              key={t}
+              className="rounded-2xl border-2 border-stone-900/10 bg-[#F5F2EA] px-3 py-4 text-[10px] font-black text-center tracking-widest text-stone-800 uppercase"
+            >
+              {t}
+            </div>
+          ))}
+        </div>
+        <div className="mt-10 h-3 w-full rounded-full bg-stone-200 overflow-hidden shadow-inner">
+          <div className="h-full w-2/3 bg-emerald-600" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PartnerMarquee() {
+  return (
+    <div className="group relative w-full overflow-hidden py-8">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-[#F5F2EA] via-[#F5F2EA]/40 to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-[#F5F2EA] via-[#F5F2EA]/40 to-transparent" />
+      <div className="flex w-max animate-marquee whitespace-nowrap">
+        {[...PARTNERS, ...PARTNERS, ...PARTNERS].map((name, idx) => (
+          <div
+            key={`${name}-${idx}`}
+            className="flex items-center px-14 text-[10px] md:text-xs font-black tracking-[0.4em] text-stone-950 uppercase transition-colors duration-500 hover:text-emerald-700"
+          >
+            {name}
+          </div>
+        ))}
+      </div>
+      <style>{`
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-33.33%); } }
+        .animate-marquee { animation: marquee 25s linear infinite; }
+      `}</style>
+    </div>
+  );
+}
+
+// ---------- background & cursor ----------
+
+function CustomCursor() {
+  const cursorRef = useRef(null);
+  const dotRef = useRef(null);
+
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
-    script.async = true;
-    document.head.appendChild(script);
-    script.onload = () => {
-      const THREE = window.THREE;
-      class TouchTexture {
-        constructor() {
-          this.size = 128;
-          this.width = this.height = this.size;
-          this.maxAge = 64;
-          this.radius = 0.15 * this.size;
-          this.speed = 1 / this.maxAge;
-          this.trail = [];
-          this.last = null;
-          this.initTexture();
+    const cursor = cursorRef.current;
+    const dot = dotRef.current;
+    if (!cursor || !dot) return;
+
+    let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+    let rafId = 0;
+
+    const onMouseMove = (e) => {
+      mouseX = e.clientX; mouseY = e.clientY;
+      // Keep the dot centered under the pointer (inline transforms override Tailwind translate classes).
+      dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+    };
+
+    const animate = () => {
+      cursorX += (mouseX - cursorX) * 0.15;
+      cursorY += (mouseY - cursorY) * 0.15;
+      cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+      rafId = requestAnimationFrame(animate);
+    };
+
+    const onMouseEnter = () => {
+      cursor.style.width = "60px"; cursor.style.height = "60px";
+      cursor.style.borderColor = "#10B981"; cursor.style.backgroundColor = "rgba(16, 185, 129, 0.1)";
+    };
+    const onMouseLeave = () => {
+      cursor.style.width = "30px"; cursor.style.height = "30px";
+      cursor.style.borderColor = "rgba(28, 25, 23, 0.4)"; cursor.style.backgroundColor = "transparent";
+    };
+
+    // attach
+    window.addEventListener("mousemove", onMouseMove);
+    rafId = requestAnimationFrame(animate);
+
+    // delegated hover handling
+    const onOver = (e) => {
+      const t = e.target;
+      if (t && t.closest && t.closest("a, button, input, select, textarea")) onMouseEnter();
+    };
+    const onOut = (e) => {
+      const t = e.target;
+      if (t && t.closest && t.closest("a, button, input, select, textarea")) onMouseLeave();
+    };
+    document.addEventListener("mouseover", onOver);
+    document.addEventListener("mouseout", onOut);
+
+    return () => {
+      window.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mouseover", onOver);
+      document.removeEventListener("mouseout", onOut);
+      cancelAnimationFrame(rafId);
+    };
+  }, []);
+
+  return (
+    <>
+      <div ref={cursorRef} className="pointer-events-none fixed left-0 top-0 z-[9999] h-[30px] w-[30px] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-stone-900/40 transition-[width,height,background-color,border-color] duration-300 hidden lg:block shadow-sm" />
+      <div ref={dotRef} className="pointer-events-none fixed left-0 top-0 z-[9999] h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-600 hidden lg:block" />
+    </>
+  );
+}
+
+function LiquidBackground({ className = "" }) {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.domElement.style.width = '100%';
+    renderer.domElement.style.height = '100%';
+    renderer.domElement.style.display = 'block';
+    el.appendChild(renderer.domElement);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
+    camera.position.z = 50;
+
+    class TouchTexture {
+      constructor() {
+        this.size = 128;
+        this.width = this.height = this.size;
+        this.maxAge = 64;
+        this.radius = 0.15 * this.size;
+        this.speed = 1 / this.maxAge;
+        this.trail = [];
+        this.last = null;
+
+        this.canvas = document.createElement('canvas');
+        this.canvas.width = this.width;
+        this.canvas.height = this.height;
+        this.ctx = this.canvas.getContext('2d');
+        this.ctx.fillStyle = 'black';
+        this.ctx.fillRect(0, 0, this.width, this.height);
+
+        this.texture = new THREE.Texture(this.canvas);
+        this.texture.minFilter = THREE.LinearFilter;
+        this.texture.magFilter = THREE.LinearFilter;
+      }
+
+      addTouch(point) {
+        if (this.last) {
+          const dx = point.x - this.last.x;
+          const dy = point.y - this.last.y;
+          if (dx === 0 && dy === 0) return;
+
+          const dd = dx * dx + dy * dy;
+          const d = Math.sqrt(dd);
+
+          this.trail.push({
+            x: point.x,
+            y: point.y,
+            age: 0,
+            force: Math.min(dd * 20000, 2.0),
+            vx: dx / d,
+            vy: dy / d,
+          });
         }
-        initTexture() {
-          this.canvas = document.createElement("canvas");
-          this.canvas.width = this.width;
-          this.canvas.height = this.height;
-          this.ctx = this.canvas.getContext("2d");
-          this.ctx.fillStyle = "black";
-          this.ctx.fillRect(0, 0, this.width, this.height);
-          this.texture = new THREE.Texture(this.canvas);
-        }
-        update() {
-          this.ctx.fillStyle = "black";
-          this.ctx.fillRect(0, 0, this.width, this.height);
-          for (let i = this.trail.length - 1; i >= 0; i--) {
-            const point = this.trail[i];
-            let f = point.force * this.speed * (1 - point.age / this.maxAge);
-            point.x += point.vx * f;
-            point.y += point.vy * f;
-            point.age++;
-            if (point.age > this.maxAge) {
-              this.trail.splice(i, 1);
-            } else {
-              const pos = { x: point.x * this.width, y: (1 - point.y) * this.height };
-              let intensity =
-                point.age < this.maxAge * 0.3
-                  ? Math.sin((point.age / (this.maxAge * 0.3)) * (Math.PI / 2))
-                  : 1.0 - point.age / this.maxAge;
-              intensity *= point.force;
-              let offset = this.size * 5;
-              this.ctx.shadowOffsetX = this.ctx.shadowOffsetY = offset;
-              this.ctx.shadowBlur = this.radius;
-              this.ctx.shadowColor = `rgba(${((point.vx + 1) / 2) * 255}, ${((point.vy + 1) / 2) * 255}, ${intensity * 255}, ${0.3 * intensity})`;
-              this.ctx.beginPath();
-              this.ctx.fillStyle = "rgba(255,0,0,1)";
-              this.ctx.arc(pos.x - offset, pos.y - offset, this.radius, 0, Math.PI * 2);
-              this.ctx.fill();
-            }
+        this.last = { x: point.x, y: point.y };
+      }
+
+      update() {
+        this.ctx.fillStyle = 'black';
+        this.ctx.fillRect(0, 0, this.width, this.height);
+
+        for (let i = this.trail.length - 1; i >= 0; i--) {
+          const p = this.trail[i];
+          const f = p.force * this.speed * (1 - p.age / this.maxAge);
+
+          p.x += p.vx * f;
+          p.y += p.vy * f;
+          p.age += 1;
+
+          if (p.age > this.maxAge) {
+            this.trail.splice(i, 1);
+            continue;
           }
-          this.texture.needsUpdate = true;
+
+          const pos = { x: p.x * this.width, y: (1 - p.y) * this.height };
+
+          let intensity =
+            p.age < this.maxAge * 0.3
+              ? Math.sin((p.age / (this.maxAge * 0.3)) * (Math.PI / 2))
+              : 1.0 - p.age / this.maxAge;
+
+          intensity *= p.force;
+
+          const offset = this.size * 5;
+
+          this.ctx.shadowOffsetX = offset;
+          this.ctx.shadowOffsetY = offset;
+          this.ctx.shadowBlur = this.radius;
+          this.ctx.shadowColor = `rgba(${((p.vx + 1) / 2) * 255}, ${((p.vy + 1) / 2) * 255}, ${
+            intensity * 255
+          }, ${0.3 * intensity})`;
+
+          this.ctx.beginPath();
+          this.ctx.fillStyle = 'rgba(255,0,0,1)';
+          this.ctx.arc(pos.x - offset, pos.y - offset, this.radius, 0, Math.PI * 2);
+          this.ctx.fill();
         }
-        addTouch(point) {
-          if (this.last) {
-            const dx = point.x - this.last.x,
-              dy = point.y - this.last.y;
-            if (dx === 0 && dy === 0) return;
-            const dd = dx * dx + dy * dy;
-            let d = Math.sqrt(dd);
-            this.trail.push({
-              x: point.x,
-              y: point.y,
-              age: 0,
-              force: Math.min(dd * 20000, 2.0),
-              vx: dx / d,
-              vy: dy / d,
-            });
-          }
-          this.last = { x: point.x, y: point.y };
-        }
+
+        this.texture.needsUpdate = true;
       }
       const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
@@ -461,15 +681,37 @@ function LiquidBackground() {
         camera.updateProjectionMatrix();
       });
     };
+
+    const ro = new ResizeObserver(resize);
+    ro.observe(el);
+    // Listen on window so the background can safely be pointer-events-none
+    window.addEventListener('mousemove', handleMove, { passive: true });
+    window.addEventListener('touchmove', handleMove, { passive: true });
+
+    resize();
+    animate();
+
     return () => {
-      const s = document.querySelector('script[src*="three.min.js"]');
-      if (s) document.head.removeChild(s);
+      cancelAnimationFrame(rafId);
+      ro.disconnect();
+      window.removeEventListener('mousemove', handleMove);
+      window.removeEventListener('touchmove', handleMove);
+
+      geometry.dispose();
+      material.dispose();
+      touchTexture.texture.dispose();
+      renderer.dispose();
+
+      if (renderer.domElement && renderer.domElement.parentNode === el) {
+        el.removeChild(renderer.domElement);
+      }
     };
   }, []);
-  return <div ref={containerRef} className="fixed inset-0 -z-30 bg-stone-950" />;
+
+  return <div ref={containerRef} className="absolute inset-0" aria-hidden="true" />;
 }
 
-function InnerBackground() {
+function Grid() {
   return (
     <div className="fixed inset-0 -z-30">
       <div className="absolute inset-0 bg-stone-950" />
@@ -490,45 +732,73 @@ function InnerBackground() {
   );
 }
 
-function Grid({ opacityClass = "opacity-20" }) {
+function HomeLiquidBackdrop() {
+  const gridStyle = {
+    backgroundImage:
+      "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
+    backgroundSize: "96px 96px",
+    backgroundPosition: "center",
+  };
+
   return (
-    <svg
-      className={`fixed inset-0 h-full w-full -z-20 pointer-events-none ${opacityClass}`}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <defs>
-        <pattern id="archGrid" width="100" height="100" patternUnits="userSpaceOnUse">
-          <path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="0.5" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#archGrid)" />
-    </svg>
+    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+      {/* Base */}
+      <div className="absolute inset-0 bg-[#0C1016]" />
+      {/* Liquid */}
+      <div className="absolute -inset-[30vh] opacity-40 blur-xl">
+        <LiquidBackground />
+      </div>
+      {/* Grid + vignettes */}
+      <div className="absolute inset-0 opacity-[0.14]" style={gridStyle} />
+      <div className="absolute inset-0 bg-[radial-gradient(1000px_700px_at_50%_15%,rgba(0,0,0,0.00),rgba(0,0,0,0.35)_55%,rgba(0,0,0,0.70)_100%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/55" />
+      {/* Grain */}
+      <div className="absolute inset-0 grain-opaque opacity-40" />
+    </div>
   );
 }
 
-function resolveLogoAsset(logo) {
-  if (logo.mode === "image" && logo.src) {
-    return { mode: "image", src: logo.src, alt: logo.alt || logo.name };
-  }
-  return { mode: "text", text: logo.name.toUpperCase(), alt: logo.alt || logo.name };
+// ---------- form components ----------
+
+function Fieldset({ title, children }) {
+  return (
+    <fieldset className="rounded-[1.75rem] md:rounded-[2.5rem] border-2 border-stone-900/10 bg-[#F5F2EA]/50 backdrop-blur-sm p-5 sm:p-6 md:p-10 text-left">
+      <legend className="px-5 text-[10px] font-black text-emerald-700 uppercase tracking-[0.4em] mb-4">{title}</legend>
+      <div className="mt-4 space-y-6 md:space-y-8">{children}</div>
+    </fieldset>
+  );
 }
 
-function TrustedLogo({ logo }) {
-  const asset = resolveLogoAsset(logo);
-  const [imageFailed, setImageFailed] = useState(false);
-  if (asset.mode === "image" && !imageFailed) {
-    return (
-      <img
-        src={asset.src}
-        alt={asset.alt}
-        className="h-5 w-auto max-w-[180px] object-contain brightness-0 invert opacity-90"
-        loading="lazy"
-        onError={() => setImageFailed(true)}
-      />
-    );
-  }
-  return <span className="text-sm font-black tracking-[0.22em] uppercase text-white/85">{logo.name.toUpperCase()}</span>;
+function Input({ label, placeholder, name, required = true }) {
+  return (
+    <label className="block text-left">
+      <div className="text-[10px] font-black tracking-widest text-stone-500 uppercase mb-3">{label}</div>
+      <input type="text" name={name} required={required} placeholder={placeholder} className="w-full min-h-11 rounded-xl md:rounded-[1.25rem] border-2 border-stone-900/10 bg-white px-4 md:px-6 py-3 md:py-5 text-base md:text-lg font-bold focus:outline-none focus:ring-4 focus:ring-emerald-600/10 focus:border-emerald-600 transition-all shadow-inner placeholder:text-stone-300" />
+    </label>
+  );
 }
+
+function Textarea({ label, placeholder, name, required = true }) {
+  return (
+    <label className="block text-left">
+      <div className="text-[10px] font-black tracking-widest text-stone-500 uppercase mb-3">{label}</div>
+      <textarea name={name} required={required} rows={4} placeholder={placeholder} className="w-full min-h-[140px] resize-y rounded-xl md:rounded-[1.25rem] border-2 border-stone-900/10 bg-white px-4 md:px-6 py-3 md:py-5 text-base md:text-lg font-bold focus:outline-none focus:ring-4 focus:ring-emerald-600/10 focus:border-emerald-600 transition-all shadow-inner placeholder:text-stone-300" />
+    </label>
+  );
+}
+
+function Select({ label, options }) {
+  return (
+    <label className="block text-left">
+      <div className="text-[10px] font-black tracking-widest text-stone-500 uppercase mb-3">{label}</div>
+      <select className="w-full min-h-11 rounded-xl md:rounded-[1.25rem] border-2 border-stone-900/10 bg-white px-4 md:px-6 py-3 md:py-5 text-base md:text-lg font-bold focus:outline-none focus:ring-4 focus:ring-emerald-600/10 focus:border-emerald-600 transition-all shadow-md appearance-none">
+        {options.map((o) => (<option key={o} value={o}>{o}</option>))}
+      </select>
+    </label>
+  );
+}
+
+// ---------- pages ----------
 
 function Home() {
   return (
@@ -550,7 +820,6 @@ function Home() {
                 {COPY.home.ctaSecondary}
               </Button>
             </div>
-          </div>
 
           <div className="flex flex-col justify-center pl-0 lg:pl-8">
             <div className="text-sm font-black tracking-[0.4em] text-emerald-400 uppercase mb-1">{COPY.home.trustedKicker}</div>
@@ -564,16 +833,20 @@ function Home() {
         </div>
       </section>
 
-      <section className="mt-6 relative z-10 border border-white/15 bg-gradient-to-r from-black/50 via-black/40 to-black/30 backdrop-blur-xl p-8 md:p-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {COPY.home.stats.map((s) => (
-            <div key={s.label || s.sub.slice(0, 40)} className="relative z-10 border border-white/10 bg-white/5 p-8 backdrop-blur-sm text-left h-full overflow-hidden">
-              {s.label && <div className="text-sm font-black tracking-[0.04em] text-emerald-400 uppercase mb-3">{s.label}</div>}
-              <div className="text-base font-black tracking-[0.02em] text-white/80 leading-relaxed">{s.sub}</div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a
+                href={CONFIGURE_URL}
+                className="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(16,185,129,0.35)] hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-300/60"
+              >
+                {CTA_LABEL}
+              </a>
+              <a
+                href="#/case-studies"
+                className="inline-flex items-center justify-center rounded-xl border border-white/18 bg-white/5 px-6 py-3 text-sm font-semibold text-white/90 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/25"
+              >
+                VIEW CASE STUDIES
+              </a>
             </div>
-          ))}
-        </div>
-      </section>
 
       <section className="mt-12 md:mt-14 border border-white/10 bg-black/40 backdrop-blur-xl p-6 sm:p-8 md:p-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-24 items-start">
@@ -591,9 +864,8 @@ function Home() {
                     <span className="text-sm font-black tracking-widest text-emerald-400">0{i + 1}</span>
                     <span className="text-lg font-black text-white">{layer.title}</span>
                   </div>
-                  <p className="text-[17px] text-white/85 font-semibold leading-relaxed text-right">{layer.desc}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -612,16 +884,11 @@ function Infrastructure() {
         <p className="mt-8 md:mt-12 text-xl sm:text-2xl md:text-4xl text-white/80 font-semibold">{COPY.infrastructure.sub}</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {COPY.infrastructure.layers.map((L) => (
-          <div
-            key={L.title}
-            className="bg-black/40 backdrop-blur-md p-10 text-left border border-white/10 hover:bg-emerald-500/5 transition-colors h-full relative z-10"
-          >
-            <div className="text-sm font-black tracking-[0.3em] text-emerald-500 mb-6">{L.note}</div>
-            <h3 className="text-2xl font-black text-white mb-6 uppercase">{L.title}</h3>
-            <p className="text-[17px] text-white/80 font-semibold leading-relaxed">{L.desc}</p>
-          </div>
+      <div className="grid lg:grid-cols-3 gap-8 text-left">
+        {INFRA_LAYERS.map((layer) => (
+          <Card key={layer.note} title={layer.title} eyebrow={layer.note}>
+            <p className="text-base md:text-lg leading-relaxed text-stone-700">{layer.desc}</p>
+          </Card>
         ))}
       </div>
 
@@ -642,7 +909,19 @@ function Infrastructure() {
               <h3 className="text-xl font-black text-white uppercase mb-4">{tier.title}</h3>
               <p className="text-[17px] text-white/80 font-semibold leading-relaxed">{tier.desc}</p>
             </div>
-          ))}
+            <div>
+              <h3 className="text-xl font-black tracking-tight text-stone-950">Ops</h3>
+              <p className="mt-4 text-base md:text-lg leading-relaxed text-stone-700">
+                We run it each month with a short report tied to booked calls.
+              </p>
+            </div>
+          </div>
+        </Card>
+      </div>
+      <section className="rounded-[2rem] md:rounded-[3rem] border-2 border-stone-900/10 bg-white/80 backdrop-blur-xl p-6 sm:p-8 md:p-16 shadow-2xl text-left">
+        <h2 className="text-3xl md:text-5xl font-black tracking-tight text-stone-950">Your flow is ready.</h2>
+        <div className="mt-10">
+          <Button href={CONFIGURE_URL} variant="primary" size="large">{CTA_LABEL}</Button>
         </div>
       </section>
 
@@ -664,6 +943,12 @@ function Infrastructure() {
 }
 
 function CaseStudies() {
+  const items = useMemo(() => [
+    { title: "Healthcare Services Firm", industry: "Case Study 01", problem: "Qualified relationships stalled at intake. Messaging reached peers rather than decision-makers. Revenue sat in a dormant database with no system to activate it.", deployment: "+41% Qualified Opportunities 90 Days", stats: [{ label: "After", value: "+41%", sub: "qualified opportunities" }, { label: "Timeline", value: "90", sub: "days" }], highlights: ["Strategic Language", "Owned Infrastructure", "Full Deployment"] },
+    { title: "Regional Energy Consultancy", industry: "Case Study 02", problem: "High referral volume arriving with no nurture system to move relationships from interest to retained engagement. Authority was established. The conversion system did not exist.", deployment: "+27% Proposal-to-Close Rate +18% Average Engagement Size", stats: [{ label: "Close Rate", value: "+27%", sub: "proposal-to-close" }, { label: "Engagement", value: "+18%", sub: "average size" }], highlights: ["Strategic Language", "Lifecycle Sequences"] },
+    { title: "Professional Services Network", industry: "Case Study 03", problem: "Strong institutional reputation with no owned distribution. Every new relationship depended entirely on referral. The network existed. The conversion path did not.", deployment: "340 Qualified Subscribers 12 Retained Clients 6 Months", stats: [{ label: "Subscribers", value: "340", sub: "qualified" }, { label: "Clients", value: "12", sub: "retained" }, { label: "Timeline", value: "6", sub: "months" }], highlights: ["Owned Infrastructure", "Full Deployment"] },
+  ], []);
+
   return (
     <div className="pt-12 relative z-10">
       <div className="text-left mb-12 md:mb-24 max-w-4xl">
@@ -686,19 +971,20 @@ function CaseStudies() {
                   <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Challenge</div>
                   <p className="text-[17px] font-semibold text-white/85 leading-relaxed">{cs.challenge}</p>
                 </div>
-                <div>
-                  <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Action</div>
-                  <p className="text-[17px] font-semibold text-white/85 leading-relaxed">{cs.action}</p>
+                <div className="mt-8 rounded-[1.5rem] md:rounded-[2rem] border-2 border-stone-900/10 bg-white p-5 sm:p-6 md:p-8 shadow-lg text-left">
+                  <div className="text-[10px] font-black tracking-widest text-stone-500 uppercase mb-4 leading-none text-left">BEFORE</div>
+                  <div className="text-lg font-bold text-stone-950 leading-tight text-left">{cs.problem}</div>
                 </div>
               </div>
-              <div className="space-y-6">
-                <div>
-                  <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Result</div>
-                  <p className="text-base font-bold text-white leading-relaxed">{cs.result}</p>
+              <div className="lg:col-span-2 space-y-10 text-left">
+                <div className="grid md:grid-cols-3 gap-6 text-left">
+                  {cs.stats.map((s) => (<Stat key={s.label} label={s.label} value={s.value} sub={s.sub} />))}
                 </div>
-                <div>
-                  <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Disciplines</div>
-                  <div className="text-sm font-black tracking-widest text-emerald-400 uppercase">{cs.tech}</div>
+                <div className="rounded-[1.75rem] md:rounded-[2.5rem] border-2 border-stone-900/10 bg-white p-5 sm:p-6 md:p-12 shadow-2xl text-left">
+                  <div className="text-[10px] font-black tracking-[0.3em] text-emerald-700 uppercase mb-10 leading-none text-left">FLOW COMPONENTS</div>
+                  <div className="mt-6 flex flex-wrap gap-4 text-left">
+                    {cs.highlights.map((h) => (<span key={h} className="rounded-2xl border-2 border-stone-900/10 bg-[#F5F2EA] px-8 py-5 text-sm font-black tracking-tight text-stone-950 shadow-lg text-left">{h}</span>))}
+                  </div>
                 </div>
                 <div>
                   <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Methodology</div>
@@ -706,7 +992,7 @@ function CaseStudies() {
                 </div>
               </div>
             </div>
-          </div>
+          </section>
         ))}
       </div>
 
@@ -863,8 +1149,10 @@ function Shell({ children, route }) {
                 key={item.href}
                 href={item.href}
                 className={cx(
-                  "text-xs font-black tracking-[0.25em] uppercase transition-colors whitespace-nowrap",
-                  active(item.href) ? "text-emerald-400" : "text-white/65 hover:text-white"
+                  "text-sm md:text-base hover:opacity-80 transition rounded-2xl px-3 py-2 font-medium tracking-wide",
+                  active(item.href)
+                    ? "bg-stone-950 text-white shadow-2xl"
+                    : "text-stone-600 hover:text-stone-950 hover:bg-white/50"
                 )}
               >
                 {item.label}
@@ -936,23 +1224,25 @@ function Shell({ children, route }) {
                 Join
               </button>
             </div>
-          </form>
-          <div className="flex flex-col md:flex-row lg:flex-col gap-8 text-sm font-black tracking-[0.4em] text-white/65 uppercase lg:items-end">
-            <a href="#/terms" className="hover:text-emerald-400 transition-colors">
-              {COPY.shell.terms}
-            </a>
-            <a href="#/privacy" className="hover:text-emerald-400 transition-colors">
-              {COPY.shell.privacy}
-            </a>
           </div>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
-
 export default function App() {
   const route = useHashRoute();
+
+  // Ensure route changes land at the top (hash-based navigation doesn't do this automatically)
+  useEffect(() => {
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    } catch {
+      window.scrollTo(0, 0);
+    }
+  }, [route]);
+
   const page = useMemo(() => {
     switch (route) {
       case "/infrastructure":
@@ -971,6 +1261,5 @@ export default function App() {
         return <Home />;
     }
   }, [route]);
-
   return <Shell route={route}>{page}</Shell>;
 }
