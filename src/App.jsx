@@ -13,74 +13,37 @@ const ZOHO_RETURN_URL = "https://socialfollowingstudios.com/#/thank-you";
 const MAILING_LIST_ENDPOINT = "#";
 const BRAND_LOGO_PATH = "/brand/sfs-logo.png";
 
-const TRUSTED_BY_LOGOS = [
-  { name: "Kaiser Permanente", mode: "image", src: "/logos/kaiser-permanente.png", alt: "Kaiser Permanente" },
-  { name: "Stanford University", mode: "image", src: "/logos/stanford-university.svg", alt: "Stanford University" },
-  { name: "NVIDIA", mode: "image", src: "/logos/nvidia.svg", alt: "NVIDIA" },
-  { name: "PG&E", mode: "image", src: "/logos/pge.svg", alt: "PG&E" },
-  { name: "CommonSpirit Health", mode: "image", src: "/logos/commonspirit-health.png", alt: "CommonSpirit Health" },
-  { name: "Drew Medical", mode: "image", src: "/logos/drew-medical.png", alt: "Drew Medical" },
-  { name: "The Anthemist", mode: "image", src: "/logos/the-anthemist.png", alt: "The Anthemist" },
-  { name: "City of Concord", mode: "image", src: "/logos/city-of-concord.png", alt: "City of Concord" },
-  { name: "DGRP", mode: "text", src: null, alt: "DGRP" },
-  { name: "Rhythm & Roux", mode: "text", src: null, alt: "RHYTHM & ROUX" },
-  { name: "Parade of Youth", mode: "text", src: null, alt: "PARADE OF YOUTH" },
-  { name: "D55", mode: "image", src: "/logos/d55.png", alt: "D55" },
+const MARQUEE_NAMES = [
+  "Stanford University",
+  "City of Concord",
+  "Drew Medical",
+  "Roux",
+  "DGRP",
+  "Parade of Youth",
+  "The Anthemist",
+  "D55",
+  "PG&E",
 ];
 
-const PARTNERS = ["KAISER PERMANENTE", "STANFORD UNIVERSITY", "NVIDIA", "PG&E", "COMMONSPIRIT HEALTH", "DREW MEDICAL"];
+
 
 const COPY = {
   home: {
-    productName: "Social Following Studios",
-    h1Line1: "builds",
-    h1Line1Accent: "words",
-    h1Line1Suffix: "systems.",
-    h1Line2Accent: "",
-    sub: "We deploy language conversion systems that turn your data and authority into increased visibility and revenue.",
-    ctaPrimary: "BOOK MY CALL",
+    headline: "Your database, reactivated.",
+    sub: "Social Following Studios reactivates dormant contact databases for organizations operating under active compliance mandates, with a 95% inbox placement record across every program we run.",
+    ctaPrimary: "BOOK YOUR ASSESSMENT",
     ctaSecondary: "View Case Studies",
     trustedKicker: "TRUSTED BY",
-    trustedSub: "Social Following Studios has built words systems for groups that set the standard in their fields.",
-    stats: [
-      {
-        label: "FOR ESTABLISHED OPERATORS",
-        sub: "You have the authority and the database. We build the system that turns both into booked appointments.",
-      },
-      {
-        label: "YOUR AUTHORITY IS THE ASSET.",
-        sub: "Your database is full of people who already trust you. Most let it sit idle. The revenue you want is already in the room.",
-      },
-      {
-        label: "THE CONVERSION SYSTEM THAT NARRATES ITSELF",
-        sub: "We deploy the sequence that tells your story, activates your database, and converts trust into predictable appointments and clients.",
-      },
-    ],
-    equationKicker: "DISCIPLINES",
-    equationHeadline: "We write it. We build it. We send it.",
-    equationBody:
-      "We align every channel you control around one objective: converting dormant relationships into booked consultations.",
-    coreArch: "ONE DEPLOYMENT SYSTEM",
-    architecture: [
-      {
-        title: "Strategic Language",
-        desc: "We define the language that moves qualified buyers to signed agreements. Your expertise, codified.",
-      },
-      {
-        title: "Owned Infrastructure",
-        desc: "We build the infrastructure that puts you in command. Your channels, unified.",
-      },
-      {
-        title: "Full Deployment",
-        desc: "We deploy the system across your channels to keep qualified appointments coming. Your calendar, full.",
-      },
-    ],
-    resultsIntroTitle: "Results from real engagements.",
-    resultsIntroSub:
-      "Every engagement begins with a Language Assessment. We map your authority, find your system gaps, and build the bridge to revenue.",
-    closingHeadline: "Your authority is built. Your deployment system solidifies it.",
+    authorityKicker: "THE PROGRAM",
+    authorityHeadline: "When a database stops producing revenue, the source of the performance gap is the program managing it.",
+    authorityBody: "Organizations operating under active compliance mandates have built contact databases from years of earned permission and documented relationship. When that database stops producing revenue, the source of the performance gap is the program managing it.",
+    authoritySub: "Social Following Studios operates as the full program owner, managing strategy, execution, reporting, and channel coordination through one team from open to close.",
+    proofKicker: "PROOF",
+    proofBody: "A compliance sector client completed a coordinated reactivation sequence across three live channels simultaneously. More than 14,000 disengaged contacts returned to active status within 14 days, from the existing database and within the existing program budget.",
+    proofStatement: "Your database, reactivated.",
+    closingHeadline: "Your database, reactivated.",
     closingSub: "",
-    closingCta: "BOOK MY CALL",
+    closingCta: "BOOK YOUR ASSESSMENT",
   },
   infrastructure: {
     kicker: "INFRASTRUCTURE",
@@ -136,62 +99,38 @@ const COPY = {
     title: "Results from real engagements.",
     cards: [
       {
-        badge: "Case Study 01",
-        client: "Michael Todd Legal",
-        location: "San Francisco Bay Area",
-        quote: "Our calendar filled from emails we already owned. Ninety days.",
-        quoteAttrib: "Michael Todd, Managing Principal",
-        challenge:
-          "Strong referral reputation. Email list sitting idle. No lifecycle sequencing. Bookings dependent on inbound timing.",
-        action:
-          "Repositioned messaging for decision-stage buyers. Built segmented email architecture. Deployed consultation booking sequence with automated follow-up.",
-        result:
-          "+32% retained clients sourced directly from owned channels in 90 days. Revenue stabilized through structured lifecycle deployment.",
-        outcome: "+32%",
-        outcomeLabel: "Retained Clients · 90 Days · Owned Channels",
-        tech: "Strategic Language · Owned Infrastructure · Full Deployment",
-        problem:
-          "Before: Strong referral reputation. Email list sitting idle. No lifecycle sequencing. Bookings dependent on inbound timing.",
-        methodology: "Retained client count measured against owned channel sequences over a 90-day deployment window.",
+        badge: "Real Estate",
+        narrative: "A regional broker had a past-client database full of buyers and sellers who had gone quiet while the business spent money acquiring new leads. We ran a unified reactivation sequence across email, conversational, and voice channels simultaneously. The existing database produced 11 signed listing agreements within 45 days without new list acquisition or additional ad spend.",
+        quote: "The buyers and sellers we thought were gone came back through the same list we had ignored for years.",
+        quoteAttrib: "",
       },
       {
-        badge: "Case Study 02",
-        client: "Erich Simpson, MD",
-        location: "Northern California",
-        quote: "Patients we hadn't heard from in years started booking. The system found them.",
-        quoteAttrib: "Erich Simpson, Founder",
-        challenge: "Established patient trust. Dormant database. No re-engagement system. No referral path.",
-        action:
-          "Strategic messaging rewrite. Reactivation sequence deployed. Newsletter system built. Referral amplification workflow installed.",
-        result: "+41% lift in consultations and recurring referrals in 120 days.",
-        outcome: "+41%",
-        outcomeLabel: "Consultations & Referrals · 120 Days",
-        tech: "Strategic Language · Owned Infrastructure · Full Deployment",
-        problem: "Before: Established patient trust. Dormant database. No re-engagement system. No referral path.",
-        methodology: "Consultation and referral volume measured against baseline across a 120-day reactivation deployment.",
+        badge: "Mass Tort",
+        narrative: "A mass tort matter had a plaintiff database that had gone dormant while competing firms reached the same claimant pool. The industry average inbox placement rate sits at 83.5%. Outreach that does not reach the inbox does not reach the claimant. We ran the deliverability program at 95% inbox placement, sequenced the language architecture, and built the communication program around claimant trust. Participation increased significantly across the reactivated segment and the matter reached multi-million dollar resolution.",
+        quote: "Our messaging reached our claimants. That was the difference.",
+        quoteAttrib: "James McDonough",
       },
       {
-        badge: "Case Study 03",
-        client: "Sandra Lindholm Real Estate",
-        location: "San Francisco",
-        quote: "I had the brand. I just needed the system behind it.",
-        quoteAttrib: "Sandra Lindholm, Principal",
-        challenge:
-          "Strong personal brand. High social visibility. No owned system to move prospects from interest to signed agreement.",
-        action:
-          "Offer positioning rewrite. Automated nurture system built. Seller consultation sequence deployed. Follow-up messaging aligned with buyer psychology.",
-        result: "+28% increase in signed listing agreements driven from owned email and follow-up sequences.",
-        outcome: "+28%",
-        outcomeLabel: "Signed Listing Agreements · Owned Channels",
-        tech: "Strategic Language · Owned Infrastructure · Full Deployment",
-        problem:
-          "Before: Strong personal brand. High social visibility. No owned system to move prospects from interest to signed agreement.",
-        methodology:
-          "Signed listing agreements measured against owned email and follow-up sequence activity over the engagement period.",
+        badge: "Federal Government",
+        narrative: "A federal housing agency managing active waitlist programs across multiple markets had a constituent database full of applicants who had submitted for assistance and gone quiet. We ran a coordinated reactivation program across every live channel simultaneously. Constituent engagement returned to active status at program scale within the existing budget and infrastructure.",
+        quote: "Social Following Studios brought our communication program to a level our internal team could not have managed alone.",
+        quoteAttrib: "",
+      },
+      {
+        badge: "Municipal Government",
+        narrative: "A mayoral office managing active constituent communication obligations had a database that had gone quiet between election cycles while residents with open compliance requirements stopped receiving consistent outreach. We took over the full communication program and ran coordinated reactivation across the existing database. Constituent response returned to active status before the next reporting period.",
+        quote: "This program changed how our office communicates with residents.",
+        quoteAttrib: "",
+      },
+      {
+        badge: "Manufacturing",
+        narrative: "A manufacturing organization had a vendor and procurement contact database that had gone quiet after a program transition while relationships representing active buying history stopped responding entirely. We ran a reactivation sequence across the existing database. Procurement contacts returned to active engagement within the first program cycle without new list acquisition or additional budget.",
+        quote: "We recovered relationships we assumed were gone permanently.",
+        quoteAttrib: "",
       },
     ],
     outroLines: [],
-    cta: "BOOK MY CALL",
+    cta: "BOOK YOUR ASSESSMENT",
   },
   contact: {
     kicker: "CONTACT",
@@ -203,8 +142,8 @@ const COPY = {
   shell: {
     brand: "Social Following Studios",
     brandSub: "Language Infrastructure",
-    topCta: "BOOK MY CALL",
-    footerSub: "Social Following Studios 2026",
+    topCta: "BOOK YOUR ASSESSMENT",
+    footerSub: "An imprint of Marchitects.",
     terms: "Terms",
     privacy: "Privacy",
   },
@@ -278,11 +217,11 @@ function useHashRoute() {
 
 function Button({ href, children, variant = "primary" }) {
   const base =
-    "inline-flex min-h-11 items-center justify-center px-6 md:px-8 py-3 md:py-4 text-sm font-black tracking-[0.2em] uppercase transition-all active:scale-[0.98] border shadow-2xl relative z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-black";
+    "inline-flex min-h-11 items-center justify-center px-6 md:px-8 py-3 md:py-4 text-sm font-black tracking-[0.2em] uppercase transition-all active:scale-[0.98] border shadow-2xl relative z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#E8E9EA]";
   const styles =
     variant === "primary"
       ? "bg-emerald-600 text-white border-emerald-500 hover:bg-emerald-500"
-      : "bg-transparent text-white border-white/20 hover:bg-white/5";
+      : "bg-transparent text-[#0A0A0A] border-black/20 hover:bg-black/5";
   return (
     <a href={href} className={cx(base, styles)}>
       {children}
@@ -292,19 +231,19 @@ function Button({ href, children, variant = "primary" }) {
 
 function PolicyPage({ policy }) {
   return (
-    <section className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 py-20 text-white">
+    <section className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 py-20 text-[#0A0A0A]">
       <p className="text-sm font-black tracking-[0.28em] uppercase text-emerald-400/90 mb-4">Last Updated: {POLICY_TEMPLATE.updatedAt}</p>
       <h1 className="text-4xl md:text-5xl font-black tracking-tight uppercase mb-5">{policy.title}</h1>
-      <p className="text-[17px] leading-7 text-white/80 mb-10">{policy.intro}</p>
+      <p className="text-[17px] leading-7 text-[#0A0A0A]/75 mb-10">{policy.intro}</p>
       <div className="space-y-8">
         {policy.sections.map((section) => (
-          <article key={section.heading} className="border border-white/10 bg-white/[0.02] p-6 md:p-8">
+          <article key={section.heading} className="border border-black/10 bg-black/[0.03] p-6 md:p-8">
             <h2 className="text-xl md:text-2xl font-black uppercase tracking-wide mb-3">{section.heading}</h2>
-            <p className="text-[17px] leading-7 text-white/88">{section.body}</p>
+            <p className="text-[17px] leading-7 text-[#0A0A0A]/75">{section.body}</p>
           </article>
         ))}
       </div>
-      <p className="mt-10 text-[17px] text-white/80">
+      <p className="mt-10 text-[17px] text-[#0A0A0A]/75">
         Questions? Contact {POLICY_TEMPLATE.siteName} at {POLICY_TEMPLATE.email}.
       </p>
     </section>
@@ -400,13 +339,13 @@ function LiquidBackground() {
       const uniforms = {
         uTime: { value: 0 },
         uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
-        uColor1: { value: new THREE.Vector3(0.06, 0.72, 0.5) },
-        uColor2: { value: new THREE.Vector3(0.02, 0.03, 0.08) },
+        uColor1: { value: new THREE.Vector3(0.07, 0.74, 0.5) },
+        uColor2: { value: new THREE.Vector3(0.91, 0.92, 0.92) },
         uSpeed: { value: 0.55 },
         uIntensity: { value: 0.85 },
         uTouchTexture: { value: touchTexture.texture },
         uGrainIntensity: { value: 0.08 },
-        uDarkNavy: { value: new THREE.Vector3(0.01, 0.02, 0.05) },
+        uDarkNavy: { value: new THREE.Vector3(0.88, 0.89, 0.90) },
         uGradientSize: { value: 0.5 },
         uGradientCount: { value: 8.0 },
         uColor1Weight: { value: 0.6 },
@@ -466,26 +405,16 @@ function LiquidBackground() {
       if (s) document.head.removeChild(s);
     };
   }, []);
-  return <div ref={containerRef} className="fixed inset-0 -z-30 bg-stone-950" />;
+  return <div ref={containerRef} className="fixed inset-0 -z-30 bg-[#E8E9EA]" />;
 }
 
 function InnerBackground() {
   return (
     <div className="fixed inset-0 -z-30">
-      <div className="absolute inset-0 bg-stone-950" />
-      <div className="absolute -top-56 left-1/2 h-[980px] w-[980px] -translate-x-1/2 rounded-full bg-emerald-500/8 blur-[120px]" />
-      <div className="absolute -top-32 -left-48 h-[720px] w-[720px] rounded-full bg-white/6 blur-[110px]" />
-      <div className="absolute -bottom-48 -right-48 h-[820px] w-[820px] rounded-full bg-emerald-400/6 blur-[130px]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
-      <div
-        className="absolute inset-0 opacity-[0.06] mix-blend-overlay"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.35) 1px, transparent 0)",
-          backgroundSize: "24px 24px",
-        }}
-      />
-      <div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.06)]" />
+      <div className="absolute inset-0 bg-[#E8E9EA]" />
+      <div className="absolute -top-56 left-1/2 h-[980px] w-[980px] -translate-x-1/2 rounded-full bg-emerald-400/10 blur-[140px]" />
+      <div className="absolute -top-32 -left-48 h-[720px] w-[720px] rounded-full bg-white/40 blur-[110px]" />
+      <div className="absolute -bottom-48 -right-48 h-[820px] w-[820px] rounded-full bg-emerald-300/8 blur-[150px]" />
     </div>
   );
 }
@@ -498,7 +427,7 @@ function Grid({ opacityClass = "opacity-20" }) {
     >
       <defs>
         <pattern id="archGrid" width="100" height="100" patternUnits="userSpaceOnUse">
-          <path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="0.5" />
+          <path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(0,0,0,0.15)" strokeWidth="0.5" />
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill="url(#archGrid)" />
@@ -506,34 +435,34 @@ function Grid({ opacityClass = "opacity-20" }) {
   );
 }
 
-function resolveLogoAsset(logo) {
-  if (logo.mode === "image" && logo.src) {
-    return { mode: "image", src: logo.src, alt: logo.alt || logo.name };
-  }
-  return { mode: "text", text: logo.name.toUpperCase(), alt: logo.alt || logo.name };
-}
-
-function TrustedLogo({ logo }) {
-  const asset = resolveLogoAsset(logo);
-  const [imageFailed, setImageFailed] = useState(false);
-  if (asset.mode === "image" && !imageFailed) {
-    return (
-      <img
-        src={asset.src}
-        alt={asset.alt}
-        className="h-5 w-auto max-w-[180px] object-contain brightness-0 invert opacity-90"
-        loading="lazy"
-        onError={() => setImageFailed(true)}
-      />
-    );
-  }
-  return <span className="text-sm font-black tracking-[0.22em] uppercase text-white/85">{logo.name.toUpperCase()}</span>;
+function ScrollingMarquee() {
+  const names = [...MARQUEE_NAMES, ...MARQUEE_NAMES];
+  return (
+    <div className="relative overflow-hidden w-full py-3">
+      <div
+        className="flex gap-12 whitespace-nowrap"
+        style={{
+          animation: "marquee 28s linear infinite",
+          width: "max-content",
+        }}
+      >
+        {names.map((name, i) => (
+          <span
+            key={i}
+            className="text-sm font-black tracking-[0.28em] uppercase text-[#0A0A0A]/50"
+          >
+            {name}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 function BrandLogo({ className = "", priority = false }) {
   const [imageFailed, setImageFailed] = useState(false);
   if (imageFailed) {
-    return <span className="text-lg md:text-2xl font-black tracking-[0.08em] uppercase text-white">Social Following Studios</span>;
+    return <span className="text-lg md:text-2xl font-black tracking-[0.08em] uppercase text-[#0A0A0A]">Social Following Studios</span>;
   }
   return (
     <img
@@ -550,70 +479,39 @@ function BrandLogo({ className = "", priority = false }) {
 function Home() {
   return (
     <div className="relative pt-12 space-y-16">
-      <section className="relative z-10 md:min-h-[calc(100vh-170px)]">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] h-full gap-8 md:gap-0">
-          <div className="flex flex-col justify-center md:pr-12">
-            <h1 className="text-[clamp(2.1rem,9vw,4rem)] font-black tracking-tighter leading-[0.95] text-white">
-              {COPY.home.productName} {COPY.home.h1Line1} <span className="text-emerald-500">{COPY.home.h1Line1Accent}</span> {COPY.home.h1Line1Suffix}
-              {COPY.home.h1Line2Accent && (<>
-                <br />
-                <span className="text-emerald-500">{COPY.home.h1Line2Accent}</span>
-              </>)}
-            </h1>
-            <p className="mt-6 text-[17px] text-white/80 font-semibold leading-relaxed">{COPY.home.sub}</p>
-            <div className="mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
-              <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
-              <Button href="#/case-studies" variant="secondary">
-                {COPY.home.ctaSecondary}
-              </Button>
-            </div>
-          </div>
-
-          <div className="flex flex-col justify-center md:pl-8">
-            <div className="text-sm font-black tracking-[0.4em] text-emerald-400 uppercase mb-1">{COPY.home.trustedKicker}</div>
-            <p className="text-[17px] text-white/65 font-semibold mb-4">{COPY.home.trustedSub}</p>
-            <img
-              src="/logos-sheet.png"
-              alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP Baysound, Rhythm & Roux, Parade of Youth, Chevron"
-              className="w-full object-contain"
-            />
-          </div>
+      <section className="relative z-10 md:min-h-[calc(100vh-170px)] flex flex-col justify-center max-w-3xl">
+        <h1 className="text-[clamp(2.4rem,9vw,5rem)] font-black tracking-tighter leading-[0.95] text-[#0A0A0A]">
+          {COPY.home.headline}
+        </h1>
+        <p className="mt-6 text-[17px] text-[#0A0A0A]/75 font-semibold leading-relaxed max-w-2xl">{COPY.home.sub}</p>
+        <div className="mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
+          <Button href={BOOKING_URL}>{COPY.home.ctaPrimary}</Button>
+          <Button href="#/case-studies" variant="secondary">
+            {COPY.home.ctaSecondary}
+          </Button>
         </div>
       </section>
 
-      <section className="mt-6 relative z-10 border border-white/15 bg-gradient-to-r from-black/50 via-black/40 to-black/30 backdrop-blur-xl p-8 md:p-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {COPY.home.stats.map((s) => (
-            <div key={s.label || s.sub.slice(0, 40)} className="relative z-10 border border-white/10 bg-white/5 p-8 backdrop-blur-sm text-left h-full overflow-hidden">
-              {s.label && <div className="text-sm font-black tracking-[0.04em] text-emerald-400 uppercase mb-3">{s.label}</div>}
-              <div className="text-base font-black tracking-[0.02em] text-white/80 leading-relaxed">{s.sub}</div>
-            </div>
+      <section className="relative z-10 border-t border-b border-black/10 py-10 md:py-12">
+        <div className="text-xs font-black tracking-[0.4em] text-[#4A4F54] uppercase mb-8 text-center">{COPY.home.trustedKicker}</div>
+        <div className="flex flex-wrap justify-center gap-x-10 gap-y-4">
+          {MARQUEE_NAMES.map((name) => (
+            <span key={name} className="text-sm font-black tracking-[0.22em] uppercase text-[#0A0A0A]/50">{name}</span>
           ))}
         </div>
       </section>
 
-      <section className="mt-14 border border-white/10 bg-black/40 backdrop-blur-xl p-6 sm:p-8 md:p-24 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-24 items-start">
-          <div>
-            <div className="text-sm font-black tracking-[0.4em] text-emerald-500 uppercase mb-8">{COPY.home.equationKicker}</div>
-            <h2 className="text-[clamp(2rem,8vw,3.75rem)] font-black tracking-tighter text-white leading-[1]">{COPY.home.equationHeadline}</h2>
-            <p className="mt-8 text-[17px] text-white/80 leading-relaxed font-semibold">{COPY.home.equationBody}</p>
-          </div>
-          <div className="border border-white/10 p-5 sm:p-8 md:p-10 bg-white/5 relative overflow-hidden">
-            <div className="text-sm font-black tracking-[0.3em] text-white/65 uppercase mb-12">{COPY.home.coreArch}</div>
-            <div className="space-y-6">
-              {COPY.home.architecture.map((layer, i) => (
-                <div key={layer.title} className="border-b border-white/5 pb-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-black tracking-widest text-emerald-400">0{i + 1}</span>
-                    <span className="text-lg font-black text-white">{layer.title}</span>
-                  </div>
-                  <p className="text-[17px] text-white/85 font-semibold leading-relaxed text-right">{layer.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+      <section className="mt-6 relative z-10 border border-black/10 bg-white/60 backdrop-blur-xl p-8 md:p-16">
+        <div className="text-sm font-black tracking-[0.4em] text-emerald-600 uppercase mb-6">{COPY.home.authorityKicker}</div>
+        <h2 className="text-[clamp(1.6rem,5vw,2.5rem)] font-black tracking-tight text-[#0A0A0A] leading-tight mb-6">{COPY.home.authorityHeadline}</h2>
+        <p className="text-[17px] text-[#0A0A0A]/75 font-semibold leading-relaxed mb-6">{COPY.home.authorityBody}</p>
+        <p className="text-[17px] text-[#0A0A0A]/75 font-semibold leading-relaxed">{COPY.home.authoritySub}</p>
+      </section>
+
+      <section className="mt-0 relative z-10 border border-emerald-500/30 bg-emerald-50/60 p-8 md:p-16">
+        <div className="text-sm font-black tracking-[0.4em] text-emerald-600 uppercase mb-6">{COPY.home.proofKicker}</div>
+        <p className="text-[17px] text-[#0A0A0A]/80 font-semibold leading-relaxed mb-8">{COPY.home.proofBody}</p>
+        <div className="text-[clamp(1.8rem,5vw,2.5rem)] font-black tracking-tight text-emerald-600">{COPY.home.proofStatement}</div>
       </section>
     </div>
   );
@@ -625,47 +523,47 @@ function Infrastructure() {
     <div className="pt-12 space-y-20 relative z-10">
       <div className="max-w-4xl text-left">
         <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.infrastructure.kicker}</div>
-        <h1 className="text-[clamp(2.25rem,10vw,8rem)] font-black tracking-tighter text-white leading-[0.92] whitespace-pre-line">{COPY.infrastructure.h1}</h1>
-        <p className="mt-12 text-2xl md:text-4xl text-white/80 font-semibold">{COPY.infrastructure.sub}</p>
+        <h1 className="text-[clamp(2.25rem,10vw,8rem)] font-black tracking-tighter text-[#0A0A0A] leading-[0.92] whitespace-pre-line">{COPY.infrastructure.h1}</h1>
+        <p className="mt-12 text-2xl md:text-4xl text-[#0A0A0A]/75 font-semibold">{COPY.infrastructure.sub}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {COPY.infrastructure.layers.map((L) => (
           <div
             key={L.title}
-            className="bg-black/40 backdrop-blur-md p-10 text-left border border-white/10 hover:bg-emerald-500/5 transition-colors h-full relative z-10"
+            className="bg-white/60 backdrop-blur-md p-10 text-left border border-black/10 hover:bg-emerald-500/5 transition-colors h-full relative z-10"
           >
             <div className="text-sm font-black tracking-[0.3em] text-emerald-500 mb-6">{L.note}</div>
-            <h3 className="text-2xl font-black text-white mb-6 uppercase">{L.title}</h3>
-            <p className="text-[17px] text-white/80 font-semibold leading-relaxed">{L.desc}</p>
+            <h3 className="text-2xl font-black text-[#0A0A0A] mb-6 uppercase">{L.title}</h3>
+            <p className="text-[17px] text-[#0A0A0A]/75 font-semibold leading-relaxed">{L.desc}</p>
           </div>
         ))}
       </div>
 
-      <section className="border border-white/10 bg-black/40 backdrop-blur-xl p-6 md:p-8 relative z-10">
+      <section className="border border-black/10 bg-white/60 backdrop-blur-xl p-6 md:p-8 relative z-10">
         <div className="max-w-2xl">
           <div className="text-xs font-black tracking-[0.4em] text-emerald-500 uppercase mb-4">{whoWeServe.kicker}</div>
-          <h3 className="text-2xl md:text-3xl font-black tracking-tight text-white leading-tight mb-4">{whoWeServe.headline}</h3>
-          <p className="text-[17px] text-white/80 font-semibold leading-relaxed">{whoWeServe.body}</p>
+          <h3 className="text-2xl md:text-3xl font-black tracking-tight text-[#0A0A0A] leading-tight mb-4">{whoWeServe.headline}</h3>
+          <p className="text-[17px] text-[#0A0A0A]/75 font-semibold leading-relaxed">{whoWeServe.body}</p>
         </div>
       </section>
 
       <section className="relative z-10">
         <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{howItWorks.kicker}</div>
-        <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white leading-none mb-14">{howItWorks.headline}</h2>
+        <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-[#0A0A0A] leading-none mb-14">{howItWorks.headline}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {howItWorks.tiers.map((tier) => (
-            <div key={tier.title} className="border border-white/10 bg-black/40 p-10 hover:bg-emerald-500/5 transition-colors">
-              <h3 className="text-xl font-black text-white uppercase mb-4">{tier.title}</h3>
-              <p className="text-[17px] text-white/80 font-semibold leading-relaxed">{tier.desc}</p>
+            <div key={tier.title} className="border border-black/10 bg-white/60 p-10 hover:bg-emerald-500/5 transition-colors">
+              <h3 className="text-xl font-black text-[#0A0A0A] uppercase mb-4">{tier.title}</h3>
+              <p className="text-[17px] text-[#0A0A0A]/75 font-semibold leading-relaxed">{tier.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="text-center py-20 border-t border-white/10 relative z-10">
+      <section className="text-center py-20 border-t border-black/10 relative z-10">
         {COPY.infrastructure.outroLines.length > 0 && (
-          <p className="text-3xl md:text-5xl font-black text-white leading-tight mb-12">
+          <p className="text-3xl md:text-5xl font-black text-[#0A0A0A] leading-tight mb-12">
             {COPY.infrastructure.outroLines.map((line) => (
               <React.Fragment key={line}>
                 {line}
@@ -685,66 +583,36 @@ function CaseStudies() {
     <div className="pt-12 relative z-10">
       <div className="text-left mb-24 max-w-4xl">
         <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.caseStudies.kicker}</div>
-        <h1 className="text-[clamp(2.2rem,10vw,6rem)] font-black tracking-tighter text-white leading-[0.92]">{COPY.caseStudies.title}</h1>
-        {COPY.caseStudies.sub && <p className="mt-8 text-[17px] text-white/80 font-semibold leading-tight">{COPY.caseStudies.sub}</p>}
+        <h1 className="text-[clamp(2.2rem,10vw,6rem)] font-black tracking-tighter text-[#0A0A0A] leading-[0.92]">{COPY.caseStudies.title}</h1>
+        {COPY.caseStudies.sub && <p className="mt-8 text-[17px] text-[#0A0A0A]/75 font-semibold leading-tight">{COPY.caseStudies.sub}</p>}
       </div>
+
       <div className="space-y-8 relative z-10">
-        {COPY.caseStudies.cards.map((cs) => (
-          <div key={cs.client} className="border border-white/10 bg-black/40 p-10 md:p-14 hover:bg-white/5 transition-all relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
-              <div>
-                <span className="inline-block border border-emerald-500/30 px-3 py-1 text-sm font-black tracking-widest text-emerald-400 uppercase mb-4">{cs.badge}</span>
-                <div className="text-2xl font-black text-white uppercase mb-6">{cs.client}</div>
-                <div className="text-6xl font-black text-emerald-400 leading-none">{cs.outcome}</div>
-                <div className="text-sm font-black tracking-widest text-white/65 uppercase mt-2">{cs.outcomeLabel}</div>
-              </div>
-              <div className="space-y-6">
-                <div>
-                  <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Challenge</div>
-                  <p className="text-[17px] font-semibold text-white/85 leading-relaxed">{cs.challenge}</p>
-                </div>
-                <div>
-                  <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Action</div>
-                  <p className="text-[17px] font-semibold text-white/85 leading-relaxed">{cs.action}</p>
-                </div>
-              </div>
-              <div className="space-y-6">
-                <div>
-                  <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Result</div>
-                  <p className="text-base font-bold text-white leading-relaxed">{cs.result}</p>
-                </div>
-                <div>
-                  <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Disciplines</div>
-                  <div className="text-sm font-black tracking-widest text-emerald-400 uppercase">{cs.tech}</div>
-                </div>
-                <div>
-                  <div className="text-sm font-black tracking-widest text-white/65 uppercase mb-2">Methodology</div>
-                  <p className="text-sm font-semibold text-white/65 leading-relaxed">{cs.methodology}</p>
-                </div>
-              </div>
-            </div>
+        {COPY.caseStudies.cards.map((cs, i) => (
+          <div key={cs.badge} className="border border-black/10 bg-white/60 p-10 md:p-14 hover:bg-white/80 transition-all relative z-10">
+            <span className="inline-block border border-emerald-600/40 px-3 py-1 text-sm font-black tracking-widest text-emerald-600 uppercase mb-6">{cs.badge}</span>
+            <p className="text-[17px] font-semibold text-[#0A0A0A]/80 leading-relaxed mb-8">{cs.narrative}</p>
+            {cs.quote && (
+              <blockquote className="border-l-2 border-emerald-500 pl-6">
+                <p className="text-[17px] font-black text-[#0A0A0A] leading-relaxed italic">&ldquo;{cs.quote}&rdquo;</p>
+                {cs.quoteAttrib && <cite className="mt-2 block text-sm font-black tracking-[0.2em] uppercase text-[#4A4F54] not-italic">{cs.quoteAttrib}</cite>}
+              </blockquote>
+            )}
           </div>
         ))}
       </div>
 
-      <div className="mb-24 py-12 border-y border-white/10 overflow-hidden relative z-10">
-        {COPY.caseStudies.trustedKicker && (
-          <div className="text-sm font-black tracking-[0.3em] text-emerald-500 uppercase mb-12 text-center">{COPY.caseStudies.trustedKicker}</div>
-        )}
-        <img
-          src="/logos-sheet.png"
-          alt="Trusted by Kaiser Permanente, Stanford University, NVIDIA, PG&E, CommonSpirit Health, Drew Medical, The Anthemist, City of Concord, DGRP Baysound, Rhythm & Roux, Parade of Youth, Chevron"
-          className="w-full max-w-4xl mx-auto object-contain"
-        />
+      <div className="mb-24 py-12 border-y border-black/10 overflow-hidden relative z-10">
+        <ScrollingMarquee />
       </div>
 
       <section className="text-center py-24 mt-24 relative z-10">
         <Button href={BOOKING_URL}>{COPY.caseStudies.cta}</Button>
       </section>
 
-      <section className="border border-emerald-500/40 bg-emerald-500/5 p-6 sm:p-8 md:p-20 relative z-10">
+      <section className="border border-emerald-500/40 bg-emerald-50/60 p-6 sm:p-8 md:p-20 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-          <h2 className="text-[clamp(1.8rem,8vw,3rem)] font-black tracking-tight text-white leading-tight">{COPY.home.closingHeadline}</h2>
+          <h2 className="text-[clamp(1.8rem,8vw,3rem)] font-black tracking-tight text-[#0A0A0A] leading-tight">{COPY.home.closingHeadline}</h2>
           <Button href={BOOKING_URL}>{COPY.shell.topCta}</Button>
         </div>
       </section>
@@ -755,12 +623,12 @@ function CaseStudies() {
 function Contact() {
   return (
     <div className="pt-12 max-w-5xl mx-auto relative z-10">
-      <section id="contact" className="border border-white/10 bg-black/40 backdrop-blur-xl px-5 sm:px-8 md:px-16 py-10 sm:py-14 md:py-20">
+      <section id="contact" className="border border-black/10 bg-white/60 backdrop-blur-xl px-5 sm:px-8 md:px-16 py-10 sm:py-14 md:py-20">
         <div className="text-center max-w-3xl mx-auto">
           <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.contact.kicker}</div>
-          <h1 className="text-[clamp(2.2rem,10vw,4.5rem)] font-black tracking-tighter text-white leading-[0.95]">{COPY.contact.title}</h1>
+          <h1 className="text-[clamp(2.2rem,10vw,4.5rem)] font-black tracking-tighter text-[#0A0A0A] leading-[0.95]">{COPY.contact.title}</h1>
           <div className="h-[2px] w-24 bg-emerald-500/90 mx-auto mt-8 mb-8" />
-          <p className="text-[17px] text-white/85 font-semibold leading-relaxed">{COPY.contact.sub}</p>
+          <p className="text-[17px] text-[#0A0A0A]/80 font-semibold leading-relaxed">{COPY.contact.sub}</p>
         </div>
         <form
           action={CONTACT_FORM_ENDPOINT}
@@ -775,55 +643,55 @@ function Contact() {
           <input type="hidden" name="aG9uZXlwb3Q" value="" readOnly />
 
           <div>
-            <label htmlFor="company" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Company *</label>
-            <input id="company" type="text" name="Company" required placeholder="Company" className="w-full min-h-11 bg-white/[0.02] border border-white/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+            <label htmlFor="company" className="block text-xs font-black tracking-[0.2em] uppercase text-[#4A4F54] mb-2">Company *</label>
+            <input id="company" type="text" name="Company" required placeholder="Company" className="w-full min-h-11 bg-black/[0.03] border border-black/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-[#0A0A0A] placeholder:text-black/35 focus:outline-none focus:border-emerald-500" />
           </div>
 
           <div>
-            <label htmlFor="designation" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Title</label>
-            <input id="designation" type="text" name="Designation" placeholder="Title" className="w-full min-h-11 bg-white/[0.02] border border-white/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+            <label htmlFor="designation" className="block text-xs font-black tracking-[0.2em] uppercase text-[#4A4F54] mb-2">Title</label>
+            <input id="designation" type="text" name="Designation" placeholder="Title" className="w-full min-h-11 bg-black/[0.03] border border-black/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-[#0A0A0A] placeholder:text-black/35 focus:outline-none focus:border-emerald-500" />
           </div>
 
           <div>
-            <label htmlFor="firstName" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">First Name</label>
-            <input id="firstName" type="text" name="First Name" placeholder="First Name (optional)" className="w-full min-h-11 bg-white/[0.02] border border-white/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+            <label htmlFor="firstName" className="block text-xs font-black tracking-[0.2em] uppercase text-[#4A4F54] mb-2">First Name</label>
+            <input id="firstName" type="text" name="First Name" placeholder="First Name (optional)" className="w-full min-h-11 bg-black/[0.03] border border-black/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-[#0A0A0A] placeholder:text-black/35 focus:outline-none focus:border-emerald-500" />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Email</label>
-            <input id="email" type="email" name="Email" placeholder="Email" className="w-full min-h-11 bg-white/[0.02] border border-white/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+            <label htmlFor="email" className="block text-xs font-black tracking-[0.2em] uppercase text-[#4A4F54] mb-2">Email</label>
+            <input id="email" type="email" name="Email" placeholder="Email" className="w-full min-h-11 bg-black/[0.03] border border-black/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-[#0A0A0A] placeholder:text-black/35 focus:outline-none focus:border-emerald-500" />
           </div>
 
           <div>
-            <label htmlFor="lastName" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Last Name *</label>
-            <input id="lastName" type="text" name="Last Name" required placeholder="Last Name" className="w-full min-h-11 bg-white/[0.02] border border-white/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+            <label htmlFor="lastName" className="block text-xs font-black tracking-[0.2em] uppercase text-[#4A4F54] mb-2">Last Name *</label>
+            <input id="lastName" type="text" name="Last Name" required placeholder="Last Name" className="w-full min-h-11 bg-black/[0.03] border border-black/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-[#0A0A0A] placeholder:text-black/35 focus:outline-none focus:border-emerald-500" />
           </div>
 
           <div>
-            <label htmlFor="primaryChannel" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Primary Channel</label>
-            <input id="primaryChannel" type="text" name="LEADCF2" placeholder="Primary Channel" className="w-full min-h-11 bg-white/[0.02] border border-white/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+            <label htmlFor="primaryChannel" className="block text-xs font-black tracking-[0.2em] uppercase text-[#4A4F54] mb-2">Primary Channel</label>
+            <input id="primaryChannel" type="text" name="LEADCF2" placeholder="Primary Channel" className="w-full min-h-11 bg-black/[0.03] border border-black/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-[#0A0A0A] placeholder:text-black/35 focus:outline-none focus:border-emerald-500" />
           </div>
 
           <div className="md:col-span-2">
-            <label htmlFor="audienceDescription" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Audience Description</label>
-            <textarea id="audienceDescription" name="Description" placeholder="Audience Description" rows={3} className="w-full bg-white/[0.02] border border-white/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+            <label htmlFor="audienceDescription" className="block text-xs font-black tracking-[0.2em] uppercase text-[#4A4F54] mb-2">Audience Description</label>
+            <textarea id="audienceDescription" name="Description" placeholder="Audience Description" rows={3} className="w-full bg-black/[0.03] border border-black/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-[#0A0A0A] placeholder:text-black/35 focus:outline-none focus:border-emerald-500" />
           </div>
 
           <div className="md:col-span-2">
-            <label htmlFor="additionalContext" className="block text-xs font-black tracking-[0.2em] uppercase text-white/70 mb-2">Additional Context</label>
-            <textarea id="additionalContext" name="LEADCF1" placeholder="Additional Context" rows={4} className="w-full bg-white/[0.02] border border-white/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-white placeholder:text-white/35 focus:outline-none focus:border-emerald-500" />
+            <label htmlFor="additionalContext" className="block text-xs font-black tracking-[0.2em] uppercase text-[#4A4F54] mb-2">Additional Context</label>
+            <textarea id="additionalContext" name="LEADCF1" placeholder="Additional Context" rows={4} className="w-full bg-black/[0.03] border border-black/20 px-4 md:px-5 py-3 md:py-4 text-[17px] font-semibold text-[#0A0A0A] placeholder:text-black/35 focus:outline-none focus:border-emerald-500" />
           </div>
 
           <div className="md:col-span-2 flex justify-start mt-2">
-            <button type="submit" className="min-h-11 bg-emerald-600 px-8 md:px-10 py-3 md:py-4 text-sm font-black tracking-[0.3em] uppercase text-white hover:bg-emerald-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-black">
+            <button type="submit" className="min-h-11 bg-emerald-600 px-8 md:px-10 py-3 md:py-4 text-sm font-black tracking-[0.3em] uppercase text-white hover:bg-emerald-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#E8E9EA]">
               {COPY.contact.submitIdle}
             </button>
           </div>
         </form>
 
-        <div className="mt-12 border border-white/10 bg-white/[0.02] p-6 md:p-8">
-          <p className="text-sm font-black tracking-[0.3em] uppercase text-emerald-400 mb-3">Qualification</p>
-          <p className="text-[17px] text-white/80 font-semibold leading-relaxed">
+        <div className="mt-12 border border-black/10 bg-black/[0.03] p-6 md:p-8">
+          <p className="text-sm font-black tracking-[0.3em] uppercase text-emerald-500 mb-3">Qualification</p>
+          <p className="text-[17px] text-[#0A0A0A]/75 font-semibold leading-relaxed">
             We review every assessment request and engage with operators whose database and channels are ready to activate.
           </p>
         </div>
@@ -836,9 +704,9 @@ function Contact() {
 function ThankYou() {
   return (
     <div className="pt-20 max-w-4xl mx-auto relative z-10">
-      <section className="border border-white/10 bg-black/40 backdrop-blur-xl px-8 md:px-16 py-16 text-center">
-        <h1 className="text-4xl md:text-6xl font-black tracking-tight text-white">Thanks. We got your request.</h1>
-        <p className="mt-6 text-[17px] text-white/80 font-semibold">Our team will review and follow up shortly.</p>
+      <section className="border border-black/10 bg-white/60 backdrop-blur-xl px-8 md:px-16 py-16 text-center">
+        <h1 className="text-4xl md:text-6xl font-black tracking-tight text-[#0A0A0A]">Thanks. We got your request.</h1>
+        <p className="mt-6 text-[17px] text-[#0A0A0A]/75 font-semibold">Our team will review and follow up shortly.</p>
         <div className="mt-10">
           <Button href="#/">Back Home</Button>
         </div>
@@ -859,11 +727,11 @@ function Shell({ children, route }) {
   };
 
   return (
-    <div className="min-h-screen text-white selection:bg-emerald-600 selection:text-white font-sans relative">
+    <div className="min-h-screen text-[#0A0A0A] selection:bg-emerald-500 selection:text-white font-sans relative">
       {route === "/" ? <LiquidBackground /> : <InnerBackground />}
       <Grid opacityClass={route === "/" ? "opacity-20" : "opacity-10"} />
 
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-black/10 bg-white/90 backdrop-blur-xl">
         <div className="max-w-[1800px] mx-auto flex items-center justify-between gap-2 px-4 sm:px-6 md:px-12 py-3 md:py-4">
           <a href="#/" className="group min-w-0 shrink">
             <BrandLogo className="w-[140px] sm:w-[180px] md:w-[260px]" priority />
@@ -875,7 +743,7 @@ function Shell({ children, route }) {
                 href={item.href}
                 className={cx(
                   "text-sm md:text-base font-black tracking-[0.2em] uppercase transition-colors whitespace-nowrap",
-                  active(item.href) ? "text-emerald-400" : "text-white/65 hover:text-white"
+                  active(item.href) ? "text-emerald-500" : "text-[#4A4F54] hover:text-[#0A0A0A]"
                 )}
               >
                 {item.label}
@@ -885,14 +753,14 @@ function Shell({ children, route }) {
           <div className="hidden md:block shrink-0">
             <a
               href={BOOKING_URL}
-              className="border border-emerald-500/50 px-6 py-3 text-sm font-black tracking-[0.3em] uppercase hover:bg-emerald-500 transition-all whitespace-nowrap"
+              className="border border-emerald-500/50 px-6 py-3 text-sm font-black tracking-[0.3em] uppercase hover:bg-emerald-500 hover:text-white transition-all whitespace-nowrap"
             >
               {COPY.shell.topCta}
             </a>
           </div>
           <button
             onClick={() => setMobileMenuOpen((open) => !open)}
-            className="md:hidden min-h-11 min-w-11 border border-white/20 bg-black/40 text-white flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
+            className="md:hidden min-h-11 min-w-11 border border-black/20 bg-white/60 text-[#0A0A0A] flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-nav"
@@ -907,10 +775,10 @@ function Shell({ children, route }) {
           </button>
         </div>
         {mobileMenuOpen && (
-          <div id="mobile-nav" className="md:hidden border-t border-white/10 bg-black/95 px-4 py-4 space-y-3">
+          <div id="mobile-nav" className="md:hidden border-t border-black/10 bg-[#E8E9EA]/98 px-4 py-4 space-y-3">
             <a
               href={BOOKING_URL}
-              className="flex items-center justify-center min-h-11 border border-emerald-500/50 px-4 py-3 text-sm font-black tracking-[0.24em] uppercase hover:bg-emerald-500 transition-all"
+              className="flex items-center justify-center min-h-11 border border-emerald-500/50 px-4 py-3 text-sm font-black tracking-[0.24em] uppercase hover:bg-emerald-500 hover:text-white transition-all"
             >
               {COPY.shell.topCta}
             </a>
@@ -920,8 +788,8 @@ function Shell({ children, route }) {
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className={cx(
-                  "flex items-center justify-center min-h-11 text-sm font-black tracking-[0.16em] uppercase transition-colors border border-white/15 px-4 py-3",
-                  active(item.href) ? "text-emerald-400 border-emerald-500/50" : "text-white/80 hover:text-white"
+                  "flex items-center justify-center min-h-11 text-sm font-black tracking-[0.16em] uppercase transition-colors border border-black/15 px-4 py-3",
+                  active(item.href) ? "text-emerald-500 border-emerald-500/50" : "text-[#0A0A0A]/75 hover:text-[#0A0A0A]"
                 )}
               >
                 {item.label}
@@ -933,35 +801,35 @@ function Shell({ children, route }) {
 
       <main className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12 pt-28 md:pt-32 pb-24 md:pb-48 relative z-10 text-base md:text-lg leading-relaxed">{children}</main>
 
-      <footer className="border-t border-white/10 bg-black relative z-50">
+      <footer className="border-t border-black/10 bg-[#E8E9EA] relative z-50">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12 py-12 md:py-16 grid lg:grid-cols-3 gap-10 md:gap-16">
           <div>
             <BrandLogo className="w-[180px] sm:w-[220px] md:w-[300px] mb-4" />
-            <div className="text-sm font-black tracking-[0.4em] text-white/65 uppercase">{COPY.shell.footerSub}</div>
+            <div className="text-sm font-black tracking-[0.4em] text-[#4A4F54] uppercase">{COPY.shell.footerSub}</div>
           </div>
           <form
             action={MAILING_LIST_ENDPOINT}
             onSubmit={(e) => e.preventDefault()}
-            className="border border-white/10 bg-white/[0.02] p-6"
+            className="border border-black/10 bg-black/[0.03] p-6"
           >
-            <p className="text-base font-semibold text-white mb-4">Join our mailing list for the latest insights.</p>
+            <p className="text-base font-semibold text-[#0A0A0A] mb-4">Join our mailing list for the latest insights.</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
                 required
                 placeholder="Email"
-                className="flex-1 bg-transparent border border-white/20 px-4 py-3 text-xs text-white placeholder:text-white/65 focus:outline-none focus:border-emerald-500"
+                className="flex-1 bg-transparent border border-black/20 px-4 py-3 text-xs text-[#0A0A0A] placeholder:text-black/50 focus:outline-none focus:border-emerald-500"
               />
-              <button type="submit" className="min-h-11 bg-emerald-600 px-5 py-3 text-sm font-black tracking-[0.24em] uppercase hover:bg-emerald-500">
+              <button type="submit" className="min-h-11 bg-emerald-600 px-5 py-3 text-sm font-black tracking-[0.24em] uppercase hover:bg-emerald-500 text-white">
                 Join
               </button>
             </div>
           </form>
-          <div className="flex flex-col md:flex-row lg:flex-col gap-8 text-sm font-black tracking-[0.4em] text-white/65 uppercase lg:items-end">
-            <a href="#/terms" className="hover:text-emerald-400 transition-colors">
+          <div className="flex flex-col md:flex-row lg:flex-col gap-8 text-sm font-black tracking-[0.4em] text-[#4A4F54] uppercase lg:items-end">
+            <a href="#/terms" className="hover:text-emerald-500 transition-colors">
               {COPY.shell.terms}
             </a>
-            <a href="#/privacy" className="hover:text-emerald-400 transition-colors">
+            <a href="#/privacy" className="hover:text-emerald-500 transition-colors">
               {COPY.shell.privacy}
             </a>
           </div>
