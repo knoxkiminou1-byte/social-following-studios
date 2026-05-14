@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState, useRef } from "react";
 
 const NAV = [
   { label: "01 Home", href: "#/" },
-  { label: "02 Infrastructure", href: "#/infrastructure" },
+  { label: "02 The Program", href: "#/infrastructure" },
   { label: "03 Case Studies", href: "#/case-studies" },
   { label: "04 Contact", href: "#/contact" },
 ];
@@ -42,89 +42,83 @@ const COPY = {
     proofBody: "A compliance sector client completed a coordinated reactivation sequence across three live channels simultaneously. More than 14,000 disengaged contacts returned to active status within 14 days, from the existing database and within the existing program budget.",
     proofStatement: "Your database, reactivated.",
     closingHeadline: "Your database, reactivated.",
-    closingSub: "",
-    closingCta: "BOOK YOUR ASSESSMENT",
+    closingSub: "We are accepting assessment calls for organizations ready to understand what their existing database can produce. There is no proposal before the assessment. The assessment produces the numbers. The numbers drive the decision.",
+    closingCta: "Book Your Assessment",
   },
   infrastructure: {
-    kicker: "INFRASTRUCTURE",
-    h1: "One system. Every channel.",
-    sub: "Built and deployed by Social Following Studios.",
+    kicker: "THE PROGRAM",
+    h1: "One program. Every channel.",
+    sub: "Managed end-to-end by Social Following Studios.",
     layers: [
       {
-        note: "01 We Write It",
-        title: "We write the words.",
-        desc: "We write the language that moves qualified buyers to signed agreements.",
+        note: "01 We Assess It",
+        title: "We audit the database.",
+        desc: "We assess your contact database, deliverability health, and channel infrastructure to identify exactly where the reactivation gap is.",
       },
       {
         note: "02 We Build It",
-        title: "We build the system.",
-        desc: "We build the infrastructure that puts you in command.",
+        title: "We build the program.",
+        desc: "We build the full reactivation program across every live channel — email, conversational, and voice — coordinated from one team.",
       },
       {
-        note: "03 We Send It",
-        title: "We deploy the system.",
-        desc: "We deploy the system across your channels to keep qualified appointments coming.",
+        note: "03 We Run It",
+        title: "We run the deployment.",
+        desc: "We execute the program, manage deliverability, and report on reactivation progress against your program targets.",
       },
     ],
     whoWeServe: {
       kicker: "WHO WE SERVE",
-      headline: "For operators whose authority is the asset.",
-      body: "We work with operators who have built real world authority, with full databases, owned channels, and audiences that already trust them.",
+      headline: "Organizations with dormant databases and active compliance obligations.",
+      body: "We work with organizations that have built real contact databases from years of earned permission — legal, government, healthcare, real estate, and manufacturing — whose outreach programs have gone quiet.",
       closing: "",
     },
     howItWorks: {
       kicker: "HOW IT WORKS",
-      headline: "All engagements begin with a Language Audit.",
+      headline: "All engagements begin with a Database Assessment.",
       tiers: [
         {
-          title: "THE AUDIT",
-          desc: "A focused audit of your language, database, and system gaps, delivered as a written report that maps the system you need.",
+          title: "Assessment",
+          desc: "A focused audit of your database, deliverability health, and channel gaps — delivered as a written report with a clear reactivation path.",
         },
         {
-          title: "Full Build",
-          desc: "Your complete system, built and launched across your owned channels to turn dormant connections into revenue.",
+          title: "Full Program",
+          desc: "Your complete reactivation program, built and launched across every live channel within your existing budget and infrastructure.",
         },
         {
-          title: "Retained Advisory",
-          desc: "We deploy your system on an ongoing basis, with monthly reporting tied to your revenue targets.",
+          title: "Retained Management",
+          desc: "We manage the program on an ongoing basis with monthly deliverability reporting and reactivation tracking tied to your program targets.",
         },
       ],
     },
     outroLines: [],
     outroSub: "",
-    cta: "DEPLOY YOUR SYSTEM",
+    cta: "BOOK YOUR ASSESSMENT",
   },
   caseStudies: {
     kicker: "CASE STUDIES",
     title: "Results from real engagements.",
     cards: [
       {
-        badge: "Real Estate",
-        narrative: "A regional broker had a past-client database full of buyers and sellers who had gone quiet while the business spent money acquiring new leads. We ran a unified reactivation sequence across email, conversational, and voice channels simultaneously. The existing database produced 11 signed listing agreements within 45 days without new list acquisition or additional ad spend.",
+        badge: "A federal housing agency recovered constituent engagement at program scale without new budget or new infrastructure.",
+        narrative: "A federal housing agency managing constituent communication across active waitlist programs engaged Social Following Studios to run the full outreach program. Coordinated communication reached applicants across every live channel within the existing program infrastructure. Constituent engagement returned to active status at program scale.",
+        quote: "",
+        quoteAttrib: "",
+      },
+      {
+        badge: "A plaintiff database reached multi-million dollar resolution after competing firms had already reached the same claimant pool.",
+        narrative: "A plaintiff database had gone dormant while competing firms reached the same claimant pool. The industry average inbox placement rate sits at 83.5%. Outreach that does not reach the inbox does not reach the claimant. We ran the deliverability program at 95% inbox placement, sequenced the outreach, and built the communication program around claimant trust. The matter reached multi-million dollar resolution.",
+        quote: "Our messaging reached our claimants. That was the difference.",
+        quoteAttrib: "Managing Attorney, mass tort firm — quoted anonymously at client's request",
+      },
+      {
+        badge: "A regional broker produced 11 signed listing agreements in 45 days from a database the business had stopped using.",
+        narrative: "A regional broker had a past-client database of buyers and sellers who had gone quiet while the business spent money acquiring new leads. A unified reactivation sequence ran across email, conversational, and voice channels simultaneously. The existing database produced 11 signed listing agreements within 45 days without new list acquisition or additional spend.",
         quote: "The buyers and sellers we thought were gone came back through the same list we had ignored for years.",
         quoteAttrib: "",
       },
       {
-        badge: "Mass Tort",
-        narrative: "A mass tort matter had a plaintiff database that had gone dormant while competing firms reached the same claimant pool. The industry average inbox placement rate sits at 83.5%. Outreach that does not reach the inbox does not reach the claimant. We ran the deliverability program at 95% inbox placement, sequenced the language architecture, and built the communication program around claimant trust. Participation increased significantly across the reactivated segment and the matter reached multi-million dollar resolution.",
-        quote: "Our messaging reached our claimants. That was the difference.",
-        quoteAttrib: "James McDonough",
-      },
-      {
-        badge: "Federal Government",
-        narrative: "A federal housing agency managing active waitlist programs across multiple markets had a constituent database full of applicants who had submitted for assistance and gone quiet. We ran a coordinated reactivation program across every live channel simultaneously. Constituent engagement returned to active status at program scale within the existing budget and infrastructure.",
-        quote: "Social Following Studios brought our communication program to a level our internal team could not have managed alone.",
-        quoteAttrib: "",
-      },
-      {
-        badge: "Municipal Government",
-        narrative: "A mayoral office managing active constituent communication obligations had a database that had gone quiet between election cycles while residents with open compliance requirements stopped receiving consistent outreach. We took over the full communication program and ran coordinated reactivation across the existing database. Constituent response returned to active status before the next reporting period.",
-        quote: "This program changed how our office communicates with residents.",
-        quoteAttrib: "",
-      },
-      {
-        badge: "Manufacturing",
-        narrative: "A manufacturing organization had a vendor and procurement contact database that had gone quiet after a program transition while relationships representing active buying history stopped responding entirely. We ran a reactivation sequence across the existing database. Procurement contacts returned to active engagement within the first program cycle without new list acquisition or additional budget.",
+        badge: "A manufacturing organization recovered procurement relationships that had stopped responding after a program transition.",
+        narrative: "A manufacturing organization had a vendor and procurement contact database that had gone quiet after a program transition while relationships representing active buying history stopped responding entirely. A reactivation sequence ran across the existing database. Procurement contacts returned to active engagement within the first program cycle without new list acquisition or additional budget.",
         quote: "We recovered relationships we assumed were gone permanently.",
         quoteAttrib: "",
       },
@@ -135,13 +129,13 @@ const COPY = {
   contact: {
     kicker: "CONTACT",
     title: "Book Your Call.",
-    sub: "Every engagement starts here. We bring the system. You bring the authority.",
+    sub: "Every engagement starts with a Database Assessment. There is no proposal before the assessment. The assessment produces the numbers. The numbers drive the decision.",
     submitIdle: "SUBMIT",
     submitDone: "SUBMITTED",
   },
   shell: {
     brand: "Social Following Studios",
-    brandSub: "Language Infrastructure",
+    brandSub: "Database Reactivation",
     topCta: "BOOK YOUR ASSESSMENT",
     footerSub: "An imprint of Marchitects.",
     terms: "Terms",
@@ -217,11 +211,11 @@ function useHashRoute() {
 
 function Button({ href, children, variant = "primary" }) {
   const base =
-    "inline-flex min-h-11 items-center justify-center px-6 md:px-8 py-3 md:py-4 text-sm font-black tracking-[0.2em] uppercase transition-all active:scale-[0.98] border shadow-2xl relative z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#E8E9EA]";
+    "inline-flex items-center justify-center px-7 py-3 text-sm font-semibold tracking-wide rounded-full transition-all active:scale-[0.98] relative z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2";
   const styles =
     variant === "primary"
-      ? "bg-emerald-600 text-white border-emerald-500 hover:bg-emerald-500"
-      : "bg-transparent text-[#0A0A0A] border-black/20 hover:bg-black/5";
+      ? "bg-emerald-600 text-white hover:bg-emerald-500 shadow-sm"
+      : "bg-white text-[#0A0A0A] border border-black/15 hover:border-black/30 hover:bg-white shadow-sm";
   return (
     <a href={href} className={cx(base, styles)}>
       {children}
@@ -480,7 +474,7 @@ function Home() {
   return (
     <div className="relative pt-12 space-y-16">
       <section className="relative z-10 md:min-h-[calc(100vh-170px)] flex flex-col justify-center max-w-3xl">
-        <h1 className="text-[clamp(2.4rem,9vw,5rem)] font-black tracking-tighter leading-[0.95] text-[#0A0A0A]">
+        <h1 className="text-[clamp(2.4rem,9vw,5rem)] font-bold leading-[1.05] text-[#0A0A0A]" style={{fontFamily: "'Lora', Georgia, serif"}}>
           {COPY.home.headline}
         </h1>
         <p className="mt-6 text-[17px] text-[#0A0A0A]/75 font-semibold leading-relaxed max-w-2xl">{COPY.home.sub}</p>
@@ -492,26 +486,35 @@ function Home() {
         </div>
       </section>
 
-      <section className="relative z-10 border-t border-b border-black/10 py-10 md:py-12">
-        <div className="text-xs font-black tracking-[0.4em] text-[#4A4F54] uppercase mb-8 text-center">{COPY.home.trustedKicker}</div>
-        <div className="flex flex-wrap justify-center gap-x-10 gap-y-4">
-          {MARQUEE_NAMES.map((name) => (
-            <span key={name} className="text-sm font-black tracking-[0.22em] uppercase text-[#0A0A0A]/50">{name}</span>
-          ))}
+      <section className="relative z-10 border-t border-b border-black/10 py-10 md:py-14">
+        <div className="text-xs font-semibold tracking-[0.18em] text-[#4A4F54] uppercase mb-8 text-center">{COPY.home.trustedKicker}</div>
+        <img
+          src="/logos-approved.png"
+          alt="Trusted by Stanford University, Drew Medical, The Anthemist, City of Concord, DGRP Baysound, Rhythm and Roux, Parade of Youth"
+          className="w-full max-w-5xl mx-auto object-contain"
+        />
+      </section>
+
+      <section className="relative z-10 border border-black/10 bg-white/60">
+        <div className="aspect-video w-full flex flex-col items-center justify-center gap-4 bg-[#E8E9EA]">
+          <div className="w-16 h-16 rounded-full border-2 border-emerald-600 flex items-center justify-center">
+            <svg className="w-6 h-6 text-emerald-600 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <p className="text-sm font-medium text-[#4A4F54]" style={{fontFamily:"'Lora', Georgia, serif"}}>Program Explainer — Coming Soon</p>
         </div>
       </section>
 
       <section className="mt-6 relative z-10 border border-black/10 bg-white/60 backdrop-blur-xl p-8 md:p-16">
-        <div className="text-sm font-black tracking-[0.4em] text-emerald-600 uppercase mb-6">{COPY.home.authorityKicker}</div>
-        <h2 className="text-[clamp(1.6rem,5vw,2.5rem)] font-black tracking-tight text-[#0A0A0A] leading-tight mb-6">{COPY.home.authorityHeadline}</h2>
+        <div className="text-xs font-semibold tracking-[0.18em] text-emerald-600 uppercase mb-4">{COPY.home.authorityKicker}</div>
+        <h2 className="text-[clamp(1.6rem,5vw,2.5rem)] font-semibold text-[#0A0A0A] leading-snug mb-6" style={{fontFamily: "'Lora', Georgia, serif"}}>{COPY.home.authorityHeadline}</h2>
         <p className="text-[17px] text-[#0A0A0A]/75 font-semibold leading-relaxed mb-6">{COPY.home.authorityBody}</p>
         <p className="text-[17px] text-[#0A0A0A]/75 font-semibold leading-relaxed">{COPY.home.authoritySub}</p>
       </section>
 
       <section className="mt-0 relative z-10 border border-emerald-500/30 bg-emerald-50/60 p-8 md:p-16">
-        <div className="text-sm font-black tracking-[0.4em] text-emerald-600 uppercase mb-6">{COPY.home.proofKicker}</div>
+        <div className="text-xs font-semibold tracking-[0.18em] text-emerald-600 uppercase mb-4">{COPY.home.proofKicker}</div>
         <p className="text-[17px] text-[#0A0A0A]/80 font-semibold leading-relaxed mb-8">{COPY.home.proofBody}</p>
-        <div className="text-[clamp(1.8rem,5vw,2.5rem)] font-black tracking-tight text-emerald-600">{COPY.home.proofStatement}</div>
+        <div className="text-[clamp(1.8rem,5vw,2.5rem)] font-semibold text-emerald-600" style={{fontFamily: "'Lora', Georgia, serif"}}>{COPY.home.proofStatement}</div>
       </section>
     </div>
   );
@@ -590,7 +593,7 @@ function CaseStudies() {
       <div className="space-y-8 relative z-10">
         {COPY.caseStudies.cards.map((cs, i) => (
           <div key={cs.badge} className="border border-black/10 bg-white/60 p-10 md:p-14 hover:bg-white/80 transition-all relative z-10">
-            <span className="inline-block border border-emerald-600/40 px-3 py-1 text-sm font-black tracking-widest text-emerald-600 uppercase mb-6">{cs.badge}</span>
+            <p className="text-[1.15rem] font-semibold text-[#0A0A0A] leading-snug mb-6" style={{fontFamily: "'Lora', Georgia, serif"}}>{cs.badge}</p>
             <p className="text-[17px] font-semibold text-[#0A0A0A]/80 leading-relaxed mb-8">{cs.narrative}</p>
             {cs.quote && (
               <blockquote className="border-l-2 border-emerald-500 pl-6">
@@ -610,11 +613,10 @@ function CaseStudies() {
         <Button href={BOOKING_URL}>{COPY.caseStudies.cta}</Button>
       </section>
 
-      <section className="border border-emerald-500/40 bg-emerald-50/60 p-6 sm:p-8 md:p-20 relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-          <h2 className="text-[clamp(1.8rem,8vw,3rem)] font-black tracking-tight text-[#0A0A0A] leading-tight">{COPY.home.closingHeadline}</h2>
-          <Button href={BOOKING_URL}>{COPY.shell.topCta}</Button>
-        </div>
+      <section className="border border-emerald-500/40 bg-emerald-50/60 p-8 sm:p-12 md:p-20 relative z-10">
+        <h2 className="text-[clamp(1.8rem,6vw,3rem)] font-semibold text-[#0A0A0A] leading-snug mb-6" style={{fontFamily: "'Lora', Georgia, serif"}}>{COPY.home.closingHeadline}</h2>
+        <p className="text-[17px] text-[#0A0A0A]/75 font-medium leading-relaxed max-w-2xl mb-10">{COPY.home.closingSub}</p>
+        <Button href={BOOKING_URL}>{COPY.home.closingCta}</Button>
       </section>
     </div>
   );
@@ -625,8 +627,8 @@ function Contact() {
     <div className="pt-12 max-w-5xl mx-auto relative z-10">
       <section id="contact" className="border border-black/10 bg-white/60 backdrop-blur-xl px-5 sm:px-8 md:px-16 py-10 sm:py-14 md:py-20">
         <div className="text-center max-w-3xl mx-auto">
-          <div className="text-sm font-black tracking-[0.5em] text-emerald-500 uppercase mb-8">{COPY.contact.kicker}</div>
-          <h1 className="text-[clamp(2.2rem,10vw,4.5rem)] font-black tracking-tighter text-[#0A0A0A] leading-[0.95]">{COPY.contact.title}</h1>
+          <div className="text-xs font-semibold tracking-[0.18em] text-emerald-600 uppercase mb-6">{COPY.contact.kicker}</div>
+          <h1 className="text-[clamp(2.2rem,10vw,4.5rem)] font-semibold text-[#0A0A0A] leading-tight" style={{fontFamily: "'Lora', Georgia, serif"}}>{COPY.contact.title}</h1>
           <div className="h-[2px] w-24 bg-emerald-500/90 mx-auto mt-8 mb-8" />
           <p className="text-[17px] text-[#0A0A0A]/80 font-semibold leading-relaxed">{COPY.contact.sub}</p>
         </div>
@@ -683,7 +685,7 @@ function Contact() {
           </div>
 
           <div className="md:col-span-2 flex justify-start mt-2">
-            <button type="submit" className="min-h-11 bg-emerald-600 px-8 md:px-10 py-3 md:py-4 text-sm font-black tracking-[0.3em] uppercase text-white hover:bg-emerald-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#E8E9EA]">
+            <button type="submit" className="min-h-11 bg-emerald-600 px-8 md:px-10 py-3 text-sm font-semibold rounded-full text-white hover:bg-emerald-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2">
               {COPY.contact.submitIdle}
             </button>
           </div>
@@ -727,7 +729,7 @@ function Shell({ children, route }) {
   };
 
   return (
-    <div className="min-h-screen text-[#0A0A0A] selection:bg-emerald-500 selection:text-white font-sans relative">
+    <div className="min-h-screen text-[#0A0A0A] selection:bg-emerald-500 selection:text-white relative" style={{fontFamily: "'Inter', system-ui, sans-serif"}}>
       {route === "/" ? <LiquidBackground /> : <InnerBackground />}
       <Grid opacityClass={route === "/" ? "opacity-20" : "opacity-10"} />
 
@@ -736,14 +738,14 @@ function Shell({ children, route }) {
           <a href="#/" className="group min-w-0 shrink">
             <BrandLogo className="w-[140px] sm:w-[180px] md:w-[260px]" priority />
           </a>
-          <nav className="hidden md:flex gap-2 md:gap-4 mr-2 md:mr-6 text-base md:text-lg">
+          <nav className="hidden md:flex gap-1 md:gap-2 mr-2 md:mr-6" style={{fontFamily: "'Lora', Georgia, serif"}}>
             {NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 className={cx(
-                  "text-sm md:text-base font-black tracking-[0.2em] uppercase transition-colors whitespace-nowrap",
-                  active(item.href) ? "text-emerald-500" : "text-[#4A4F54] hover:text-[#0A0A0A]"
+                  "px-4 py-2 text-base font-medium rounded-full transition-colors whitespace-nowrap",
+                  active(item.href) ? "text-emerald-600 bg-emerald-50" : "text-[#555] hover:text-[#0A0A0A] hover:bg-black/5"
                 )}
               >
                 {item.label}
@@ -753,7 +755,8 @@ function Shell({ children, route }) {
           <div className="hidden md:block shrink-0">
             <a
               href={BOOKING_URL}
-              className="border border-emerald-500/50 px-6 py-3 text-sm font-black tracking-[0.3em] uppercase hover:bg-emerald-500 hover:text-white transition-all whitespace-nowrap"
+              className="inline-flex items-center px-5 py-2.5 text-sm font-semibold rounded-full bg-emerald-600 text-white hover:bg-emerald-500 transition-colors whitespace-nowrap shadow-sm"
+              style={{fontFamily: "'Lora', Georgia, serif"}}
             >
               {COPY.shell.topCta}
             </a>
@@ -778,7 +781,7 @@ function Shell({ children, route }) {
           <div id="mobile-nav" className="md:hidden border-t border-black/10 bg-[#E8E9EA]/98 px-4 py-4 space-y-3">
             <a
               href={BOOKING_URL}
-              className="flex items-center justify-center min-h-11 border border-emerald-500/50 px-4 py-3 text-sm font-black tracking-[0.24em] uppercase hover:bg-emerald-500 hover:text-white transition-all"
+              className="flex items-center justify-center py-3 px-4 text-sm font-semibold rounded-full bg-emerald-600 text-white hover:bg-emerald-500 transition-colors"
             >
               {COPY.shell.topCta}
             </a>
@@ -788,8 +791,8 @@ function Shell({ children, route }) {
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className={cx(
-                  "flex items-center justify-center min-h-11 text-sm font-black tracking-[0.16em] uppercase transition-colors border border-black/15 px-4 py-3",
-                  active(item.href) ? "text-emerald-500 border-emerald-500/50" : "text-[#0A0A0A]/75 hover:text-[#0A0A0A]"
+                  "flex items-center justify-center py-3 px-4 text-sm font-medium rounded-full transition-colors",
+                  active(item.href) ? "text-emerald-600 bg-emerald-50" : "text-[#555] hover:text-[#0A0A0A] hover:bg-black/5"
                 )}
               >
                 {item.label}
@@ -805,7 +808,7 @@ function Shell({ children, route }) {
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12 py-12 md:py-16 grid lg:grid-cols-3 gap-10 md:gap-16">
           <div>
             <BrandLogo className="w-[180px] sm:w-[220px] md:w-[300px] mb-4" />
-            <div className="text-sm font-black tracking-[0.4em] text-[#4A4F54] uppercase">{COPY.shell.footerSub}</div>
+            <div className="text-sm font-medium text-[#777]">{COPY.shell.footerSub}</div>
           </div>
           <form
             action={MAILING_LIST_ENDPOINT}
@@ -820,12 +823,12 @@ function Shell({ children, route }) {
                 placeholder="Email"
                 className="flex-1 bg-transparent border border-black/20 px-4 py-3 text-xs text-[#0A0A0A] placeholder:text-black/50 focus:outline-none focus:border-emerald-500"
               />
-              <button type="submit" className="min-h-11 bg-emerald-600 px-5 py-3 text-sm font-black tracking-[0.24em] uppercase hover:bg-emerald-500 text-white">
+              <button type="submit" className="min-h-11 bg-emerald-600 px-5 py-3 text-sm font-semibold rounded-full hover:bg-emerald-500 text-white">
                 Join
               </button>
             </div>
           </form>
-          <div className="flex flex-col md:flex-row lg:flex-col gap-8 text-sm font-black tracking-[0.4em] text-[#4A4F54] uppercase lg:items-end">
+          <div className="flex flex-col md:flex-row lg:flex-col gap-6 text-sm font-medium text-[#777] lg:items-end">
             <a href="#/terms" className="hover:text-emerald-500 transition-colors">
               {COPY.shell.terms}
             </a>
